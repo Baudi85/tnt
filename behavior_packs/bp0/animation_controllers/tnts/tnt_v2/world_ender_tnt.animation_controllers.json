@@ -1,0 +1,94 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.world_ender_tnt.initiate_expl": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "initiate": "q.is_shaking"
+            }
+          ]
+        },
+        "initiate": {
+          "on_entry": [
+            "v.random_msg = Math.random_integer(1, 50);"
+          ],
+          "transitions": [
+            {
+              "common": "v.random_msg != 1"
+            },
+            {
+              "rare": "v.random_msg == 1"
+            }
+          ],
+          "on_exit": [
+            "/playsound note.pling @p"
+          ]
+        },
+        "common": {
+          "on_entry": [
+            "/tellraw @p {\"rawtext\":[{\"translate\":\"chat.world_ender_tnt.warning\"}]}",
+            "/tellraw @p {\"rawtext\":[{\"translate\":\"chat.world_ender_tnt.confirmation\"}]}",
+            "/tellraw @p {\"rawtext\":[{\"translate\":\"chat.world_ender_tnt.warning\"}]}"
+          ]
+        },
+        "rare": {
+          "on_entry": [
+            "/tellraw @p {\"rawtext\":[{\"translate\":\"chat.world_ender_tnt.warning\"}]}",
+            "/tellraw @p {\"rawtext\":[{\"translate\":\"chat.world_ender_tnt.confirmation2\"}]}",
+            "/tellraw @p {\"rawtext\":[{\"translate\":\"chat.world_ender_tnt.warning\"}]}"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.world_ender_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "/playsound tnt.world_ender @a ~~~ 1.0",
+
+            "/execute @a[tag=!achievements_world_ender_tnt,r=50] ~~~ function achievements/world_ender_tnt"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.world_ender_tnt.tp": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tp": "q.is_shaking"
+            }
+          ]
+        },
+        "tp": {
+          "on_entry": [
+            "/spreadplayers ~ ~ 15 40 @s",
+            "@s sndbx:remove_teleport_entity"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_shaking"
+            }
+          ],
+          "on_exit": [
+            "/summon sndbx:world_ender_tnt ~ ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

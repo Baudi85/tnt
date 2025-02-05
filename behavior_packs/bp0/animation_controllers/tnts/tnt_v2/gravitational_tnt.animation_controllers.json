@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.gravitational_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.tick_delay) >= 4.0"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/effect @e slow_falling 20 255 true",
+            "/effect @e jump_boost 20 2 true",
+
+            "/particle sndbx:gravitational_release ~~0.5~",
+            "/particle sndbx:gravitational_release_continuous ~~0.5~",
+            "/playsound beacon.activate @a ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

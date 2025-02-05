@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.butterfly_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_explode": "q.is_powered"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound tnt.butterfly @p"
+          ],
+          "transitions": [
+            {
+              "explode": "(q.life_time - v.tick_delay) >= 4.0"
+            }
+          ]
+        },
+        "explode": {
+          "on_entry": [
+
+            "/summon sndbx:butterfly ~ ~1 ~-3",
+            "/summon sndbx:butterfly ~ ~1 ~3",
+            "/summon sndbx:butterfly ~3 ~ ~",
+            "/summon sndbx:butterfly ~-3 ~ ~",
+            "/summon sndbx:butterfly ~-2 ~1 ~2",
+            "/summon sndbx:butterfly ~2 ~1 ~-2",
+            "/summon sndbx:butterfly ~2 ~1 ~2",
+            "/summon sndbx:butterfly ~-2 ~1 ~-2"
+          ]
+        }
+      }
+    }
+  }
+}

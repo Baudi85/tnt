@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:tnt_mob",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "geometry": {
+        "default": "geometry.tnt_mob"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/tnt_mob/tnt_mob",
+        "exploding": "textures/tnts/v1/tnt_mob/tnt_mob_exploding",
+        "angry": "textures/tnts/v1/tnt_mob/tnt_mob_angry"
+      },
+      "scripts": {
+        "animate": [ "controller_move" ]
+      },
+      "animations": {
+        "idle": "animation.basic_block.idle",
+        "walk": "animation.basic_block.walk",
+        "hit": "animation.basic_block.hit",
+        "attack": "animation.basic_block.attack",
+        "look_at_target": "animation.common.look_at_target",
+        "controller_move": "controller.animation.basic_block.move"
+      },
+      "render_controllers": [ 
+        "controller.render.tnt_mob"
+      ],
+      "spawn_egg": {
+        "texture": "tnt_mob"
+      }
+    }
+  }
+}

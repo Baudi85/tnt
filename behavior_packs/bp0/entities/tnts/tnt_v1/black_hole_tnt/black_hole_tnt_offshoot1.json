@@ -1,0 +1,70 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:black_hole_tnt_offshoot1",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "black_hole"
+        ]
+      },
+      "animations": {
+        "black_hole": "animation.blackhole_particles"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "black_hole_tnt",
+          "offshoot",
+          "inanimate"
+        ]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [ 0, -1, 0 ]
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+    },
+    
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      }
+    }
+  }
+}

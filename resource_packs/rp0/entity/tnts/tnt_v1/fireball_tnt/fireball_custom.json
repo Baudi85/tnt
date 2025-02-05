@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:fireball",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/fireball_tnt/fireball"
+      },
+      "geometry": {
+        "default": "geometry.fireball"
+      },
+      "animations": {
+        "fireball": "animation.fireball_particle_emission",
+        "move":"animation.fireball.move"
+      },
+      "scripts": {
+        "animate": [
+          "fireball",
+          "move"
+        ]
+      },
+      "particle_effects": {
+        "fireball": "sndbx:fire"
+      },
+      "render_controllers": [ "controller.render.sndbx_tnt.block" ]
+    }
+  }
+}

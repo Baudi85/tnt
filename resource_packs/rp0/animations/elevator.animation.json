@@ -1,0 +1,60 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.elevator.lcd_off": {
+			"loop": true,
+			"bones": {
+				"lcd_1": {
+					"scale": 1
+				},
+				"lcd_2": {
+					"scale": 1
+				}
+			}
+		},
+		"animation.elevator.lcd_on": {
+			"loop": true,
+			"bones": {
+				"lcd_1": {
+					"scale": 1
+				},
+				"lcd_2": {
+					"scale": 0
+				},
+				"lcd_slider": {
+					"position": [-3, 0, 0]
+				}
+			}
+		},
+		"animation.elevator.control_panel_scale": {
+			"loop": true,
+			"bones": {
+				"control_panel": {
+					"scale": [1, 0.7, 1]
+				}
+			}
+		},
+		"animation.elevator.control_panel_click": {
+			"loop": true,
+			"animation_length": 0.8,
+			"bones": {
+				"control_panel": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.1": [1.02, 0.98, 1.02],
+						"0.2": [0.98, 1.02, 0.98],
+						"0.35": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.elevator.vibrate": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"scale": [1, "math.sin(query.anim_time * 1200)*.002 + 1", 1]
+				}
+			}
+		}
+	}
+}

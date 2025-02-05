@@ -1,0 +1,71 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.equaliser_tnt",
+				"texture_width": 80,
+				"texture_height": 80,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+			  {
+					"name": "tnt",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "bb_main",
+					"parent": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 19, -8], "size": [16, 11, 16], "inflate": 0.5, "uv": [0, 32]},
+						{"origin": [-3, 19, -12], "size": [6, 11, 3], "inflate": 0.5, "uv": [62, 32]}
+					],
+					"locators": {
+						"spark": [0, 16, 0],
+						"lever": [0, 24, -12.5]
+					}
+				},
+				{
+					"name": "lever",
+					"parent": "bb_main",
+					"pivot": [0, 25, -12.5],
+					"cubes": [
+						{"origin": [-1, 24, -18], "size": [2, 2, 9], "inflate": 0.5, "pivot": [0, 25, -13.5], "rotation": [-47.5, 0, 0], "uv": [58, 59]}
+					]
+				},
+				{
+					"name": "piston_pusher",
+					"parent": "bb_main",
+					"pivot": [0.5, 17, 0],
+					"cubes": [
+						{"origin": [-1.5, 17, -2], "size": [3, 2, 4], "inflate": 0.5, "uv": [66, 2]}
+					]
+				},
+				{
+					"name": "tnt_piston",
+					"parent": "bb_main",
+					"pivot": [0, 7, 0]
+				},
+				{
+					"name": "tnt_block",
+					"parent": "tnt_piston",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "piston",
+					"parent": "tnt_piston",
+					"pivot": [0, 7, 0],
+					"cubes": [
+						{"origin": [-8, 13, -8], "size": [16, 3, 16], "inflate": 0.5, "uv": [0, 61]}
+					]
+				}
+			]
+		}
+	]
+}

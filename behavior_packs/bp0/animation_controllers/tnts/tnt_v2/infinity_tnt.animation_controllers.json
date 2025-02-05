@@ -1,0 +1,61 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.infinity_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/execute @s[family=!lit2] ~~~ playsound mob.wither.ambient @a ~~~",
+            "/execute @s[family=!lit2] ~~~ playsound portal.trigger @a ~~~"
+          ],
+          "transitions": [
+            { "on_explode_0": "(q.life_time - v.tick_delay) >= 4.0 && q.skin_id == 0" },
+            { "on_explode_1": "(q.life_time - v.tick_delay) >= 4.0 && q.skin_id == 1" },
+            { "on_explode_2": "(q.life_time - v.tick_delay) >= 4.0 && q.skin_id == 2" },
+            { "on_explode_3": "(q.life_time - v.tick_delay) >= 4.0 && q.skin_id == 3" }
+          ]
+        },
+        "on_explode_0": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~",
+            "/summon sndbx:infinity_tnt ~-1 ~ ~-1 sndbx:infinity_tnt_1",
+            "/summon sndbx:infinity_tnt ~-1 ~ ~1 sndbx:infinity_tnt_1"
+          ]
+        },
+        "on_explode_1": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~",
+            "/summon sndbx:infinity_tnt ~-1 ~ ~-1 sndbx:infinity_tnt_2",
+            "/summon sndbx:infinity_tnt ~-1 ~ ~1 sndbx:infinity_tnt_2"
+          ]
+        },
+        "on_explode_2": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~",
+            "/summon sndbx:infinity_tnt ~-1 ~ ~-1 sndbx:infinity_tnt_3",
+            "/summon sndbx:infinity_tnt ~-1 ~ ~1 sndbx:infinity_tnt_3",
+
+            "/execute @a[tag=!achievements_infinity_tnt,r=25] ~~~ function achievements/infinity_tnt"
+          ]
+        },
+        "on_explode_3": {
+          "on_entry": [
+            "@s sndbx:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.device_crasher_tnt.lit": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "Array.skins[Math.floor(q.life_time)]" ],
+      "overlay_color": {
+        "r": "variable.flash == 0.0 ? this : 1.0",
+        "g": "variable.flash == 0.0 ? this : 1.0",
+        "b": "variable.flash == 0.0 ? this : 1.0",
+        "a": "variable.flash == 0.0 ? this : 1.0"
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "texture.tnt_0",
+            "texture.tnt_1",
+            "texture.tnt_2",
+            "texture.tnt_3"
+          ]
+        }
+      }
+    }
+  }
+}

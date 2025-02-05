@@ -1,0 +1,53 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.doomsday_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_ignited"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "/playsound tnt.doomsday @a ~~~ 1.0",
+            "/execute @a[tag=!achievements_dooms_day,r=50] ~~~ function achievements/dooms_day"
+          ],
+          "transitions": [
+            {
+              "on_explode": "q.life_time >= 11.0"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/summon sndbx:doomsday_dummy ~ ~ ~"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.sndbx_doomsday_expl": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "strc": "q.life_time >= 1.9"
+            }
+          ]
+        },
+        "strc": {
+          "on_entry": [
+            "/function tnt/doomsday/str_load",
+            "/function tnt/doomsday/str_load2",
+            "@s sndbx:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

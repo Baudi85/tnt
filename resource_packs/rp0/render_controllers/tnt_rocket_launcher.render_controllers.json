@@ -1,0 +1,148 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.tnt_rocket_launcher": {
+      "geometry": "Geometry.tnt_rocket_launcher",
+      "materials": [
+        {
+          "*": "q.is_ignited ? Material.tnt_rocket_launcher : Material.default"
+        }
+      ],
+      "textures": [
+        "q.is_ignited ? Texture.tnt_rocket_launcher : Texture.tnt_rocket_launcher_deactivated"
+      ],
+      "part_visibility": [
+        {
+          "tnt": false
+        },
+        {
+          "claw1": false
+        },
+        {
+          "claw2": false
+        },
+        {
+          "claw3": false
+        }
+      ]
+    },
+    "controller.render.tnt_launcher.barrel": {
+      "geometry": "Geometry.tnt_rocket_launcher_barrel",
+      "materials": [
+        {
+          "*": "q.is_ignited ? Material.tnt_rocket_launcher : Material.default"
+        }
+      ],
+      "textures": [
+        "q.is_ignited ? Texture.tnt_rocket_launcher : Texture.tnt_rocket_launcher_deactivated"
+      ],
+      "overlay_color": {
+        "a": "q.is_illager_captain ? 0.81 : 0.0",
+        "b": "q.is_illager_captain ? ((Math.sin(query.life_time * 240.0) + 1.0) * 0.1) : 0.0",
+        "g": "q.is_illager_captain ? 0.15 : 0.0",
+        "r": "q.is_illager_captain ? 0.96 : 0.0"
+      }
+    },
+    "controller.render.tnt_rocket_launcher_overlay": {
+      "geometry": "Geometry.tnt_rocket_launcher_overlay",
+      "materials": [
+        {
+          "*": "Material.tnt_rocket_launcher_overlay"
+        }
+      ],
+      "textures": [
+        "Texture.tnt_rocket_launcher_overlay"
+      ],
+      "on_fire_color": {},
+      "is_hurt_color": {},
+      "uv_anim": {
+        "offset": [
+          "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01",
+          "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01"
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "ignore_lighting": true
+    },
+    "controller.render.tnt_launcher.tnt": {
+      "geometry": "(q.skin_id >= 40 && q.skin_id <= 55) ? Geometry.launcher_smoke_tnt : (q.skin_id == 21 ? Geometry.launcher_scatter_tnt : ((q.skin_id == 56 || q.skin_id == 57) ? Geometry.launcher_sponge_tnt : (q.skin_id == 18 ? Geometry.launcher_fireball_tnt : (q.skin_id == 39 ? Geometry.launcher_shulker_tnt : (Geometry.launcher_base_tnt)))))",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.tnt_texture[q.skin_id]"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.tnt_texture": [
+            "Texture.arctic",
+            "Texture.arctic",
+            "Texture.black_colored",
+            "Texture.blue_colored",
+            "Texture.brown_colored",
+            "Texture.cyan_colored",
+            "Texture.gray_colored",
+            "Texture.green_colored",
+            "Texture.light_blue_colored",
+            "Texture.light_gray_colored",
+            "Texture.lime_colored",
+            "Texture.magenta_colored",
+            "Texture.orange_colored",
+            "Texture.pink_colored",
+            "Texture.purple_colored",
+            "Texture.red_colored",
+            "Texture.white_colored",
+            "Texture.yellow_colored",
+            "Texture.fireball",
+            "Texture.fish",
+            "Texture.galaxy",
+            "Texture.scatter",
+            "Texture.tornado",
+            "Texture.dinnerbone",
+            "Texture.lucky",
+            "Texture.axolotl_mob",
+            "Texture.bat_mob",
+            "Texture.cat_mob",
+            "Texture.chicken_mob",
+            "Texture.cow_mob",
+            "Texture.fox_mob",
+            "Texture.parrot_mob",
+            "Texture.pig_mob",
+            "Texture.polar_bear_mob",
+            "Texture.rabbit_mob",
+            "Texture.napalm",
+            "Texture.patient_zero",
+            "Texture.portal",
+            "Texture.rainbow",
+            "Texture.shulker",
+            "Texture.black_smoke",
+            "Texture.blue_smoke",
+            "Texture.brown_smoke",
+            "Texture.cyan_smoke",
+            "Texture.dark_green_smoke",
+            "Texture.gray_smoke",
+            "Texture.light_blue_smoke",
+            "Texture.light_gray_smoke",
+            "Texture.lime_smoke",
+            "Texture.magenta_smoke",
+            "Texture.orange_smoke",
+            "Texture.pink_smoke",
+            "Texture.purple_smoke",
+            "Texture.red_smoke",
+            "Texture.white_smoke",
+            "Texture.yellow_smoke",
+            "Texture.sponge",
+            "Texture.sponge_wet",
+            "Texture.troll",
+            "Texture.base"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:tnt_skeleton",
+      "materials": {
+        "default": "skeleton"
+      },
+      "textures": {
+        "default": "textures/mobs/skeleton_tnt"
+      },
+      "geometry": {
+        "default": "geometry.skeleton_tnt"
+      },
+      "render_controllers": [
+        "controller.render.skeleton"
+      ],
+      "spawn_egg": {
+        "base_color": "#b1abab",
+        "overlay_color": "#eb0808"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "look_at_target",
+          "move_controller",
+          "holding_controller",
+          "charging_controller",
+          "attack",
+          "bob_controller",
+          "damage_nearby_mobs_controller",
+          "bow_and_arrow_controller",
+          "swimming_controller",
+          "use_item_progress_controller",
+          "skeleton_attack_controller"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "sneaking": "animation.humanoid.sneaking",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow": "animation.skeleton_tnt.attack",
+        "swimming": "animation.zombie.swimming",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "skeleton_attack": "animation.skeleton.attack",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "move_controller": "controller.animation.humanoid.move",
+        "holding_controller": "controller.animation.humanoid.holding",
+        "charging_controller": "controller.animation.humanoid.charging",
+        "attack": "controller.animation.humanoid.attack",
+        "bob_controller": "controller.animation.humanoid.bob",
+        "damage_nearby_mobs_controller": "controller.animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow_controller": "controller.animation.humanoid.bow_and_arrow",
+        "swimming_controller": "controller.animation.zombie.swimming",
+        "use_item_progress_controller": "controller.animation.humanoid.use_item_progress",
+        "skeleton_attack_controller": "controller.animation.skeleton.attack"
+      },
+      "enable_attachables": false
+    }
+  }
+}

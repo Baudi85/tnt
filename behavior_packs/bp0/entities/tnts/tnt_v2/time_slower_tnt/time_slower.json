@@ -1,0 +1,72 @@
+{
+  "format_version": "1.17.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:time_slower",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.time_slower"
+      }
+    },
+    "component_groups": {
+      "sndbx:stop_timer": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:tick_world": {},
+      "minecraft:collision_box": {
+        "height": 0.000001,
+        "width": 0.000001
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "inanimate",
+          "time_slower"
+        ]
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": 30,
+        "time_down_event": {
+          "event": "sndbx:stop_timer",
+          "target": "self"
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "sndbx:stop_timer": {
+        "add": {
+          "component_groups": [
+            "sndbx:stop_timer"
+          ]
+        }
+      }
+    }
+  }
+}

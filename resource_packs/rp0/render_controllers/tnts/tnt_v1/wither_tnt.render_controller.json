@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.withertnt_white": {
+      "geometry": "Geometry.primed",
+      "materials": [ { "*": "Material.tnt_armor" } ],
+      "textures": [ "Texture.armor_white" ],
+      "is_hurt_color":{},
+      "on_fire_color":{},
+      "uv_anim": {
+        "offset": [
+          "Math.cos(query.life_time * 22.92) * 3.0",
+          "query.life_time * 0.2"
+        ],
+        "scale": [ 1.0, 1.0 ]
+      },
+      "ignore_lighting": true
+    },
+    "controller.render.withertnt_blue": {
+      "geometry": "Geometry.primed",
+      "materials": [ { "*": "Material.tnt_armor" } ],
+      "textures": [ "Texture.armor_blue" ],
+      "is_hurt_color":{},
+      "on_fire_color":{},
+      "uv_anim": {
+        "offset": [
+          "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01",
+          "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01"
+        ],
+        "scale": [ 1.0, 1.0 ]
+      },
+      "ignore_lighting": true
+    }
+  }
+}

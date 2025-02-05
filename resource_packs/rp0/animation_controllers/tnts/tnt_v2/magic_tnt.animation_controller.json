@@ -1,0 +1,63 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.magic_tnt_blob_spin": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "spin_slowly": "!q.is_powered"
+            },
+            { 
+              "spin_fast": "q.is_powered"
+            }
+          ]
+        },
+        "spin_slowly": {
+          "animations": [ "idle" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+          "transitions": [
+            { 
+              "spin_fast": "q.is_powered"
+            }
+          ]
+        },
+        "spin_fast": {
+          "animations": [ "fast" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+          "transitions": [
+            { 
+              "spin_slowly": "!q.is_powered"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.magic_tnt_glyphs": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "emit": "1" 
+            }
+          ]
+        },
+        "emit": {
+          "particle_effects": [
+            { 
+              "effect": "rune_glyphs"
+            },
+            { 
+              "effect": "magic_tnt_particle"
+            }
+          ],
+          "transitions": [ { "default": "1" } ]
+        }
+      }
+    }
+  }
+}

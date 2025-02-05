@@ -1,0 +1,278 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:bunker_door",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "bunker_door"
+        ]
+      },
+      "animations": {
+        "bunker_door": "controller.animation.bunker_door.setup",
+        "bunker_door_1.open": "animation.bunker_door_1.open",
+        "bunker_door_1.close": "animation.bunker_door_1.close",
+        "bunker_door_2.open": "animation.bunker_door_2.open",
+        "bunker_door_2.close": "animation.bunker_door_2.close",
+        "bunker_door_3.open": "animation.bunker_door_3.open",
+        "bunker_door_3.close": "animation.bunker_door_3.close"
+      }
+    },
+    "component_groups": {
+      "sndbx:door_open": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            6.0,
+            6.0
+          ],
+          "time_down_event": {
+            "event": "sndbx:door_opened",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:door_opened": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "sndbx:door_close": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            4.0,
+            4.0
+          ],
+          "time_down_event": {
+            "event": "sndbx:door_closed",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:door_closed": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+
+      "sndbx:bunker_door_1": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "sndbx:bunker_door_2": {
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "sndbx:bunker_door_3": {
+        "minecraft:mark_variant": {
+          "value": 3
+        }
+      },
+
+      "sndbx:set_health": {
+        "minecraft:health": {
+          "value": 1,
+          "max": 1,
+          "min": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [
+          "inanimate",
+          "bunker_door"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": { 
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      },
+
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "self",
+              "value": "bunker_door_1"
+            },
+            "event": "sndbx:bunker_door_1"
+          },
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "self",
+              "value": "bunker_door_2"
+            },
+            "event": "sndbx:bunker_door_2"
+          },
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "self",
+              "value": "bunker_door_3"
+            },
+            "event": "sndbx:bunker_door_3"
+          }
+        ]
+      }
+    },
+    "events": {
+      "sndbx:door_open": {
+        "add": {
+          "component_groups": [
+            "sndbx:door_open"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:door_close",
+            "sndbx:door_opened",
+            "sndbx:door_closed"
+          ]
+        }
+      },
+      "sndbx:door_close": {
+        "add": {
+          "component_groups": [
+            "sndbx:door_close"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:door_open",
+            "sndbx:door_opened",
+            "sndbx:door_closed"
+          ]
+        }
+      },
+      "sndbx:door_opened": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_skin_id",
+              "subject": "self",
+              "operator": "!=",
+              "value": 2
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:door_opened"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "sndbx:door_closed"
+              ]
+            }
+          }
+        ]
+      },
+      "sndbx:door_closed": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_skin_id",
+              "subject": "self",
+              "operator": "!=",
+              "value": 1
+            },
+            "remove": {
+              "component_groups": [
+                "sndbx:door_opened"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:door_closed"
+              ]
+            }
+          }
+        ]
+      },
+
+      "sndbx:bunker_door_1": {
+        "add": {
+          "component_groups": [
+            "sndbx:bunker_door_1"
+          ]
+        }
+      },
+      "sndbx:bunker_door_2": {
+        "add": {
+          "component_groups": [
+            "sndbx:bunker_door_2"
+          ]
+        }
+      },
+      "sndbx:bunker_door_3": {
+        "add": {
+          "component_groups": [
+            "sndbx:bunker_door_3"
+          ]
+        }
+      },
+
+      "minecraft:entity_spawned": {
+        "trigger": {
+          "event": "sndbx:door_close",
+          "target": "self"
+        }
+      },
+
+      "sndbx:reset_door": {
+        "remove": {
+          "component_groups": [
+            "sndbx:door_open",
+            "sndbx:door_close",
+            "sndbx:door_opened",
+            "sndbx:door_closed"
+          ]
+        }
+      },
+
+      "sndbx:set_health": {
+        "add": {
+          "component_groups": [
+            "sndbx:set_health"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.infinity_tnt.idle": {
+			"loop": true,
+			"bones": {
+				"upper": {
+					"position": [0, "math.sin(query.anim_time * 100) -1", 0]
+				},
+				"mid": {
+					"position": [0, "math.sin(query.anim_time * 100)* .5 -.5", 0]
+				}
+			}
+		},
+		"animation.infinity_tnt.explode": {
+			"loop": true,
+			"animation_length": 5.55,
+			"bones": {
+				"root": {
+					"rotation": [0, "query.anim_time * query.anim_time * 60", "query.anim_time * query.anim_time * 60"],
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.2": [0, 1.06, 0],
+						"0.3": [0, 1.99, 0],
+						"0.4": [0, 3.32, 0],
+						"0.55": [0, 5.4, 0],
+						"0.75": [0, 7.06, 0],
+						"1.0": [0, 8, 0],
+						"1.25": [0, 8.51, 0],
+						"1.55": [0, 8.69, 0],
+						"3.95": [0, 9, 0]
+					}
+				},
+				"lowwer": {
+					"position": [0, "math.sin(query.anim_time * 150 * (query.anim_time*2))* 1.5 + 1.5", 0]
+				},
+				"upper": {
+					"position": [0, "math.sin(query.anim_time * 150 * (query.anim_time*2))* -1.5 + -1.5", 0]
+				}
+			}
+		}
+	}
+}

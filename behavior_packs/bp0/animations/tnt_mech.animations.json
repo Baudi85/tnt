@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tnt_mech.shoot": {
+      "timeline": {
+        "0.0": [
+          "/event entity @p[r=1.5] sndbx:tnt_projectile"
+        ],
+        "0.1": [
+          "/event entity @p[r=1.5] sndbx:tnt_projectile"
+        ],
+        "0.2": [
+          "/event entity @p[r=1.5] sndbx:tnt_projectile"
+        ]
+      },
+      "animation_length": 0.5,
+      "loop": true
+    }
+  }
+}

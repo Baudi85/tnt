@@ -1,0 +1,81 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.patient_zero_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.tick_delay) >= 4.0"
+            }
+          ],
+          "on_exit": [
+            "/playsound random.explode @p"
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/summon sndbx:patient_zero_dummy ~ ~ ~"
+          ]
+        }
+      }
+    },
+    "controller.animation.patient_zero_expl": {
+      "initial_state": "set_block",
+      "states": {
+        "set_block": {
+          "on_entry": [
+            "/function tnt/toxic_goo_block",
+            "@s sndbx:patient_zero_effects"
+          ],
+          "transitions": [
+            {
+              "effects": "q.is_ignited"
+            }
+          ]
+        },
+        "effects": {
+          "on_entry": [
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.toxic_goo_block.particles": {
+      "initial_state": "rep",
+      "states": {
+        "particle": {
+          "on_entry": [
+            "/particle sndbx:toxic_goo ~ ~1 ~",
+            "/event entity @e[type=minecraft:villager] become_zombie",
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "rep": "(q.life_time - v.tick_delay) >= Math.random(1, 10)"
+            }
+          ]
+        },
+        "rep": {
+          "transitions": [
+            {
+              "particle": "1.0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

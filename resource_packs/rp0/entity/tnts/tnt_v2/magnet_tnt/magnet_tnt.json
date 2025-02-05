@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:magnet_tnt",
+      "geometry": {
+        "default": "geometry.magnet_tnt",
+        "magnet": "geometry.magnet_tnt_armor"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "magnet": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/magnet_tnt/magnet_tnt",
+        "armor_white": "textures/entity/wither_boss/wither_armor_white",
+        "armor_blue": "textures/entity/wither_boss/wither_armor_blue"
+      },
+      "particle_effects": {
+        "lightning_bolts": "sndbx:lightning_bolts"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          "lightning_bolts",
+          { "explosion": "q.life_time >= 3.5" },
+          "tnt_explode"
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "lightning_bolts": "controller.animation.magnet_tnt_particles",
+        "tnt_explode": "animation.magnet_tnt.explode"
+      },
+      "render_controllers": [
+        "controller.render.magnet_tnt",
+        "controller.render.magnet_tnt.flash_lit",
+        "controller.render.magnet_tnt.overlay"
+      ],
+      "sound_effects": {
+        "ignited": "mob.mooshroom.convert"
+      }
+    }
+  }
+}

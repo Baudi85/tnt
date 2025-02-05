@@ -1,0 +1,1586 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:tnt_cannon",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "detect_rider",
+          "detect_unloaded_launcher",
+          "load_tnts",
+          "unsupported_tnt",
+          { "launch_tnt": "q.has_rider" },
+          "cooldown_attack",
+          "particle"
+        ]
+      },
+      "animations": {
+        "detect_rider": "controller.animation.tnt_cannon.detect_rider",
+        "detect_unloaded_launcher": "controller.animation.tnt_cannon.detect_unloaded_launcher",
+        "load_tnts": "controller.animation.tnt_cannon.load_tnts",
+        "launch_tnt": "controller.animation.tnt_cannon.launch_tnt",
+        "unsupported_tnt": "controller.animation.tnt_cannon.unsupported_tnt",
+        "cooldown_attack": "controller.animation.tnt_cannon.cooldown_attack",
+        "particle": "controller.animation.interact_particle"
+      }
+    },
+    "component_groups": {
+      "sndbx:set_health": {
+        "minecraft:health": {
+          "value": 1,
+          "max": 1,
+          "min": 1
+        }
+      },
+      "sndbx:not_loaded": {
+        "minecraft:is_charged": {}
+      },
+      "sndbx:has_rider": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "play_sounds": "plop",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    {
+                      "any_of": [
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:base_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:big_bertha_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_hole_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blast_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blaze_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lightning_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:mega_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:party_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:potion_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sticky_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:super_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:ultra_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:wither_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blessed_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:butterfly_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:circle_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:device_crasher_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:doomsday_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dynamite_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:ender_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:equaliser_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gravitational_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:infinity_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magic_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magnet_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:miners_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:toxic_goo_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:split_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:time_slower_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:void_eater_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:world_ender_tnt_block_spawn_egg" }
+                      ]
+                    },
+                    {
+                      "none_of": [
+                        { "test": "has_component", "subject": "self", "value": "minecraft:is_ignited" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:arctic_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:green_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fireball_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fish_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:galaxy_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:scatter_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:tornado_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dinnerbone_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lucky_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:axolotl_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:bat_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cat_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:chicken_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cow_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fox_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:parrot_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pig_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:polar_bear_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rabbit_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:napalm_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:patient_zero_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:portal_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rainbow_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:shulker_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dark_green_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_wet_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:troll_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "tnt" }
+                      ]
+                    }
+                  ]
+                },
+                "event": "sndbx:unsupported_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "play_sounds": "plop",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_skin_id", "subject": "self", "operator": ">", "value": 0 },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    {
+                      "none_of": [
+                        { "test": "has_component", "subject": "self", "value": "minecraft:is_ignited" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:arctic_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:green_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fireball_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fish_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:galaxy_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:scatter_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:tornado_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dinnerbone_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lucky_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:axolotl_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:bat_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cat_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:chicken_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cow_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fox_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:parrot_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pig_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:polar_bear_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rabbit_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:napalm_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:patient_zero_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:portal_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rainbow_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:shulker_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dark_green_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_wet_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:troll_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "tnt" },
+                        
+                        // Not supported TNTs
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:base_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:big_bertha_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_hole_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blast_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blaze_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lightning_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:mega_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:party_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:potion_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sticky_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:super_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:ultra_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:wither_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blessed_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:butterfly_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:circle_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:device_crasher_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:doomsday_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dynamite_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:ender_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:equaliser_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gravitational_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:infinity_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magic_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magnet_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:miners_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:toxic_goo_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:split_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:time_slower_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:void_eater_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:world_ender_tnt_block_spawn_egg" }
+                      ]
+                    }
+                  ]
+                },
+                "event": "sndbx:launch_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" }, 
+                    { "test": "rider_count", "subject": "self", "value": 1 }, 
+                    { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 0 },
+                    { "test": "has_component", "subject": "self", "value": "minecraft:is_ignited", "operator": "!=" },
+                    {
+                      "none_of": [
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:arctic_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:green_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_colored_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fireball_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fish_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:galaxy_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:scatter_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:tornado_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dinnerbone_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lucky_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:axolotl_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:bat_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cat_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:chicken_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cow_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fox_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:parrot_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pig_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:polar_bear_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rabbit_mob_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:napalm_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:patient_zero_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:portal_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rainbow_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:shulker_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dark_green_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_smoke_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_wet_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:troll_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "tnt" },
+
+                        // Not supported TNTs
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:base_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:big_bertha_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_hole_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blast_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blaze_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lightning_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:mega_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:party_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:potion_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sticky_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:super_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:ultra_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:wither_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blessed_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:butterfly_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:circle_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:device_crasher_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:doomsday_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dynamite_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:ender_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:equaliser_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gravitational_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:infinity_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magic_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magnet_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:miners_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:toxic_goo_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:split_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:time_slower_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:void_eater_tnt_block_spawn_egg" },
+                        { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:world_ender_tnt_block_spawn_egg" }
+                      ]
+                    }
+                  ]
+                },
+                "event": "sndbx:not_loaded",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.arctic_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" }, 
+                    { "test": "rider_count", "subject": "self", "value": 1 }, 
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:arctic_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_arctic_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.black_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" }, 
+                    { "test": "rider_count", "subject": "self", "value": 1 }, 
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_black_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.blue_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_blue_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.brown_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_brown_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.cyan_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_cyan_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.gray_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_gray_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.green_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:green_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_green_colored_tnt",
+                "target": "self"
+              }
+            },
+            {            
+              "interact_text": "action.interact.tnt_launcher.light_blue_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_light_blue_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.light_gray_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_light_gray_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.lime_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_lime_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.magenta_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_magenta_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.orange_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_orange_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.pink_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_pink_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.purple_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_purple_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.red_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_red_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.white_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_white_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.yellow_colored_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_colored_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_yellow_colored_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.fireball_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fireball_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_fireball_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.fish_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fish_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_fish_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.galaxy_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:galaxy_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_galaxy_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.scatter_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:scatter_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_scatter_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.tornado_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:tornado_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_tornado_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.dinnerbone_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dinnerbone_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_dinnerbone_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.lucky_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lucky_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_lucky_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.axolotl_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:axolotl_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_axolotl_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.bat_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:bat_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_bat_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.cat_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cat_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_cat_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.chicken_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:chicken_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_chicken_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.cow_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cow_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_cow_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.fox_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:fox_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_fox_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.parrot_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:parrot_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_parrot_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.pig_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pig_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_pig_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.polar_bear_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:polar_bear_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_polar_bear_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.rabbit_mob_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rabbit_mob_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_rabbit_mob_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.napalm_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:napalm_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_napalm_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.patient_zero_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:patient_zero_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_patient_zero_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.portal_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:portal_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_portal_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.rainbow_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:rainbow_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_rainbow_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.shulker_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:shulker_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_shulker_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.black_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:black_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_black_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.blue_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:blue_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_blue_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.brown_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:brown_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_brown_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.cyan_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:cyan_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_cyan_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.dark_green_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:dark_green_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_dark_green_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.gray_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:gray_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_gray_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.light_blue_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_blue_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_light_blue_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.light_gray_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:light_gray_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_light_gray_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.lime_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:lime_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_lime_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.magenta_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:magenta_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_magenta_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.orange_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:orange_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_orange_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.pink_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:pink_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_pink_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.purple_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:purple_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_purple_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.red_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:red_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_red_smoke_tnt",
+                "target": "self"
+              }
+            },
+             {
+              "interact_text": "action.interact.tnt_launcher.white_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:white_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_white_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.yellow_smoke_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:yellow_smoke_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_yellow_smoke_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.sponge_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_sponge_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.sponge_wet_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:sponge_wet_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_sponge_wet_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.troll_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "sndbx:troll_tnt_block_spawn_egg" }
+                  ]
+                },
+                "event": "sndbx:load_troll_tnt",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "action.interact.tnt_launcher.vanilla_tnt",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "tnt" }
+                  ]
+                },
+                "event": "sndbx:load_vanilla_tnt",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+
+      "sndbx:launch_tnt": {
+        "minecraft:is_sheared": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.0,
+          "time_down_event": {
+            "event": "sndbx:reload_cannon",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:reloading_cannon": {
+        "minecraft:is_ignited": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            1.56,
+            1.56
+          ],
+          "time_down_event": {
+            "event": "sndbx:reloaded_cannon",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:unsupported_tnt": {
+        "minecraft:is_illager_captain": {}
+      },
+
+      "sndbx:damage_attack": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    { "test": "rider_count", "subject": "self", "value": 0 },
+                    { "test": "has_damage", "subject": "self", "value": "attack", "operator": "!=" },
+                    {
+                      "all_of": [
+                        { "test": "has_damage", "subject": "self", "value": "attack", "operator": "==" },
+                        { "test": "is_skin_id", "subject": "self", "value": 0 }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_damage", "value": "attack" },
+                    { "test": "is_skin_id", "subject": "self", "operator": ">", "value": 0 },
+                    { "test": "rider_count", "subject": "self", "value": 1 }
+                  ]
+                },
+                "event": "sndbx:launch_tnt_via_attack",
+                "target": "self"
+              },
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+
+      "sndbx:launched_via_attack": {
+        "minecraft:out_of_control": {},
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+
+      "sndbx:reset_cannon": { "minecraft:skin_id": { "value": 0 } },
+      "sndbx:load_arctic_tnt": { "minecraft:skin_id": { "value": 1 } },
+      "sndbx:load_black_colored_tnt": { "minecraft:skin_id": { "value": 2 } },
+      "sndbx:load_blue_colored_tnt": { "minecraft:skin_id": { "value": 3 } },
+      "sndbx:load_brown_colored_tnt": { "minecraft:skin_id": { "value": 4 } },
+      "sndbx:load_cyan_colored_tnt": { "minecraft:skin_id": { "value": 5 } },
+      "sndbx:load_gray_colored_tnt": { "minecraft:skin_id": { "value": 6 } },
+      "sndbx:load_green_colored_tnt": { "minecraft:skin_id": { "value": 7 } },
+      "sndbx:load_light_blue_colored_tnt": { "minecraft:skin_id": { "value": 8 } },
+      "sndbx:load_light_gray_colored_tnt": { "minecraft:skin_id": { "value": 9 } },
+      "sndbx:load_lime_colored_tnt": { "minecraft:skin_id": { "value": 10 } },
+      "sndbx:load_magenta_colored_tnt": { "minecraft:skin_id": { "value": 11 } },
+      "sndbx:load_orange_colored_tnt": { "minecraft:skin_id": { "value": 12 } },
+      "sndbx:load_pink_colored_tnt": { "minecraft:skin_id": { "value": 13 } },
+      "sndbx:load_purple_colored_tnt": { "minecraft:skin_id": { "value": 14 } },
+      "sndbx:load_red_colored_tnt": { "minecraft:skin_id": { "value": 15 } },
+      "sndbx:load_white_colored_tnt": { "minecraft:skin_id": { "value": 16 } },
+      "sndbx:load_yellow_colored_tnt": { "minecraft:skin_id": { "value": 17 } },
+      "sndbx:load_fireball_tnt": { "minecraft:skin_id": { "value": 18 } },
+      "sndbx:load_fish_tnt": { "minecraft:skin_id": { "value": 19 } },
+      "sndbx:load_galaxy_tnt": { "minecraft:skin_id": { "value": 20 } },
+      "sndbx:load_scatter_tnt": { "minecraft:skin_id": { "value": 21 } },
+      "sndbx:load_tornado_tnt": { "minecraft:skin_id": { "value": 22 } },
+      "sndbx:load_dinnerbone_tnt": { "minecraft:skin_id": { "value": 23 } },
+      "sndbx:load_lucky_tnt": { "minecraft:skin_id": { "value": 24 } },
+      "sndbx:load_axolotl_mob_tnt": { "minecraft:skin_id": { "value": 25 } },
+      "sndbx:load_bat_mob_tnt": { "minecraft:skin_id": { "value": 26 } },
+      "sndbx:load_cat_mob_tnt": { "minecraft:skin_id": { "value": 27 } },
+      "sndbx:load_chicken_mob_tnt": { "minecraft:skin_id": { "value": 28 } },
+      "sndbx:load_cow_mob_tnt": { "minecraft:skin_id": { "value": 29 } },
+      "sndbx:load_fox_mob_tnt": { "minecraft:skin_id": { "value": 30 } },
+      "sndbx:load_parrot_mob_tnt": { "minecraft:skin_id": { "value": 31 } },
+      "sndbx:load_pig_mob_tnt": { "minecraft:skin_id": { "value": 32 } },
+      "sndbx:load_polar_bear_mob_tnt": { "minecraft:skin_id": { "value": 33 } },
+      "sndbx:load_rabbit_mob_tnt": { "minecraft:skin_id": { "value": 34 } },
+      "sndbx:load_napalm_tnt": { "minecraft:skin_id": { "value": 35 } },
+      "sndbx:load_patient_zero_tnt": { "minecraft:skin_id": { "value": 36 } },
+      "sndbx:load_portal_tnt": { "minecraft:skin_id": { "value": 37 } },
+      "sndbx:load_rainbow_tnt": { "minecraft:skin_id": { "value": 38 } },
+      "sndbx:load_shulker_tnt": { "minecraft:skin_id": { "value": 39 } },
+      "sndbx:load_black_smoke_tnt": { "minecraft:skin_id": { "value": 40 } },
+      "sndbx:load_blue_smoke_tnt": { "minecraft:skin_id": { "value": 41 } },
+      "sndbx:load_brown_smoke_tnt": { "minecraft:skin_id": { "value": 42 } },
+      "sndbx:load_cyan_smoke_tnt": { "minecraft:skin_id": { "value": 43 } },
+      "sndbx:load_dark_green_smoke_tnt": { "minecraft:skin_id": { "value": 44 } },
+      "sndbx:load_gray_smoke_tnt": { "minecraft:skin_id": { "value": 45 } },
+      "sndbx:load_light_blue_smoke_tnt": { "minecraft:skin_id": { "value": 46 } },
+      "sndbx:load_light_gray_smoke_tnt": { "minecraft:skin_id": { "value": 47 } },
+      "sndbx:load_lime_smoke_tnt": { "minecraft:skin_id": { "value": 48 } },
+      "sndbx:load_magenta_smoke_tnt": { "minecraft:skin_id": { "value": 49 } },
+      "sndbx:load_orange_smoke_tnt": { "minecraft:skin_id": { "value": 50 } },
+      "sndbx:load_pink_smoke_tnt": { "minecraft:skin_id": { "value": 51 } },
+      "sndbx:load_purple_smoke_tnt": { "minecraft:skin_id": { "value": 52 } },
+      "sndbx:load_red_smoke_tnt": { "minecraft:skin_id": { "value": 53 } },
+      "sndbx:load_white_smoke_tnt": { "minecraft:skin_id": { "value": 54 } },
+      "sndbx:load_yellow_smoke_tnt": { "minecraft:skin_id": { "value": 55 } },
+      "sndbx:load_sponge_tnt": { "minecraft:skin_id": { "value": 56 } },
+      "sndbx:load_sponge_wet_tnt": { "minecraft:skin_id": { "value": 57 } },
+      "sndbx:load_troll_tnt": { "minecraft:skin_id": { "value": 58 } },
+      "sndbx:load_vanilla_tnt": { "minecraft:skin_id": { "value": 59 } }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 1.5,
+	      "height": 3
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "inanimate",
+          "tnt_cannon"
+        ]
+      },
+      "minecraft:rideable": {
+        "controlling_seat": 0,
+        "crouching_skip_interact": true,
+        "family_types": [
+          "player"
+        ],
+        "interact_text": "action.interact.ride.sndbx:tnt_cannon",
+        "pull_in_entities": false,
+        "rider_can_interact": true,
+        "seat_count": 1,
+        "seats": {
+          "position": [
+            0,
+            1.4,
+            -0.4
+          ]
+        }
+      },
+      "minecraft:input_ground_controlled": {},
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:damage_attack"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:launched_via_attack"
+          ]
+        }
+      },
+      "sndbx:not_loaded": { "add": { "component_groups": [ "sndbx:not_loaded" ] } },
+      "sndbx:remove_not_loaded": { "remove": { "component_groups": [ "sndbx:not_loaded" ] } },
+
+      "sndbx:has_rider": { "add": { "component_groups": [ "sndbx:has_rider" ] } },
+      "sndbx:has_no_rider": { "remove": { "component_groups": [ "sndbx:has_rider" ] } },
+
+      // load tnts
+      "sndbx:load_arctic_tnt": { "add": { "component_groups": [ "sndbx:load_arctic_tnt" ] } },
+      "sndbx:load_black_colored_tnt": { "add": { "component_groups": [ "sndbx:load_black_colored_tnt" ] } },
+      "sndbx:load_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:load_blue_colored_tnt" ] } },
+      "sndbx:load_brown_colored_tnt": { "add": { "component_groups": [ "sndbx:load_brown_colored_tnt" ] } },
+      "sndbx:load_cyan_colored_tnt": { "add": { "component_groups": [ "sndbx:load_cyan_colored_tnt" ] } },
+      "sndbx:load_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:load_gray_colored_tnt" ] } },
+      "sndbx:load_green_colored_tnt": { "add": { "component_groups": [ "sndbx:load_green_colored_tnt" ] } },
+      "sndbx:load_light_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:load_light_blue_colored_tnt" ] } },
+      "sndbx:load_light_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:load_light_gray_colored_tnt" ] } },
+      "sndbx:load_lime_colored_tnt": { "add": { "component_groups": [ "sndbx:load_lime_colored_tnt" ] } },
+      "sndbx:load_magenta_colored_tnt": { "add": { "component_groups": [ "sndbx:load_magenta_colored_tnt" ] } },
+      "sndbx:load_orange_colored_tnt": { "add": { "component_groups": [ "sndbx:load_orange_colored_tnt" ] } },
+      "sndbx:load_pink_colored_tnt": { "add": { "component_groups": [ "sndbx:load_pink_colored_tnt" ] } },
+      "sndbx:load_purple_colored_tnt": { "add": { "component_groups": [ "sndbx:load_purple_colored_tnt" ] } },
+      "sndbx:load_red_colored_tnt": { "add": { "component_groups": [ "sndbx:load_red_colored_tnt" ] } },
+      "sndbx:load_white_colored_tnt": { "add": { "component_groups": [ "sndbx:load_white_colored_tnt" ] } },
+      "sndbx:load_yellow_colored_tnt": { "add": { "component_groups": [ "sndbx:load_yellow_colored_tnt" ] } },
+      "sndbx:load_fireball_tnt": { "add": { "component_groups": [ "sndbx:load_fireball_tnt" ] } },
+      "sndbx:load_fish_tnt": { "add": { "component_groups": [ "sndbx:load_fish_tnt" ] } },
+      "sndbx:load_galaxy_tnt": { "add": { "component_groups": [ "sndbx:load_galaxy_tnt" ] } },
+      "sndbx:load_scatter_tnt": { "add": { "component_groups": [ "sndbx:load_scatter_tnt" ] } },
+      "sndbx:load_tornado_tnt": { "add": { "component_groups": [ "sndbx:load_tornado_tnt" ] } },
+      "sndbx:load_dinnerbone_tnt": { "add": { "component_groups": [ "sndbx:load_dinnerbone_tnt" ] } },
+      "sndbx:load_lucky_tnt": { "add": { "component_groups": [ "sndbx:load_lucky_tnt" ] } },
+      "sndbx:load_axolotl_mob_tnt": { "add": { "component_groups": [ "sndbx:load_axolotl_mob_tnt" ] } },
+      "sndbx:load_bat_mob_tnt": { "add": { "component_groups": [ "sndbx:load_bat_mob_tnt" ] } },
+      "sndbx:load_cat_mob_tnt": { "add": { "component_groups": [ "sndbx:load_cat_mob_tnt" ] } },
+      "sndbx:load_chicken_mob_tnt": { "add": { "component_groups": [ "sndbx:load_chicken_mob_tnt" ] } },
+      "sndbx:load_cow_mob_tnt": { "add": { "component_groups": [ "sndbx:load_cow_mob_tnt" ] } },
+      "sndbx:load_fox_mob_tnt": { "add": { "component_groups": [ "sndbx:load_fox_mob_tnt" ] } },
+      "sndbx:load_parrot_mob_tnt": { "add": { "component_groups": [ "sndbx:load_parrot_mob_tnt" ] } },
+      "sndbx:load_pig_mob_tnt": { "add": { "component_groups": [ "sndbx:load_pig_mob_tnt" ] } },
+      "sndbx:load_polar_bear_mob_tnt": { "add": { "component_groups": [ "sndbx:load_polar_bear_mob_tnt" ] } },
+      "sndbx:load_rabbit_mob_tnt": { "add": { "component_groups": [ "sndbx:load_rabbit_mob_tnt" ] } },
+      "sndbx:load_napalm_tnt": { "add": { "component_groups": [ "sndbx:load_napalm_tnt" ] } },
+      "sndbx:load_patient_zero_tnt": { "add": { "component_groups": [ "sndbx:load_patient_zero_tnt" ] } },
+      "sndbx:load_portal_tnt": { "add": { "component_groups": [ "sndbx:load_portal_tnt" ] } },
+      "sndbx:load_rainbow_tnt": { "add": { "component_groups": [ "sndbx:load_rainbow_tnt" ] } },
+      "sndbx:load_shulker_tnt": { "add": { "component_groups": [ "sndbx:load_shulker_tnt" ] } },
+      "sndbx:load_black_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_black_smoke_tnt" ] } },
+      "sndbx:load_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_blue_smoke_tnt" ] } },
+      "sndbx:load_brown_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_brown_smoke_tnt" ] } },
+      "sndbx:load_cyan_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_cyan_smoke_tnt" ] } },
+      "sndbx:load_dark_green_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_dark_green_smoke_tnt" ] } },
+      "sndbx:load_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_gray_smoke_tnt" ] } },
+      "sndbx:load_light_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_light_blue_smoke_tnt" ] } },
+      "sndbx:load_light_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_light_gray_smoke_tnt" ] } },
+      "sndbx:load_lime_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_lime_smoke_tnt" ] } },
+      "sndbx:load_magenta_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_magenta_smoke_tnt" ] } },
+      "sndbx:load_orange_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_orange_smoke_tnt" ] } },
+      "sndbx:load_pink_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_pink_smoke_tnt" ] } },
+      "sndbx:load_purple_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_purple_smoke_tnt" ] } },
+      "sndbx:load_red_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_red_smoke_tnt" ] } },
+      "sndbx:load_white_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_white_smoke_tnt" ] } },
+      "sndbx:load_yellow_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_yellow_smoke_tnt" ] } },
+      "sndbx:load_sponge_tnt": { "add": { "component_groups": [ "sndbx:load_sponge_tnt" ] } },
+      "sndbx:load_sponge_wet_tnt": { "add": { "component_groups": [ "sndbx:load_sponge_wet_tnt" ] } },
+      "sndbx:load_troll_tnt": { "add": { "component_groups": [ "sndbx:load_troll_tnt" ] } },
+      "sndbx:load_vanilla_tnt": { "add": { "component_groups": [ "sndbx:load_vanilla_tnt" ] } },
+      "sndbx:reset_cannon": { "add": { "component_groups": [ "sndbx:reset_cannon" ] } },
+
+      "sndbx:unsupported_tnt": { "add": { "component_groups": [ "sndbx:unsupported_tnt" ] } },
+      "sndbx:remove_unsupported_tnt": { "remove": { "component_groups": [ "sndbx:unsupported_tnt" ] } },
+
+      "sndbx:launch_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:launch_tnt"
+          ]
+        }
+      },
+      "sndbx:launch_tnt_via_attack": {
+        "add": {
+          "component_groups": [
+            "sndbx:launch_tnt",
+            "sndbx:launched_via_attack"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:damage_attack"
+          ]
+        }
+      },
+      "sndbx:reload_cannon": {
+        "remove": {
+          "component_groups": [
+            "sndbx:launch_tnt"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "sndbx:reloading_cannon"
+          ]
+        }
+      },
+      "sndbx:reloaded_cannon": {
+        "remove": {
+          "component_groups": [
+            "sndbx:reloading_cannon"
+          ]
+        }
+      },
+
+      "sndbx:set_health": {
+        "add": {
+          "component_groups": [
+            "sndbx:set_health"
+          ]
+        }
+      }
+    }
+  }
+}

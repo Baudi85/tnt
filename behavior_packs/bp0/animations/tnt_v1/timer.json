@@ -1,0 +1,268 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.timer_black":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:black_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_blue":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:blue_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_brown":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:brown_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_cyan":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:cyan_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_gray":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:gray_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_green":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:green_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_light_blue":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:light_blue_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_light_gray":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:light_gray_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_lime":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:lime_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_magenta":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:magenta_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_orange":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:orange_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_pink":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:pink_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_purple":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:purple_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_red":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:red_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_white":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:white_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_yellow":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:yellow_tnt ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+
+
+      "animation.timer_partytnt":{
+         "timeline":{
+            "3.95":[ "/function tnt/party_tnt" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_stickytnt":{
+         "timeline":{
+            "3.95":[ "/function tnt/sticky_tnt" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_potiontnt":{
+         "timeline":{
+            "3.95":[ "/summon sndbx:dummy_entity_1" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_blackholetnt":{
+         "timeline":{
+            "0.00": [ 
+               "/particle sndbx:black_hole_absorb ~~0.5~",
+               "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~"
+            ],
+            "1.00": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "1.25": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "1.50": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "1.75": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "2.00": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "2.25": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "2.50": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~", "/execute @e[r=2,c=1,family=!black_hole_tnt,family=!player] ~~~ playsound mob.endermen.portal @a ~~0.5~", "/tp @e[r=2,family=!black_hole_tnt,family=!player] ~ -10 ~" ],
+            "3.95":[ "/function tnt/black_hole_tnt" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_blazetnt":{
+         "timeline":{
+            "3.95":[ "/function tnt/blaze_tnt" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+      "animation.timer_lightningtnt":{
+         "timeline":{
+            "5.40":[ "/summon sndbx:lightning_beacon" ]
+         },
+         "animation_length":6.0,
+         "loop":false
+      },
+
+      "animation.timer_bigberthatnt":{
+         "timeline":{
+            "0.85":[ 
+               "/effect @s levitation 1 55 true",
+               "/execute @a[r=30] ~ ~ ~ playsound firework.launch @s ~ ~ ~ 100 0.5" 
+            ],
+            "0.86": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.87": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.88": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.89": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.90": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.91": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.92": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.93": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.94": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.95": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.96": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.97": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.98": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "0.99": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ],
+            "1.00": [ "/fill ~3~1~3 ~-3~3~-3 air 0 destroy" ]
+         },
+         "animation_length":1.0,
+         "loop":false
+      },
+
+      "animation.timer_fishtnt":{
+         "timeline":{
+            "3.95":[ "/summon sndbx:dummy_entity_3" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_fireballtnt":{
+         "timeline":{
+            "3.95":[ "/summon sndbx:dummy_entity_4" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_scattertnt":{
+         "timeline":{
+            "2.95":[ "/function tnt/scatter_tnt" ]
+         },
+         "animation_length":3.0,
+         "loop":false
+      },
+
+      "animation.timer_blasttnt":{
+         "timeline":{
+            "5.95":[ "/particle sndbx:blast_tnt_explosion ~ ~1 ~" ]
+         },
+         "animation_length":6.0,
+         "loop":false
+      },
+
+      "animation.timer_arctictnt":{
+         "timeline":{
+            "3.95":[ "/playsound random.glass @a ~ ~ ~ 1000.0", "/particle sndbx:snowstorm ~ ~10 ~", "/particle sndbx:arctic_tnt_destroy ~ ~0.5 ~" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_galaxytnt":{
+         "timeline":{
+            "3.95":[ "/particle sndbx:stars ~ ~0.5 ~", "/execute @a[r=30] ~ ~ ~ playsound beacon.activate @s ~ ~ ~ 100.0" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_tornadotnt":{
+         "timeline":{
+            "3.8":[ "/particle sndbx:tornado ~ ~-1.5 ~" ],
+            "3.95":[ "/execute @a[r=30] ~ ~ ~ playsound mob.creeper.death @s ~ ~ ~ 1.0 0.5" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      },
+
+      "animation.timer_withertnt":{
+         "timeline":{
+            "3.95":[ "/function tnt/wither_tnt" ]
+         },
+         "animation_length":4.0,
+         "loop":false
+      }
+   }
+}

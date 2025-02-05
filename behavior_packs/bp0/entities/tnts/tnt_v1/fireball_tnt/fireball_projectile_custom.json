@@ -1,0 +1,61 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:fireball",
+      "runtime_identifier": "minecraft:wither_skull_dangerous",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "sndbx:explode": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 1,
+          "causes_fire": false,
+          "max_resistance": 4,
+          "destroy_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "sndbx:explode"
+            }
+          },
+          "impact_damage": {
+            "damage": 1,
+            "knockback": true
+          }
+        },
+        "anchor": 1,
+        "power": 1.5,
+        "gravity": 0.03,
+        "angle_offset": 0,
+        "offset": [ 0, -0.1, 0 ]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:explode": {
+        "add": {
+          "component_groups": [ "sndbx:explode" ]
+        }
+      }
+    }
+  }
+}

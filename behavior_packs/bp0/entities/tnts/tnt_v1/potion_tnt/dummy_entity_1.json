@@ -1,0 +1,59 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:dummy_entity_1",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "potions"
+        ]
+      },
+      "animations": {
+        "potions": "animation.potions"
+      }
+    },
+    "component_groups": {
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [ 0, -1, 0 ]
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+    },
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      }
+    }
+  }
+}

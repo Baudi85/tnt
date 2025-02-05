@@ -1,0 +1,75 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:tnt_mech",
+      "materials": {
+        "activated": "spider",
+        "deactivated": "entity_alphatest",
+        "tnt_mech_tnt": "wither_boss_armor"
+      },
+      "textures": {
+        "activated": "textures/tnt_mech/tnt_mech_act",
+        "deactivated": "textures/tnt_mech/tnt_mech_deact",
+        "tnt_mech_tnt": "textures/tnt_mech/tnt_mech_tnt"
+      },
+      "animations": {
+        "inactive": "animation.tnt_mech.inactive",
+        "active": "animation.tnt_mech.active",
+        "walk": "animation.tnt_mech.walk2",
+        "pre_jump": "animation.tnt_mech.pre_jump",
+        "jump": "animation.tnt_mech.jump",
+        "speakers": "animation.tnt_mech.speakers",
+        "landing": "animation.tnt_mech.land",
+        "move_controller": "controller.animation.tnt_mech.move_controller",
+        "shoot_controller": "controller.animation.tnt_mech.shoot_controller",
+        "shoot": "animation.tnt_mech.tnt_launcher",
+        "sword_activate": "animation.tnt_mech.sword_activate",
+        "sword_activated": "animation.tnt_mech.sword_on",
+        "sword_deactivate": "animation.tnt_mech.sword_deactivate",
+        "sword_deactivated": "animation.tnt_mech.sword_off",
+        "sword_controller": "controller.animation.tnt_mech.sword_controller",
+        "swing": "animation.tnt_mech.sword_attack",
+        "sword_use_controller": "controller.animation.tnt_mech.use_sword"
+      },
+      "particle_effects": {
+        "music_notes": "sndbx:mech_sound_particle",
+        "mech_land": "sndbx:mech_land"
+      },
+      "scripts": {
+        "animate": [
+          "move_controller",
+          "sword_controller",
+          { "speakers": "q.is_ignited" },
+          "shoot_controller",
+          "sword_use_controller"
+        ]
+      },
+      "geometry": {
+        "default": "geometry.tnt_mech",
+        "tnt_mech_tnt": "geometry.tnt_mech_tnt"
+      },
+      "render_controllers": [
+        "controller.render.tnt_mech_tnt",
+        "controller.render.tnt_mech"
+      ],
+      "spawn_egg": {
+        "texture": "tnt_mech",
+        "texture_index": 0
+      },
+      "sound_effects": {
+        "walk1": "tnt_mech.walk1",
+        "walk2": "tnt_mech.walk2",
+        "prejump": "tnt_mech.prejump",
+        "jump": "tnt_mech.jump",
+        "land": "tnt_mech.land",
+        "sword_attack": "tnt_mech.blade_attack",
+        "sword_activate": "tnt_mech.blade_activation",
+        "sword_idle": "tnt_mech.blade_idle",
+        "tnt_launcher": "tnt_mech.tnt_launcher",
+        "mech_activate": "tnt_mech.activation",
+        "mech_deactivate": "tnt_mech.deactivation"
+      }
+    }
+  }
+}

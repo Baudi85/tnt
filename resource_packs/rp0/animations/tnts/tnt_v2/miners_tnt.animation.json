@@ -1,0 +1,113 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.miners_tnt.driller_dig": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"bb_main": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 1, 0]
+					}
+				},
+				"drill": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, -360, 0]
+					}
+				}
+			}
+		},
+		"animation.miners_tnt.rev_up": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"bb_main": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0.75, 0]
+					}
+				}
+			}
+		},
+		"animation.miners_tnt.idle": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": ["math.sin(query.anim_time * 75) * 1", 0, "math.cos(query.anim_time * 75) * 1"]
+				}
+			}
+		},
+		"animation.miners_tnt.ignited": {
+			"loop": true,
+			"animation_length": 6,
+			"bones": {
+				"drill": {
+					"rotation": [0, "query.anim_time * 30 * (query.anim_time)", 0]
+				},
+				"lever": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.05": [0, 0, 0],
+						"0.1": [0, -5, 0],
+						"0.15": [0, -5, 0],
+						"0.2": [0, -4.5, 0],
+						"0.25": [0, -5, 0]
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.05": [1, 1.1, 1],
+						"0.1": [1, 1, 1],
+						"0.15": [1, 0.9, 1],
+						"0.2": [1, 1, 1]
+					}
+				},
+				"root": {
+					"rotation": ["math.sin(query.anim_time * 300 * query.anim_time) * 1", 0, "math.cos(query.anim_time * 300 * query.anim_time) * 1"],
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.05": [1, 1.05, 1],
+						"0.1": [1, 0.99, 1],
+						"0.15": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.miners_tnt.explode": {
+			"loop": true,
+			"animation_length": 6,
+			"bones": {
+				"drill": {
+					"rotation": [0, "query.anim_time * 200 * (query.anim_time)", 0]
+				},
+				"lever": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.05": [0, 0, 0],
+						"0.1": [0, -5, 0],
+						"0.15": [0, -5, 0],
+						"0.2": [0, -4.5, 0],
+						"0.25": [0, -5, 0]
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.05": [1, 1.1, 1],
+						"0.1": [1, 1, 1],
+						"0.15": [1, 0.9, 1],
+						"0.2": [1, 1, 1]
+					}
+				},
+				"root": {
+					"rotation": ["math.sin(query.anim_time * 300 * query.anim_time) * 1", 0, "math.cos(query.anim_time * 300 * query.anim_time) * 1"],
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.05": [1, 1.05, 1],
+						"0.1": [1, 0.99, 1],
+						"0.15": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

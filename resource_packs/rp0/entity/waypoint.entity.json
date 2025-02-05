@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:waypoint",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "default": "textures/waypoint"
+      },
+      "geometry": {
+        "default": "geometry.waypoint"
+      },
+      "render_controllers": [
+        "controller.render.waypoint"
+      ],
+      "particle_effects": {
+        "guide_trail": "sndbx:guide_trail"
+      },
+      "scripts": {
+        "animate": [
+          "spin",
+          { "despawn": "q.is_illager_captain" }
+        ]
+      },
+      "animations": {
+        "spin": "animation.waypoint.spin",
+        "despawn": "animation.waypoint.despawn"
+      }
+    }
+  }
+}

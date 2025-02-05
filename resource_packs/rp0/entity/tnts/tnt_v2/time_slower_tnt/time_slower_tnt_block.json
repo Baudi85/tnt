@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:time_slower_tnt_block",
+      "geometry": {
+        "default": "geometry.time_slower_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/time_slower_tnt/time_slower_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "tnt_idle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "tnt_idle": "animation.time_slower_tnt.idle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "time_slower_tnt"
+      }
+    }
+  }
+}

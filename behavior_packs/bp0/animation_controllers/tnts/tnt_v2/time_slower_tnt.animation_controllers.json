@@ -1,0 +1,59 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.time_slower_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.tick_delay) >= 4.0"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/summon sndbx:time_slower ~ ~ ~",
+            "/particle sndbx:slowed_particle ~~0.5",
+            "/playsound beacon.activate @a ~~~ 1.0 0.5"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.time_slower": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "/effect @e[r=10] slowness 1 3 true",
+            "/effect @e[r=10] mining_fatigue 1 255 true",
+            "/effect @e[r=10] slow_falling 1 100 true"
+          ],
+          "transitions": [
+            {
+              "rep": "1.0"
+            }
+          ]
+        },
+        "rep": {
+          "transitions": [
+            {
+              "default": "q.is_alive"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

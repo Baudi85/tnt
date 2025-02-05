@@ -1,0 +1,26 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.fireball_sequence":{
+         "timeline":{
+         	"0.0":[ "/summon sndbx:fireball ~4 ~20 ~", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+            "0.1":["/particle minecraft:dragon_death_explosion_emitter ~ ~5 ~", "/playsound random.explode @a ~ ~5 ~ 100 0.5"],
+            "0.2":["/particle minecraft:dragon_death_explosion_emitter ~ ~10 ~", "/playsound random.explode @a ~ ~10 ~ 100 0.5"],
+            "0.3":["/particle minecraft:dragon_death_explosion_emitter ~ ~15 ~", "/playsound random.explode @a ~ ~15 ~ 100 0.5"],
+         	"0.5":[ "/summon sndbx:fireball ~3 ~19 ~3", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"0.75":[ "/summon sndbx:fireball ~ ~19 ~4", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"1.0":[ "/summon sndbx:fireball ~2 ~20 ~-1", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"1.5":[ "/summon sndbx:fireball ~ ~18 ~2", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"2.0":[ "/summon sndbx:fireball ~-3 ~19 ~-2", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"2.25":[ "/summon sndbx:fireball ~-4 ~20 ~1", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"2.5":[ "/summon sndbx:fireball ~-2 ~21 ~", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"3.0":[ "/summon sndbx:fireball ~-4 ~18 ~-3", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"3.5":[ "/summon sndbx:fireball ~ ~20 ~4", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+         	"3.75":[ "/summon sndbx:fireball ~2 ~21 ~-4", "/playsound firework.launch @a ~ ~ ~ 1000 0.5" ],
+            "4.0":[ "/summon sndbx:fireball ~3 ~20 ~-1", "/playsound firework.launch @a ~ ~ ~ 1000 0.5", "@s sndbx:despawn" ]
+         },
+         "animation_length": 4.05,
+         "loop":false
+      }
+   }
+}

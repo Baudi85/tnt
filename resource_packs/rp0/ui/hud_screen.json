@@ -1,0 +1,80 @@
+{
+  "map_keyart_animation_in": {
+    "anim_type": "size",
+    "easing": "spring",
+    "duration": 1.5,
+    "from": [ 6, 4 ],
+    "to": [ 320, 232 ],
+    "next": "@hud.map_keyart_animation_stay"
+  },
+  "map_keyart_animation_stay": {
+    "anim_type": "wait",
+    "duration": 3.0,
+    "next": "@hud.map_keyart_animation_out"
+  },
+  "map_keyart_animation_out": {
+    "anim_type": "size",
+    "easing": "linear",
+    "duration": 0.5,
+    "from": [ 320, 232 ],
+    "to": [ 6, 4 ],
+    "destroy_at_end": "map_keyart"
+  },
+
+  "map_keyart": {
+    "type": "image",
+    "texture": "textures/ui/sndbx/map_keyart",
+    "size": "@hud.map_keyart_animation_in",
+
+    "ignored": "(not ($actionbar_text = 'achievement.the_laboratory'))"
+  },
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "r4isen_custom_achievement_popup_ui": {
+              "type": "panel",
+              "factory": {
+                "name": "hud_actionbar_text_factory",
+                "control_ids": {
+                  "hud_actionbar_text": "achievements_list_factory@sndbx_achievements_list.toast_achievement_popup_control"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "r4isen_custom_map_keyart_popup_ui": {
+              "type": "panel",
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "factory": {
+                "name": "hud_actionbar_text_factory",
+                "control_ids": {
+                  "hud_actionbar_text": "pop_up@hud.map_keyart"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "mob_effects_renderer": {
+    "ignored": true
+  },
+
+  "hud_actionbar_text": {
+    "ignored": "(($actionbar_text = 'achievement.dooms_day') or ($actionbar_text = 'achievement.break_all_target') or ($actionbar_text = 'achievement.device_crasher_tnt') or ($actionbar_text = 'achievement.troll_tnt') or ($actionbar_text = 'achievement.infinity_tnt') or ($actionbar_text = 'achievement.mech_music') or ($actionbar_text = 'achievement.the_laboratory') or ($actionbar_text = 'achievement.the_showcase') or ($actionbar_text = 'achievement.the_shooting_range') or ($actionbar_text = 'achievement.break_all_set') or ($actionbar_text = 'achievement.void_eater_tnt') or ($actionbar_text = 'achievement.world_ender_tnt') or ($actionbar_text = 'achievement.rainbow_tnt') or ($actionbar_text = 'achievement.mob_tnt') or ($actionbar_text = 'achievement.smoke_tnt') or ($actionbar_text = 'achievement.pull_magnet_black_hole') or ($actionbar_text = 'achievement.ignite_all') or ($actionbar_text = 'achievement.clear_lag'))"
+  }
+}

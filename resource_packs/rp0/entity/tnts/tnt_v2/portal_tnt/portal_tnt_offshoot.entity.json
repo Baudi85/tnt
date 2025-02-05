@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:portal_tnt_offshoot",
+      "geometry": {
+        "offshoot": "geometry.portal_tnt"
+      },
+      "materials": {
+        "offshoot": "entity_alphablend"
+      },
+      "textures": {
+        "offshoot": "textures/entity/overlay"
+      },
+      "render_controllers": [
+        "controller.render.portal_tnt.offshoot"
+      ]
+    }
+  }
+}

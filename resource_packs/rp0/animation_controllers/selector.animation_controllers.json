@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.selector.setup": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "pressed": "q.is_ignited"
+            }
+          ]
+        },
+        "pressed": {
+          "animations": [ "press" ],
+          "sound_effects": [
+            {
+              "effect": "click"
+            }
+          ],
+          "particle_effects": [
+            {
+              "effect": "click"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.all_animations_finished && !q.is_ignited"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

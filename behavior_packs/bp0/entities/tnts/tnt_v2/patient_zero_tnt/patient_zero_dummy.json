@@ -1,0 +1,63 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:patient_zero_dummy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.patient_zero_expl"
+      }
+    },
+    "component_groups": {
+      "sndbx:patient_zero_effects": {
+        "minecraft:is_ignited": {}
+      },
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "sndbx:patient_zero_effects": {
+        "add": {
+          "component_groups": [
+            "sndbx:patient_zero_effects"
+          ]
+        }
+      },
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

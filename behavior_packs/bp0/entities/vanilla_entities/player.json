@@ -1,0 +1,738 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "move",
+          "throw",
+          "direction",
+          "tnt_rocket_launcher",
+          "tnt_rocket_launcher.loaded_tnt",
+          "tnt_rocket_launcher.reset",
+          { "tnt_rocket_launcher.shoot": "!q.is_illager_captain" },
+          { "tnt_rocket_launcher.overheat": "q.is_ignited" },
+          { "tnt_mech": "q.is_riding"},
+          { "tnt_mech_dubstep": "q.is_riding" }
+        ]
+      },
+      "animations": {
+        "move": "controller.animation.player.is_moving",
+        "throw": "controller.animation.player.throwable",
+        "direction": "controller.animation.player.cardinal_facing",
+        "tnt_mech": "controller.animation.tnt_mech.player",
+        "tnt_mech_dubstep": "controller.animation.tnt_mech.player.dubstep_control",
+        "tnt_rocket_launcher": "controller.animation.tnt_rocket_launcher",
+        "tnt_rocket_launcher.loaded_tnt": "controller.animation.tnt_rocket_launcher.loaded_tnt",
+        "tnt_rocket_launcher.reset": "controller.animation.tnt_rocket_launcher.reset",
+        "tnt_rocket_launcher.shoot": "controller.animation.tnt_rocket_launcher.shoot",
+        "tnt_rocket_launcher.overheat": "controller.animation.tnt_rocket_launcher.overheat"
+      }
+    },
+
+    "component_groups": {
+      "sndbx:no_riding_anim": {
+        "minecraft:out_of_control": {}
+      },
+      "sndbx:dynamite_tnt.throw": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "num_to_spawn": 1,
+            "single_use": true,
+            "spawn_entity": "sndbx:dynamite_tnt_projectile",
+            "spawn_sound": "gallop"
+          }
+        }
+      },
+      "sndbx:troll_tnt.attach_tnt": {
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "troll_tnt" ],
+          "pull_in_entities": true,
+          "seats": [
+            {
+              "position": [
+                -0.1,
+                -0.2,
+                0
+              ],
+              "min_rider_count": 0,
+              "max_rider_count": 20,
+              "lock_rider_rotation": -90
+            }
+          ]
+        }
+      },
+      "sndbx:tnt_mech_dubstep_enable": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "sndbx:tnt_mech_dubstep_disable": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "sndbx:tnt_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "sndbx:tnt_projectile",
+              "spawn_event": "sndbx:spawned_by_projectile"
+            }
+          ]
+        }
+      },
+      "sndbx:clear_levitation": {
+        "minecraft:spell_effects": {
+          "remove_effects": "levitation"
+        },
+        "minecraft:timer": {
+          "time": 0.0,
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_clear_levitation",
+            "target": "self"
+          }
+        }
+      },
+
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0,
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {}
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      },
+
+      "sndbx:tnt_launcher_reset": { "minecraft:skin_id": { "value": 0 } },
+      "sndbx:load_tnt_launcher": { "minecraft:is_ignited": {} },
+      "sndbx:load_arctic_tnt": { "minecraft:skin_id": { "value": 1 } },
+      "sndbx:load_black_colored_tnt": { "minecraft:skin_id": { "value": 2 } },
+      "sndbx:load_blue_colored_tnt": { "minecraft:skin_id": { "value": 3 } },
+      "sndbx:load_brown_colored_tnt": { "minecraft:skin_id": { "value": 4 } },
+      "sndbx:load_cyan_colored_tnt": { "minecraft:skin_id": { "value": 5 } },
+      "sndbx:load_gray_colored_tnt": { "minecraft:skin_id": { "value": 6 } },
+      "sndbx:load_green_colored_tnt": { "minecraft:skin_id": { "value": 7 } },
+      "sndbx:load_light_blue_colored_tnt": { "minecraft:skin_id": { "value": 8 } },
+      "sndbx:load_light_gray_colored_tnt": { "minecraft:skin_id": { "value": 9 } },
+      "sndbx:load_lime_colored_tnt": { "minecraft:skin_id": { "value": 10 } },
+      "sndbx:load_magenta_colored_tnt": { "minecraft:skin_id": { "value": 11 } },
+      "sndbx:load_orange_colored_tnt": { "minecraft:skin_id": { "value": 12 } },
+      "sndbx:load_pink_colored_tnt": { "minecraft:skin_id": { "value": 13 } },
+      "sndbx:load_purple_colored_tnt": { "minecraft:skin_id": { "value": 14 } },
+      "sndbx:load_red_colored_tnt": { "minecraft:skin_id": { "value": 15 } },
+      "sndbx:load_white_colored_tnt": { "minecraft:skin_id": { "value": 16 } },
+      "sndbx:load_yellow_colored_tnt": { "minecraft:skin_id": { "value": 17 } },
+      "sndbx:load_fireball_tnt": { "minecraft:skin_id": { "value": 18 } },
+      "sndbx:load_fish_tnt": { "minecraft:skin_id": { "value": 19 } },
+      "sndbx:load_galaxy_tnt": { "minecraft:skin_id": { "value": 20 } },
+      "sndbx:load_scatter_tnt": { "minecraft:skin_id": { "value": 21 } },
+      "sndbx:load_tornado_tnt": { "minecraft:skin_id": { "value": 22 } },
+      "sndbx:load_dinnerbone_tnt": { "minecraft:skin_id": { "value": 23 } },
+      "sndbx:load_lucky_tnt": { "minecraft:skin_id": { "value": 24 } },
+      "sndbx:load_axolotl_mob_tnt": { "minecraft:skin_id": { "value": 25 } },
+      "sndbx:load_bat_mob_tnt": { "minecraft:skin_id": { "value": 26 } },
+      "sndbx:load_cat_mob_tnt": { "minecraft:skin_id": { "value": 27 } },
+      "sndbx:load_chicken_mob_tnt": { "minecraft:skin_id": { "value": 28 } },
+      "sndbx:load_cow_mob_tnt": { "minecraft:skin_id": { "value": 29 } },
+      "sndbx:load_fox_mob_tnt": { "minecraft:skin_id": { "value": 30 } },
+      "sndbx:load_parrot_mob_tnt": { "minecraft:skin_id": { "value": 31 } },
+      "sndbx:load_pig_mob_tnt": { "minecraft:skin_id": { "value": 32 } },
+      "sndbx:load_polar_bear_mob_tnt": { "minecraft:skin_id": { "value": 33 } },
+      "sndbx:load_rabbit_mob_tnt": { "minecraft:skin_id": { "value": 34 } },
+      "sndbx:load_napalm_tnt": { "minecraft:skin_id": { "value": 35 } },
+      "sndbx:load_patient_zero_tnt": { "minecraft:skin_id": { "value": 36 } },
+      "sndbx:load_portal_tnt": { "minecraft:skin_id": { "value": 37 } },
+      "sndbx:load_rainbow_tnt": { "minecraft:skin_id": { "value": 38 } },
+      "sndbx:load_shulker_tnt": { "minecraft:skin_id": { "value": 39 } },
+      "sndbx:load_black_smoke_tnt": { "minecraft:skin_id": { "value": 40 } },
+      "sndbx:load_blue_smoke_tnt": { "minecraft:skin_id": { "value": 41 } },
+      "sndbx:load_brown_smoke_tnt": { "minecraft:skin_id": { "value": 42 } },
+      "sndbx:load_cyan_smoke_tnt": { "minecraft:skin_id": { "value": 43 } },
+      "sndbx:load_dark_green_smoke_tnt": { "minecraft:skin_id": { "value": 44 } },
+      "sndbx:load_gray_smoke_tnt": { "minecraft:skin_id": { "value": 45 } },
+      "sndbx:load_light_blue_smoke_tnt": { "minecraft:skin_id": { "value": 46 } },
+      "sndbx:load_light_gray_smoke_tnt": { "minecraft:skin_id": { "value": 47 } },
+      "sndbx:load_lime_smoke_tnt": { "minecraft:skin_id": { "value": 48 } },
+      "sndbx:load_magenta_smoke_tnt": { "minecraft:skin_id": { "value": 49 } },
+      "sndbx:load_orange_smoke_tnt": { "minecraft:skin_id": { "value": 50 } },
+      "sndbx:load_pink_smoke_tnt": { "minecraft:skin_id": { "value": 51 } },
+      "sndbx:load_purple_smoke_tnt": { "minecraft:skin_id": { "value": 52 } },
+      "sndbx:load_red_smoke_tnt": { "minecraft:skin_id": { "value": 53 } },
+      "sndbx:load_white_smoke_tnt": { "minecraft:skin_id": { "value": 54 } },
+      "sndbx:load_yellow_smoke_tnt": { "minecraft:skin_id": { "value": 55 } },
+      "sndbx:load_sponge_tnt": { "minecraft:skin_id": { "value": 56 } },
+      "sndbx:load_sponge_wet_tnt": { "minecraft:skin_id": { "value": 57 } },
+      "sndbx:load_troll_tnt": { "minecraft:skin_id": { "value": 58 } },
+      "sndbx:load_vanilla_tnt": { "minecraft:skin_id": { "value": 59 } },
+
+      "sndbx:use_arctic_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:arctic_tnt" } ] } },
+      "sndbx:use_black_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:black_colored_tnt" } ] } },
+      "sndbx:use_blue_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:blue_colored_tnt" } ] } },
+      "sndbx:use_brown_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:brown_colored_tnt" } ] } },
+      "sndbx:use_cyan_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:cyan_colored_tnt" } ] } },
+      "sndbx:use_gray_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:gray_colored_tnt" } ] } },
+      "sndbx:use_green_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:green_colored_tnt" } ] } },
+      "sndbx:use_light_blue_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:light_blue_colored_tnt" } ] } },
+      "sndbx:use_light_gray_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:light_gray_colored_tnt" } ] } },
+      "sndbx:use_lime_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:lime_colored_tnt" } ] } },
+      "sndbx:use_magenta_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:magenta_colored_tnt" } ] } },
+      "sndbx:use_orange_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:orange_colored_tnt" } ] } },
+      "sndbx:use_pink_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:pink_colored_tnt" } ] } },
+      "sndbx:use_purple_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:purple_colored_tnt" } ] } },
+      "sndbx:use_red_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:red_colored_tnt" } ] } },
+      "sndbx:use_white_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:white_colored_tnt" } ] } },
+      "sndbx:use_yellow_colored_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:yellow_colored_tnt" } ] } },
+      "sndbx:use_fireball_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:fireball_tnt" } ] } },
+      "sndbx:use_fish_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:fish_tnt" } ] } },
+      "sndbx:use_galaxy_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:galaxy_tnt" } ] } },
+      "sndbx:use_scatter_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:scatter_tnt" } ] } },
+      "sndbx:use_tornado_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:tornado_tnt" } ] } },
+      "sndbx:use_dinnerbone_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:dinnerbone_tnt" } ] } },
+      "sndbx:use_lucky_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:lucky_tnt" } ] } },
+      "sndbx:use_axolotl_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:axolotl_mob_tnt" } ] } },
+      "sndbx:use_bat_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:bat_mob_tnt" } ] } },
+      "sndbx:use_cat_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:cat_mob_tnt" } ] } },
+      "sndbx:use_chicken_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:chicken_mob_tnt" } ] } },
+      "sndbx:use_cow_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:cow_mob_tnt" } ] } },
+      "sndbx:use_fox_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:fox_mob_tnt" } ] } },
+      "sndbx:use_parrot_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:parrot_mob_tnt" } ] } },
+      "sndbx:use_pig_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:pig_mob_tnt" } ] } },
+      "sndbx:use_polar_bear_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:polar_bear_mob_tnt" } ] } },
+      "sndbx:use_rabbit_mob_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:rabbit_mob_tnt" } ] } },
+      "sndbx:use_napalm_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:napalm_tnt" } ] } },
+      "sndbx:use_patient_zero_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:patient_zero_tnt" } ] } },
+      "sndbx:use_portal_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:portal_tnt" } ] } },
+      "sndbx:use_rainbow_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:rainbow_tnt" } ] } },
+      "sndbx:use_shulker_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:shulker_tnt" } ] } },
+      "sndbx:use_black_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:black_smoke_tnt" } ] } },
+      "sndbx:use_blue_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:blue_smoke_tnt" } ] } },
+      "sndbx:use_brown_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:brown_smoke_tnt" } ] } },
+      "sndbx:use_cyan_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:cyan_smoke_tnt" } ] } },
+      "sndbx:use_dark_green_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:dark_green_smoke_tnt" } ] } },
+      "sndbx:use_gray_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:gray_smoke_tnt" } ] } },
+      "sndbx:use_light_blue_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:light_blue_smoke_tnt" } ] } },
+      "sndbx:use_light_gray_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:light_gray_smoke_tnt" } ] } },
+      "sndbx:use_lime_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:lime_smoke_tnt" } ] } },
+      "sndbx:use_magenta_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:magenta_smoke_tnt" } ] } },
+      "sndbx:use_orange_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:orange_smoke_tnt" } ] } },
+      "sndbx:use_pink_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:pink_smoke_tnt" } ] } },
+      "sndbx:use_purple_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:purple_smoke_tnt" } ] } },
+      "sndbx:use_red_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:red_smoke_tnt" } ] } },
+      "sndbx:use_white_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:white_smoke_tnt" } ] } },
+      "sndbx:use_yellow_smoke_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:yellow_smoke_tnt" } ] } },
+      "sndbx:use_sponge_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:sponge_tnt" } ] } },
+      "sndbx:use_sponge_wet_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:sponge_wet_tnt" } ] } },
+      "sndbx:use_troll_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:troll_tnt" } ] } },
+      "sndbx:use_vanilla_tnt": { "minecraft:spawn_entity": { "entities": [ { "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1, "single_use": true, "spawn_entity": "sndbx:tnt_launcher_projectile", "spawn_event": "sndbx:vanilla_tnt" } ] } },
+
+      "sndbx:overheating_tnt_launcher": {
+        "minecraft:is_illager_captain": {}
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:type_family": {
+        "family": [ "player" ]
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {},
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava"
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:player.saturation": {
+        "value": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 4
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [
+          "parrot_tame"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [ 0.4, -0.2, -0.1 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [ -0.4, -0.2, -0.1 ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:block_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "self",
+              "value": "no_riding_anim",
+              "operator": "=="
+            },
+            "event": "sndbx:no_riding_anim",
+            "target": "self"
+          },
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "self",
+              "value": "no_riding_anim",
+              "operator": "!="
+            },
+            "event": "sndbx:riding_anim",
+            "target": "self"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_mob_effect",
+                  "value": "bad_omen"
+                },
+                {
+                  "test": "is_in_village"
+                }
+              ]
+            },
+            "event": "minecraft:trigger_raid"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "value": "troll_tnt"
+                }
+              ]
+            },
+            "event": "sndbx:troll_tnt.attach_tnt"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "troll_tnt"
+                }
+              ]
+            },
+            "event": "sndbx:troll_tnt.deattach_tnt"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "value": "diamond_helmet",
+                  "domain": "head",
+                  "operator": "=="
+                }
+              ]
+            },
+            "event": "sndbx:tnt_mech_dubstep_enable"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "value": "diamond_helmet",
+                  "domain": "head",
+                  "operator": "!="
+                }
+              ]
+            },
+            "event": "sndbx:tnt_mech_dubstep_disable"
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_riding"
+                  },
+                  {
+                    "any_of": [
+                      {
+                        "test": "has_damage",
+                        "value": "entity_explosion"
+                      },
+                      {
+                        "test": "has_damage",
+                        "value": "block_explosion"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:is_stackable": {}
+    },
+
+    "events": {
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [
+            "minecraft:raid_trigger"
+          ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [
+            "minecraft:raid_trigger"
+          ]
+        }
+      },
+
+      "sndbx:no_riding_anim": {
+        "add": {
+          "component_groups": [
+            "sndbx:no_riding_anim"
+          ]
+        }
+      },
+      "sndbx:riding_anim": {
+        "remove": {
+          "component_groups": [
+            "sndbx:no_riding_anim"
+          ]
+        }
+      },
+
+      "sndbx:clear_levitation": {
+        "add": {
+          "component_groups": [
+            "sndbx:clear_levitation"
+          ]
+        }
+      },
+      "sndbx:clear_add_clear_levitation": {
+        "remove": {
+          "component_groups": [
+            "sndbx:clear_levitation"
+          ]
+        }
+      },
+
+      "sndbx:dynamite_tnt.throw": {
+        "add": {
+          "component_groups": [
+            "sndbx:dynamite_tnt.throw"
+          ]
+        }
+      },
+
+      "sndbx:troll_tnt.attach_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:troll_tnt.attach_tnt"
+          ]
+        }
+      },
+      "sndbx:troll_tnt.deattach_tnt": {
+        "remove": {
+          "component_groups": [
+            "sndbx:troll_tnt.attach_tnt"
+          ]
+        }
+      },
+      
+      "sndbx:tnt_mech_dubstep_enable": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_mech_dubstep_enable"
+          ]
+        }
+      },
+      "sndbx:tnt_mech_dubstep_disable": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_mech_dubstep_disable"
+          ]
+        }
+      },
+
+      "sndbx:tnt_projectile": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_projectile"
+          ]
+        }
+      },
+
+      "sndbx:tnt_launcher_reset": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_launcher_reset"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:load_tnt_launcher"
+          ]
+        }
+      },
+
+      "sndbx:load_tnt_launcher": { "add": { "component_groups": [ "sndbx:load_tnt_launcher" ] } },
+      "sndbx:load_arctic_tnt": { "add": { "component_groups": [ "sndbx:load_arctic_tnt" ] } },
+      "sndbx:load_black_colored_tnt": { "add": { "component_groups": [ "sndbx:load_black_colored_tnt" ] } },
+      "sndbx:load_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:load_blue_colored_tnt" ] } },
+      "sndbx:load_brown_colored_tnt": { "add": { "component_groups": [ "sndbx:load_brown_colored_tnt" ] } },
+      "sndbx:load_cyan_colored_tnt": { "add": { "component_groups": [ "sndbx:load_cyan_colored_tnt" ] } },
+      "sndbx:load_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:load_gray_colored_tnt" ] } },
+      "sndbx:load_green_colored_tnt": { "add": { "component_groups": [ "sndbx:load_green_colored_tnt" ] } },
+      "sndbx:load_light_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:load_light_blue_colored_tnt" ] } },
+      "sndbx:load_light_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:load_light_gray_colored_tnt" ] } },
+      "sndbx:load_lime_colored_tnt": { "add": { "component_groups": [ "sndbx:load_lime_colored_tnt" ] } },
+      "sndbx:load_magenta_colored_tnt": { "add": { "component_groups": [ "sndbx:load_magenta_colored_tnt" ] } },
+      "sndbx:load_orange_colored_tnt": { "add": { "component_groups": [ "sndbx:load_orange_colored_tnt" ] } },
+      "sndbx:load_pink_colored_tnt": { "add": { "component_groups": [ "sndbx:load_pink_colored_tnt" ] } },
+      "sndbx:load_purple_colored_tnt": { "add": { "component_groups": [ "sndbx:load_purple_colored_tnt" ] } },
+      "sndbx:load_red_colored_tnt": { "add": { "component_groups": [ "sndbx:load_red_colored_tnt" ] } },
+      "sndbx:load_white_colored_tnt": { "add": { "component_groups": [ "sndbx:load_white_colored_tnt" ] } },
+      "sndbx:load_yellow_colored_tnt": { "add": { "component_groups": [ "sndbx:load_yellow_colored_tnt" ] } },
+      "sndbx:load_fireball_tnt": { "add": { "component_groups": [ "sndbx:load_fireball_tnt" ] } },
+      "sndbx:load_fish_tnt": { "add": { "component_groups": [ "sndbx:load_fish_tnt" ] } },
+      "sndbx:load_galaxy_tnt": { "add": { "component_groups": [ "sndbx:load_galaxy_tnt" ] } },
+      "sndbx:load_scatter_tnt": { "add": { "component_groups": [ "sndbx:load_scatter_tnt" ] } },
+      "sndbx:load_tornado_tnt": { "add": { "component_groups": [ "sndbx:load_tornado_tnt" ] } },
+      "sndbx:load_dinnerbone_tnt": { "add": { "component_groups": [ "sndbx:load_dinnerbone_tnt" ] } },
+      "sndbx:load_lucky_tnt": { "add": { "component_groups": [ "sndbx:load_lucky_tnt" ] } },
+      "sndbx:load_axolotl_mob_tnt": { "add": { "component_groups": [ "sndbx:load_axolotl_mob_tnt" ] } },
+      "sndbx:load_bat_mob_tnt": { "add": { "component_groups": [ "sndbx:load_bat_mob_tnt" ] } },
+      "sndbx:load_cat_mob_tnt": { "add": { "component_groups": [ "sndbx:load_cat_mob_tnt" ] } },
+      "sndbx:load_chicken_mob_tnt": { "add": { "component_groups": [ "sndbx:load_chicken_mob_tnt" ] } },
+      "sndbx:load_cow_mob_tnt": { "add": { "component_groups": [ "sndbx:load_cow_mob_tnt" ] } },
+      "sndbx:load_fox_mob_tnt": { "add": { "component_groups": [ "sndbx:load_fox_mob_tnt" ] } },
+      "sndbx:load_parrot_mob_tnt": { "add": { "component_groups": [ "sndbx:load_parrot_mob_tnt" ] } },
+      "sndbx:load_pig_mob_tnt": { "add": { "component_groups": [ "sndbx:load_pig_mob_tnt" ] } },
+      "sndbx:load_polar_bear_mob_tnt": { "add": { "component_groups": [ "sndbx:load_polar_bear_mob_tnt" ] } },
+      "sndbx:load_rabbit_mob_tnt": { "add": { "component_groups": [ "sndbx:load_rabbit_mob_tnt" ] } },
+      "sndbx:load_napalm_tnt": { "add": { "component_groups": [ "sndbx:load_napalm_tnt" ] } },
+      "sndbx:load_patient_zero_tnt": { "add": { "component_groups": [ "sndbx:load_patient_zero_tnt" ] } },
+      "sndbx:load_portal_tnt": { "add": { "component_groups": [ "sndbx:load_portal_tnt" ] } },
+      "sndbx:load_rainbow_tnt": { "add": { "component_groups": [ "sndbx:load_rainbow_tnt" ] } },
+      "sndbx:load_shulker_tnt": { "add": { "component_groups": [ "sndbx:load_shulker_tnt" ] } },
+      "sndbx:load_black_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_black_smoke_tnt" ] } },
+      "sndbx:load_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_blue_smoke_tnt" ] } },
+      "sndbx:load_brown_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_brown_smoke_tnt" ] } },
+      "sndbx:load_cyan_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_cyan_smoke_tnt" ] } },
+      "sndbx:load_dark_green_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_dark_green_smoke_tnt" ] } },
+      "sndbx:load_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_gray_smoke_tnt" ] } },
+      "sndbx:load_light_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_light_blue_smoke_tnt" ] } },
+      "sndbx:load_light_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_light_gray_smoke_tnt" ] } },
+      "sndbx:load_lime_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_lime_smoke_tnt" ] } },
+      "sndbx:load_magenta_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_magenta_smoke_tnt" ] } },
+      "sndbx:load_orange_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_orange_smoke_tnt" ] } },
+      "sndbx:load_pink_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_pink_smoke_tnt" ] } },
+      "sndbx:load_purple_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_purple_smoke_tnt" ] } },
+      "sndbx:load_red_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_red_smoke_tnt" ] } },
+      "sndbx:load_white_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_white_smoke_tnt" ] } },
+      "sndbx:load_yellow_smoke_tnt": { "add": { "component_groups": [ "sndbx:load_yellow_smoke_tnt" ] } },
+      "sndbx:load_sponge_tnt": { "add": { "component_groups": [ "sndbx:load_sponge_tnt" ] } },
+      "sndbx:load_sponge_wet_tnt": { "add": { "component_groups": [ "sndbx:load_sponge_wet_tnt" ] } },
+      "sndbx:load_troll_tnt": { "add": { "component_groups": [ "sndbx:load_troll_tnt" ] } },
+      "sndbx:load_vanilla_tnt": { "add": { "component_groups": [ "sndbx:load_vanilla_tnt" ] } },
+      
+      "sndbx:use_arctic_tnt": { "add": { "component_groups": [ "sndbx:use_arctic_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_black_colored_tnt": { "add": { "component_groups": [ "sndbx:use_black_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:use_blue_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_brown_colored_tnt": { "add": { "component_groups": [ "sndbx:use_brown_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_cyan_colored_tnt": { "add": { "component_groups": [ "sndbx:use_cyan_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:use_gray_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_green_colored_tnt": { "add": { "component_groups": [ "sndbx:use_green_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_light_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:use_light_blue_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_light_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:use_light_gray_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_lime_colored_tnt": { "add": { "component_groups": [ "sndbx:use_lime_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_magenta_colored_tnt": { "add": { "component_groups": [ "sndbx:use_magenta_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_orange_colored_tnt": { "add": { "component_groups": [ "sndbx:use_orange_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_pink_colored_tnt": { "add": { "component_groups": [ "sndbx:use_pink_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_purple_colored_tnt": { "add": { "component_groups": [ "sndbx:use_purple_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_red_colored_tnt": { "add": { "component_groups": [ "sndbx:use_red_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_white_colored_tnt": { "add": { "component_groups": [ "sndbx:use_white_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_yellow_colored_tnt": { "add": { "component_groups": [ "sndbx:use_yellow_colored_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_fireball_tnt": { "add": { "component_groups": [ "sndbx:use_fireball_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_fish_tnt": { "add": { "component_groups": [ "sndbx:use_fish_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_galaxy_tnt": { "add": { "component_groups": [ "sndbx:use_galaxy_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_scatter_tnt": { "add": { "component_groups": [ "sndbx:use_scatter_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_tornado_tnt": { "add": { "component_groups": [ "sndbx:use_tornado_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_dinnerbone_tnt": { "add": { "component_groups": [ "sndbx:use_dinnerbone_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_lucky_tnt": { "add": { "component_groups": [ "sndbx:use_lucky_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_axolotl_mob_tnt": { "add": { "component_groups": [ "sndbx:use_axolotl_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_bat_mob_tnt": { "add": { "component_groups": [ "sndbx:use_bat_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_cat_mob_tnt": { "add": { "component_groups": [ "sndbx:use_cat_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_chicken_mob_tnt": { "add": { "component_groups": [ "sndbx:use_chicken_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_cow_mob_tnt": { "add": { "component_groups": [ "sndbx:use_cow_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_fox_mob_tnt": { "add": { "component_groups": [ "sndbx:use_fox_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_parrot_mob_tnt": { "add": { "component_groups": [ "sndbx:use_parrot_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_pig_mob_tnt": { "add": { "component_groups": [ "sndbx:use_pig_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_polar_bear_mob_tnt": { "add": { "component_groups": [ "sndbx:use_polar_bear_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_rabbit_mob_tnt": { "add": { "component_groups": [ "sndbx:use_rabbit_mob_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_napalm_tnt": { "add": { "component_groups": [ "sndbx:use_napalm_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_patient_zero_tnt": { "add": { "component_groups": [ "sndbx:use_patient_zero_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_portal_tnt": { "add": { "component_groups": [ "sndbx:use_portal_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_rainbow_tnt": { "add": { "component_groups": [ "sndbx:use_rainbow_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_shulker_tnt": { "add": { "component_groups": [ "sndbx:use_shulker_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_black_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_black_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_blue_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_brown_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_brown_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_cyan_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_cyan_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_dark_green_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_dark_green_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_gray_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_light_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_light_blue_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_light_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_light_gray_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_lime_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_lime_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_magenta_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_magenta_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_orange_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_orange_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_pink_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_pink_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_purple_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_purple_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_red_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_red_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_white_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_white_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_yellow_smoke_tnt": { "add": { "component_groups": [ "sndbx:use_yellow_smoke_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_sponge_tnt": { "add": { "component_groups": [ "sndbx:use_sponge_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_sponge_wet_tnt": { "add": { "component_groups": [ "sndbx:use_sponge_wet_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_troll_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_troll_tnt": { "add": { "component_groups": [ "sndbx:use_troll_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_sponge_wet_tnt", "sndbx:use_vanilla_tnt" ] } },
+      "sndbx:use_vanilla_tnt": { "add": { "component_groups": [ "sndbx:use_vanilla_tnt" ] }, "remove": { "component_groups": [ "sndbx:use_arctic_tnt", "sndbx:use_black_colored_tnt", "sndbx:use_blue_colored_tnt", "sndbx:use_brown_colored_tnt", "sndbx:use_cyan_colored_tnt", "sndbx:use_gray_colored_tnt", "sndbx:use_green_colored_tnt", "sndbx:use_light_blue_colored_tnt", "sndbx:use_light_gray_colored_tnt", "sndbx:use_lime_colored_tnt", "sndbx:use_magenta_colored_tnt", "sndbx:use_orange_colored_tnt", "sndbx:use_pink_colored_tnt", "sndbx:use_purple_colored_tnt", "sndbx:use_red_colored_tnt", "sndbx:use_white_colored_tnt", "sndbx:use_yellow_colored_tnt", "sndbx:use_fireball_tnt", "sndbx:use_fish_tnt", "sndbx:use_galaxy_tnt", "sndbx:use_scatter_tnt", "sndbx:use_tornado_tnt", "sndbx:use_dinnerbone_tnt", "sndbx:use_lucky_tnt", "sndbx:use_axolotl_mob_tnt", "sndbx:use_bat_mob_tnt", "sndbx:use_cat_mob_tnt", "sndbx:use_chicken_mob_tnt", "sndbx:use_cow_mob_tnt", "sndbx:use_fox_mob_tnt", "sndbx:use_parrot_mob_tnt", "sndbx:use_pig_mob_tnt", "sndbx:use_polar_bear_mob_tnt", "sndbx:use_rabbit_mob_tnt", "sndbx:use_napalm_tnt", "sndbx:use_patient_zero_tnt", "sndbx:use_portal_tnt", "sndbx:use_rainbow_tnt", "sndbx:use_shulker_tnt", "sndbx:use_black_smoke_tnt", "sndbx:use_blue_smoke_tnt", "sndbx:use_brown_smoke_tnt", "sndbx:use_cyan_smoke_tnt", "sndbx:use_dark_green_smoke_tnt", "sndbx:use_gray_smoke_tnt", "sndbx:use_light_blue_smoke_tnt", "sndbx:use_light_gray_smoke_tnt", "sndbx:use_lime_smoke_tnt", "sndbx:use_magenta_smoke_tnt", "sndbx:use_orange_smoke_tnt", "sndbx:use_pink_smoke_tnt", "sndbx:use_purple_smoke_tnt", "sndbx:use_red_smoke_tnt", "sndbx:use_white_smoke_tnt", "sndbx:use_yellow_smoke_tnt", "sndbx:use_sponge_tnt", "sndbx:use_troll_tnt", "sndbx:use_sponge_wet_tnt" ] } },
+      "sndbx:overheating_tnt_launcher": {
+        "add": {
+          "component_groups": [
+            "sndbx:overheating_tnt_launcher"
+          ]
+        }
+      },
+
+      "sndbx:not_overheating_tnt_launcher": {
+        "remove": {
+          "component_groups": [
+            "sndbx:overheating_tnt_launcher"
+          ]
+        }
+      }
+    }
+  }
+}

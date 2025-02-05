@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:fish_tnt_block",
+      "geometry": {
+        "default": "geometry.fishtnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/fish_tnt/fish_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "fish_tnt"
+      }
+    }
+  }
+}

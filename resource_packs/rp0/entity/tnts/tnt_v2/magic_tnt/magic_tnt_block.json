@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:magic_tnt_block",
+      "geometry": {
+        "default": "geometry.magic_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "lit": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/magic_tnt/magic_tnt",
+        "lit": "textures/tnts/v2/magic_tnt/magic_tnt_lit"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct",
+        "rune_glyphs": "sndbx:rune_glyphs"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "idle",
+          "rune_glyphs"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "idle": "animation.magic_tnt.idle_spin",
+        "rune_glyphs": "controller.animation.magic_tnt_glyphs"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "ui.enchant"
+      },
+      "spawn_egg": {
+        "texture": "magic_tnt"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "sndbx:lime_smoke_tnt_block_spawn_egg",
+      "geometry": {
+        "default": "geometry.smoke_tnt.in_hand"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/smoke_tnt/lime_tnt"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "first_person": "c.is_first_person"
+          },
+          {
+            "third_person": "!c.is_first_person"
+          }
+        ]
+      },
+      "animations": {
+        "first_person": "animation.sndbx_tnt.item.first_person.basic",
+        "third_person": "animation.sndbx_tnt.item.third_person.basic"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ]
+    }
+  }
+}

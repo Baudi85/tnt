@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.equaliser_tnt": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "part_visibility": [
+        { "*": true },
+        { "tnt_block": "!q.is_powered" }
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.equaliser_tnt.flash_lit": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "part_visibility": [
+        { "*": "!q.is_powered" },
+        { "tnt_block": "q.is_powered" }
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "overlay_color": {
+        "r": "variable.flash == 0.0 ? this : 1.0",
+        "g": "variable.flash == 0.0 ? this : 1.0",
+        "b": "variable.flash == 0.0 ? this : 1.0",
+        "a": "variable.flash == 0.0 ? this : 1.0"
+      }
+    }
+  }
+}

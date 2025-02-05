@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.circle_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.on_explode = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.on_explode) >= 6.0"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/function tnt/circle"
+          ]
+        }
+      }
+    }
+  }
+}

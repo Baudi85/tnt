@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.elevator_door.setup": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "open": "q.variant == 0"
+            },
+            {
+              "close": "q.variant == 1"
+            }
+          ]
+        },
+        "open": {
+          "animations": [ "open_door" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+          "transitions": [
+            { 
+              "close": "q.variant == 1"
+            }
+          ]
+        },
+        "close": {
+          "animations": [ "close_door" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+          "transitions": [
+            { 
+              "open": "q.variant == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+execute @e[type=minecraft:armor_stand,name="sndbx"] ~~~ scoreboard players remove @s targets 1
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=1}] ~~~ tellraw @a {"rawtext":[{"translate":"chat.objective.prefix"},{"translate":"chat.objective.updated","with":{"rawtext":[{"translate":"chat.objective.list.targets","with":{"rawtext":[{"text":"4"}]}}]}}]}
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=2}] ~~~ tellraw @a {"rawtext":[{"translate":"chat.objective.prefix"},{"translate":"chat.objective.updated","with":{"rawtext":[{"translate":"chat.objective.list.targets","with":{"rawtext":[{"text":"3"}]}}]}}]}
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=3}] ~~~ tellraw @a {"rawtext":[{"translate":"chat.objective.prefix"},{"translate":"chat.objective.updated","with":{"rawtext":[{"translate":"chat.objective.list.targets","with":{"rawtext":[{"text":"2"}]}}]}}]}
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=4}] ~~~ tellraw @a {"rawtext":[{"translate":"chat.objective.prefix"},{"translate":"chat.objective.updated","with":{"rawtext":[{"translate":"chat.objective.list.targets","with":{"rawtext":[{"text":"1"}]}}]}}]}
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=5}] ~~~ tellraw @a {"rawtext":[{"translate":"chat.objective.prefix"},{"translate":"chat.objective.updated","with":{"rawtext":[{"translate":"chat.objective.list.targets","with":{"rawtext":[{"text":"0"}]}}]}}]}
+
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=..0}] ~~~ execute @a[tag=!objective_shooting_range_shoot_all] ~~~ function objectives/finished/shooting_range_shoot_all
+execute @e[type=minecraft:armor_stand,name="sndbx",scores={targets=..0}] ~~~ execute @a[tag=!achievements_break_all_target] ~~~ function achievements/break_all_target
+playsound note.chime @a

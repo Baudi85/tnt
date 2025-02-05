@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:black_hole_tnt",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+      	"default": "textures/tnts/v2/black_hole_tnt/black_hole_tnt"
+      },
+      "geometry": {
+        "default": "geometry.black_hole_tnt"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation":[
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);",
+          "v.blackhole = 1.0 / math.sqrt(query.life_time * 25.0 + 1.0) - 0.1;"
+        ],
+        "animate": [ 
+          "align",
+          "hop_controller",
+          { "explosion": "query.life_time >= 3.5" },
+          "tnt_explode"
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "tnt_explode": "animation.black_hole_tnt.explode"
+      },
+      "render_controllers": [ 
+        "controller.render.sndbx_tnt.lit",
+        "controller.render.lit_blackholetnt" 
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

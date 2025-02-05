@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:sticky_tnt",
+      "geometry": {
+        "default": "geometry.stickytnt",
+        "inner": "geometry.stickytnt_inner"
+      },
+      "materials": {
+        "default": "entity_alphablend",
+        "inner": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/sticky_tnt/outer",
+        "inner": "textures/tnts/v1/sticky_tnt/inner"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "hop_controller",
+          "alignment",
+          "alignment_inner",
+          { "explosion_inner": "query.life_time >= 3.5" },
+          { "explosion": "query.life_time >= 3.5" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.ignite_no_hop",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "alignment": "animation.sndbx_tnt.rot_align",
+        "alignment_inner": "animation.block_entity_alignment.stickytnt_inner",
+        "explosion_inner": "animation.explosion_inner"
+      },
+      "render_controllers": [ 
+        "controller.render.lit_tnt.sticky", 
+        "controller.render.tnt.sticky_inner"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

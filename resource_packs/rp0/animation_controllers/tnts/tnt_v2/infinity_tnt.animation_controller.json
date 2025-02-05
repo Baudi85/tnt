@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.infinity_tnt_particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "emit": "q.is_powered" }
+          ]
+        },
+        "emit": {
+          "particle_effects": [
+            { 
+              "effect": "crease",
+              "locator": "mid"
+            }
+          ],
+          "transitions": [ { "default": "1.0" } ]
+        }
+      }
+    }
+  }
+}

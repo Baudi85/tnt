@@ -1,0 +1,135 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:miners_tnt",
+      "runtime_identifier": "minecraft:tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ 
+          "runtime",
+          "excavation_mark"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.miners_tnt.on_ignite",
+        "excavation_mark": "animation.miners_tnt.excavation_mark"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {
+        }
+      },
+      "sndbx:abort_explosion": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "sndbx:despawn_explode": {
+        "minecraft:explode": {
+          "fuse_length": -1,
+          "fuse_lit": true,
+          "power": 20,
+          "breaks_blocks": true,
+          "causes_fire": false
+        }
+      }
+    },
+    
+    "components": {
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "miners_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "in_contact_with_water",
+                  "value": true
+                },
+                {
+                  "test": "has_tag",
+                  "value": "is_countdown"
+                }
+              ]
+            },
+            "event": "sndbx:abort_explosion",
+            "target": "self"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "in_contact_with_water",
+                  "value": true
+                },
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "value": "is_countdown"
+                }
+              ]
+            },
+            "event": "sndbx:tnt_despawn",
+            "target": "self"
+          }
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    
+    "events": {
+      "sndbx:abort_explosion": {
+        "add": {
+          "component_groups": [
+            "sndbx:abort_explosion"
+          ]
+        }
+      },
+      "sndbx:despawn_explode": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn_explode"
+          ]
+        }
+      },
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

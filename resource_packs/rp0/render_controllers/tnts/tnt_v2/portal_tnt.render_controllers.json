@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.portal_tnt.block": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "ignore_lighting": true
+    },
+    "controller.render.portal_tnt.lit": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "variable.flash == 0.0 ? texture.default : texture.lit" ],
+      "part_visibility": [
+        { "*": true },
+        { "portal_anim": false }
+      ],
+      "ignore_lighting": true
+    },
+    "controller.render.portal_tnt.anim": {
+      "geometry": "geometry.anim",
+      "materials": [ { "*": "material.anim" } ],
+      "textures": [ "texture.anim" ],
+      "uv_anim": {
+        "offset": [ 0.0, "variable.flipbook" ],
+        "scale": [ 1.0, 0.03125 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "portal_anim": true }
+      ],
+      "ignore_lighting": true
+    },
+    "controller.render.portal_tnt.offshoot": {
+      "geometry": "geometry.offshoot",
+      "materials": [ { "*": "material.offshoot" } ],
+      "textures": [ "texture.offshoot" ],
+      "part_visibility": [ { "*": false } ]
+    }
+  }
+}

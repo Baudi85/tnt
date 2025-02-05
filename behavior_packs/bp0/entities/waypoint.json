@@ -1,0 +1,131 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:waypoint",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ 
+          { "objective": "!q.is_saddled" },
+          { "trail": "q.is_saddled" } 
+        ]
+      },
+      "animations": {
+        "objective": "controller.animation.waypoint.objective",
+        "trail": "controller.animation.waypoint.trail"
+      }
+    },
+
+    "component_groups": {
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": { }
+      },
+      "sndbx:goal_reached": {
+        "minecraft:is_illager_captain": {
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.6,
+          "time_down_event": {
+            "event": "sndbx:despawn",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:goal_unapproach": {
+        "minecraft:type_family": {
+          "family": [
+            "waypoint",
+            "objective",
+            "unapproachable",
+            "inanimate"
+          ]
+        }
+      },
+
+      "sndbx:trail_guide": {
+        "minecraft:is_saddled": {},
+        "minecraft:type_family": {
+          "family": [
+            "waypoint",
+            "guide",
+            "inanimate"
+          ]
+        },
+        "minecraft:collision_box": {
+          "width": 0.0001,
+          "height": 0.0001
+        },
+        "minecraft:nameable": {
+          "allow_name_tag_renaming": false,
+          "always_show": false
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "waypoint",
+          "objective",
+          "inanimate"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": { 
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      }
+    },
+
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      },
+      "sndbx:start_despawn": {
+        "add": {
+          "component_groups": [ "sndbx:goal_reached" ]
+        }
+      },
+      "sndbx:set_unapproachable": {
+        "add": {
+          "component_groups": [ "sndbx:goal_unapproach" ]
+        }
+      },
+      "sndbx:trail_guide": {
+        "add": {
+          "component_groups": [ "sndbx:trail_guide" ]
+        }
+      }
+    }
+  }
+}

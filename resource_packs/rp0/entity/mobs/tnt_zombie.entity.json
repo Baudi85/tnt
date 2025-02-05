@@ -1,0 +1,78 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:tnt_zombie",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/mobs/zombie_tnt"
+      },
+      "geometry": {
+        "default": "geometry.zombie_tnt"
+      },
+      "render_controllers": [
+        "controller.render.zombie"
+      ],
+      "spawn_egg": {
+        "base_color": "#0d2e0f",
+        "overlay_color": "#eb0808"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "look_at_target",
+          "move_controller",
+          "holding_controller",
+          "charging_controller",
+          "attack",
+          "bob_controller",
+          "damage_nearby_mobs_controller",
+          "swimming_controller",
+          "use_item_progress_controller",
+          "bow_and_arrow_controller",
+          "zombie_attack_bare_hand_controller",
+          "brandish_spear_controller"
+        ]
+      },
+      "animations": {
+        "humanoid_big_head": "animation.humanoid.big_head",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "bow_and_arrow": "animation.zombie_tnt.attack",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.zombie_tnt.attack",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "sneaking": "animation.humanoid.sneaking",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
+        "swimming": "animation.zombie.swimming",
+        "humanoid_baby_big_head": "controller.animation.humanoid.baby_big_head",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "move_controller": "controller.animation.humanoid.move",
+        "riding": "controller.animation.humanoid.riding",
+        "holding_controller": "controller.animation.humanoid.holding",
+        "brandish_spear_controller": "controller.animation.humanoid.brandish_spear",
+        "charging_controller": "controller.animation.humanoid.charging",
+        "attack": "controller.animation.humanoid.attack",
+        "bob_controller": "controller.animation.humanoid.bob",
+        "bow_and_arrow_controller": "controller.animation.humanoid.bow_and_arrow",
+        "damage_nearby_mobs_controller": "controller.animation.humanoid.damage_nearby_mobs",
+        "use_item_progress_controller": "controller.animation.humanoid.use_item_progress",
+        "zombie_attack_bare_hand_controller": "controller.animation.zombie.attack_bare_hand",
+        "swimming_controller": "controller.animation.zombie.swimming"
+      },
+      "enable_attachables": false
+    }
+  }
+}

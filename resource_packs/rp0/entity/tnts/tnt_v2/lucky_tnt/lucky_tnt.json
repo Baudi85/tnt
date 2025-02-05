@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:lucky_tnt",
+      "geometry": {
+        "default": "geometry.randomtnt"
+      },
+      "materials": {
+        "default": "sndbx_uv"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/lucky_tnt/lucky_tnt",
+        "lit": "textures/tnts/v2/lucky_tnt/lucky_tnt_lit"
+      },
+      "scripts": {
+        "initialize": [
+          "v.swell_amount = 0.0;"
+        ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 1.1), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller"
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop"
+      },
+      "render_controllers": [
+        {
+          "controller.render.lucky_tnt.lit": "q.is_shaking ? (q.distance_from_camera >= 2.5) : 1"
+        }
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

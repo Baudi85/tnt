@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:blaze_tnt_block",
+      "geometry": {
+        "default": "geometry.blazetnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/blaze_tnt/blaze_tnt"
+      },
+      "particle_effects": {
+        "smoke": "sndbx:blaze_smoke",
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "particle",
+          "idle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "particle": "animation.blazetnt_smoke",
+        "idle": "animation.blazetnt.idle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "blaze_tnt"
+      }
+    }
+  }
+}

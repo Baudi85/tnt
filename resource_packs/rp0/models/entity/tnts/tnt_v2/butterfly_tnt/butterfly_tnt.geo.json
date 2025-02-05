@@ -1,0 +1,50 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.butterfly_tnt",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "root",
+					"parent": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "wings",
+					"parent": "tnt",
+					"pivot": [0, 16, 0]
+				},
+				{
+					"name": "wing1",
+					"parent": "wings",
+					"pivot": [1.2, 15.5, 0],
+					"cubes": [
+						{"origin": [0.7, 15.5, -8], "size": [1, 12, 16], "pivot": [1.2, 15.5, 0], "rotation": [0, 0, 50], "uv": [30, 36]}
+					]
+				},
+				{
+					"name": "wing2",
+					"parent": "wings",
+					"pivot": [-1.2, 15.5, 0],
+					"cubes": [
+						{"origin": [-1.7, 15.5, -8], "size": [1, 12, 16], "pivot": [-1.2, 15.5, 0], "rotation": [0, 0, -57.5], "uv": [30, 36], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

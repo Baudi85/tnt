@@ -1,0 +1,92 @@
+{
+  "format_version":"1.10.0",
+  "animations": {
+    "animation.napalm_tnt.fire_rain": {
+      "timeline": {
+        "0.5": [
+          "/tag @s add levitation",
+          "/effect @s levitation 3 20 true",
+          "/playsound firework.launch @a ~~~"
+        ],
+        "1.0": [
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~",
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~~"
+        ],
+        "1.5": [
+          "/summon sndbx:napalm_tnt_offshoot ~5~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~-5~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~5",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~-5",
+          
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~-16.75~"
+        ],
+        "2.0": [
+          "/summon sndbx:napalm_tnt_offshoot ~6~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~-6~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~6",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~-6",
+          
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~~",
+          "/playsound firework.large_blast @a ~~-33.5~"
+        ],
+        "2.5": [
+          "/summon sndbx:napalm_tnt_offshoot ~8~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~-8~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~8",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~-8",
+          
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~~",
+          "/playsound firework.large_blast @a ~~-50.25~"
+        ],
+        "3.0": [
+          "/summon sndbx:napalm_tnt_offshoot ~12~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~-12~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~12",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~-12",
+          
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~~",
+          "/playsound firework.large_blast @a ~~-67~"
+        ],
+        "3.5": [
+          "/summon sndbx:napalm_tnt_offshoot ~13~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~-13~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~13",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~-13",
+          
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~~",
+          "/playsound firework.large_blast @a ~~-83.5~"
+          
+        ],
+        "4.0": [
+          "/summon sndbx:napalm_tnt_offshoot ~16~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~-16~-2~",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~16",
+          "/summon sndbx:napalm_tnt_offshoot ~~-2~-16",
+          
+          "/particle sndbx:firefall ~~~",
+          "/playsound firework.large_blast @a ~~~",
+          "/playsound firework.large_blast @a ~~-100~"
+          
+        ],
+        "4.5": [
+          "/summon sndbx:napalm_tnt_offshoot ~12~-10~12",
+          "/summon sndbx:napalm_tnt_offshoot ~-12~-10~-12",
+          "/summon sndbx:napalm_tnt_offshoot ~12~-10~-12",
+          "/summon sndbx:napalm_tnt_offshoot ~-12~-10~12",
+          
+          "/particle sndbx:firepow ~~0.5~",
+          "/playsound firework.twinkle @a ~~~",
+          "/playsound firework.twinkle @a ~~-100~"
+        ]
+      },
+      "animation_length": 5.5,
+      "loop": false
+    }
+  }
+}

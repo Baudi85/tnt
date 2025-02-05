@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.magnet_tnt_particles": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "unlit": "!q.is_powered"
+            },
+            { 
+              "lit": "q.is_powered"
+            }
+          ]
+        },
+        "unlit": {
+          "transitions": [ { "default": "1" } ],
+          "particle_effects": [
+            {
+              "effect": "lightning_bolts",
+              "locator": "magnet",
+              "pre_effect_script": "variable.spawn_rate = 20; variable.x = 1.0; variable.y = 1.0; variable.z = 1.0;"
+            },
+            {
+              "effect": "magnet_tnt_particle",
+              "locator": "magnet",
+              "pre_effect_script": "variable.spawn_rate = 20; variable.x = 1.0; variable.y = 1.0; variable.z = 1.0;"
+            }
+          ]
+        },
+        "lit": {
+          "transitions": [ { "default": "1" } ],
+          "particle_effects": [
+            {
+              "effect": "lightning_bolts",
+              "locator": "magnet",
+              "pre_effect_script": "variable.spawn_rate = 40; variable.x = 2.0; variable.y = 2.0; variable.z = 2.0;"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

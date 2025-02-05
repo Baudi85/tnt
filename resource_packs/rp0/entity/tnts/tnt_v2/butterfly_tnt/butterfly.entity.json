@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:butterfly",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "black": "textures/tnts/v2/butterfly_tnt/butterflies/black",
+        "blue": "textures/tnts/v2/butterfly_tnt/butterflies/blue",
+        "cinder": "textures/tnts/v2/butterfly_tnt/butterflies/cinder",
+        "cloud": "textures/tnts/v2/butterfly_tnt/butterflies/cloud",
+        "cyan": "textures/tnts/v2/butterfly_tnt/butterflies/cyan",
+        "dark": "textures/tnts/v2/butterfly_tnt/butterflies/dark",
+        "dark_blue": "textures/tnts/v2/butterfly_tnt/butterflies/dark_blue",
+        "gold": "textures/tnts/v2/butterfly_tnt/butterflies/gold",
+        "green": "textures/tnts/v2/butterfly_tnt/butterflies/green",
+        "orange": "textures/tnts/v2/butterfly_tnt/butterflies/orange",
+        "purple": "textures/tnts/v2/butterfly_tnt/butterflies/purple",
+        "rainbow": "textures/tnts/v2/butterfly_tnt/butterflies/rainbow",
+        "red_large": "textures/tnts/v2/butterfly_tnt/butterflies/red_large",
+        "red_small": "textures/tnts/v2/butterfly_tnt/butterflies/red_small",
+        "yellow": "textures/tnts/v2/butterfly_tnt/butterflies/yellow"
+      },
+      "geometry": {
+        "default": "geometry.butterfly"
+      },
+      "animations": {
+        "fly": "animation.butterfly.fly",
+        "idle": "animation.butterfly.idle",
+        "controller": "controller.animation.butterfly"
+      },
+      "particle_effects": {
+        "trail": "sndbx:butterfly_trail"
+      },
+      "scripts": {
+        "initialize": [
+          "v.random = math.random_integer(0,14);"
+        ],
+        "animate": [
+          "controller"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.butterfly"
+      ]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.rocket_particle1": {
+      "loop": false,
+      "animation_length": 2.0,
+      "particle_effects": {
+        "0.0": {
+          "effect": "rocket1",
+          "locator":"rocket_base"
+        }
+      }
+    },
+    "animation.rocket_particle2": {
+      "loop": false,
+      "animation_length": 1.0,
+      "particle_effects": {
+        "0.0": {
+          "effect": "rocket2",
+          "locator":"rocket_base"
+        }
+      }
+    },
+
+    "animation.fireball_particle_emission": {
+      "loop": true,
+      "animation_length": 5.0,
+      "particle_effects": {
+        "0.0": [
+          {
+            "effect": "fireball"
+          },
+          {
+            "effect": "fireball_tnt_particle"
+          }
+        ]
+      }
+    },
+
+    "animation.arctictnt_arctic_snow": {
+      "loop": true,
+      "animation_length": 5.0,
+      "particle_effects": {
+        "0.0": [
+          {
+            "effect": "snow",
+            "locator":"snow_base",
+            "pre_effect_script": "variable.bool = 1.0;"
+          },
+          {
+            "effect": "arctic_tnt_particle",
+            "locator":"snow_base",
+            "pre_effect_script": "variable.bool = 1.0;"
+          }
+        ]
+      }
+    },
+    "animation.arctictnt_arctic_snow_lit": {
+      "loop": true,
+      "animation_length": 5.0,
+      "particle_effects": {
+        "0.0": {
+          "effect": "snow",
+          "locator":"snow_base",
+          "pre_effect_script": "variable.bool = 0.0;"
+        }
+      }
+    },
+
+    "animation.meteorite_ring": {
+      "loop": true,
+      "animation_length": 2.0,
+      "particle_effects": {
+        "0.0": [
+          {
+            "effect": "meteorite",
+            "locator": "fireball_base"
+          }
+        ],
+        "1.0": [
+          {
+            "effect": "fireball_tnt_particle",
+            "locator": "fireball_base"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.troll_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.is_powered" 
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.on_explode = q.life_time;",
+            "/tag @p[c=1] add troll_tnt",
+            "/playsound tnt.troll @a ~~~"
+          ],
+          "on_exit": [
+            "/ride @p[tag=\"troll_tnt\",c=1] evict_riders",
+            "/playsound random.pop @a ~~~",
+            "/tag @s add ride"
+          ],
+          "transitions": [
+            { 
+              "stick_to_player": "(q.life_time - v.on_explode) >= 2.0" 
+            }
+          ]
+        },
+        "stick_to_player": {
+          "on_entry": [
+            "@s sndbx:stick_to_player",
+            "/function tnt/troll"
+          ],
+          "transitions": [
+            { 
+              "tick_stick_to_player": "q.variant == 3" 
+            },
+            { 
+              "explode_while_sticking": "q.variant == 4" 
+            }
+          ]
+        },
+        "tick_stick_to_player": {
+          "transitions": [
+            { 
+              "stick_to_player": "q.variant == 3" 
+            },
+            { 
+              "explode_while_sticking": "q.variant == 4" 
+            }
+          ]
+        },
+        "explode_while_sticking": {
+          "on_entry": [
+            "/execute @a[tag=!achievements_troll_tnt,tag=troll_tnt,c=1] ~~~ function achievements/troll_tnt",
+            "/tag @p[tag=\"troll_tnt\"] remove troll_tnt"
+          ]
+        }
+      }
+    }
+  }
+}

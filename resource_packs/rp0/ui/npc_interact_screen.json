@@ -1,0 +1,263 @@
+{
+  "npc_root_panel_modified": {
+    "type": "panel",
+    "layer": 1,
+
+    "controls": [
+      {
+        "tnt_showcase_dialog@npc_interact.r4isen_custom_dialog": {
+          "$child_control": "sndbx_dialogue_tnt_showcase.showcase_list",
+
+          "$dialogue_window_size_default": [ 320, 251 ],
+          "$dialogue_window_size_compressed": [ 258, 202 ],
+          
+          "$dialogue_window_texture": "textures/ui/sndbx/showcase/base_dialogue_window",
+          "$close_button_visibility": true,
+          "$close_button_anchor": "top_left",
+          "$close_button_max_size_default": [ 12.5, 12.5 ],
+          "$close_button_max_size_compressed": [ 8.75, 8.75 ],
+          "$close_button_offset_default": [ 304.625, 21.75 ],
+          "$close_button_offset_compressed": [ 245.625, 18.75 ],
+
+          "$visible_binding": "((#dialogtext = 'showcase_black_hole_tnt') or (#dialogtext = 'showcase_base_tnt') or (#dialogtext = 'showcase_black_colored_tnt') or (#dialogtext = 'showcase_blue_colored_tnt') or (#dialogtext = 'showcase_brown_colored_tnt') or (#dialogtext = 'showcase_cyan_colored_tnt') or (#dialogtext = 'showcase_gray_colored_tnt') or (#dialogtext = 'showcase_green_colored_tnt') or (#dialogtext = 'showcase_light_blue_colored_tnt') or (#dialogtext = 'showcase_light_gray_colored_tnt') or (#dialogtext = 'showcase_lime_colored_tnt') or (#dialogtext = 'showcase_magenta_colored_tnt') or (#dialogtext = 'showcase_orange_colored_tnt') or (#dialogtext = 'showcase_pink_colored_tnt') or (#dialogtext = 'showcase_purple_colored_tnt') or (#dialogtext = 'showcase_red_colored_tnt') or (#dialogtext = 'showcase_white_colored_tnt') or (#dialogtext = 'showcase_yellow_colored_tnt') or (#dialogtext = 'showcase_arctic_tnt') or (#dialogtext = 'showcase_big_bertha_tnt') or (#dialogtext = 'showcase_blast_tnt') or (#dialogtext = 'showcase_blaze_tnt') or (#dialogtext = 'showcase_fireball_tnt') or (#dialogtext = 'showcase_fish_tnt') or (#dialogtext = 'showcase_galaxy_tnt') or (#dialogtext = 'showcase_lightning_tnt') or (#dialogtext = 'showcase_mega_tnt') or (#dialogtext = 'showcase_party_tnt') or (#dialogtext = 'showcase_potion_tnt') or (#dialogtext = 'showcase_scatter_tnt') or (#dialogtext = 'showcase_sticky_tnt') or (#dialogtext = 'showcase_super_tnt') or (#dialogtext = 'showcase_tornado_tnt') or (#dialogtext = 'showcase_ultra_tnt') or (#dialogtext = 'showcase_wither_tnt') or (#dialogtext = 'showcase_axolotl_mob_tnt') or (#dialogtext = 'showcase_bat_mob_tnt') or (#dialogtext = 'showcase_cat_mob_tnt') or (#dialogtext = 'showcase_chicken_mob_tnt') or (#dialogtext = 'showcase_cow_mob_tnt') or (#dialogtext = 'showcase_fox_mob_tnt') or (#dialogtext = 'showcase_parrot_mob_tnt') or (#dialogtext = 'showcase_pig_mob_tnt') or (#dialogtext = 'showcase_polar_bear_mob_tnt') or (#dialogtext = 'showcase_rabbit_mob_tnt') or (#dialogtext = 'showcase_blessed_tnt') or (#dialogtext = 'showcase_butterfly_tnt') or (#dialogtext = 'showcase_circle_tnt') or (#dialogtext = 'showcase_dinnerbone_tnt') or (#dialogtext = 'showcase_dynamite_tnt') or (#dialogtext = 'showcase_ender_tnt') or (#dialogtext = 'showcase_equaliser_tnt') or (#dialogtext = 'showcase_gravitational_tnt') or (#dialogtext = 'showcase_infinity_tnt') or (#dialogtext = 'showcase_magic_tnt') or (#dialogtext = 'showcase_magnet_tnt') or (#dialogtext = 'showcase_miners_tnt') or (#dialogtext = 'showcase_napalm_tnt') or (#dialogtext = 'showcase_patient_zero_tnt') or (#dialogtext = 'showcase_device_crasher_tnt') or (#dialogtext = 'showcase_portal_tnt') or (#dialogtext = 'showcase_rainbow_tnt') or (#dialogtext = 'showcase_shulker_tnt') or (#dialogtext = 'showcase_black_smoke_tnt') or (#dialogtext = 'showcase_split_tnt') or (#dialogtext = 'showcase_sponge_tnt') or (#dialogtext = 'showcase_wet_sponge_tnt') or (#dialogtext = 'showcase_time_slower_tnt') or (#dialogtext = 'showcase_troll_tnt') or (#dialogtext = 'showcase_void_eater_tnt') or (#dialogtext = 'showcase_world_ender_tnt') or (#dialogtext = 'showcase_blue_smoke_tnt') or (#dialogtext = 'showcase_brown_smoke_tnt') or (#dialogtext = 'showcase_cyan_smoke_tnt') or (#dialogtext = 'showcase_dark_green_smoke_tnt') or (#dialogtext = 'showcase_gray_smoke_tnt') or (#dialogtext = 'showcase_light_blue_smoke_tnt') or (#dialogtext = 'showcase_light_gray_smoke_tnt') or (#dialogtext = 'showcase_lime_smoke_tnt') or (#dialogtext = 'showcase_magenta_smoke_tnt') or (#dialogtext = 'showcase_orange_smoke_tnt') or (#dialogtext = 'showcase_pink_smoke_tnt') or (#dialogtext = 'showcase_purple_smoke_tnt') or (#dialogtext = 'showcase_red_smoke_tnt') or (#dialogtext = 'showcase_white_smoke_tnt') or (#dialogtext = 'showcase_yellow_smoke_tnt') or (#dialogtext = 'showcase_doomsday_tnt') or (#dialogtext = 'showcase_lucky_tnt'))"
+        }
+      },
+      {
+        "tnt_showcase_dialog_extended@npc_interact.r4isen_custom_dialog": {
+          "$child_control": "sndbx_dialogue_tnt_showcase.showcase_list_extended",
+
+          "$dialogue_window_size_default": [ 320, 251 ],
+          "$dialogue_window_size_compressed": [ 258, 202 ],
+          
+          "$dialogue_window_texture": "textures/ui/sndbx/showcase/base_dialogue_window_extension",
+          "$close_button_visibility": true,
+          "$close_button_anchor": "top_left",
+          "$close_button_max_size_default": [ 12.5, 12.5 ],
+          "$close_button_max_size_compressed": [ 8, 8 ],
+          "$close_button_offset_default": [ 304.625, 21.75 ],
+          "$close_button_offset_compressed": [ 245.625, 18.25 ],
+
+          "$visible_binding": "((#dialogtext = 'showcase_extended_black_hole_tnt') or (#dialogtext = 'showcase_extended_base_tnt') or (#dialogtext = 'showcase_extended_black_colored_tnt') or (#dialogtext = 'showcase_extended_blue_colored_tnt') or (#dialogtext = 'showcase_extended_brown_colored_tnt') or (#dialogtext = 'showcase_extended_cyan_colored_tnt') or (#dialogtext = 'showcase_extended_gray_colored_tnt') or (#dialogtext = 'showcase_extended_green_colored_tnt') or (#dialogtext = 'showcase_extended_light_blue_colored_tnt') or (#dialogtext = 'showcase_extended_light_gray_colored_tnt') or (#dialogtext = 'showcase_extended_lime_colored_tnt') or (#dialogtext = 'showcase_extended_magenta_colored_tnt') or (#dialogtext = 'showcase_extended_orange_colored_tnt') or (#dialogtext = 'showcase_extended_pink_colored_tnt') or (#dialogtext = 'showcase_extended_purple_colored_tnt') or (#dialogtext = 'showcase_extended_red_colored_tnt') or (#dialogtext = 'showcase_extended_white_colored_tnt') or (#dialogtext = 'showcase_extended_yellow_colored_tnt') or (#dialogtext = 'showcase_extended_arctic_tnt') or (#dialogtext = 'showcase_extended_big_bertha_tnt') or (#dialogtext = 'showcase_extended_blast_tnt') or (#dialogtext = 'showcase_extended_blaze_tnt') or (#dialogtext = 'showcase_extended_fireball_tnt') or (#dialogtext = 'showcase_extended_fish_tnt') or (#dialogtext = 'showcase_extended_galaxy_tnt') or (#dialogtext = 'showcase_extended_lightning_tnt') or (#dialogtext = 'showcase_extended_mega_tnt') or (#dialogtext = 'showcase_extended_party_tnt') or (#dialogtext = 'showcase_extended_potion_tnt') or (#dialogtext = 'showcase_extended_scatter_tnt') or (#dialogtext = 'showcase_extended_sticky_tnt') or (#dialogtext = 'showcase_extended_super_tnt') or (#dialogtext = 'showcase_extended_tornado_tnt') or (#dialogtext = 'showcase_extended_ultra_tnt') or (#dialogtext = 'showcase_extended_wither_tnt') or (#dialogtext = 'showcase_extended_axolotl_mob_tnt') or (#dialogtext = 'showcase_extended_bat_mob_tnt') or (#dialogtext = 'showcase_extended_cat_mob_tnt') or (#dialogtext = 'showcase_extended_chicken_mob_tnt') or (#dialogtext = 'showcase_extended_cow_mob_tnt') or (#dialogtext = 'showcase_extended_fox_mob_tnt') or (#dialogtext = 'showcase_extended_parrot_mob_tnt') or (#dialogtext = 'showcase_extended_pig_mob_tnt') or (#dialogtext = 'showcase_extended_polar_bear_mob_tnt') or (#dialogtext = 'showcase_extended_rabbit_mob_tnt') or (#dialogtext = 'showcase_extended_blessed_tnt') or (#dialogtext = 'showcase_extended_butterfly_tnt') or (#dialogtext = 'showcase_extended_circle_tnt') or (#dialogtext = 'showcase_extended_dinnerbone_tnt') or (#dialogtext = 'showcase_extended_dynamite_tnt') or (#dialogtext = 'showcase_extended_ender_tnt') or (#dialogtext = 'showcase_extended_equaliser_tnt') or (#dialogtext = 'showcase_extended_gravitational_tnt') or (#dialogtext = 'showcase_extended_infinity_tnt') or (#dialogtext = 'showcase_extended_magic_tnt') or (#dialogtext = 'showcase_extended_magnet_tnt') or (#dialogtext = 'showcase_extended_miners_tnt') or (#dialogtext = 'showcase_extended_napalm_tnt') or (#dialogtext = 'showcase_extended_patient_zero_tnt') or (#dialogtext = 'showcase_extended_device_crasher_tnt') or (#dialogtext = 'showcase_extended_portal_tnt') or (#dialogtext = 'showcase_extended_rainbow_tnt') or (#dialogtext = 'showcase_extended_shulker_tnt') or (#dialogtext = 'showcase_extended_black_smoke_tnt') or (#dialogtext = 'showcase_extended_split_tnt') or (#dialogtext = 'showcase_extended_sponge_tnt') or (#dialogtext = 'showcase_extended_sponge_wet_tnt') or (#dialogtext = 'showcase_extended_time_slower_tnt') or (#dialogtext = 'showcase_extended_troll_tnt') or (#dialogtext = 'showcase_extended_void_eater_tnt') or (#dialogtext = 'showcase_extended_world_ender_tnt') or (#dialogtext = 'showcase_extended_blue_smoke_tnt') or (#dialogtext = 'showcase_extended_brown_smoke_tnt') or (#dialogtext = 'showcase_extended_cyan_smoke_tnt') or (#dialogtext = 'showcase_extended_dark_green_smoke_tnt') or (#dialogtext = 'showcase_extended_gray_smoke_tnt') or (#dialogtext = 'showcase_extended_light_blue_smoke_tnt') or (#dialogtext = 'showcase_extended_light_gray_smoke_tnt') or (#dialogtext = 'showcase_extended_lime_smoke_tnt') or (#dialogtext = 'showcase_extended_magenta_smoke_tnt') or (#dialogtext = 'showcase_extended_orange_smoke_tnt') or (#dialogtext = 'showcase_extended_pink_smoke_tnt') or (#dialogtext = 'showcase_extended_purple_smoke_tnt') or (#dialogtext = 'showcase_extended_red_smoke_tnt') or (#dialogtext = 'showcase_extended_white_smoke_tnt') or (#dialogtext = 'showcase_extended_yellow_smoke_tnt') or (#dialogtext = 'showcase_extended_doomsday_tnt') or (#dialogtext = 'showcase_extended_lucky_tnt'))"
+        }
+      }
+    ]
+  },
+
+  "r4isen_custom_dialog": {
+    "type": "panel",
+    "size": "$dialogue_window_size",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "layer": 1,
+
+    "controls": [
+      {
+        "dialogue_window_background": {
+          "type": "panel",
+          "size": "$dialogue_window_size",
+          "controls": [
+            {
+              "window_texture_image": {
+                "type": "image",
+                "texture": "$dialogue_window_texture",
+                "layer": 1,
+                "clips_children": true,
+
+                "controls": [
+                  {
+                    "content_indent@$child_control": {
+                      "size": "$dialogue_window_size",
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_button_panel": {
+          "visible": "$close_button_visibility",
+
+          "type": "stack_panel",
+          "anchor_from": "$close_button_anchor",
+          "anchor_to": "$close_button_anchor",
+          "size": "$close_button_max_size",
+          "offset": "$close_button_offset",
+          "controls": [
+            {
+              "button_indent@common.close_button": {
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [ "100% - 4px", "100% - 4px" ],
+                "offset": [ 17, 17 ],
+
+                "$close_button_texture_default|default": "textures/ui/sndbx/showcase/close_button_default",
+                "$close_button_texture_hovered|default": "textures/ui/sndbx/showcase/close_button_hovered",
+                "$close_button_texture_pressed|default": "textures/ui/sndbx/showcase/close_button_pressed",
+
+                "controls": [
+                  {
+                    "default@common.close_button_panel": {
+                      "$close_button_texture": "$close_button_texture_default",
+                      "$button_alpha": "$default_button_alpha"
+                    }
+                  },
+                  {
+                    "hover@common.close_button_panel": {
+                      "$close_button_texture": "$close_button_texture_hovered"
+                    }
+                  },
+                  {
+                    "pressed@common.close_button_panel": {
+                      "$close_button_texture": "$close_button_texture_pressed"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+
+    "variables": [
+      {
+        "requires": "(not ($is_android or $is_ios) and not ($nx_os))",
+        "$dialogue_window_size": "$dialogue_window_size_default",
+        "$close_button_max_size": "$close_button_max_size_default",
+        "$close_button_offset": "$close_button_offset_default"
+      },
+      {
+        "requires": "($is_android or $is_ios)",
+        "$dialogue_window_size": "$dialogue_window_size_compressed",
+        "$close_button_max_size": "$close_button_max_size_compressed",
+        "$close_button_offset": "$close_button_offset_compressed"
+      },
+      {
+        "requires": "($nx_os)",
+        "$dialogue_window_size": "$dialogue_window_size_compressed",
+        "$close_button_max_size": "$close_button_max_size_compressed",
+        "$close_button_offset": "$close_button_offset_compressed"
+      }
+    ],
+
+    "bindings": [
+      {
+        "binding_name": "#dialogtext",
+        "binding_type": "global"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "$visible_binding",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  
+  "screen_exit_animation_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": 1.0,
+    "to": 0.9,
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "screen_exit_animation_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": 1.0,
+    "to": 0.9,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "screen_entrance_animation_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": 0.9,
+    "to": 1.0,
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "screen_entrance_animation_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": 0.9,
+    "to": 1.0,
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "screen_exit_animation_push_offset": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": "$transition_time_push",
+    "from": [ 0, 0 ],
+    "to": [ 0, "100%" ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "screen_exit_animation_pop_offset": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": "$transition_time_pop",
+    "from": [ 0, 0 ],
+    "to": [ 0, "-100%" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "screen_entrance_animation_push_offset": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "duration": "$transition_time_push",
+    "from": [ 0, "10%" ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "screen_entrance_animation_pop_offset": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "duration": "$transition_time_pop",
+    "from": [ 0, "-10%" ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "npc_screen@common.base_screen": {
+    "$screen_content": "npc_interact.npc_root_panel_modified",
+    "$screen_animations|default": [
+      "@npc_interact.screen_exit_animation_push_offset",
+      "@npc_interact.screen_exit_animation_pop_offset",
+      "@npc_interact.screen_entrance_animation_push_offset",
+      "@npc_interact.screen_entrance_animation_pop_offset",
+      "@npc_interact.screen_exit_animation_push_fade",
+      "@npc_interact.screen_exit_animation_pop_fade",
+      "@npc_interact.screen_entrance_animation_push_fade",
+      "@npc_interact.screen_entrance_animation_pop_fade"
+    ],
+    "low_frequency_rendering": true,
+    "render_only_when_topmost": true,
+    "render_game_behind": true,
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_exit",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      }
+    ]
+  }
+}

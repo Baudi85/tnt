@@ -1,0 +1,75 @@
+{
+  "individual_event_sounds": {
+    "events": {}
+  },
+  "entity_sounds": {
+    "entities": {
+      "sndbx:butterfly": {
+        "events": {
+          "ambient": "mob.butterfly.idle",
+          "death": "mob.butterfly.death",
+          "hurt": "mob.butterfly.hurt",
+          "step": "mob.butterfly.step"
+        },
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 1
+      },
+      "sndbx:tnt_zombie": {
+        "events": {
+          "ambient": "mob.zombie.say",
+          "death": "mob.zombie.death",
+          "hurt": "mob.zombie.hurt",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.zombie.step",
+            "volume": 0.45
+          }
+        },
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 1.0
+      },
+      "sndbx:tnt_skeleton": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.skeleton.step",
+            "volume": 1.0
+          }
+        },
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 1.0
+      },
+      "sndbx:scientist_npc": {
+        "events": {
+          "ambient": "mob.villager.idle",
+          "death": "mob.villager.death",
+          "death.to.zombie": "mob.villager.death",
+          "haggle": "mob.villager.haggle",
+          "haggle.no": "mob.villager.no",
+          "haggle.yes": "mob.villager.yes",
+          "hurt": "mob.villager.hit"
+        },
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 1.0
+      }
+    }
+  }
+}

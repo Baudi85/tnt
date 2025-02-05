@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:orange_colored_tnt",
+      "geometry": {
+        "default": "geometry.coloredtnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/colored_tnt/orange"
+      },
+      "scripts": {
+        "initialize": [
+          "v.swell_amount = 0.0;"
+        ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          {
+            "explosion": "q.life_time >= 3.5"
+          }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion"
+      },
+      "render_controllers": [
+        {
+          "controller.render.sndbx_tnt.lit": "q.is_shaking ? (q.distance_from_camera >= 2.5) : 1"
+        }
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

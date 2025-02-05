@@ -1,0 +1,27 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.despawn_a":{
+         "timeline":{
+            "0.0":[ 
+            	"/playsound random.pop @a ~ ~ ~ 0.75",
+            	"/particle minecraft:crop_growth_emitter ~ ~ ~",
+            	"@s sndbx:despawn"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":false
+      },
+      "animation.despawn_b":{
+         "timeline":{
+            "0.0":[ 
+            	"/playsound random.pop @a ~ ~ ~ 0.75",
+            	"/particle minecraft:explosion_manual ~ ~ ~",
+            	"@s sndbx:despawn" 
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":false
+      }
+   }
+}

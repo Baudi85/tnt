@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:scientist_npc",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "scientist_1": "textures/scientists/scientist_1",
+        "scientist_2": "textures/scientists/scientist_2",
+        "scientist_3": "textures/scientists/scientist_3"
+      },
+      "geometry": {
+        "scientist_1": "geometry.scientist_1",
+        "scientist_2": "geometry.scientist_2",
+        "scientist_3": "geometry.scientist_3"
+      },
+      "render_controllers": [
+        "controller.render.scientist_npc"
+      ],
+      "scripts": {
+        "animate": [
+          "look_at_target",
+          { "move": "query.modified_move_speed" }
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.scientist.move"
+      },
+      "spawn_egg": {
+        "base_color": "#8f8d8d",
+        "overlay_color": "#5c5a5a"
+      }
+    }
+  }
+}

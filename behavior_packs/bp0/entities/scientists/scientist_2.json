@@ -1,0 +1,241 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:scientist_2",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "scientist_alpha" ]
+      },
+      "animations": {
+        "scientist_alpha": "controller.animation.scientist.two"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:show_dialogue_on_player_approach": {
+        "minecraft:is_saddled": {
+        }
+      },
+
+      "sndbx:no_dialogue": {
+        "minecraft:variant": {
+          "value": 0.0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": { 
+                    "test": "has_damage", 
+                    "subject": "self", 
+                    "value": "attack" 
+                  }
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "sndbx:dialogue_1": {
+        "minecraft:variant": {
+          "value": 1.0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "void",
+              "damage_multiplier": 10e7,
+              "deals_damage": true
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    { "test": "has_damage", "value": "anvil" },
+                    { "test": "has_damage", "value": "block_explosion" },
+                    { "test": "has_damage", "value": "entity_explosion" },
+                    { "test": "has_damage", "value": "fire" },
+                    { "test": "has_damage", "value": "fire_tick" },
+                    { "test": "has_damage", "value": "lava" },
+                    { "test": "has_damage", "value": "projectile" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "operator": "!=", "value": "player" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                },
+                "event": "sndbx:show_dialogue_2"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "interact_text": "action.interact.talk",
+              "swing": false,
+              "on_interact": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "sndbx:show_dialogue_2",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:type_family": {
+        "family": [
+          "villager",
+          "mob",
+          "scientists",
+          "scientist_2"
+        ]
+      },
+      "minecraft:health": {
+        "min": 1,
+        "max": 1,
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.7,
+        "height": 2.1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 0,
+        "look_distance": 8,
+        "probability": 0.02
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": 0.1,
+        "time_down_event": {
+          "event": "sndbx:show_dialogue_1",
+          "target": "self"
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "test": "distance_to_nearest_player",
+              "operator": ">",
+              "value": 5.0
+            },
+            "event": "sndbx:hide_dialogue",
+            "target": "self"
+          },
+          {
+            "filters": {
+              "test": "distance_to_nearest_player",
+              "operator": "<=",
+              "value": 5.0
+            },
+            "event": "sndbx:show_dialogue_on_player_approach",
+            "target": "self"
+          }
+        ]
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [ "sndbx:hide_dialogue" ]
+        }
+      },
+
+      "sndbx:show_dialogue_on_player_approach": {
+        "add": {
+          "component_groups": [ "sndbx:show_dialogue_on_player_approach" ]
+        }
+      },
+      "sndbx:hide_dialogue": {
+        "remove": {
+          "component_groups": [ "sndbx:show_dialogue_on_player_approach" ]
+        }
+      },
+      "sndbx:no_dialogue": {
+        "add": {
+          "component_groups": [ "sndbx:no_dialogue" ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:dialogue_1",
+            "sndbx:dialogue_2",
+            "sndbx:dialogue_3"
+          ]
+        }
+      },
+      "sndbx:show_dialogue_1": {
+        "add": {
+          "component_groups": [ "sndbx:dialogue_1" ]
+        }
+      },
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      }
+    }
+  }
+}

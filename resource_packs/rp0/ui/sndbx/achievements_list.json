@@ -1,0 +1,197 @@
+{
+  "namespace": "sndbx_achievements_list",
+
+  "toast_achievement_popup_control": {
+    "type": "panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ "100%c", "100%c" ],
+    "controls": [
+      {
+        "dooms_day_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.dooms_day'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.dooms_day",
+          "$achievement_icon": "dooms_day",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "device_crasher_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.device_crasher_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.device_crasher_tnt",
+          "$achievement_icon": "device_crasher_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "troll_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.troll_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.troll_tnt",
+          "$achievement_icon": "troll_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "infinity_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.infinity_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.infinity_tnt",
+          "$achievement_icon": "infinity_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "mech_music_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.mech_music'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.mech_music",
+          "$achievement_icon": "mech_music",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "the_laboratory_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.the_laboratory'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.the_laboratory",
+          "$achievement_icon": "the_laboratory",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "the_showcase_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.the_showcase'))",
+
+          "$achievement_header": "toast.achievement.header_rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.the_showcase",
+          "$achievement_icon": "the_showcase",
+          "$achievement_length": "long"
+        }
+      },
+      {
+        "the_shooting_rangeachievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.the_shooting_range'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.the_shooting_range",
+          "$achievement_icon": "the_shooting_range",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "break_all_target_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.break_all_target'))",
+
+          "$achievement_header": "toast.achievement.header_rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.break_all_target",
+          "$achievement_icon": "break_all_target",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "break_all_set_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.break_all_set'))",
+
+          "$achievement_header": "toast.achievement.header_rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.break_all_set",
+          "$achievement_icon": "break_all_set",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "void_eater_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.void_eater_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.void_eater_tnt",
+          "$achievement_icon": "void_eater_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "world_ender_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.world_ender_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.world_ender_tnt",
+          "$achievement_icon": "world_ender_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "rainbow_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.rainbow_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.rainbow_tnt",
+          "$achievement_icon": "rainbow_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "mob_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.mob_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.mob_tnt",
+          "$achievement_icon": "mob_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "smoke_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.smoke_tnt'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.smoke_tnt",
+          "$achievement_icon": "smoke_tnt",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "pull_magnet_black_hole_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.pull_magnet_black_hole'))",
+
+          "$achievement_header": "toast.achievement.header",
+          "$achievement_name": "toast.achievement.pull_magnet_black_hole",
+          "$achievement_icon": "pull_magnet_black_hole",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "ignite_all_tnt_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.ignite_all'))",
+
+          "$achievement_header": "toast.achievement.header_rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.ignite_all",
+          "$achievement_icon": "ignite_all",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "clear_lag_achievement@sndbx_achievements_common.toast_achievement_popup_template": {
+          "ignored": "(not ($actionbar_text = 'achievement.clear_lag'))",
+
+          "$achievement_header": "toast.achievement.header_rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.clear_lag",
+          "$achievement_icon": "clear_lag",
+          "$achievement_length": "normal"
+        }
+      }
+    ]
+  }
+}

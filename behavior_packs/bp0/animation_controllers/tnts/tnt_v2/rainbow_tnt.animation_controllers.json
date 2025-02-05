@@ -1,0 +1,69 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.rainbow_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.on_explode = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.on_explode) >= 4"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/function tnt/rainbow/tnt"
+          ]
+        }
+      }
+    },
+    "controller.animation.rainbow_tnt.sheep_runtime": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "is_named_jeb": "q.life_time >= 0.1 && q.get_name == 'jeb_'"
+            }
+          ],
+          "on_entry": [ 
+            "/scoreboard objectives add rainbowTNT dummy",
+            "/scoreboard players random @s rainbowTNT 0 15"
+          ]
+        },
+        "is_named_jeb": {
+          "on_entry": [
+            "/tag @s add ground_test",
+            "/execute @s ~~~ detect ~~-1~ air 0 tag @s remove ground_test",
+            "/execute @s ~~~ detect ~~-1~ wool -1 tag @s remove ground_test",
+            
+            "/execute @s[tag=\"ground_test\"] ~~~ function tnt/rainbow/sheep"
+          ],
+          "transitions": [
+            {
+              "is_named_jeb_tick": "1"
+            }
+          ]
+        },
+        "is_named_jeb_tick": {
+          "transitions": [
+            {
+              "is_named_jeb": "1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:void_eater_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ 
+          "runtime",
+          "wing_flap_sfx"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.void_eater_tnt.on_ignite",
+        "wing_flap_sfx": "animation.void_eater_tnt.wing_flap_sound"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:void_eater_tnt_respawn": {
+        "minecraft:is_ignited": {},
+        "minecraft:knockback_resistance": {
+          "value": 1.0,
+          "max": 1.0
+        },
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": false
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        }
+      },
+      "sndbx:void_eater_tnt_gravity": {
+        "minecraft:physics": {
+          "has_gravity": true
+        },
+        "minecraft:is_shaking": {}
+      },
+
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    
+    "components": {
+      "minecraft:is_ignited": {
+      },
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "void_eater_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 6,
+        "looping": false,
+        "time_down_event": {
+          "event": "sndbx:void_eater_tnt_respawn"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    
+    "events": {
+      "sndbx:void_eater_tnt_respawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:void_eater_tnt_respawn"
+          ]
+        }
+      },
+      "sndbx:void_eater_tnt_gravity": {
+        "add": {
+          "component_groups": [
+            "sndbx:void_eater_tnt_gravity"
+          ]
+        }
+      },
+
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

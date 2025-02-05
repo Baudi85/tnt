@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:void_eater_tnt_block",
+      "geometry": {
+        "default": "geometry.void_eater_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/void_eater_tnt/void_eater_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "tnt_idle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "tnt_idle": "animation.void_eater_tnt.idle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "void_eater_tnt"
+      }
+    }
+  }
+}

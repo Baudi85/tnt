@@ -1,0 +1,77 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:portal_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "animation.portal_tnt.nether_perils"
+      }
+    },
+    "components": {
+      "minecraft:is_charged": {},
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "lit",
+          "portal_tnt",
+          "inanimate"
+        ]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [
+              0,
+              -1,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 4,
+        "fuse_lit": true,
+        "power": 10,
+        "causes_fire": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:spawned_by_projectile": {
+        "add": {
+          "component_groups": [
+            "sndbx:spawned_by_projectile"
+          ]
+        }
+      }
+    },
+    "component_groups": {
+      "sndbx:spawned_by_projectile": {
+        "minecraft:is_shaking": {}
+      }
+    }
+  }
+}

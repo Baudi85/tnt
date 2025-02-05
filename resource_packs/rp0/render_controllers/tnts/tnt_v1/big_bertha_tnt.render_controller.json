@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.lit_bigberthatnt": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "overlay_color":{
+        "r": "variable.flash_modified",
+        "g": "variable.flash",
+        "b": "variable.flash",
+        "a": "variable.flash_modified"
+      },
+      "is_hurt_color":{},
+      "on_fire_color":{}
+    }
+  }
+}

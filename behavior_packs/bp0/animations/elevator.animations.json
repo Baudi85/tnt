@@ -1,0 +1,63 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.elevator.sequence": {
+      "loop": false,
+      "animation_length": 33.0,
+      "timeline": {
+        "0.000": [
+          "@s sndbx:sequence_two",
+          "/particle sndbx:elevator_control_panel -12 30.08 13",
+          "/summon sndbx:elevator -9 31 13 no_action",
+          "/effect @e[type=sndbx:elevator,family=elevator_lift_hidden] invisibility 9999 255 true",
+          "/playsound elevator.button @a ~~~ 1.0"
+        ],
+        "0.250": [ "/playsound elevator.move @a ~~~ 1.0" ],
+        "1.750": [
+          "@s sndbx:sequence_three",
+          "/effect @e[family=elevator_lift,r=10] levitation 15 0 true",
+          "/camerashake add @a[r=10] 0.1 28.40 positional",
+          "/effect @a[r=10] levitation 999999 1 true"
+        ],
+        "20.65": [ 
+          "/event entity @e[type=sndbx:elevator_door] sndbx:door_open",
+          "/playsound elevator.door @a ~~~ 1.0",
+
+          "/particle sndbx:gate_pressure_elevator -6 55 10",
+          "/particle sndbx:gate_pressure_elevator -12 55 10",
+          "/particle sndbx:gate_pressure_elevator -6 55 16",
+          "/particle sndbx:gate_pressure_elevator -12 55 16"
+        ],
+        "28.03": [
+          "/event entity @e[type=sndbx:elevator_door] sndbx:despawn",
+          "/summon sndbx:elevator -9 54.177 13 sndbx:sequence_four",
+          "/effect @s invisibility 9999 255 true",
+
+          "/setworldspawn -9 56 13",
+
+          "/fill -11 54 16 -7 54 16 barrier 0 replace air",
+          "/fill -6 54 15 -6 54 11 barrier 0 replace air",
+          "/fill -11 54 10 -7 54 10 barrier 0 replace air",
+          "/fill -12 54 15 -7 54 11 barrier 0 replace air",
+
+          "/particle sndbx:excavation_mark_x1 ~~1.5~",
+          "/particle sndbx:excavation_mark_x2 ~~1.5~",
+          "/particle sndbx:excavation_mark_z1 ~~1.5~",
+          "/particle sndbx:excavation_mark_z2 ~~1.5~",
+
+          "/camerashake stop @a[r=10]"
+        ],
+        "28.10": [
+          "/fill -11 29 15 -7 54 11 barrier 0 replace air",
+          "/event entity @a[r=10] sndbx:clear_levitation",
+          "/execute @e[type=sndbx:scientist_1] ~~~ tp ~~~ facing @p[c=1]",
+          "/execute @a[tag=!achievements_the_laboratory] ~~~ function achievements/the_laboratory"
+        ],
+        "32.00": [
+          "/execute @a ~~~ function objectives/setup/intro",
+          "@s sndbx:despawn"
+        ]
+      }
+    }
+  }
+}

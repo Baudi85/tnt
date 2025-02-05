@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:bunker_door",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/bunker_door"
+      },
+      "geometry": {
+        "default": "geometry.bunker_door"
+      },
+      "render_controllers": [
+        "controller.render.bunker_door"
+      ],
+      "scripts": {
+        "animate": [
+          "setup"
+        ]
+      },
+      "animations": {
+        "setup": "controller.animation.bunker_door.setup",
+        "open": "animation.bunker_door.open",
+        "opened": "animation.bunker_door.opened",
+        "close": "animation.bunker_door.close",
+        "closed": "animation.bunker_door.closed"
+      },
+      "sound_effects": {
+        "open": "bunker_door.open",
+        "close": "bunker_door.close"
+      }
+    }
+  }
+}

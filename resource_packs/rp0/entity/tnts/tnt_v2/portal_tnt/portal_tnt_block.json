@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:portal_tnt_block",
+      "geometry": {
+        "default": "geometry.portal_tnt",
+        "anim": "geometry.portal_tnt.anim"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "anim": "conduit_wind"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/portal_tnt/portal_tnt",
+        "anim": "textures/tnts/v2/portal_tnt/portal_tnt_anim"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct",
+        "portal_dust": "sndbx:portal_dust"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.flipbook = math.mod(math.floor(query.life_time * 16), 32) / 32;"
+        ],
+        "animate": [
+          "align",
+          "block_destruct",
+          "portal_dust"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "portal_dust": "controller.animation.portal_tnt_particles"
+      },
+      "render_controllers": [
+        "controller.render.portal_tnt.block",
+        "controller.render.portal_tnt.anim"
+      ],
+      "sound_effects": {
+        "ignited": "portal.trigger"
+      },
+      "spawn_egg": {
+        "texture": "portal_tnt"
+      }
+    }
+  }
+}

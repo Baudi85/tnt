@@ -1,0 +1,85 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:world_ender_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.world_ender_tnt.on_ignite"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:despawn_tnt": {
+        "minecraft:instant_despawn": {}
+      },
+
+      "sndbx:spawned_by_device_crasher": {
+        "minecraft:scale": {
+          "value": 0.0001
+        }
+      }
+    },
+    "components": {
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "world_ender_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 4,
+        "fuse_lit": true,
+        "power": 60,
+        "breaks_blocks": true,
+        "causes_fire": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:despawn_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn_tnt"
+          ]
+        }
+      },
+
+      "sndbx:spawned_by_device_crasher": {
+        "add": {
+          "component_groups": [
+            "sndbx:spawned_by_device_crasher"
+          ]
+        }
+      }
+    }
+  }
+}

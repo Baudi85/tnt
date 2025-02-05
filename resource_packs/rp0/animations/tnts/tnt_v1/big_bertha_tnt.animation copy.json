@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+	"animations": {
+    "animation.takeoff": {
+			"loop": true,
+			"bones": {
+				"TNT": {
+					"rotation": [ "query.anim_time < 4 ? math.sin(math.pow(query.anim_time,2)*5.6)*-180 : -180", 0, 0 ]
+				}
+			}
+		}
+	}
+}

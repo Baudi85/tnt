@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:sticky_tnt_block",
+      "materials": {
+        "default": "entity_alphablend",
+        "inner": "entity_alphatest"
+      },
+      "geometry": {
+        "default": "geometry.stickytnt",
+        "inner": "geometry.stickytnt_inner"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/sticky_tnt/outer",
+        "inner": "textures/tnts/v1/sticky_tnt/inner"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "alignment_inner": "animation.block_entity_alignment.stickytnt_inner"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "alignment_inner"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block",
+        "controller.render.tnt.sticky_inner"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "sticky_tnt"
+      }
+    }
+  }
+}

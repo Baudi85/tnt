@@ -1,0 +1,59 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:red_smoke_tnt",
+      "geometry": {
+        "default": "geometry.smoke_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/smoke_tnt/red_smoke_tnt"
+      },
+      "particle_effects": {
+        "smoke": "sndbx:smoke_emitter",
+        "smoke_chimney": "sndbx:smoke_chimney_emitter"
+      },
+      "scripts": {
+        "initialize": [
+          "v.swell_amount = 0.0;"
+        ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          "chimney_smoke",
+          "tnt_idle",
+          {
+            "explosion": "q.life_time >= 3.5"
+          },
+          {
+            "smoke": "q.life_time >= 3.9"
+          }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "tnt_idle": "animation.smoke_tnt.explode",
+        "smoke": "controller.animation.smoke_tnt.emit_particles",
+        "chimney_smoke": "controller.animation.smoke_tnt.chimney_smoke"
+      },
+      "render_controllers": [
+        {
+          "controller.render.sndbx_tnt.lit": "q.is_shaking ? (q.distance_from_camera >= 2.5) : 1"
+        }
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.sponge_tnt.check_for_humid": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "test": "1" }
+          ]
+        },
+        "test": {
+          "transitions": [
+            { "default": "1" }
+          ],
+          "on_entry": [
+            "/execute @s[tag=!\"waterCh\"] ~~~ function tnt/sponge/check"
+          ]
+        }
+      }
+    },
+    "controller.animation.sponge_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "1"
+            }
+          ],
+          "on_exit": [
+            "/scoreboard objectives add spongeTNT dummy",
+            "/scoreboard players set @s spongeTNT 1"
+          ]
+        },
+        "on_ignite": {
+          "transitions": [
+            {
+              "tick_on_ignite": "1"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=\"waterCh\",tag=\"absorb\"] ~~~ function tnt/sponge/dried",
+            "/execute @s[tag=\"waterCh\",tag=\"explode\"] ~~~ function tnt/sponge/dried_explode"
+          ]
+        },
+        "tick_on_ignite": {
+          "transitions": [
+            {
+              "on_ignite": "1"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=\"waterCh\",tag=\"absorb\"] ~~~ function tnt/sponge/dried",
+            "/execute @s[tag=\"waterCh\",tag=\"explode\"] ~~~ function tnt/sponge/dried_explode"
+          ]
+        }
+      }
+    },
+    "controller.animation.sponge_wet_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.is_powered && !q.is_saddled"
+            },
+            {
+              "on_explode": "q.is_saddled"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.on_explode = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.on_explode) >= 4.0"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/function tnt/sponge/wet",
+            "/summon sndbx:sponge_tnt_block ~~~",
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

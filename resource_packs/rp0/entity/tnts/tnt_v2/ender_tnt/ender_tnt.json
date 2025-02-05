@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:ender_tnt",
+      "geometry": {
+        "default": "geometry.ender_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/ender_tnt/ender_tnt"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          { "explosion": "q.life_time >= 13.5" },
+          { "explode": "q.life_time > 0.5" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "explode": "animation.ender_tnt.explode"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.lit"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:elevator",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ { "sequence": "!q.is_illager_captain && q.is_saddled" } ]
+      },
+      "animations": {
+        "sequence": "animation.elevator.sequence"
+      }
+    },
+
+    "component_groups": {
+      "no_action": {
+        "minecraft:is_illager_captain": {},
+        "minecraft:type_family": {
+          "family": [
+            "elevator",
+            "elevator_lift",
+            "elevator_lift_hidden",
+            "inanimate"
+          ]
+        }
+      },
+
+      "sndbx:trigger_intro_sequence": {
+        "minecraft:is_saddled": {}
+      },
+
+      "sndbx:sequence_one": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "sndbx:sequence_two": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "sndbx:sequence_three": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+
+      "sndbx:sequence_four": {
+        "minecraft:variant": {
+          "value": 3
+        },
+        "minecraft:is_illager_captain": {
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": { }
+      }
+    },
+
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:is_stackable": {
+      },
+      "minecraft:collision_box": {
+        "width": 5.0,
+        "height": 1.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "elevator",
+          "elevator_lift",
+          "inanimate"
+        ]
+      },
+      "minecraft:health": {
+        "min": 1,
+        "max": 1,
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": { 
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      }
+    },
+
+    "events": {
+      "no_action": {
+        "add": {
+          "component_groups": [ "no_action" ]
+        }
+      },
+
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      },
+      
+      "sndbx:trigger_intro_sequence": {
+        "add": {
+          "component_groups": [ "sndbx:trigger_intro_sequence" ]
+        }
+      },
+      "sndbx:sequence_one": {
+        "add": {
+          "component_groups": [ "sndbx:sequence_one" ]
+        },
+        "remove": {
+          "component_groups": [ 
+            "sndbx:sequence_two",
+            "sndbx:sequence_three",
+            "sndbx:sequence_four"
+          ]
+        }
+      },
+      "sndbx:sequence_two": {
+        "add": {
+          "component_groups": [ "sndbx:sequence_two" ]
+        },
+        "remove": {
+          "component_groups": [ 
+            "sndbx:sequence_one",
+            "sndbx:sequence_three",
+            "sndbx:sequence_four"
+          ]
+        }
+      },
+      "sndbx:sequence_three": {
+        "add": {
+          "component_groups": [ "sndbx:sequence_three" ]
+        },
+        "remove": {
+          "component_groups": [ 
+            "sndbx:sequence_one",
+            "sndbx:sequence_two",
+            "sndbx:sequence_four"
+          ]
+        }
+      },
+      "sndbx:sequence_four": {
+        "add": {
+          "component_groups": [ "sndbx:sequence_four" ]
+        },
+        "remove": {
+          "component_groups": [ 
+            "sndbx:sequence_one",
+            "sndbx:sequence_two",
+            "sndbx:sequence_three"
+          ]
+        }
+      }
+    }
+  }
+}

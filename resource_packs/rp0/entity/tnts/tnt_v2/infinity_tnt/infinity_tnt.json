@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:infinity_tnt",
+      "geometry": {
+        "default": "geometry.infinity_tnt"
+      },
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/infinity_tnt/infinity_tnt"
+      },
+      "particle_effects": {
+        "crease": "sndbx:infinity_crease"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "tnt_explode",
+          "tnt_particle", 
+          { "explosion": "q.life_time >= 3.5" }
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "tnt_explode": "animation.infinity_tnt.explode",
+        "tnt_particle": "controller.animation.infinity_tnt_particle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.lit"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

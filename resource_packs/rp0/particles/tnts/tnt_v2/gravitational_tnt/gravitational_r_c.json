@@ -1,0 +1,71 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "sndbx:gravitational_release_continuous",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.size = 0.005;variable.radius = 5;"
+			},
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": true
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 1000,
+				"max_particles": 250
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 20
+			},
+			"minecraft:emitter_shape_box": {
+				"half_dimensions": ["math.random(8,22)", 0, "math.random(8,22)"],
+				"direction": [0, 1, 0]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "Math.random(4,10)"
+			},
+			"minecraft:particle_initial_speed": "math.random(30,60)",
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [
+					"math.random(-variable.radius,variable.radius)", 
+					"variable.particle_random_1*variable.radius + 0.1", 
+					"math.random(-variable.radius,variable.radius)"
+				],
+				"linear_drag_coefficient": 1
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					"(Math.pow((Math.sin((variable.particle_age+variable.particle_random_1)*360)),2)*0.5+0.5-variable.particle_age*0.05)*0.1", 
+					"Math.pow((Math.sin((variable.particle_age+variable.particle_random_1)*360)),2)*0.5+0.5-variable.particle_age*0.05"
+				],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 128,
+					"flipbook": {
+						"base_UV": [0, 96],
+						"size_UV": [8, 8],
+						"step_UV": [8, 0],
+						"frames_per_second": 16,
+						"max_frame": 8,
+						"loop": true
+					}
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [
+					"Math.clamp(2/255, 0, 1)", 
+					"Math.clamp(191/255, 0, 1)", 
+					"Math.clamp(255/255, 0, 1)", 
+					0.8
+				]
+			}
+		}
+	}
+}

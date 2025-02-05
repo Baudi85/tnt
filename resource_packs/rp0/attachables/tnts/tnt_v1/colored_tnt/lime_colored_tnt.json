@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "sndbx:lime_colored_tnt_block_spawn_egg",
+      "geometry": {
+        "default": "geometry.coloredtnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/colored_tnt/lime"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "first_person": "c.is_first_person"
+          },
+          {
+            "third_person": "!c.is_first_person"
+          }
+        ]
+      },
+      "animations": {
+        "first_person": "animation.sndbx_tnt.item.first_person.basic",
+        "third_person": "animation.sndbx_tnt.item.third_person.basic"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ]
+    }
+  }
+}

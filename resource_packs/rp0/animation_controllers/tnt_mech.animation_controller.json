@@ -1,0 +1,197 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_mech.move_controller": {
+      "states": {
+        "default": {
+          "animations": [
+            "inactive"
+          ],
+          "transitions": [
+            {
+              "active": "query.has_rider"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "active": {
+          "animations": [
+            "active"
+          ],
+          "transitions": [
+            {
+              "walk": "query.ground_speed > 0.1 && query.is_on_ground"
+            },
+            {
+              "default": "!query.has_rider"
+            },
+            {
+              "pre_jump": "!query.is_on_ground && q.vertical_speed >= 3"
+            }
+          ],
+          "blend_transition": 0.3
+        },
+        "walk": {
+          "animations": [
+            {
+              "walk": "math.clamp(query.modified_move_speed*2, 0, 1)"
+            }
+          ],
+          "transitions": [
+            {
+              "active": "!query.ground_speed"
+            },
+            {
+              "default": "!query.has_rider"
+            },
+            {
+              "pre_jump": "!query.is_on_ground && q.vertical_speed >= 1"
+            }
+          ],
+          "blend_transition": 0.3
+        },
+        "pre_jump": {
+          "animations": [
+            "pre_jump"
+          ],
+          "transitions": [
+            {
+              "in_air": "q.any_animation_finished && !q.is_on_ground"
+            }
+          ]
+        },
+        "in_air": {
+          "animations": [
+            "jump"
+          ],
+          "transitions": [
+            {
+              "landing": "q.is_on_ground"
+            }
+          ]
+        },
+        "landing": {
+          "animations": [
+            "landing"
+          ],
+          "transitions": [
+            {
+              "active": "q.all_animations_finished && q.is_on_ground"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tnt_mech.sword_controller": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "activate_sword": "q.mark_variant == 1"
+            },
+            {
+              "sword_activated": "q.mark_variant == 2"
+            },
+            {
+              "deactivate_sword": "q.mark_variant == 3"
+            },
+            {
+              "sword_deactivated": "q.mark_variant == 4"
+            }
+          ]
+        },
+        "activate_sword": {
+          "animations": [
+            "sword_activate"
+          ],
+          "transitions": [
+            {
+              "sword_activated": "q.any_animation_finished && q.mark_variant == 2 && q.is_powered"
+            }
+          ],
+          "blend_transition": 0.2
+        },
+        "sword_activated": {
+          "animations": [
+            "sword_activated"
+          ],
+          "transitions": [
+            {
+              "default": "q.mark_variant == 3"
+            }
+          ],
+          "blend_transition": 0.3
+        },
+        "deactivate_sword": {
+          "animations": [
+            "sword_deactivate"
+          ],
+          "transitions": [
+            {
+              "sword_deactivated": "q.any_animation_finished && q.mark_variant == 4 && q.is_powered"
+            }
+          ],
+          "blend_transition": 0.2
+        },
+        "sword_deactivated": {
+          "animations": [
+            "sword_deactivated"
+          ],
+          "transitions": [
+            {
+              "default": "q.mark_variant == 1"
+            }
+          ],
+          "blend_transition": 0.3
+        }
+      }
+    },
+    "controller.animation.tnt_mech.shoot_controller": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true,
+          "transitions": [
+            {
+              "shoot": "q.out_of_control"
+            }
+          ]
+        },
+        "shoot": {
+          "transitions": [
+            {
+              "default": "query.all_animations_finished && !q.out_of_control"
+            }
+          ],
+          "animations": [
+            "shoot"
+          ]
+        }
+      }
+    },
+    "controller.animation.tnt_mech.use_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "use_sword": "query.has_rider && query.is_illager_captain"
+            }
+          ]
+        },
+        "use_sword": {
+          "animations": [
+            "swing"
+          ],
+          "transitions": [
+            {
+              "default": "q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

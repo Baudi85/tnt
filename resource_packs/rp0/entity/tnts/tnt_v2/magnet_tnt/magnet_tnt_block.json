@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:magnet_tnt_block",
+      "geometry": {
+        "default": "geometry.magnet_tnt",
+        "magnet": "geometry.magnet_tnt_armor"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "magnet": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/magnet_tnt/magnet_tnt",
+        "armor_white": "textures/entity/wither_boss/wither_armor_white",
+        "armor_blue": "textures/entity/wither_boss/wither_armor_blue"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct",
+        "lightning_bolts": "sndbx:lightning_bolts"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "lightning_bolts",
+          "tnt_idle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "lightning_bolts": "controller.animation.magnet_tnt_particles",
+        "tnt_idle": "animation.magnet_tnt.idle"
+      },
+      "render_controllers": [
+        "controller.render.magnet_tnt",
+        "controller.render.magnet_tnt.overlay"
+      ],
+      "sound_effects": {
+        "ignited": "mob.moohsroom.convert"
+      },
+      "spawn_egg": {
+        "texture": "magnet_tnt"
+      }
+    }
+  }
+}

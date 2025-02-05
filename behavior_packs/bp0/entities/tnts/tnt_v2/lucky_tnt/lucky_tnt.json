@@ -1,0 +1,88 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:lucky_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "animation.lucky_tnt.roll_sequence"
+      }
+    },
+    "component_groups": {
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sndbx:spawned_by_projectile": {
+        "minecraft:is_shaking": {}
+      }
+    },
+    "components": {
+      "minecraft:is_charged": {},
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "lit",
+          "lucky_tnt",
+          "inanimate"
+        ]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [
+              0,
+              -2,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 15,
+        "looping": false,
+        "time_down_event": {
+          "event": "sndbx:tnt_despawn"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      },
+      "sndbx:spawned_by_projectile": {
+        "add": {
+          "component_groups": [
+            "sndbx:spawned_by_projectile"
+          ]
+        }
+      }
+    }
+  }
+}

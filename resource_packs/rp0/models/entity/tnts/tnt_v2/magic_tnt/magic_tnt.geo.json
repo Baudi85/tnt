@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.magic_tnt",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]},
+						{"origin": [-12, -1, 0], "size": [24, 32, 0], "uv": [16, 32]}
+					],
+					"locators": {
+						"spark": [0, 16.5, 0]
+					}
+				},
+				{
+					"name": "blobs",
+					"parent": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-1.4, 7, -16], "size": [3, 3, 3], "uv": [0, 56]},
+						{"origin": [13.4, 7, -2], "size": [3, 3, 3], "pivot": [-0.1, 7.5, 0.5], "rotation": [0, 45, 0], "uv": [0, 56], "mirror": true},
+						{"origin": [-16.4, 7, -2], "size": [3, 3, 3], "pivot": [0.1, 7.5, 0.5], "rotation": [0, -45, 0], "uv": [0, 56]},
+						{"origin": [-16.4, 7, -1], "size": [3, 3, 3], "uv": [0, 56]},
+						{"origin": [-16.4, 7, -1], "size": [3, 3, 3], "pivot": [0.1, 7.5, -0.5], "rotation": [0, 45, 0], "uv": [0, 56]},
+						{"origin": [-1.4, 7, 13], "size": [3, 3, 3], "uv": [0, 56]},
+						{"origin": [13.4, 7, -1], "size": [3, 3, 3], "pivot": [-0.1, 7.5, -0.5], "rotation": [0, -45, 0], "uv": [0, 56], "mirror": true},
+						{"origin": [13.6, 7, -1], "size": [3, 3, 3], "uv": [0, 56]}
+					]
+				}
+			]
+		}
+	]
+}

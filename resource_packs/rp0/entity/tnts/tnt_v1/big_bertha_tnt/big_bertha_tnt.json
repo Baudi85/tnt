@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:big_bertha_tnt",
+      "geometry": {
+        "default": "geometry.bigberthatnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/big_bertha_tnt/big_bertha_tnt"
+      },
+      "particle_effects":{
+        "rocket1":"sndbx:rocket_engine1",
+        "rocket2":"sndbx:rocket_engine2"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);",
+          "v.flash_modified = (query.life_time * 0.5 < 0.5 ? query.life_time * 0.7 : variable.flash);"
+        ],
+        "animate": [
+          "hop_controller",
+          "align",
+          { "takeoff": "query.life_time >= 1.0" },
+          { "rocket_particle1": "query.life_time <= 0.9" },
+          { "rocket_particle2": "query.life_time >= 1.0" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.ignite_no_hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "takeoff": "animation.takeoff",
+        "rocket_particle1": "animation.rocket_particle1",
+        "rocket_particle2": "animation.rocket_particle2"
+      },
+      "render_controllers": [
+        "controller.render.lit_bigberthatnt"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:display_model",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "runtime" ]
+      },
+      "animations": {
+        "runtime": "controller.animation.display_model.runtime"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {
+        }
+      },
+      
+      "sndbx:base_tnt": { "minecraft:skin_id": { "value": 2 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:black_colored_tnt": { "minecraft:skin_id": { "value": 3 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:blue_colored_tnt": { "minecraft:skin_id": { "value": 4 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:brown_colored_tnt": { "minecraft:skin_id": { "value": 5 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:cyan_colored_tnt": { "minecraft:skin_id": { "value": 6 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:gray_colored_tnt": { "minecraft:skin_id": { "value": 7 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:green_colored_tnt": { "minecraft:skin_id": { "value": 8 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:light_blue_colored_tnt": { "minecraft:skin_id": { "value": 9 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:light_gray_colored_tnt": { "minecraft:skin_id": { "value": 10 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:lime_colored_tnt": { "minecraft:skin_id": { "value": 11 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:magenta_colored_tnt": { "minecraft:skin_id": { "value": 12 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:orange_colored_tnt": { "minecraft:skin_id": { "value": 13 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:pink_colored_tnt": { "minecraft:skin_id": { "value": 14 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:purple_colored_tnt": { "minecraft:skin_id": { "value": 15 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:red_colored_tnt": { "minecraft:skin_id": { "value": 16 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:white_colored_tnt": { "minecraft:skin_id": { "value": 17 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:yellow_colored_tnt": { "minecraft:skin_id": { "value": 18 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:arctic_tnt": { "minecraft:skin_id": { "value": 19 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:blast_tnt": { "minecraft:skin_id": { "value": 21 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:blaze_tnt": { "minecraft:skin_id": { "value": 22 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:fireball_tnt": { "minecraft:skin_id": { "value": 23 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:fish_tnt": { "minecraft:skin_id": { "value": 24 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:galaxy_tnt": { "minecraft:skin_id": { "value": 25 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:potion_tnt": { "minecraft:skin_id": { "value": 29 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:scatter_tnt": { "minecraft:skin_id": { "value": 30 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:sticky_tnt": { "minecraft:skin_id": { "value": 31 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:tornado_tnt": { "minecraft:skin_id": { "value": 33 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:wither_tnt": { "minecraft:skin_id": { "value": 35 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:axolotl_mob_tnt": { "minecraft:skin_id": { "value": 36 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:bat_mob_tnt": { "minecraft:skin_id": { "value": 37 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:cat_mob_tnt": { "minecraft:skin_id": { "value": 38 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:chicken_mob_tnt": { "minecraft:skin_id": { "value": 39 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:cow_mob_tnt": { "minecraft:skin_id": { "value": 40 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:fox_mob_tnt": { "minecraft:skin_id": { "value": 41 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:parrot_mob_tnt": { "minecraft:skin_id": { "value": 42 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:pig_mob_tnt": { "minecraft:skin_id": { "value": 43 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:polar_bear_mob_tnt": { "minecraft:skin_id": { "value": 44 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:rabbit_mob_tnt": { "minecraft:skin_id": { "value": 45 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:blessed_tnt": { "minecraft:skin_id": { "value": 46 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:butterfly_tnt": { "minecraft:skin_id": { "value": 47 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:circle_tnt": { "minecraft:skin_id": { "value": 48 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:dinnerbone_tnt": { "minecraft:skin_id": { "value": 49 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:dynamite_tnt": { "minecraft:skin_id": { "value": 50 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:ender_tnt": { "minecraft:skin_id": { "value": 51 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:gravitational_tnt": { "minecraft:skin_id": { "value": 53 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:magic_tnt": { "minecraft:skin_id": { "value": 55 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:napalm_tnt": { "minecraft:skin_id": { "value": 59 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:patient_zero_tnt": { "minecraft:skin_id": { "value": 60 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:device_crasher_tnt": { "minecraft:skin_id": { "value": 61 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:portal_tnt": { "minecraft:skin_id": { "value": 62 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:rainbow_tnt": { "minecraft:skin_id": { "value": 63 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:shulker_tnt": { "minecraft:skin_id": { "value": 64 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:black_smoke_tnt": { "minecraft:skin_id": { "value": 65 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:split_tnt": { "minecraft:skin_id": { "value": 66 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:sponge_tnt": { "minecraft:skin_id": { "value": 67 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:wet_sponge_tnt": { "minecraft:skin_id": { "value": 68 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:troll_tnt": { "minecraft:skin_id": { "value": 70 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:void_eater_tnt": { "minecraft:skin_id": { "value": 71 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:world_ender_tnt": { "minecraft:skin_id": { "value": 72 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:blue_smoke_tnt": { "minecraft:skin_id": { "value": 73 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:brown_smoke_tnt": { "minecraft:skin_id": { "value": 74 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:cyan_smoke_tnt": { "minecraft:skin_id": { "value": 75 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:dark_green_smoke_tnt": { "minecraft:skin_id": { "value": 76 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:gray_smoke_tnt": { "minecraft:skin_id": { "value": 77 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:light_blue_smoke_tnt": { "minecraft:skin_id": { "value": 78 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:light_gray_smoke_tnt": { "minecraft:skin_id": { "value": 79 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:lime_smoke_tnt": { "minecraft:skin_id": { "value": 80 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:magenta_smoke_tnt": { "minecraft:skin_id": { "value": 81 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:orange_smoke_tnt": { "minecraft:skin_id": { "value": 82 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:pink_smoke_tnt": { "minecraft:skin_id": { "value": 83 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:purple_smoke_tnt": { "minecraft:skin_id": { "value": 84 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:red_smoke_tnt": { "minecraft:skin_id": { "value": 85 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:white_smoke_tnt": { "minecraft:skin_id": { "value": 86 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:yellow_smoke_tnt": { "minecraft:skin_id": { "value": 87 }, "minecraft:scale": { "value": 0.98 } },
+      "sndbx:lucky_tnt": { "minecraft:skin_id": { "value": 89 }, "minecraft:scale": { "value": 0.98 } },
+      
+      "sndbx:black_hole_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 1
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:big_bertha_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 20 
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        }, 
+        "minecraft:collision_box": { 
+          "width": 1.0, 
+          "height": 3.4 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:lightning_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 26
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:mega_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 27 
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:party_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 28 
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:super_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 32 
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:ultra_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 34
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:equaliser_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 52
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:infinity_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 54
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.2, 1.2, 1.2]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.2, 1.2, 1.2]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:magnet_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 56
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:miners_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 57
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:time_slower_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 69
+        }, 
+        "minecraft:scale": { 
+          "value": 0.98 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1.25, 1.25, 1.25]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      },
+
+      "sndbx:doomsday_tnt": { 
+        "minecraft:skin_id": { 
+          "value": 88 
+        }, 
+        "minecraft:scale": { 
+          "value": 0.90 
+        }, 
+        "minecraft:collision_box": { 
+          "width": 3.0, 
+          "height": 3.0 
+        },
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [-7, 50, 0],
+              "scale": [1, 1, 1]
+            },
+            "picker_offsets": {
+              "translate": [0, 19, 0],
+              "scale": [1, 1, 1]
+            },
+            "skin_list": [ { "variant": 0 } ]
+          }
+        }
+      }
+    },
+    
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:skin_id": { 
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "display_model",
+          "display_tnt",
+          "display_showcase",
+          "inanimate"
+        ]
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:npc": {
+        "npc_data": {
+          "portrait_offsets": {
+            "translate": [-7, 50, 0],
+            "scale": [1.75, 1.75, 1.75]
+          },
+          "picker_offsets": {
+            "translate": [0, 19, 0],
+            "scale": [1.7, 1.7, 1.7]
+          },
+          "skin_list": [
+            { "variant": 0 },
+            { "variant": 1 },
+            { "variant": 2 },
+            { "variant": 3 },
+            { "variant": 4 },
+            { "variant": 5 },
+            { "variant": 6 },
+            { "variant": 7 },
+            { "variant": 8 },
+            { "variant": 9 },
+            { "variant": 10 },
+            { "variant": 11 },
+            { "variant": 12 },
+            { "variant": 13 },
+            { "variant": 14 },
+            { "variant": 15 },
+            { "variant": 16 },
+            { "variant": 17 },
+            { "variant": 18 },
+            { "variant": 19 },
+            { "variant": 20 },
+            { "variant": 21 },
+            { "variant": 22 },
+            { "variant": 23 },
+            { "variant": 24 },
+            { "variant": 25 },
+            { "variant": 26 },
+            { "variant": 27 },
+            { "variant": 28 },
+            { "variant": 29 },
+            { "variant": 30 },
+            { "variant": 31 },
+            { "variant": 32 },
+            { "variant": 33 },
+            { "variant": 34 },
+            { "variant": 35 },
+            { "variant": 36 },
+            { "variant": 37 },
+            { "variant": 38 },
+            { "variant": 39 },
+            { "variant": 40 },
+            { "variant": 41 },
+            { "variant": 42 },
+            { "variant": 43 },
+            { "variant": 44 },
+            { "variant": 45 },
+            { "variant": 46 },
+            { "variant": 47 },
+            { "variant": 48 },
+            { "variant": 49 },
+            { "variant": 50 },
+            { "variant": 51 },
+            { "variant": 52 },
+            { "variant": 53 },
+            { "variant": 54 },
+            { "variant": 55 },
+            { "variant": 56 },
+            { "variant": 57 },
+            { "variant": 59 },
+            { "variant": 60 },
+            { "variant": 61 },
+            { "variant": 62 },
+            { "variant": 63 },
+            { "variant": 64 },
+            { "variant": 65 },
+            { "variant": 66 },
+            { "variant": 67 },
+            { "variant": 68 },
+            { "variant": 69 },
+            { "variant": 70 },
+            { "variant": 71 },
+            { "variant": 72 },
+            { "variant": 73 },
+            { "variant": 74 },
+            { "variant": 75 },
+            { "variant": 76 },
+            { "variant": 77 },
+            { "variant": 78 },
+            { "variant": 79 },
+            { "variant": 80 },
+            { "variant": 81 },
+            { "variant": 82 },
+            { "variant": 83 },
+            { "variant": 84 },
+            { "variant": 85 },
+            { "variant": 86 },
+            { "variant": 87 },
+            { "variant": 88 },
+            { "variant": 89 }
+          ]
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "void",
+            "damage_multiplier": 10e7,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  { "test": "has_damage", "value": "anvil" },
+                  { "test": "has_damage", "value": "block_explosion" },
+                  { "test": "has_damage", "value": "entity_explosion" },
+                  { "test": "has_damage", "value": "fire" },
+                  { "test": "has_damage", "value": "fire_tick" },
+                  { "test": "has_damage", "value": "lava" },
+                  { "test": "has_damage", "value": "projectile" }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "operator": "!=", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" },
+                  {
+                    "any_of": [
+                      { "test": "has_ability", "subject": "other", "operator": "!=", "value": "instabuild" },
+                      { "test": "is_sneaking", "subject": "other", "value": false },
+                      { "test": "has_tag", "subject": "other", "operator": "!=", "value": "sndbx_dev" }
+                    ]
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" },
+                  { "test": "has_ability", "subject": "other", "value": "instabuild" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "has_tag", "subject": "other", "value": "sndbx_dev" }
+                ]
+              },
+              "target": "self",
+              "event": "sndbx:despawn"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:nameable": {
+        "always_show": false,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "value": "despawn"
+                }
+              ] 
+            },
+            "event": "sndbx:despawn"
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_tag",
+                  "value": "reset"
+                },
+                {
+                  "all_of": [
+                    {
+                      "test": "is_skin_id",
+                      "operator": "=",
+                      "value": 0
+                    },
+                    {
+                      "none_of": [
+                        { "test": "has_tag", "value": "tnt_display_black_hole_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_base_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_black_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_blue_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_brown_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_cyan_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_gray_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_green_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_light_blue_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_light_gray_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_lime_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_magenta_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_orange_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_pink_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_purple_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_red_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_white_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_yellow_colored_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_arctic_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_big_bertha_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_blast_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_blaze_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_fireball_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_fish_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_galaxy_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_lightning_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_mega_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_party_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_potion_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_scatter_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_sticky_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_super_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_tornado_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_ultra_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_wither_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_axolotl_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_bat_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_cat_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_chicken_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_cow_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_fox_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_parrot_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_pig_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_polar_bear_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_rabbit_mob_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_blessed_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_butterfly_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_circle_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_dinnerbone_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_dynamite_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_ender_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_equaliser_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_gravitational_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_infinity_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_magic_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_magnet_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_miners_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_napalm_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_patient_zero_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_device_crasher_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_portal_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_rainbow_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_shulker_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_black_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_split_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_sponge_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_wet_sponge_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_time_slower_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_troll_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_void_eater_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_world_ender_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_blue_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_brown_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_cyan_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_dark_green_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_gray_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_light_blue_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_light_gray_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_lime_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_magenta_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_orange_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_pink_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_purple_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_red_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_white_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_yellow_smoke_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_doomsday_tnt" },
+                        { "test": "has_tag", "value": "tnt_display_lucky_tnt" }
+                      ]
+                    }
+                  ]
+                }
+              ] 
+            },
+            "event": "sndbx:base_tnt"
+          },
+
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_black_hole" } ] }, "event": "sndbx:black_hole_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_base" } ] }, "event": "sndbx:base_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_black_colored" } ] }, "event": "sndbx:black_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_blue_colored" } ] }, "event": "sndbx:blue_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_brown_colored" } ] }, "event": "sndbx:brown_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_cyan_colored" } ] }, "event": "sndbx:cyan_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_gray_colored" } ] }, "event": "sndbx:gray_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_green_colored" } ] }, "event": "sndbx:green_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_light_blue_colored" } ] }, "event": "sndbx:light_blue_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_light_gray_colored" } ] }, "event": "sndbx:light_gray_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_lime_colored" } ] }, "event": "sndbx:lime_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_magenta_colored" } ] }, "event": "sndbx:magenta_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_orange_colored" } ] }, "event": "sndbx:orange_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_pink_colored" } ] }, "event": "sndbx:pink_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_purple_colored" } ] }, "event": "sndbx:purple_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_red_colored" } ] }, "event": "sndbx:red_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_white_colored" } ] }, "event": "sndbx:white_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_yellow_colored" } ] }, "event": "sndbx:yellow_colored_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_arctic" } ] }, "event": "sndbx:arctic_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_big_bertha" } ] }, "event": "sndbx:big_bertha_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_blast" } ] }, "event": "sndbx:blast_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_blaze" } ] }, "event": "sndbx:blaze_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_fireball" } ] }, "event": "sndbx:fireball_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_fish" } ] }, "event": "sndbx:fish_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_galaxy" } ] }, "event": "sndbx:galaxy_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_lightning" } ] }, "event": "sndbx:lightning_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_mega" } ] }, "event": "sndbx:mega_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_party" } ] }, "event": "sndbx:party_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_potion" } ] }, "event": "sndbx:potion_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_scatter" } ] }, "event": "sndbx:scatter_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_sticky" } ] }, "event": "sndbx:sticky_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_super" } ] }, "event": "sndbx:super_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_tornado" } ] }, "event": "sndbx:tornado_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_ultra" } ] }, "event": "sndbx:ultra_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_wither" } ] }, "event": "sndbx:wither_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_axolotl_mob" } ] }, "event": "sndbx:axolotl_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_bat_mob" } ] }, "event": "sndbx:bat_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_cat_mob" } ] }, "event": "sndbx:cat_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_chicken_mob" } ] }, "event": "sndbx:chicken_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_cow_mob" } ] }, "event": "sndbx:cow_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_fox_mob" } ] }, "event": "sndbx:fox_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_parrot_mob" } ] }, "event": "sndbx:parrot_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_pig_mob" } ] }, "event": "sndbx:pig_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_polar_bear_mob" } ] }, "event": "sndbx:polar_bear_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_rabbit_mob" } ] }, "event": "sndbx:rabbit_mob_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_blessed" } ] }, "event": "sndbx:blessed_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_butterfly" } ] }, "event": "sndbx:butterfly_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_circle" } ] }, "event": "sndbx:circle_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_dinnerbone" } ] }, "event": "sndbx:dinnerbone_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_dynamite" } ] }, "event": "sndbx:dynamite_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_ender" } ] }, "event": "sndbx:ender_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_equaliser" } ] }, "event": "sndbx:equaliser_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_gravitational" } ] }, "event": "sndbx:gravitational_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_infinity" } ] }, "event": "sndbx:infinity_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_magic" } ] }, "event": "sndbx:magic_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_magnet" } ] }, "event": "sndbx:magnet_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_miners" } ] }, "event": "sndbx:miners_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_napalm" } ] }, "event": "sndbx:napalm_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_patient_zero" } ] }, "event": "sndbx:patient_zero_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_device_crasher" } ] }, "event": "sndbx:device_crasher_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_portal" } ] }, "event": "sndbx:portal_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_rainbow" } ] }, "event": "sndbx:rainbow_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_shulker" } ] }, "event": "sndbx:shulker_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_black_smoke" } ] }, "event": "sndbx:black_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_split" } ] }, "event": "sndbx:split_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_sponge" } ] }, "event": "sndbx:sponge_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_wet_sponge" } ] }, "event": "sndbx:wet_sponge_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_time_slower" } ] }, "event": "sndbx:time_slower_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_troll" } ] }, "event": "sndbx:troll_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_void_eater" } ] }, "event": "sndbx:void_eater_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_world_ender" } ] }, "event": "sndbx:world_ender_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_blue_smoke" } ] }, "event": "sndbx:blue_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_brown_smoke" } ] }, "event": "sndbx:brown_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_cyan_smoke" } ] }, "event": "sndbx:cyan_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_dark_green_smoke" } ] }, "event": "sndbx:dark_green_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_gray_smoke" } ] }, "event": "sndbx:gray_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_light_blue_smoke" } ] }, "event": "sndbx:light_blue_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_light_gray_smoke" } ] }, "event": "sndbx:light_gray_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_lime_smoke" } ] }, "event": "sndbx:lime_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_magenta_smoke" } ] }, "event": "sndbx:magenta_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_orange_smoke" } ] }, "event": "sndbx:orange_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_pink_smoke" } ] }, "event": "sndbx:pink_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_purple_smoke" } ] }, "event": "sndbx:purple_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_red_smoke" } ] }, "event": "sndbx:red_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_white_smoke" } ] }, "event": "sndbx:white_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_yellow_smoke" } ] }, "event": "sndbx:yellow_smoke_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_doomsday" } ] }, "event": "sndbx:doomsday_tnt" },
+          { "filters": { "all_of": [ { "test": "is_skin_id", "operator": "<", "value": 1 }, { "test": "has_tag", "value": "tnt_display_lucky" } ] }, "event": "sndbx:lucky_tnt" }
+        ]
+      }
+    },
+    
+    "events": {
+      "sndbx:despawn": { 
+        "add": {
+          "component_groups": [ 
+            "sndbx:despawn"
+          ]
+        }
+      },
+      
+      "sndbx:black_hole_tnt": { "add": { "component_groups": [ "sndbx:black_hole_tnt" ] } },
+      "sndbx:base_tnt": { "add": { "component_groups": [ "sndbx:base_tnt" ] } },
+      "sndbx:black_colored_tnt": { "add": { "component_groups": [ "sndbx:black_colored_tnt" ] } },
+      "sndbx:blue_colored_tnt": { "add": { "component_groups": [ "sndbx:blue_colored_tnt" ] } },
+      "sndbx:brown_colored_tnt": { "add": { "component_groups": [ "sndbx:brown_colored_tnt" ] } },
+      "sndbx:cyan_colored_tnt": { "add": { "component_groups": [ "sndbx:cyan_colored_tnt" ] } },
+      "sndbx:gray_colored_tnt": { "add": { "component_groups": [ "sndbx:gray_colored_tnt" ] } },
+      "sndbx:green_colored_tnt": { "add": { "component_groups": [ "sndbx:green_colored_tnt" ] } },
+      "sndbx:light_blue_colored_tnt": { "add": { "component_groups": [ "sndbx:light_blue_colored_tnt" ] } },
+      "sndbx:light_gray_colored_tnt": { "add": { "component_groups": [ "sndbx:light_gray_colored_tnt" ] } },
+      "sndbx:lime_colored_tnt": { "add": { "component_groups": [ "sndbx:lime_colored_tnt" ] } },
+      "sndbx:magenta_colored_tnt": { "add": { "component_groups": [ "sndbx:magenta_colored_tnt" ] } },
+      "sndbx:orange_colored_tnt": { "add": { "component_groups": [ "sndbx:orange_colored_tnt" ] } },
+      "sndbx:pink_colored_tnt": { "add": { "component_groups": [ "sndbx:pink_colored_tnt" ] } },
+      "sndbx:purple_colored_tnt": { "add": { "component_groups": [ "sndbx:purple_colored_tnt" ] } },
+      "sndbx:red_colored_tnt": { "add": { "component_groups": [ "sndbx:red_colored_tnt" ] } },
+      "sndbx:white_colored_tnt": { "add": { "component_groups": [ "sndbx:white_colored_tnt" ] } },
+      "sndbx:yellow_colored_tnt": { "add": { "component_groups": [ "sndbx:yellow_colored_tnt" ] } },
+      "sndbx:arctic_tnt": { "add": { "component_groups": [ "sndbx:arctic_tnt" ] } },
+      "sndbx:big_bertha_tnt": { "add": { "component_groups": [ "sndbx:big_bertha_tnt" ] } },
+      "sndbx:blast_tnt": { "add": { "component_groups": [ "sndbx:blast_tnt" ] } },
+      "sndbx:blaze_tnt": { "add": { "component_groups": [ "sndbx:blaze_tnt" ] } },
+      "sndbx:fireball_tnt": { "add": { "component_groups": [ "sndbx:fireball_tnt" ] } },
+      "sndbx:fish_tnt": { "add": { "component_groups": [ "sndbx:fish_tnt" ] } },
+      "sndbx:galaxy_tnt": { "add": { "component_groups": [ "sndbx:galaxy_tnt" ] } },
+      "sndbx:lightning_tnt": { "add": { "component_groups": [ "sndbx:lightning_tnt" ] } },
+      "sndbx:mega_tnt": { "add": { "component_groups": [ "sndbx:mega_tnt" ] } },
+      "sndbx:party_tnt": { "add": { "component_groups": [ "sndbx:party_tnt" ] } },
+      "sndbx:potion_tnt": { "add": { "component_groups": [ "sndbx:potion_tnt" ] } },
+      "sndbx:scatter_tnt": { "add": { "component_groups": [ "sndbx:scatter_tnt" ] } },
+      "sndbx:sticky_tnt": { "add": { "component_groups": [ "sndbx:sticky_tnt" ] } },
+      "sndbx:super_tnt": { "add": { "component_groups": [ "sndbx:super_tnt" ] } },
+      "sndbx:tornado_tnt": { "add": { "component_groups": [ "sndbx:tornado_tnt" ] } },
+      "sndbx:ultra_tnt": { "add": { "component_groups": [ "sndbx:ultra_tnt" ] } },
+      "sndbx:wither_tnt": { "add": { "component_groups": [ "sndbx:wither_tnt" ] } },
+      "sndbx:axolotl_mob_tnt": { "add": { "component_groups": [ "sndbx:axolotl_mob_tnt" ] } },
+      "sndbx:bat_mob_tnt": { "add": { "component_groups": [ "sndbx:bat_mob_tnt" ] } },
+      "sndbx:cat_mob_tnt": { "add": { "component_groups": [ "sndbx:cat_mob_tnt" ] } },
+      "sndbx:chicken_mob_tnt": { "add": { "component_groups": [ "sndbx:chicken_mob_tnt" ] } },
+      "sndbx:cow_mob_tnt": { "add": { "component_groups": [ "sndbx:cow_mob_tnt" ] } },
+      "sndbx:fox_mob_tnt": { "add": { "component_groups": [ "sndbx:fox_mob_tnt" ] } },
+      "sndbx:parrot_mob_tnt": { "add": { "component_groups": [ "sndbx:parrot_mob_tnt" ] } },
+      "sndbx:pig_mob_tnt": { "add": { "component_groups": [ "sndbx:pig_mob_tnt" ] } },
+      "sndbx:polar_bear_mob_tnt": { "add": { "component_groups": [ "sndbx:polar_bear_mob_tnt" ] } },
+      "sndbx:rabbit_mob_tnt": { "add": { "component_groups": [ "sndbx:rabbit_mob_tnt" ] } },
+      "sndbx:blessed_tnt": { "add": { "component_groups": [ "sndbx:blessed_tnt" ] } },
+      "sndbx:butterfly_tnt": { "add": { "component_groups": [ "sndbx:butterfly_tnt" ] } },
+      "sndbx:circle_tnt": { "add": { "component_groups": [ "sndbx:circle_tnt" ] } },
+      "sndbx:dinnerbone_tnt": { "add": { "component_groups": [ "sndbx:dinnerbone_tnt" ] } },
+      "sndbx:dynamite_tnt": { "add": { "component_groups": [ "sndbx:dynamite_tnt" ] } },
+      "sndbx:ender_tnt": { "add": { "component_groups": [ "sndbx:ender_tnt" ] } },
+      "sndbx:equaliser_tnt": { "add": { "component_groups": [ "sndbx:equaliser_tnt" ] } },
+      "sndbx:gravitational_tnt": { "add": { "component_groups": [ "sndbx:gravitational_tnt" ] } },
+      "sndbx:infinity_tnt": { "add": { "component_groups": [ "sndbx:infinity_tnt" ] } },
+      "sndbx:magic_tnt": { "add": { "component_groups": [ "sndbx:magic_tnt" ] } },
+      "sndbx:magnet_tnt": { "add": { "component_groups": [ "sndbx:magnet_tnt" ] } },
+      "sndbx:miners_tnt": { "add": { "component_groups": [ "sndbx:miners_tnt" ] } },
+      "sndbx:napalm_tnt": { "add": { "component_groups": [ "sndbx:napalm_tnt" ] } },
+      "sndbx:patient_zero_tnt": { "add": { "component_groups": [ "sndbx:patient_zero_tnt" ] } },
+      "sndbx:device_crasher_tnt": { "add": { "component_groups": [ "sndbx:device_crasher_tnt" ] } },
+      "sndbx:portal_tnt": { "add": { "component_groups": [ "sndbx:portal_tnt" ] } },
+      "sndbx:rainbow_tnt": { "add": { "component_groups": [ "sndbx:rainbow_tnt" ] } },
+      "sndbx:shulker_tnt": { "add": { "component_groups": [ "sndbx:shulker_tnt" ] } },
+      "sndbx:black_smoke_tnt": { "add": { "component_groups": [ "sndbx:black_smoke_tnt" ] } },
+      "sndbx:split_tnt": { "add": { "component_groups": [ "sndbx:split_tnt" ] } },
+      "sndbx:sponge_tnt": { "add": { "component_groups": [ "sndbx:sponge_tnt" ] } },
+      "sndbx:wet_sponge_tnt": { "add": { "component_groups": [ "sndbx:wet_sponge_tnt" ] } },
+      "sndbx:time_slower_tnt": { "add": { "component_groups": [ "sndbx:time_slower_tnt" ] } },
+      "sndbx:troll_tnt": { "add": { "component_groups": [ "sndbx:troll_tnt" ] } },
+      "sndbx:void_eater_tnt": { "add": { "component_groups": [ "sndbx:void_eater_tnt" ] } },
+      "sndbx:world_ender_tnt": { "add": { "component_groups": [ "sndbx:world_ender_tnt" ] } },
+      "sndbx:blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:blue_smoke_tnt" ] } },
+      "sndbx:brown_smoke_tnt": { "add": { "component_groups": [ "sndbx:brown_smoke_tnt" ] } },
+      "sndbx:cyan_smoke_tnt": { "add": { "component_groups": [ "sndbx:cyan_smoke_tnt" ] } },
+      "sndbx:dark_green_smoke_tnt": { "add": { "component_groups": [ "sndbx:dark_green_smoke_tnt" ] } },
+      "sndbx:gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:gray_smoke_tnt" ] } },
+      "sndbx:light_blue_smoke_tnt": { "add": { "component_groups": [ "sndbx:light_blue_smoke_tnt" ] } },
+      "sndbx:light_gray_smoke_tnt": { "add": { "component_groups": [ "sndbx:light_gray_smoke_tnt" ] } },
+      "sndbx:lime_smoke_tnt": { "add": { "component_groups": [ "sndbx:lime_smoke_tnt" ] } },
+      "sndbx:magenta_smoke_tnt": { "add": { "component_groups": [ "sndbx:magenta_smoke_tnt" ] } },
+      "sndbx:orange_smoke_tnt": { "add": { "component_groups": [ "sndbx:orange_smoke_tnt" ] } },
+      "sndbx:pink_smoke_tnt": { "add": { "component_groups": [ "sndbx:pink_smoke_tnt" ] } },
+      "sndbx:purple_smoke_tnt": { "add": { "component_groups": [ "sndbx:purple_smoke_tnt" ] } },
+      "sndbx:red_smoke_tnt": { "add": { "component_groups": [ "sndbx:red_smoke_tnt" ] } },
+      "sndbx:white_smoke_tnt": { "add": { "component_groups": [ "sndbx:white_smoke_tnt" ] } },
+      "sndbx:yellow_smoke_tnt": { "add": { "component_groups": [ "sndbx:yellow_smoke_tnt" ] } },
+      "sndbx:lucky_tnt": { "add": { "component_groups": [ "sndbx:lucky_tnt" ] } },
+      "sndbx:doomsday_tnt": { "add": { "component_groups": [ "sndbx:doomsday_tnt" ] } }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.split_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_exit": [
+            "/tag @s add levitation"
+          ],
+          "transitions": [
+            {
+              "str_0": "q.is_powered"
+            }
+          ]
+        },
+        "str_0": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~ 1.0 0.5",
+            "/structure load split_tnt:str_0 ~-2 ~ ~-2 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode"
+          ],
+          "transitions": [
+            {
+              "str_1": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ]
+        },
+        "str_1": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~ 1.0 0.5",
+            "/structure load split_tnt:str_1 ~-4 ~ ~-4 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode"
+          ],
+          "transitions": [
+            {
+              "str_2": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ]
+        },
+        "str_2": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~ 1.0 0.5",
+            "/structure load split_tnt:str_2 ~-6 ~ ~-6 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode"
+          ],
+          "transitions": [
+            {
+              "str_3": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ]
+        },
+        "str_3": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~ 1.0 0.5",
+            "/structure load split_tnt:str_3 ~-8 ~ ~-8 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode"
+          ],
+          "transitions": [
+            {
+              "str_4": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ]
+        },
+        "str_4": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~ 1.0 0.5",
+            "/structure load split_tnt:str_4 ~-10 ~ ~-10 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode"
+          ],
+          "transitions": [
+            {
+              "str_5": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ]
+        },
+        "str_5": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound mob.illusioner.teleport @a ~~~ 1.0 0.5",
+            "/structure load split_tnt:str_5 ~-12 ~ ~-12 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode"
+          ],
+          "transitions": [
+            {
+              "str_6": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ]
+        },
+        "str_6": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/structure load split_tnt:str_6 ~-14 ~ ~-14 0_degrees none true false",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_explode",
+            "@s sndbx:split_tnt_instant_expl",
+            "/event entity @e[tag=activated_split_tnt,type=sndbx:split_tnt] sndbx:split_tnt_instant_expl"
+          ]
+        }
+      }
+    }
+  }
+}

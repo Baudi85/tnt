@@ -1,0 +1,78 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.bunker_door.setup": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "open": "q.variant == 1 && q.skin_id == 0"
+            },
+            {
+              "close": "q.variant == 2 && q.skin_id == 0"
+            },
+            {
+              "opened": "query.variant == 1 && q.skin_id == 2" 
+            },
+            {
+              "closed": "query.variant == 2 && q.skin_id == 1" 
+            }
+          ]
+        },
+        "open": {
+          "animations": [
+            { "bunker_door_1.open": "query.mark_variant == 1" },
+            { "bunker_door_2.open": "query.mark_variant == 2" },
+            { "bunker_door_3.open": "query.mark_variant == 3" }
+          ],
+          "on_entry": [ 
+            "/execute @s[type=sndbx:bunker_door,tag=!bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff ~~1.25~-1.25",
+            "/execute @s[type=sndbx:bunker_door,tag=!bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff ~~1.25~1.25",
+            "/execute @s[type=sndbx:bunker_door,tag=bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff2 ~1.25~1.25~",
+            "/execute @s[type=sndbx:bunker_door,tag=bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff2 ~-1.25~1.25~",
+            "/playsound random.fizz @a ~~~"
+          ],
+          "transitions": [
+            {
+              "opened": "q.skin_id == 2"
+            }
+          ]
+        },
+        "opened": {
+          "transitions": [
+            {
+              "close": "q.variant == 2"
+            }
+          ]
+        }, 
+        "close": {
+          "animations": [
+            { "bunker_door_1.close": "query.mark_variant == 1" },
+            { "bunker_door_2.close": "query.mark_variant == 2" },
+            { "bunker_door_3.close": "query.mark_variant == 3" }
+          ],
+          "transitions": [
+            {
+              "closed": "q.skin_id == 1"
+            }
+          ]
+        },
+        "closed": {
+          "on_entry": [ 
+            "/execute @s[type=sndbx:bunker_door,tag=!bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff ~~1.25~-1.25",
+            "/execute @s[type=sndbx:bunker_door,tag=!bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff ~~1.25~1.25",
+            "/execute @s[type=sndbx:bunker_door,tag=bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff2 ~1.25~1.25~",
+            "/execute @s[type=sndbx:bunker_door,tag=bunker_door_1] ~ ~ ~ particle sndbx:gate_pressure_door_puff2 ~-1.25~1.25~",
+            "/playsound random.fizz @a ~~~"
+          ],
+          "transitions": [
+            {
+              "open": "q.variant == 1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

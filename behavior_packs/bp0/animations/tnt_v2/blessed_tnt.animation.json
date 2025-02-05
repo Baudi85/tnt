@@ -1,0 +1,12 @@
+{
+  "format_version":"1.10.0",
+  "animations": {
+    "animation.timer_blessedtnt": {
+      "timeline": {
+        "4.0": [ "/function tnt/blessed" ]
+      },
+      "animation_length": 4.1,
+      "loop": false
+    }
+  }
+}

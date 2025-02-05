@@ -1,0 +1,129 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.reset_selector.setup": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "press": "q.is_ignited"
+            }
+          ]
+        },
+        "press": {
+          "on_entry": [
+            "/execute @s[x=99,y=45,z=8,r=4] ~~~ tp @e[x=118,y=39,z=-7,dx=40,dy=111,dz=40,family=mob] ~ -82 ~",
+            "/execute @s[x=99,y=45,z=8,r=4] ~~~ function selectors/load",
+
+            "/execute @s[x=99,y=45,z=8,r=4] ~~~ particle sndbx:mcstructure_plot_change_x1 139.5 44.4 13.5",
+            "/execute @s[x=99,y=45,z=8,r=4] ~~~ particle sndbx:mcstructure_plot_change_x2 139.5 44.4 13.5",
+            "/execute @s[x=99,y=45,z=8,r=4] ~~~ particle sndbx:mcstructure_plot_change_z1 139.5 44.4 13.5",
+            "/execute @s[x=99,y=45,z=8,r=4] ~~~ particle sndbx:mcstructure_plot_change_z2 139.5 44.4 13.5",
+
+            "/execute @s[x=14,y=56,z=-25,r=4] ~~~ structure load mystructure:shooting_range 8 45 -76 0_degrees none layer_by_layer 3",
+            "/execute @s[x=14,y=56,z=-25,r=4] ~~~ particle sndbx:shooting_range_plot 17 47 -68",
+
+            "/playsound smithing_table.use @a ~~~",
+            "/execute @a[tag=!objective_outside_reset_structure,tag=objective_outside_select_structure] ~~~ function objectives/finished/outside_reset_structure"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_ignited"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.next_selector.setup": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "press": "q.is_ignited"
+            }
+          ],
+          "on_exit": [
+            "/scoreboard players add @e[type=minecraft:armor_stand,name=\"sndbx\"] randomStr 1"
+          ]
+        },
+        "press": {
+          "on_entry": [
+            "/tp @e[x=118,y=39,z=-7,dx=40,dy=111,dz=40,family=mob] ~ -82 ~",
+            "/function selectors/load",
+            "/playsound item.book.page_turn @a ~~~",
+
+            "/execute @a[tag=!objective_outside_select_structure,tag=objective_outside_shoot_structure] ~~~ function objectives/finished/outside_select_structure"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_ignited"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.gamemode_changer.setup": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "press": "q.is_ignited"
+            }
+          ],
+          "on_entry": [ "/tag @s remove on_click" ]
+        },
+        "press": {
+          "on_entry": [
+            "/execute @a[r=12,m=!c] ~~~ tag @e[type=sndbx:gamemode_changer] add on_click",
+            "/gamemode c @a[r=12,m=!c]",
+            "/execute @s[tag=!on_click] ~~~ gamemode s @a[r=12,m=!s]",
+
+            "/playsound random.click @a ~~~",
+            "/playsound note.pling @a ~~~ 1.0 2.0",
+            "/execute @s[tag=on_click] ~~~ playsound beacon.activate @a ~~~",
+            "/execute @s[tag=!on_click] ~~~ playsound beacon.deactivate @a ~~~",
+            "/execute @s[tag=on_click] ~~~ particle sndbx:gamemode_changer_panel 100 43.5 17",
+            "/execute @s[tag=!on_click] ~~~ particle sndbx:gamemode_changer_panel_survival 100 43.5 17",
+
+            "/execute @a[tag=!objective_outside_change_gamemode,tag=objective_outside_select_structure] ~~~ function objectives/finished/change_gamemode"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_ignited"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.teleporter.setup": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "press": "q.is_ignited"
+            }
+          ]
+        },
+        "press": {
+          "on_entry": [
+            "/playsound random.click @a ~~~",
+            "/playsound note.pling @a ~~~ 1.0 2.0",
+            "/spreadplayers 136 9 100 120 @p"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_ignited"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

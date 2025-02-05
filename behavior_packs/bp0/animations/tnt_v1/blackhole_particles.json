@@ -1,0 +1,37 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.blackhole_particles":{
+         "timeline":{
+            "1.0": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~" ],
+            "1.5":[ 
+               "/execute @a[tag=!achievements_pull_magnet_black_hole,r=12] ~~~ function achievements/pull_magnet_black_hole",
+
+            	"/playsound random.totem @a ~~0.5~ 1.0 0.6",
+            	"/particle sndbx:black_hole_ring2 ~~0.5~",
+            	"/summon sndbx:black_hole_tnt_offshoot2 ~~0.5~ sndbx:explosion_1"
+            ],
+            "2.5": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~" ],
+            "3.0":[ 
+               "/playsound random.totem @a ~~0.5~ 1.0 0.6",
+               "/particle sndbx:black_hole_ring3 ~~0.5~",
+               "/summon sndbx:black_hole_tnt_offshoot2 ~~0.5~ sndbx:explosion_2"
+            ],
+            "4.0": [ "/summon sndbx:black_hole_tnt_offshoot3 ~~0.5~" ],
+            "4.5":[ 
+            	"/playsound random.totem @a ~~0.5~ 1.0 0.6",
+            	"/particle sndbx:black_hole_ring2 ~~0.5~",
+            	"/summon sndbx:black_hole_tnt_offshoot2 ~~0.5~ sndbx:explosion_1"
+            ],
+            "6.0":[ 
+               "/playsound random.totem @a ~~0.5~ 1.0 0.6",
+               "/particle sndbx:black_hole_ring3 ~~0.5~",
+               "/summon sndbx:black_hole_tnt_offshoot2 ~~0.5~ sndbx:explosion_2",
+               "@s sndbx:despawn"
+            ]
+         },
+         "animation_length": 6.5,
+         "loop":false
+      }
+   }
+}

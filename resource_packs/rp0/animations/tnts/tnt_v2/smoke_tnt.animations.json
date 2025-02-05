@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.smoke_tnt.idle": {
+			"loop": true,
+			"bones": {
+				"engine": {
+					"scale": [1, "1 + math.sin(query.anim_time * 1200) * 0.002", 1]
+				}
+			}
+		},
+		"animation.smoke_tnt.explode": {
+			"loop": true,
+			"bones": {
+				"engine": {
+					"scale": [1, "1 + math.sin(query.anim_time * 2400) * (.02 * query.anim_time + 0.02) ", 1]
+				}
+			}
+		}
+	}
+}

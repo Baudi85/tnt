@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.lit_partytnt": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "overlay_color":{
+        "r": "variable.flash ? math.lerp(0,1,math.cos(query.life_time * 360))",
+        "g": "variable.flash ? math.lerp(0,1,-math.cos(query.life_time * 360))",
+        "b": "variable.flash ? math.lerp(0,1,math.sin(query.life_time * 360))",
+        "a": "variable.flash ? 0.5"
+      },
+      "is_hurt_color":{},
+      "on_fire_color":{}
+    }
+  }
+}

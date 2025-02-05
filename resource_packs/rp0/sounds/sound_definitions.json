@@ -1,0 +1,320 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "ambient.hangar.loop": {
+      "category": "ambient",
+      "sounds": [
+        {
+          "is3D" : false,
+          "name" : "sounds/ambient/hangar",
+          "stream" : true,
+          "volume" : 1.0
+        }
+      ]
+    },
+    
+    "ui.challenge_complete": {
+      "category": "ui",
+      "sounds": [
+        "sounds/ui/toast/challenge_complete"
+      ]
+    },
+    "ui.achievement": {
+      "category": "ui",
+      "sounds": [
+        "sounds/ui/toast/aether_achievement"
+      ]
+    },
+    
+    "ui.enchant": {
+      "category": "ui",
+      "sounds": [
+        "sounds/block/enchantment_table/enchant1",
+        "sounds/block/enchantment_table/enchant2",
+        "sounds/block/enchantment_table/enchant3"
+      ]
+    },
+    "ui.sndbx_button": {
+      "category": "ui",
+      "sounds": [
+        "sounds/ui/sndbx_button"
+      ]
+    },
+
+    "mob.illusioner.teleport": {
+      "category": "mob",
+      "sounds": [
+        "sounds/mob/illusioner/teleport1",
+        "sounds/mob/illusioner/teleport2"
+      ]
+    },
+
+    "mob.butterfly.idle": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/butterfly/idle1"
+      ]
+    },
+    "mob.butterfly.death": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/butterfly/death1"
+      ]
+    },
+    "mob.butterfly.hurt": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/butterfly/hurt1",
+        "sounds/butterfly/hurt2",
+        "sounds/butterfly/hurt3"
+      ]
+    },
+    "mob.butterfly.step": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/butterfly/flying1"
+      ]
+    },
+
+    "tnt.blessed": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/blessed/blessed_tnt"
+      ]
+    },
+    "tnt.butterfly": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/butterfly/butterfly_tnt"
+      ]
+    },
+    "tnt.dynamite": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/dynamite/dynamite_tnt"
+      ]
+    },
+    "tnt.magnet": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/magnet/magnet_tnt"
+      ]
+    },
+    "tnt.doomsday": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/doomsday/doomsday_tnt"
+      ]
+    },
+    "tnt.troll": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/troll/troll_tnt"
+      ]
+    },
+    "tnt.world_ender": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnts/world_ender/world_ender_tnt"
+      ]
+    },
+
+    "tnt_mech.dubstep": {
+      "__use_legacy_max_distance": "true",
+			"category": "music",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/dubstep",
+					"stream": true,
+					"volume": 0.30
+				}
+			]
+    },
+
+
+    // bunker door
+    "bunker_door.open": {
+      "category": "block",
+      "sounds": [
+        "sounds/bunker_door/opening"
+      ]
+    },
+    "bunker_door.close": {
+      "category": "block",
+      "sounds": [
+        "sounds/bunker_door/closing"
+      ]
+    },
+
+    // crates
+    "crate.1x1.break": {
+      "category": "block",
+      "sounds": [
+        "sounds/crates/crates_1x1_v1",
+        "sounds/crates/crates_1x1_v2"
+      ]
+    },
+    "crate.2x2_v1.break": {
+      "category": "block",
+      "sounds": [
+        "sounds/crates/crates_2x2_v1"
+      ]
+    },
+    "crate.2x2_v2.break": {
+      "category": "block",
+      "sounds": [
+        "sounds/crates/crates_2x2_v2_1",
+        "sounds/crates/crates_2x2_v2_2"
+      ]
+    },
+    "crate.3x3_v1.break": {
+      "category": "block",
+      "sounds": [
+        "sounds/crates/crates_3x3_v1"
+      ]
+    },
+    "crate.3x3_v2.break": {
+      "category": "block",
+      "sounds": [
+        "sounds/crates/crates_3x3_v2"
+      ]
+    },
+
+    // TNT mech
+    "tnt_mech.walk1": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/walk_1"
+      ]
+    },
+    "tnt_mech.walk2": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/walk_2"
+      ]
+    },
+    "tnt_mech.jump": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/jump"
+      ]
+    },
+    "tnt_mech.land": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/land"
+      ]
+    },
+    "tnt_mech.tnt_launcher": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/tnt_launcher"
+      ]
+    },
+    "tnt_mech.activation": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/mech_activation"
+      ]
+    },
+    "tnt_mech.deactivation": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/mech_deactivation"
+      ]
+    },
+    "tnt_mech.prejump": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/prejump"
+      ]
+    },
+    "tnt_mech.blade_idle": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/blade_idle"
+      ]
+    },
+    "tnt_mech.blade_attack": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/blade_attack"
+      ]
+    },
+    "tnt_mech.blade_activation": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mech/blade_activation"
+      ]
+    },
+
+    // escalator
+    "escalator.move": {
+      "category": "block",
+      "sounds": [
+        "sounds/escalator/escalator"
+      ]
+    },
+    
+    // elevator
+    "elevator.move": {
+      "category": "block",
+      "sounds": [
+        "sounds/elevator/elevator"
+      ]
+    },
+    "elevator.button": {
+      "category": "block",
+      "sounds": [
+        "sounds/elevator/button"
+      ]
+    },
+    "elevator.door": {
+      "category": "block",
+      "sounds": [
+        "sounds/elevator/door"
+      ]
+    },
+
+    // TNT cannon
+    "tnt_cannon.activate": {
+      "category": "block",
+      "sounds": [
+        "sounds/cannon/activate"
+      ]
+    },
+    "tnt_cannon.deactivate": {
+      "category": "block",
+      "sounds": [
+        "sounds/cannon/deactivate"
+      ]
+    },
+    "tnt_cannon.reload": {
+      "category": "block",
+      "sounds": [
+        "sounds/cannon/reload"
+      ]
+    },
+    "tnt_cannon.shooting": {
+      "category": "block",
+      "sounds": [
+        "sounds/cannon/shooting"
+      ]
+    },
+
+    // TNT Launcher
+    "tnt_launcher.attack": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnt_launcher/attack"
+      ]
+    },
+    "tnt_launcher.overheat": {
+      "category": "block",
+      "sounds": [
+        "sounds/tnt_launcher/overheat"
+      ]
+    }
+  }
+}

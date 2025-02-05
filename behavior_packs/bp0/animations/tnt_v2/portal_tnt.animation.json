@@ -1,0 +1,68 @@
+{
+  "format_version":"1.10.0",
+  "animations": {
+    "animation.portal_tnt.nether_perils": {
+      "timeline": {
+        "0.0": [
+          "/tag @s add levitation",
+          "/effect @s levitation 5 1 true"
+        ],
+        "0.5": [
+          "/summon piglin ~4~~ sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~4~~",
+          "/playsound mob.endermen.portal @a ~4~~"
+        ],
+        "1.0": [
+          "/summon piglin ~-4~~ sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~-4~~",
+          "/playsound mob.endermen.portal @a ~-4~~"
+        ],
+        "1.5": [
+          "/summon piglin ~~~4 sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~~~4",
+          "/playsound mob.endermen.portal @a ~~~4"
+        ],
+        "2.0": [
+          "/summon piglin ~~~-4 sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~~~-4",
+          "/playsound mob.endermen.portal @a ~~~-4"
+        ],
+        "2.5": [
+          "/summon piglin ~4~~-4 sndbx:portal_tnt_summon",
+          "/summon piglin ~-4~~4 sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~4~~-4",
+          "/particle sndbx:gateway_poof ~-4~~4",
+          "/playsound mob.endermen.portal @a ~4~~-4",
+          "/playsound mob.endermen.portal @a ~-4~~4"
+        ],
+        "3.0": [
+          "/summon piglin ~4~~4 sndbx:portal_tnt_summon",
+          "/summon piglin ~-4~~-4 sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~4~~4",
+          "/particle sndbx:gateway_poof ~-4~~-4",
+          "/playsound mob.endermen.portal @a ~4~~4",
+          "/playsound mob.endermen.portal @a ~-4~~-4"
+        ],
+        "3.5": [
+          "/summon piglin_brute ~4~~ sndbx:portal_tnt_summon",
+          "/summon piglin_brute ~-4~~ sndbx:portal_tnt_summon",
+          "/summon hoglin ~~~4 sndbx:portal_tnt_summon",
+          "/summon hoglin ~~~-4 sndbx:portal_tnt_summon",
+          "/particle sndbx:gateway_poof ~4~~",
+          "/particle sndbx:gateway_poof ~-4~~",
+          "/particle sndbx:gateway_poof ~~~4",
+          "/particle sndbx:gateway_poof ~~~-4",
+          "/playsound mob.endermen.portal @a ~4~~",
+          "/playsound mob.endermen.portal @a ~-4~~",
+          "/playsound mob.endermen.portal @a ~~~4",
+          "/playsound mob.endermen.portal @a ~~~-4"
+        ],
+        "4.0": [
+          "/function tnt/portal/main"
+        ]
+      },
+      "animation_length": 4.1,
+      "loop": false
+    }
+  }
+}

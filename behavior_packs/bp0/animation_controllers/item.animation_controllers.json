@@ -1,0 +1,120 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.item.root": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "execute": "q.is_powered > 0.0"
+            }
+          ]
+        },
+        "execute": {
+          "on_entry": [
+            "/execute @s[type=item,name=\"Black Hole TNT (v2)\",tag=!tnt.black_hole] ~ ~ ~ tag @s add tnt.black_hole",
+            "/execute @s[type=item,name=\"Base TNT [Dev]\",tag=!tnt.base] ~ ~ ~ tag @s add tnt.base",
+            "/execute @s[type=item,name=\"Black Colored TNT\",tag=!tnt.black_colored] ~ ~ ~ tag @s add tnt.black_colored",
+            "/execute @s[type=item,name=\"Blue Colored TNT\",tag=!tnt.blue_colored] ~ ~ ~ tag @s add tnt.blue_colored",
+            "/execute @s[type=item,name=\"Brown Colored TNT\",tag=!tnt.brown_colored] ~ ~ ~ tag @s add tnt.brown_colored",
+            "/execute @s[type=item,name=\"Cyan Colored TNT\",tag=!tnt.cyan_colored] ~ ~ ~ tag @s add tnt.cyan_colored",
+            "/execute @s[type=item,name=\"gray Colored TNT\",tag=!tnt.gray_colored] ~ ~ ~ tag @s add tnt.gray_colored",
+            "/execute @s[type=item,name=\"Green Colored TNT\",tag=!tnt.green_colored] ~ ~ ~ tag @s add tnt.green_colored",
+            "/execute @s[type=item,name=\"Light Blue Colored TNT\",tag=!tnt.light_blue_colored] ~ ~ ~ tag @s add tnt.light_blue_colored",
+            "/execute @s[type=item,name=\"Light gray Colored TNT\",tag=!tnt.light_gray_colored] ~ ~ ~ tag @s add tnt.light_gray_colored",
+            "/execute @s[type=item,name=\"Lime Colored TNT\",tag=!tnt.lime_colored] ~ ~ ~ tag @s add tnt.lime_colored",
+            "/execute @s[type=item,name=\"Magenta Colored TNT\",tag=!tnt.magenta_colored] ~ ~ ~ tag @s add tnt.magenta_colored",
+            "/execute @s[type=item,name=\"Orange Colored TNT\",tag=!tnt.orange_colored] ~ ~ ~ tag @s add tnt.orange_colored",
+            "/execute @s[type=item,name=\"Pink Colored TNT\",tag=!tnt.pink_colored] ~ ~ ~ tag @s add tnt.pink_colored",
+            "/execute @s[type=item,name=\"Purple Colored TNT\",tag=!tnt.purple_colored] ~ ~ ~ tag @s add tnt.purple_colored",
+            "/execute @s[type=item,name=\"Red Colored TNT\",tag=!tnt.red_colored] ~ ~ ~ tag @s add tnt.red_colored",
+            "/execute @s[type=item,name=\"White Colored TNT\",tag=!tnt.white_colored] ~ ~ ~ tag @s add tnt.white_colored",
+            "/execute @s[type=item,name=\"Yellow Colored TNT\",tag=!tnt.yellow_colored] ~ ~ ~ tag @s add tnt.yellow_colored",
+            "/execute @s[type=item,name=\"Arctic TNT\",tag=!tnt.arctic] ~ ~ ~ tag @s add tnt.arctic",
+            "/execute @s[type=item,name=\"Big Bertha TNT\",tag=!tnt.big_bertha] ~ ~ ~ tag @s add tnt.big_bertha",
+            "/execute @s[type=item,name=\"Blast\",tag=!tnt.blast] ~ ~ ~ tag @s add tnt.blast",
+            "/execute @s[type=item,name=\"Blaze TNT\",tag=!tnt.blaze] ~ ~ ~ tag @s add tnt.blaze",
+            "/execute @s[type=item,name=\"Fireball\",tag=!tnt.fireball] ~ ~ ~ tag @s add tnt.fireball",
+            "/execute @s[type=item,name=\"Fish TNT\",tag=!tnt.fish] ~ ~ ~ tag @s add tnt.fish",
+            "/execute @s[type=item,name=\"Galaxy TNT\",tag=!tnt.galaxy] ~ ~ ~ tag @s add tnt.galaxy",
+            "/execute @s[type=item,name=\"Lightning TNT\",tag=!tnt.lightning] ~ ~ ~ tag @s add tnt.lightning",
+            "/execute @s[type=item,name=\"Mega TNT\",tag=!tnt.mega] ~ ~ ~ tag @s add tnt.mega",
+            "/execute @s[type=item,name=\"Party TNT\",tag=!tnt.party] ~ ~ ~ tag @s add tnt.party",
+            "/execute @s[type=item,name=\"Potion TNT\",tag=!tnt.potion] ~ ~ ~ tag @s add tnt.potion",
+            "/execute @s[type=item,name=\"Scatter TNT\",tag=!tnt.scatter] ~ ~ ~ tag @s add tnt.scatter",
+            "/execute @s[type=item,name=\"Sticky TNT\",tag=!tnt.sticky] ~ ~ ~ tag @s add tnt.sticky",
+            "/execute @s[type=item,name=\"Super TNT\",tag=!tnt.super] ~ ~ ~ tag @s add tnt.super",
+            "/execute @s[type=item,name=\"Tornado TNT\",tag=!tnt.tornado] ~ ~ ~ tag @s add tnt.tornado",
+            "/execute @s[type=item,name=\"Ultra TNT\",tag=!tnt.ultra] ~ ~ ~ tag @s add tnt.ultra",
+            "/execute @s[type=item,name=\"Wither TNT\",tag=!tnt.wither] ~ ~ ~ tag @s add tnt.wither",
+            "/execute @s[type=item,name=\"Axolotl Mob TNT\",tag=!tnt.axolotl_mob] ~ ~ ~ tag @s add tnt.axolotl_mob",
+            "/execute @s[type=item,name=\"Bat Mob TNT\",tag=!tnt.bat_mob] ~ ~ ~ tag @s add tnt.bat_mob",
+            "/execute @s[type=item,name=\"Cat Mob TNT\",tag=!tnt.cat_mob] ~ ~ ~ tag @s add tnt.cat_mob",
+            "/execute @s[type=item,name=\"Chicken Mob TNT\",tag=!tnt.chicken_mob] ~ ~ ~ tag @s add tnt.chicken_mob",
+            "/execute @s[type=item,name=\"Cow Mob TNT\",tag=!tnt.cow_mob] ~ ~ ~ tag @s add tnt.cow_mob",
+            "/execute @s[type=item,name=\"Fox Mob TNT\",tag=!tnt.fox_mob] ~ ~ ~ tag @s add tnt.fox_mob",
+            "/execute @s[type=item,name=\"Parrot Mob TNT\",tag=!tnt.parrot_mob] ~ ~ ~ tag @s add tnt.parrot_mob",
+            "/execute @s[type=item,name=\"Pig Mob TNT\",tag=!tnt.pig_mob] ~ ~ ~ tag @s add tnt.pig_mob",
+            "/execute @s[type=item,name=\"Polar_bear Mob TNT\",tag=!tnt.polar_bear_mob] ~ ~ ~ tag @s add tnt.polar_bear_mob",
+            "/execute @s[type=item,name=\"Rabbit Mob TNT\",tag=!tnt.rabbit_mob] ~ ~ ~ tag @s add tnt.rabbit_mob",
+            "/execute @s[type=item,name=\"Blessed TNT\",tag=!tnt.blessed] ~ ~ ~ tag @s add tnt.blessed",
+            "/execute @s[type=item,name=\"Butterfly TNT\",tag=!tnt.butterfly] ~ ~ ~ tag @s add tnt.butterfly",
+            "/execute @s[type=item,name=\"Circle TNT\",tag=!tnt.circle] ~ ~ ~ tag @s add tnt.circle",
+            "/execute @s[type=item,name=\"Dinnerbone TNT\",tag=!tnt.dinnerbone] ~ ~ ~ tag @s add tnt.dinnerbone",
+            "/execute @s[type=item,name=\"Dynamite TNT\",tag=!tnt.dynamite] ~ ~ ~ tag @s add tnt.dynamite",
+            "/execute @s[type=item,name=\"Ender TNT\",tag=!tnt.ender] ~ ~ ~ tag @s add tnt.ender",
+            "/execute @s[type=item,name=\"Equaliser TNT\",tag=!tnt.equaliser] ~ ~ ~ tag @s add tnt.equaliser",
+            "/execute @s[type=item,name=\"Gravitational TNT\",tag=!tnt.gravitational] ~ ~ ~ tag @s add tnt.gravitational",
+            "/execute @s[type=item,name=\"Infinity TNT\",tag=!tnt.infinity] ~ ~ ~ tag @s add tnt.infinity",
+            "/execute @s[type=item,name=\"Magic TNT\",tag=!tnt.magic] ~ ~ ~ tag @s add tnt.magic",
+            "/execute @s[type=item,name=\"Magnet TNT\",tag=!tnt.magnet] ~ ~ ~ tag @s add tnt.magnet",
+            "/execute @s[type=item,name=\"Miners TNT\",tag=!tnt.miners] ~ ~ ~ tag @s add tnt.miners",
+            "/execute @s[type=item,name=\"Mob TNT\",tag=!tnt.mob] ~ ~ ~ tag @s add tnt.mob",
+            "/execute @s[type=item,name=\"Napalm TNT\",tag=!tnt.napalm] ~ ~ ~ tag @s add tnt.napalm",
+            "/execute @s[type=item,name=\"Patient Zero TNT\",tag=!tnt.patient_zero] ~ ~ ~ tag @s add tnt.patient_zero",
+            "/execute @s[type=item,name=\"Device Crasher TNT\",tag=!tnt.device_crasher] ~ ~ ~ tag @s add tnt.device_crasher",
+            "/execute @s[type=item,name=\"Portal TNT\",tag=!tnt.portal] ~ ~ ~ tag @s add tnt.portal",
+            "/execute @s[type=item,name=\"Rainbow TNT\",tag=!tnt.rainbow] ~ ~ ~ tag @s add tnt.rainbow",
+            "/execute @s[type=item,name=\"Shulker TNT\",tag=!tnt.shulker] ~ ~ ~ tag @s add tnt.shulker",
+            "/execute @s[type=item,name=\"Split TNT\",tag=!tnt.split] ~ ~ ~ tag @s add tnt.split",
+            "/execute @s[type=item,name=\"Sponge TNT\",tag=!tnt.sponge] ~ ~ ~ tag @s add tnt.sponge",
+            "/execute @s[type=item,name=\"Wet Sponge TNT\",tag=!tnt.wet_sponge] ~ ~ ~ tag @s add tnt.wet_sponge",
+            "/execute @s[type=item,name=\"Time Slower TNT\",tag=!tnt.time_slower] ~ ~ ~ tag @s add tnt.time_slower",
+            "/execute @s[type=item,name=\"Troll TNT\",tag=!tnt.troll] ~ ~ ~ tag @s add tnt.troll",
+            "/execute @s[type=item,name=\"Void Eater TNT\",tag=!tnt.void_eater] ~ ~ ~ tag @s add tnt.void_eater",
+            "/execute @s[type=item,name=\"World Ender TNT\",tag=!tnt.world_ender] ~ ~ ~ tag @s add tnt.world_ender",
+
+
+            "/execute @s[type=item,name=\"Black Smoke TNT\",tag=!tnt.black_smoke] ~ ~ ~ tag @s add tnt.black_smoke",
+            "/execute @s[type=item,name=\"Blue Smoke TNT\",tag=!tnt.blue_smoke] ~ ~ ~ tag @s add tnt.blue_smoke",
+            "/execute @s[type=item,name=\"Brown Smoke TNT\",tag=!tnt.brown_smoke] ~ ~ ~ tag @s add tnt.brown_smoke",
+            "/execute @s[type=item,name=\"Cyan Smoke TNT\",tag=!tnt.cyan_smoke] ~ ~ ~ tag @s add tnt.cyan_smoke",
+            "/execute @s[type=item,name=\"Dark Green Smoke TNT\",tag=!tnt.dark_green_smoke] ~ ~ ~ tag @s add tnt.dark_green_smoke",
+            "/execute @s[type=item,name=\"gray Smoke TNT\",tag=!tnt.gray_smoke] ~ ~ ~ tag @s add tnt.gray_smoke",
+            "/execute @s[type=item,name=\"Light Blue Smoke TNT\",tag=!tnt.light_blue_smoke] ~ ~ ~ tag @s add tnt.light_blue_smoke",
+            "/execute @s[type=item,name=\"Light gray Smoke TNT\",tag=!tnt.light_gray_smoke] ~ ~ ~ tag @s add tnt.light_gray_smoke",
+            "/execute @s[type=item,name=\"Lime Smoke TNT\",tag=!tnt.lime_smoke] ~ ~ ~ tag @s add tnt.lime_smoke",
+            "/execute @s[type=item,name=\"Magenta Smoke TNT\",tag=!tnt.magenta_smoke] ~ ~ ~ tag @s add tnt.magenta_smoke",
+            "/execute @s[type=item,name=\"Orange Smoke TNT\",tag=!tnt.orange_smoke] ~ ~ ~ tag @s add tnt.orange_smoke",
+            "/execute @s[type=item,name=\"Pink Smoke TNT\",tag=!tnt.pink_smoke] ~ ~ ~ tag @s add tnt.pink_smoke",
+            "/execute @s[type=item,name=\"Purple Smoke TNT\",tag=!tnt.purple_smoke] ~ ~ ~ tag @s add tnt.purple_smoke",
+            "/execute @s[type=item,name=\"Red Smoke TNT\",tag=!tnt.red_smoke] ~ ~ ~ tag @s add tnt.red_smoke",
+            "/execute @s[type=item,name=\"White Smoke TNT\",tag=!tnt.white_smoke] ~ ~ ~ tag @s add tnt.white_smoke",
+            "/execute @s[type=item,name=\"Yellow Smoke TNT\",tag=!tnt.yellow_smoke] ~ ~ ~ tag @s add tnt.yellow_smoke",
+
+            "/execute @s[type=item,name=\"Doomsday TNT\",tag=!tnt.doomsday] ~ ~ ~ tag @s add tnt.doomsday",
+            "/execute @s[type=item,name=\"Lucky TNT\",tag=!tnt.lucky] ~ ~ ~ tag @s add tnt.lucky",
+
+            "/execute @s[type=item,name=\"TNT Rocket Launcher\",tag=!tnt.rocket_launcher] ~ ~ ~ tag @s add tnt.rocket_launcher"
+          ],
+          "transitions": [
+            {
+              "default": "q.is_powered <= 0.0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

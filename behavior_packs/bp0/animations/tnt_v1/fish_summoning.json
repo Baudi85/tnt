@@ -1,0 +1,12 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.fish_summoning":{
+         "timeline":{
+            "0.1":[ "/function tnt/fish_tnt", "@s sndbx:despawn" ]
+         },
+         "animation_length": 0.15,
+         "loop":false
+      }
+   }
+}

@@ -1,0 +1,49 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.void_eater_tnt.floating": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [0, 0, "-math.cos(query.anim_time * 700.0) * 20.0"]
+				},
+				"bone2": {
+					"rotation": [0, "math.cos(query.anim_time * 700.0) * 1.0", "math.cos(query.anim_time * 700.0) * 20.0"]
+				},
+				"tnt": {
+					"position": [0, "math.cos(query.anim_time * 700.0 - 50) * 1.0", 0]
+				}
+			}
+		},
+		"animation.void_eater_tnt.spinning": {
+			"loop": true,
+			"bones": {
+				"bb_main": {
+					"rotation": [0, "(q.anim_time * 2.0) * 360.0", 0]
+				},
+				"bone": {
+					"rotation": ["47.5 + math.cos(query.anim_time * 700.0) * 1.0", 0, 0]
+				},
+				"bone2": {
+					"rotation": ["47.5 + math.cos(query.anim_time * 700.0) * 1.0", 0, 0]
+				}
+			}
+		},
+		"animation.void_eater_tnt.idle": {
+			"loop": true,
+			"bones": {
+				"tnt": {
+					"scale": [1, "1 + math.sin(query.anim_time * 150) * .05", 1]
+				},
+				"bone": {
+					"rotation": [0, 0, "math.cos(query.anim_time * 150 - 5) *-3"],
+					"scale": [1, "1 + math.sin(query.anim_time * 150) * -.05", 1]
+				},
+				"bone2": {
+					"rotation": [0, 0, "math.cos(query.anim_time * 150 - 5) *3"],
+					"scale": [1, "1 + math.sin(query.anim_time * 150) * -.05", 1]
+				}
+			}
+		}
+	}
+}

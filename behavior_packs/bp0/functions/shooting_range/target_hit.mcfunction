@@ -1,0 +1,1 @@
+testforblock 11 50 -65 target

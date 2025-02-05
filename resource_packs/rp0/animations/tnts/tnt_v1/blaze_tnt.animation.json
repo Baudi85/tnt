@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+	"animations": {
+		"animation.blazetnt.idle": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"Rods1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [0, -360, 0]
+					}
+				},
+				"Rods2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [0, 360, 0]
+					}
+				}
+			}
+		},
+		"animation.blazetnt_smoke": {
+      "loop": true,
+      "animation_length": 5.0,
+      "particle_effects": {
+        "0.0": [
+					{
+						"effect": "smoke",
+						"locator": "blaze_base"
+					},
+					{
+						"effect": "blaze_tnt_particle",
+						"locator": "blaze_base"
+					}
+				]	
+      }
+    },
+    "animation.blazetnt_fire": {
+      "loop": true,
+      "animation_length": 5.0,
+      "particle_effects": {
+        "0.0": {
+          "effect": "fire",
+          "locator": "blaze_base"
+        }
+      }
+    }
+	}
+}

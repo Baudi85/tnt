@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_cannon.setup": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "inactive"
+          ],
+          "transitions": [
+            {
+              "has_rider": "q.has_rider"
+            }
+          ]
+        },
+        "has_rider": {
+          "animations": [
+            "active"
+          ],
+          "transitions": [
+            {
+              "default": "!q.has_rider"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.shoot": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.is_sheared"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [ "fire" ],
+          "particle_effects": [
+            { 
+              "effect": "cannon_fire",
+              "locator": "tnt_base"
+            }
+          ],
+          "transitions": [
+            {
+              "reload": "q.any_animation_finished && q.is_ignited"
+            }
+          ]
+        },
+        "reload": {
+          "animations": [ "reload" ],
+          "transitions": [
+            {
+              "default": "q.any_animation_finished && !q.is_ignited"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

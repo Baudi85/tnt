@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.equaliser_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.life_time >= 0.1"
+            }
+          ],
+          "on_entry": [
+            "/execute @s ~~~ detect ~~-2~ bedrock -1 playsound random.break @a ~~~",
+            "/execute @s ~~~ detect ~~-1~ bedrock -1 playsound random.break @a ~~~",
+            
+            "/execute @s ~~~ detect ~~-2~ bedrock -1 particle sndbx:squeezed_evaporation ~~0.6~",
+            "/execute @s ~~~ detect ~~-1~ bedrock -1 particle sndbx:squeezed_evaporation ~~0.6~",
+            
+            "/execute @s ~~~ detect ~~-2~ bedrock -1 event entity @s sndbx:tnt_remove_and_drop_item",
+            "/execute @s ~~~ detect ~~-1~ bedrock -1 event entity @s sndbx:tnt_remove_and_drop_item",
+            
+            "/particle sndbx:dirt_push ~~0.1~",
+            "/playsound random.fuse @a[r=20] ~~~",
+            "/playsound tile.piston.in @a[r=20] ~~~"
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.on_explode = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.on_explode) >= 4.0"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/function tnt/equaliser",
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

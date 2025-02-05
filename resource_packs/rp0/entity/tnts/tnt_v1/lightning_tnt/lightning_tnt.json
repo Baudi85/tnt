@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:lightning_tnt",
+      "geometry": {
+        "default": "geometry.lightningtnt"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "primed": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/lightning_tnt/lightning_tnt"
+      },
+      "particle_effects":{
+        "lightning": "sndbx:lightning_bolts"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          "particle",
+          { "explosion": "q.life_time >= 5.5" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "particle": "animation.lightning_particle_lit"
+      },
+      "render_controllers": [
+        "controller.render.lit_lightningtnt"
+      ],
+      "sound_effects": {
+        "ignited": "ambient.weather.thunder"
+      }
+    }
+  }
+}

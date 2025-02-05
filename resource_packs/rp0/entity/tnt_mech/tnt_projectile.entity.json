@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:tnt_projectile",
+      "geometry": {
+        "default": "geometry.base_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/base_tnt"
+      },
+      "scripts": {
+        "scale": 0.5,
+        "pre_animation": [ 
+          "variable.flash = (math.mod(query.life_time * 500.0, 100.0) > 50.0);"
+        ],
+        "animate": [ "billboard" ]
+      },
+      "animations": {
+        "billboard": "animation.tnt.projectile"
+      },
+      "render_controllers": [
+        { "controller.render.sndbx_tnt.lit": "q.is_shaking ? (q.distance_from_camera >= 5.5) : 1" }
+      ]
+    }
+  }
+}

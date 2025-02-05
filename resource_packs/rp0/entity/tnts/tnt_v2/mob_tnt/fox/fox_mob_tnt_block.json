@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:fox_mob_tnt_block",
+      "geometry": {
+        "default": "geometry.mob_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/mob_tnt/fox_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "tnt_idle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "tnt_idle": "animation.mob_tnt.idle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "fox_mob_tnt"
+      }
+    }
+  }
+}

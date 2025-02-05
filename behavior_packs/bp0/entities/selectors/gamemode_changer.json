@@ -1,0 +1,210 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:gamemode_changer",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "setup" ]
+      },
+      "animations": {
+        "setup": "controller.animation.gamemode_changer.setup"
+      }
+    },
+
+    "component_groups": {
+      "sndbx:gamemode_selector_on": {
+        "minecraft:is_ignited": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.79999,
+          "time_down_event": {
+            "event": "sndbx:reset_button",
+            "target": "self"
+          }
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "any",
+            "deals_damage": false
+          }
+        }
+      },
+      "sndbx:can_be_turned_on": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "void",
+              "damage_multiplier": 10e7,
+              "deals_damage": true
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    { "test": "has_damage", "value": "anvil" },
+                    { "test": "has_damage", "value": "block_explosion" },
+                    { "test": "has_damage", "value": "entity_explosion" },
+                    { "test": "has_damage", "value": "fire" },
+                    { "test": "has_damage", "value": "fire_tick" },
+                    { "test": "has_damage", "value": "lava" },
+                    { "test": "has_damage", "value": "projectile" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "operator": "!=", "value": "player" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "has_tag", "subject": "other", "operator": "!=", "value": "objective_outside_reset_structure" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "has_tag", "subject": "other", "value": "objective_outside_reset_structure" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                },
+                "event": "sndbx:gamemode_selector_on"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    { 
+                      "test": "has_tag", 
+                      "subject": "other", 
+                      "value": "objective_outside_reset_structure" 
+                    }
+                  ]
+                },
+                "event": "sndbx:gamemode_selector_on",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": { }
+      }
+    },
+
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": true
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:health": {
+        "min": 1,
+        "max": 1,
+        "value": 1
+      },
+      "minecraft:scale": {
+        "value": 0.8
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "any",
+          "deals_damage": false
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "inanimate",
+          "selector",
+          "gamemode_shanger"
+        ]
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:can_be_turned_on"
+          ]
+        }
+      },
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      },
+
+      "sndbx:gamemode_selector_on": {
+        "add": {
+          "component_groups": [
+            "sndbx:gamemode_selector_on"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:can_be_turned_on"
+          ]
+        }
+      },
+
+      "sndbx:reset_button": {
+        "remove": {
+          "component_groups": [
+            "sndbx:gamemode_selector_on"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "sndbx:can_be_turned_on"
+          ]
+        }
+      }
+    }
+  }
+}

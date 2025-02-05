@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.bunker_door.setup": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "open": "q.variant == 1 && q.skin_id == 0"
+            },
+            {
+              "close": "q.variant == 2 && q.skin_id == 0"
+            },
+            {
+              "opened": "query.variant == 1 && q.skin_id == 2" 
+            },
+            {
+              "closed": "query.variant == 2 && q.skin_id == 1" 
+            }
+          ]
+        },
+        "open": {
+          "animations": [
+            "open"
+          ],
+          "transitions": [
+            {
+              "opened": "q.skin_id == 2"
+            }
+          ]
+        },
+        "opened": {
+          "animations": [
+            "opened"
+          ],
+          "transitions": [
+            {
+              "close": "q.variant == 2"
+            }
+          ]
+        }, 
+        "close": {
+          "animations": [
+            "close"
+          ],
+          "transitions": [
+            {
+              "closed": "q.skin_id == 1"
+            }
+          ]
+        },
+        "closed": {
+          "animations": [
+            "closed"
+          ],
+          "transitions": [
+            {
+              "open": "q.variant == 1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

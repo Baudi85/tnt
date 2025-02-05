@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.rainbow_tnt_trail": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "rainbow_trail": "q.is_powered" 
+            }
+          ]
+        },
+        "rainbow_trail": {
+          "particle_effects": [
+            { 
+              "effect": "rainbow_trail"
+            }
+          ],
+          "transitions": [ { "default": "1" } ]
+        }
+      }
+    }
+  }
+}

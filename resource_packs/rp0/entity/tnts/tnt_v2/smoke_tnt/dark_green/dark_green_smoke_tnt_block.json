@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:dark_green_smoke_tnt_block",
+      "geometry": {
+        "default": "geometry.smoke_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/smoke_tnt/dark_green_smoke_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct",
+        "smoke_chimney": "sndbx:smoke_chimney_emitter"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "tnt_idle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "tnt_idle": "animation.smoke_tnt.idle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "dark_green_smoke_tnt"
+      }
+    }
+  }
+}

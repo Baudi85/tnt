@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.portal_tnt.offshoot": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "/function tnt/portal/offshoot"
+          ],
+          "transitions": [
+            {
+              "tick_on_ignite": "1"
+            }
+          ]
+        },
+        "tick_on_ignite": {
+          "transitions": [
+            {
+              "on_ignite": "1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

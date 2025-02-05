@@ -1,0 +1,144 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.is_moving": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "is_moving": "(q.is_moving || q.is_sprinting)"
+            },
+            {
+              "not_moving": "(!q.is_moving && !q.is_sprinting)"
+            }
+          ]
+        },
+        "is_moving": {
+          "on_entry": [
+            "/tag @s add is_moving"
+          ],
+          "transitions": [
+            {
+              "not_moving": "(!q.is_moving && !q.is_sprinting)"
+            }
+          ]
+        },
+        "not_moving": {
+          "on_entry": [
+            "/tag @s remove is_moving"
+          ],
+          "transitions": [
+            {
+              "is_moving": "(q.is_moving || q.is_sprinting)"
+            }
+          ]
+        }
+      }
+    },
+    
+    "controller.animation.player.throwable": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "transitions": [ 
+            { 
+              "dynamite_tnt": "(q.get_equipped_item_name('main_hand') == 'dynamite_tnt_projectile' && q.is_using_item)"
+            }
+          ]
+        },
+        "dynamite_tnt": { 
+          "transitions": [ { "on_detect": "!q.is_using_item" } ],
+          "on_entry": [
+            "@s sndbx:dynamite_tnt.throw",
+            "/clear @s[m=!c] sndbx:dynamite_tnt_projectile 0 1"
+          ]
+        }
+      }
+    },
+    
+    "controller.animation.player.cardinal_facing": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [ "/tag @s[tag=!\"is_facing_north\",tag=!\"is_facing_south\",tag=!\"is_facing_west\",tag=!\"is_facing_east\"] add facing_south" ],
+          "on_exit": [ "/tag @s[tag=!\"is_facing_north\",tag=!\"is_facing_south\",tag=!\"is_facing_west\",tag=!\"is_facing_east\"] add facing_south" ],
+          "transitions": [ 
+            { 
+              "cardinal_facing": "q.is_moving"
+            }
+          ]
+        },
+        "cardinal_facing": {
+          "on_entry": [ "/tag @s[tag=!\"is_facing_north\",tag=!\"is_facing_south\",tag=!\"is_facing_west\",tag=!\"is_facing_east\"] add facing_south" ],
+          "on_exit": [ "/tag @s[tag=!\"is_facing_north\",tag=!\"is_facing_south\",tag=!\"is_facing_west\",tag=!\"is_facing_east\"] add facing_south" ],
+          "transitions": [ 
+            { "is_facing_north": "q.cardinal_player_facing == 2" },
+            { "is_facing_south": "q.cardinal_player_facing == 3" },
+            { "is_facing_west": "q.cardinal_player_facing == 4" },
+            { "is_facing_east": "q.cardinal_player_facing == 5" }
+          ]
+        },
+        "cardinal_facing_updown": {
+          "on_entry": [ 
+            "/tag @s remove facing_north",
+            "/tag @s remove facing_south",
+            "/tag @s remove facing_west",
+            "/tag @s remove facing_east",
+            "/title @s[name=kaminariken] actionbar ignored_facing"
+          ],
+          "transitions": [ 
+            { "is_facing_north": "q.cardinal_player_facing == 2" },
+            { "is_facing_south": "q.cardinal_player_facing == 3" },
+            { "is_facing_west": "q.cardinal_player_facing == 4" },
+            { "is_facing_east": "q.cardinal_player_facing == 5" }
+          ]
+        },
+        "is_facing_north": {
+          "on_entry": [ "/tag @s add facing_north", "/title @s[name=kaminariken] actionbar facing_north" ],
+          "on_exit": [ "/tag @s remove facing_north" ],
+          "transitions": [ 
+            { "is_facing_south": "q.cardinal_player_facing == 3" },
+            { "is_facing_west": "q.cardinal_player_facing == 4" },
+            { "is_facing_east": "q.cardinal_player_facing == 5" },
+
+            { "cardinal_facing_updown": "(q.cardinal_player_facing == 0 || q.cardinal_player_facing == 1 || q.cardinal_player_facing > 5)" }
+          ]
+        },
+        "is_facing_south": {
+          "on_entry": [ "/tag @s add facing_south", "/title @s[name=kaminariken] actionbar facing_south" ],
+          "on_exit": [ "/tag @s remove facing_south" ],
+          "transitions": [ 
+            { "is_facing_north": "q.cardinal_player_facing == 2" },
+            { "is_facing_west": "q.cardinal_player_facing == 4" },
+            { "is_facing_east": "q.cardinal_player_facing == 5" },
+
+            { "cardinal_facing_updown": "(q.cardinal_player_facing == 0 || q.cardinal_player_facing == 1 || q.cardinal_player_facing > 5)" }
+          ]
+        },
+        "is_facing_west": {
+          "on_entry": [ "/tag @s add facing_west", "/title @s[name=kaminariken] actionbar facing_west" ],
+          "on_exit": [ "/tag @s remove facing_west" ],
+          "transitions": [ 
+            { "is_facing_north": "q.cardinal_player_facing == 2" },
+            { "is_facing_south": "q.cardinal_player_facing == 3" },
+            { "is_facing_east": "q.cardinal_player_facing == 5" },
+
+            { "cardinal_facing_updown": "(q.cardinal_player_facing == 0 || q.cardinal_player_facing == 1 || q.cardinal_player_facing > 5)" }
+          ]
+        },
+        "is_facing_east": {
+          "on_entry": [ "/tag @s add facing_east", "/title @s[name=kaminariken] actionbar facing_east" ],
+          "on_exit": [ "/tag @s remove facing_east" ],
+          "transitions": [ 
+            { "is_facing_north": "q.cardinal_player_facing == 2" },
+            { "is_facing_south": "q.cardinal_player_facing == 3" },
+            { "is_facing_west": "q.cardinal_player_facing == 4" },
+
+            { "cardinal_facing_updown": "(q.cardinal_player_facing == 0 || q.cardinal_player_facing == 1 || q.cardinal_player_facing > 5)" }
+          ]
+        }
+      }
+    }
+  }
+}

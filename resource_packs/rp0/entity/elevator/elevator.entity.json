@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:elevator",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "spider"
+      },
+      "textures": {
+        "default": "textures/elevators/elevator"
+      },
+      "geometry": {
+        "default": "geometry.elevator"
+      },
+      "render_controllers": [
+        "controller.render.elevator",
+        "controller.render.elevator_glow"
+      ],
+      "scripts": {
+        "animate": [
+          "control_panel_scale",
+          { "lcd_off": "q.variant == 0" },
+          { "lcd_on": "q.variant >= 1" },
+          { "control_panel_click": "q.variant == 1" },
+          { "vibrate": "q.variant == 2" }
+        ]
+      },
+      "animations": {
+        "lcd_off": "animation.elevator.lcd_off",
+        "lcd_on": "animation.elevator.lcd_on",
+        "control_panel_click": "animation.elevator.control_panel_click",
+        "control_panel_scale": "animation.elevator.control_panel_scale",
+        "vibrate": "animation.elevator.vibrate"
+      }
+    }
+  }
+}

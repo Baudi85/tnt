@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.magnet_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.life_time >= 0.1"
+            }
+          ],
+          "on_entry": [
+            "/summon lightning_bolt ~~2~",
+            "/summon sndbx:magnet_tnt_offshoot",
+            "/playsound tnt.magnet @a ~~~"
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "/effect @e[r=3,type=player] slowness 1 1 true",
+            "/execute @e[r=6,rm=2,family=!inanimate,type=!player] ~~~ tp ^^^0.1 facing @e[family=magnet_tnt,family=lit,c=1]",
+
+            "/execute @a[tag=!achievements_pull_magnet_black_hole,r=12] ~~~ function achievements/pull_magnet_black_hole"
+          ],
+          "transitions": [
+            {
+              "tick_on_ignite": "1"
+            }
+          ]
+        },
+        "tick_on_ignite": {
+          "transitions": [
+            {
+              "on_ignite": "1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

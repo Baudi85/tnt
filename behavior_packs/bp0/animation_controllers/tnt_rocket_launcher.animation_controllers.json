@@ -1,0 +1,1655 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_rocket_launcher": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "not_loaded_on_use": "!q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item"
+            },
+            {
+              "loaded": "q.skin_id >= 1 && q.skin_id <= 59"
+            }
+          ]
+        },
+        "not_loaded_on_use": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§c\"},{\"translate\":\"tnt_launcher.unloaded\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_using_item"
+            }
+          ]
+        },
+        "loaded": {
+          "on_entry": [
+            "@s sndbx:load_tnt_launcher"
+          ],
+          "transitions": [
+            {
+              "default": "q.get_equipped_item_name != 'tnt_rocket_launcher' || q.skin_id < 1"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tnt_rocket_launcher.loaded_tnt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "load_arctic_tnt": "q.skin_id == 1 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_black_colored_tnt": "q.skin_id == 2 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_blue_colored_tnt": "q.skin_id == 3 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_brown_colored_tnt": "q.skin_id == 4 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_cyan_colored_tnt": "q.skin_id == 5 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_gray_colored_tnt": "q.skin_id == 6 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_green_colored_tnt": "q.skin_id == 7 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_light_blue_colored_tnt": "q.skin_id == 8 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_light_gray_colored_tnt": "q.skin_id == 9 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_lime_colored_tnt": "q.skin_id == 10 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_magenta_colored_tnt": "q.skin_id == 11 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_orange_colored_tnt": "q.skin_id == 12 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_pink_colored_tnt": "q.skin_id == 13 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_purple_colored_tnt": "q.skin_id == 14 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_red_colored_tnt": "q.skin_id == 15 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_white_colored_tnt": "q.skin_id == 16 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_yellow_colored_tnt": "q.skin_id == 17 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_fireball_tnt": "q.skin_id == 18 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_fish_tnt": "q.skin_id == 19 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_galaxy_tnt": "q.skin_id == 20 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_scatter_tnt": "q.skin_id == 21 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_tornado_tnt": "q.skin_id == 22 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_dinnerbone_tnt": "q.skin_id == 23 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_lucky_tnt": "q.skin_id == 24 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_axolotl_mob_tnt": "q.skin_id == 25 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_bat_mob_tnt": "q.skin_id == 26 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_cat_mob_tnt": "q.skin_id == 27 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_chicken_mob_tnt": "q.skin_id == 28 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_cow_mob_tnt": "q.skin_id == 29 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_fox_mob_tnt": "q.skin_id == 30 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_parrot_mob_tnt": "q.skin_id == 31 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_pig_mob_tnt": "q.skin_id == 32 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_polar_bear_mob_tnt": "q.skin_id == 33 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_rabbit_mob_tnt": "q.skin_id == 34 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_napalm_tnt": "q.skin_id == 35 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_patient_zero_tnt": "q.skin_id == 36 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_portal_tnt": "q.skin_id == 37 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_rainbow_tnt": "q.skin_id == 38 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_shulker_tnt": "q.skin_id == 39 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_black_smoke_tnt": "q.skin_id == 40 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_blue_smoke_tnt": "q.skin_id == 41 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_brown_smoke_tnt": "q.skin_id == 42 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_cyan_smoke_tnt": "q.skin_id == 43 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_dark_green_smoke_tnt": "q.skin_id == 44 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_gray_smoke_tnt": "q.skin_id == 45 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_light_blue_smoke_tnt": "q.skin_id == 46 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_light_gray_smoke_tnt": "q.skin_id == 47 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_lime_smoke_tnt": "q.skin_id == 48 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_magenta_smoke_tnt": "q.skin_id == 49 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_orange_smoke_tnt": "q.skin_id == 50 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_pink_smoke_tnt": "q.skin_id == 51 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_purple_smoke_tnt": "q.skin_id == 52 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_red_smoke_tnt": "q.skin_id == 53 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_white_smoke_tnt": "q.skin_id == 54 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_yellow_smoke_tnt": "q.skin_id == 55 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_sponge_tnt": "q.skin_id == 56 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_sponge_wet_tnt": "q.skin_id == 57 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_troll_tnt": "q.skin_id == 58 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            },
+            {
+              "load_vanilla_tnt": "q.skin_id == 59 && q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher'"
+            }
+          ]
+        },
+        "load_arctic_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:arctic_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 1 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_black_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:black_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 2 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_blue_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:blue_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 3 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_brown_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:brown_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 4 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_cyan_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cyan_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 5 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_gray_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:gray_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 6 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_green_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:green_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 7 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_light_blue_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_blue_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 8 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_light_gray_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_gray_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 9 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_lime_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:lime_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 10 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_magenta_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:magenta_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 11 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_orange_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:orange_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 12 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_pink_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:pink_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 13 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_purple_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:purple_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 14 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_red_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:red_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 15 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_white_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:white_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 16 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_yellow_colored_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:yellow_colored_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 17 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_fireball_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:fireball_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 18 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_fish_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:fish_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 19 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_galaxy_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:galaxy_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 20 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_scatter_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:scatter_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 21 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_tornado_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:tornado_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 22 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_dinnerbone_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:dinnerbone_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 23 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_lucky_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:lucky_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 24 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_axolotl_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:axolotl_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 25 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_bat_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:bat_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 26 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_cat_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cat_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 27 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_chicken_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:chicken_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 28 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_cow_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cow_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 29 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_fox_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:fox_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 30 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_parrot_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:parrot_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 31 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_pig_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:pig_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 32 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_polar_bear_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:polar_bear_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 33 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_rabbit_mob_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:rabbit_mob_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 34 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_napalm_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:napalm_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 35 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_patient_zero_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:patient_zero_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 36 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_portal_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:portal_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 37 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_rainbow_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:rainbow_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 38 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_shulker_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:shulker_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 39 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_black_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:black_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 40 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_blue_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:blue_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 41 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_brown_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:brown_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 42 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_cyan_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cyan_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 43 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_dark_green_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:dark_green_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 44 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_gray_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:gray_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 45 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_light_blue_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_blue_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 46 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_light_gray_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_gray_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 47 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_lime_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:lime_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 48 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_magenta_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:magenta_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 49 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_orange_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:orange_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 50 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_pink_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:pink_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 51 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_purple_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:purple_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 52 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_red_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:red_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 53 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_white_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:white_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 54 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_yellow_smoke_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:yellow_smoke_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 55 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_sponge_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:sponge_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 56 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_sponge_wet_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:sponge_wet_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 57 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_troll_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:troll_tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 58 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        },
+        "load_vanilla_tnt": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.minecraft:tnt.name\"}]}"
+          ],
+          "transitions": [
+            {
+              "default": "q.skin_id != 59 || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tnt_rocket_launcher.reset": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "reset": "q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_sneaking && variable.attack_time && q.is_ignited"
+            }
+          ]
+        },
+        "reset": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.reset\"}]}",
+            "@s sndbx:tnt_launcher_reset"
+          ],
+          "transitions": [
+            {
+              "default": "!v.attack_time || !q.is_ignited || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tnt_rocket_launcher.shoot": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "using_arctic_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 1"
+            },
+            {
+              "using_black_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 2"
+            },
+            {
+              "using_blue_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 3"
+            },
+            {
+              "using_brown_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 4"
+            },
+            {
+              "using_cyan_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 5"
+            },
+            {
+              "using_gray_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 6"
+            },
+            {
+              "using_green_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 7"
+            },
+            {
+              "using_light_blue_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 8"
+            },
+            {
+              "using_light_gray_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 9"
+            },
+            {
+              "using_lime_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 10"
+            },
+            {
+              "using_magenta_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 11"
+            },
+            {
+              "using_orange_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 12"
+            },
+            {
+              "using_pink_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 13"
+            },
+            {
+              "using_purple_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 14"
+            },
+            {
+              "using_red_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 15"
+            },
+            {
+              "using_white_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 16"
+            },
+            {
+              "using_yellow_colored_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 17"
+            },
+            {
+              "using_fireball_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 18"
+            },
+            {
+              "using_fish_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 19"
+            },
+            {
+              "using_galaxy_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 20"
+            },
+            {
+              "using_scatter_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 21"
+            },
+            {
+              "using_tornado_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 22"
+            },
+            {
+              "using_dinnerbone_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 23"
+            },
+            {
+              "using_lucky_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 24"
+            },
+            {
+              "using_axolotl_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 25"
+            },
+            {
+              "using_bat_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 26"
+            },
+            {
+              "using_cat_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 27"
+            },
+            {
+              "using_chicken_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 28"
+            },
+            {
+              "using_cow_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 29"
+            },
+            {
+              "using_fox_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 30"
+            },
+            {
+              "using_parrot_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 31"
+            },
+            {
+              "using_pig_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 32"
+            },
+            {
+              "using_polar_bear_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 33"
+            },
+            {
+              "using_rabbit_mob_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 34"
+            },
+            {
+              "using_napalm_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 35"
+            },
+            {
+              "using_patient_zero_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 36"
+            },
+            {
+              "using_portal_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 37"
+            },
+            {
+              "using_rainbow_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 38"
+            },
+            {
+              "using_shulker_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 39"
+            },
+            {
+              "using_black_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 40"
+            },
+            {
+              "using_blue_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 41"
+            },
+            {
+              "using_brown_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 42"
+            },
+            {
+              "using_cyan_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 43"
+            },
+            {
+              "using_dark_green_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 44"
+            },
+            {
+              "using_gray_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 45"
+            },
+            {
+              "using_light_blue_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 46"
+            },
+            {
+              "using_light_gray_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 47"
+            },
+            {
+              "using_lime_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 48"
+            },
+            {
+              "using_magenta_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 49"
+            },
+            {
+              "using_orange_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 50"
+            },
+            {
+              "using_pink_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 51"
+            },
+            {
+              "using_purple_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 52"
+            },
+            {
+              "using_red_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 53"
+            },
+            {
+              "using_white_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 54"
+            },
+            {
+              "using_yellow_smoke_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 55"
+            },
+            {
+              "using_sponge_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 56"
+            },
+            {
+              "using_sponge_wet_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 57"
+            },
+            {
+              "using_troll_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 58"
+            },
+            {
+              "using_vanilla_tnt": "q.is_ignited && q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && q.skin_id == 59"
+            }
+          ]
+        },
+        "using_arctic_tnt": {
+          "on_entry": [
+            "@s sndbx:use_arctic_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 1"
+            }
+          ]
+        },
+        "using_black_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_black_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 2"
+            }
+          ]
+        },
+        "using_blue_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_blue_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 3"
+            }
+          ]
+        },
+        "using_brown_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_brown_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 4"
+            }
+          ]
+        },
+        "using_cyan_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_cyan_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 5"
+            }
+          ]
+        },
+        "using_gray_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_gray_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 6"
+            }
+          ]
+        },
+        "using_green_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_green_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 7"
+            }
+          ]
+        },
+        "using_light_blue_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_light_blue_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 8"
+            }
+          ]
+        },
+        "using_light_gray_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_light_gray_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 9"
+            }
+          ]
+        },
+        "using_lime_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_lime_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 10"
+            }
+          ]
+        },
+        "using_magenta_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_magenta_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 11"
+            }
+          ]
+        },
+        "using_orange_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_orange_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 12"
+            }
+          ]
+        },
+        "using_pink_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_pink_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 13"
+            }
+          ]
+        },
+        "using_purple_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_purple_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 14"
+            }
+          ]
+        },
+        "using_red_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_red_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 15"
+            }
+          ]
+        },
+        "using_white_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_white_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 16"
+            }
+          ]
+        },
+        "using_yellow_colored_tnt": {
+          "on_entry": [
+            "@s sndbx:use_yellow_colored_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 17"
+            }
+          ]
+        },
+        "using_fireball_tnt": {
+          "on_entry": [
+            "@s sndbx:use_fireball_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 18"
+            }
+          ]
+        },
+        "using_fish_tnt": {
+          "on_entry": [
+            "@s sndbx:use_fish_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 19"
+            }
+          ]
+        },
+        "using_galaxy_tnt": {
+          "on_entry": [
+            "@s sndbx:use_galaxy_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 20"
+            }
+          ]
+        },
+        "using_scatter_tnt": {
+          "on_entry": [
+            "@s sndbx:use_scatter_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 21"
+            }
+          ]
+        },
+        "using_tornado_tnt": {
+          "on_entry": [
+            "@s sndbx:use_tornado_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 22"
+            }
+          ]
+        },
+        "using_dinnerbone_tnt": {
+          "on_entry": [
+            "@s sndbx:use_dinnerbone_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 23"
+            }
+          ]
+        },
+        "using_lucky_tnt": {
+          "on_entry": [
+            "@s sndbx:use_lucky_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 24"
+            }
+          ]
+        },
+        "using_axolotl_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_axolotl_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 25"
+            }
+          ]
+        },
+        "using_bat_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_bat_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 26"
+            }
+          ]
+        },
+        "using_cat_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_cat_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 27"
+            }
+          ]
+        },
+        "using_chicken_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_chicken_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 28"
+            }
+          ]
+        },
+        "using_cow_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_cow_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 29"
+            }
+          ]
+        },
+        "using_fox_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_fox_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 30"
+            }
+          ]
+        },
+        "using_parrot_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_parrot_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 31"
+            }
+          ]
+        },
+        "using_pig_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_pig_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 32"
+            }
+          ]
+        },
+        "using_polar_bear_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_polar_bear_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 33"
+            }
+          ]
+        },
+        "using_rabbit_mob_tnt": {
+          "on_entry": [
+            "@s sndbx:use_rabbit_mob_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 34"
+            }
+          ]
+        },
+        "using_napalm_tnt": {
+          "on_entry": [
+            "@s sndbx:use_napalm_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 35"
+            }
+          ]
+        },
+        "using_patient_zero_tnt": {
+          "on_entry": [
+            "@s sndbx:use_patient_zero_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 36"
+            }
+          ]
+        },
+        "using_portal_tnt": {
+          "on_entry": [
+            "@s sndbx:use_portal_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 37"
+            }
+          ]
+        },
+        "using_rainbow_tnt": {
+          "on_entry": [
+            "@s sndbx:use_rainbow_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 38"
+            }
+          ]
+        },
+        "using_shulker_tnt": {
+          "on_entry": [
+            "@s sndbx:use_shulker_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 39"
+            }
+          ]
+        },
+        "using_black_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_black_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 40"
+            }
+          ]
+        },
+        "using_blue_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_blue_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 41"
+            }
+          ]
+        },
+        "using_brown_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_brown_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 42"
+            }
+          ]
+        },
+        "using_cyan_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_cyan_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 43"
+            }
+          ]
+        },
+        "using_dark_green_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_dark_green_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 44"
+            }
+          ]
+        },
+        "using_gray_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_gray_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 45"
+            }
+          ]
+        },
+        "using_light_blue_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_light_blue_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 46"
+            }
+          ]
+        },
+        "using_light_gray_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_light_gray_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 47"
+            }
+          ]
+        },
+        "using_lime_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_lime_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 48"
+            }
+          ]
+        },
+        "using_magenta_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_magenta_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 49"
+            }
+          ]
+        },
+        "using_orange_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_orange_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 50"
+            }
+          ]
+        },
+        "using_pink_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_pink_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 51"
+            }
+          ]
+        },
+        "using_purple_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_purple_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 52"
+            }
+          ]
+        },
+        "using_red_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_red_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 53"
+            }
+          ]
+        },
+        "using_white_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_white_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 54"
+            }
+          ]
+        },
+        "using_yellow_smoke_tnt": {
+          "on_entry": [
+            "@s sndbx:use_yellow_smoke_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 55"
+            }
+          ]
+        },
+        "using_sponge_tnt": {
+          "on_entry": [
+            "@s sndbx:use_sponge_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 56"
+            }
+          ]
+        },
+        "using_sponge_wet_tnt": {
+          "on_entry": [
+            "@s sndbx:use_sponge_wet_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 57"
+            }
+          ]
+        },
+        "using_troll_tnt": {
+          "on_entry": [
+            "@s sndbx:use_troll_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 58"
+            }
+          ]
+        },
+        "using_vanilla_tnt": {
+          "on_entry": [
+            "@s sndbx:use_vanilla_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.get_equipped_item_name != 'tnt_rocket_launcher' || !q.is_ignited || q.skin_id != 59"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_rocket_launcher.overheat": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "setup": "v.use_count = 0.0; return q.get_equipped_item_name == 'tnt_rocket_launcher' && !q.is_illager_captain;" },
+            { "overheating": "q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_illager_captain" }
+          ]
+        },
+        "setup": {
+          "transitions": [
+            { "default": "q.get_equipped_item_name != 'tnt_rocket_launcher'" },
+            { "using": "q.get_equipped_item_name == 'tnt_rocket_launcher' && q.is_using_item && v.use_count < 15" },
+            { "overheating": "q.get_equipped_item_name == 'tnt_rocket_launcher' && v.use_count >= 15 && q.is_using_item" }
+          ]
+        },
+        "using": {
+          "on_entry": [ "v.use_count = v.use_count + 1.0;" ],
+          "transitions": [
+            { "default": "q.get_equipped_item_name != 'tnt_rocket_launcher'" },
+            { "setup": "q.get_equipped_item_name == 'tnt_rocket_launcher' && !q.is_using_item" }
+          ]
+        },
+        "overheating": {
+          "on_entry": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§c\"},{\"translate\":\"tnt_launcher.overheat\"}]}",
+            "@s sndbx:overheating_tnt_launcher",
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            { "default": "(q.life_time - v.tick_delay) >= 10.0" }
+          ],
+          "on_exit": [
+            "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§c\"},{\"translate\":\"tnt_launcher.cooldown\"}]}",
+            "@s sndbx:not_overheating_tnt_launcher"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.void_eater_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_exit": [
+            "/tag @s add levitation"
+          ],
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/effect @s levitation 5 1 true"
+          ],
+          "transitions": [
+            {
+              "levitating": "(q.life_time - v.tick_delay) >= 5.9"
+            }
+          ]
+        },
+        "levitating": {
+          "on_entry": [
+            "@s sndbx:void_eater_tnt_gravity",
+            "/tag @s add void_eater_tnt",
+            "/playsound mob.enderdragon.growl @a[r=30]",
+
+            "/execute @a[tag=!achievements_void_eater_tnt,r=50] ~~~ function achievements/void_eater_tnt"
+          ],
+          "transitions": [
+            {
+              "despawn": "q.position(1) <= -65"
+            }
+          ]
+        },
+        "despawn": {
+          "on_entry": [
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.napalm_tnt.offshoot": {
+      "geometry": "geometry.offshoot",
+      "materials": [ { "*": "material.offshoot" } ],
+      "textures": [ "texture.offshoot" ],
+      "part_visibility": [ { "*": false } ]
+    }
+  }
+}

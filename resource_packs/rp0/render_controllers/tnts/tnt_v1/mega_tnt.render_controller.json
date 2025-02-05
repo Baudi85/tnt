@@ -1,0 +1,44 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.lit_tnt.mega": {
+      "geometry": "Geometry.primed",
+      "materials": [ { "*": "Material.primed" } ],
+      "textures": [ "Texture.primed" ],
+      "overlay_color": {
+          "r": "variable.flash",
+          "g": "variable.flash",
+          "b": "variable.flash",
+          "a": "variable.flash"
+      },
+      "uv_anim": {
+          "offset": [ "variable.uv",  "variable.uv" ],
+          "scale": [ 0.5, 0.5 ]
+      },
+      "is_hurt_color":{},
+      "on_fire_color":{},
+      "light_color_multiplier": 1.0,
+      "ignore_lighting" : true
+    },
+    "controller.render.tnt.mega": {
+      "geometry": "Geometry.primed",
+      "materials": [ { "*": "Material.primed" } ],
+      "textures": [ "Texture.primed" ],
+      "overlay_color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+      },
+      "uv_anim": {
+          "offset": [ "variable.uv",  "variable.uv" ],
+          "scale": [ 0.5, 0.5 ]
+      },
+      "is_hurt_color":{},
+      "on_fire_color":{},
+      "light_color_multiplier": 1.0,
+      "ignore_lighting" : true
+    }
+  }
+}
+

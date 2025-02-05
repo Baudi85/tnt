@@ -1,0 +1,104 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:ender_tnt",
+      "runtime_identifier": "minecraft:tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          { "runtime": "q.is_ignited" }
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.ender_tnt.teleport"
+      }
+    },
+    "component_groups": {
+      "sndbx:ender_tnt_explode": {
+        "minecraft:is_charged": {},
+        "minecraft:explode": {
+          "fuse_length": 4,
+          "fuse_lit": true,
+          "power": 7,
+          "causes_fire": false
+        }
+      },
+
+      "sndbx:tnt_teleport": {
+        "minecraft:is_ignited": {},
+        "minecraft:type_family": {
+          "family": [
+            "tnt",
+            "lit",
+            "ender_tnt",
+            "ender_tnt_ignited",
+            "inanimate"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "lit",
+          "ender_tnt",
+          "inanimate"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": [
+          10.0,
+          10.0
+        ],
+        "time_down_event": {
+          "event": "sndbx:tnt_explode",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_teleport"
+          ]
+        }
+      },
+      "sndbx:tnt_explode": {
+        "remove": {
+          "component_groups": [
+            "sndbx:tnt_teleport"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "sndbx:ender_tnt_explode"
+          ]
+        }
+      }
+    }
+  }
+}

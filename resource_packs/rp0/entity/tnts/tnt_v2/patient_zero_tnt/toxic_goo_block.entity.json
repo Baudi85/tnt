@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:toxic_goo_block",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/patient_zero_tnt/toxic_goo_block"
+      },
+      "geometry": {
+        "default": "geometry.toxic_goo_block"
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "end": "animation.toxic_goo_block.end"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+         { "end": "q.life_time >= 14.5" }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ]
+    }
+  }
+}

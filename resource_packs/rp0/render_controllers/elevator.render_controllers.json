@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.elevator": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default"} ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [ 
+        { "lcd_1": false }
+      ],
+      "on_fire_color": {},
+      "is_hurt_color": {}
+    },
+    "controller.render.elevator_glow": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.glow"} ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [ 
+        { "lcd_1": true }
+      ],
+      "on_fire_color": {},
+      "is_hurt_color": {}
+    },
+    "controller.render.elevator_control_panel": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default"} ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [ { "*": false } ],
+      "on_fire_color": {},
+      "is_hurt_color": {}
+    }
+  }
+}

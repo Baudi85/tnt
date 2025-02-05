@@ -1,0 +1,60 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:napalm_tnt",
+      "geometry": {
+        "default": "geometry.napalm_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/napalm_tnt/napalm_tnt"
+      },
+      "particle_effects": {
+        "fire_fuse": "sndbx:fire_fuse",
+        "rocket_engine": "sndbx:napalm_propulsion",
+        "blaze_fire": "sndbx:blaze_fire",
+        "blaze_smoke": "sndbx:blaze_smoke",
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "initialize": [
+          "v.swell_amount = 0.0;"
+        ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          "spark",
+          "rocket_engine",
+          {
+            "explosion": "q.life_time >= 3.5"
+          },
+          "tnt_explode"
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "spark": "controller.animation.tnt_spark",
+        "rocket_engine": "controller.animation.napalm_tnt.propulsion_rocket",
+        "tnt_explode": "animation.napalm_tnt.explode"
+      },
+      "render_controllers": [
+        {
+          "controller.render.sndbx_tnt.lit": "q.is_shaking ? (q.distance_from_camera >= 2.5) : 1"
+        }
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

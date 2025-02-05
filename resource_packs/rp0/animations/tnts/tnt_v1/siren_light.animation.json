@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+	"animations": {
+    "animation.siren_light": {
+      "loop": true,
+      "bones": {
+        "siren_light": {
+          "rotation": [ 0, "query.anim_time * 200.0", 0 ]
+        }
+      }
+    }
+	}
+}

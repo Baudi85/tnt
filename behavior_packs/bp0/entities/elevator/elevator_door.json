@@ -1,0 +1,112 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:elevator_door",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "sndbx:door_open": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:collision_box": {
+          "width": 7.0,
+          "height": 0.1
+        }
+      },
+
+      "sndbx:door_close": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:collision_box": {
+          "width": 7.0,
+          "height": 1.0
+        },
+        "minecraft:is_stackable": {
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": { }
+      }
+    },
+
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [
+          "elevator",
+          "elevator_door",
+          "inanimate"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "min": 1,
+        "max": 1,
+        "value": 1
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": { 
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": 0.1,
+        "time_down_event": {
+          "event": "sndbx:door_close",
+          "target": "self"
+        }
+      }
+    },
+
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      },
+
+      "sndbx:door_open": {
+        "add": {
+          "component_groups": [ "sndbx:door_open" ]
+        },
+        "remove": {
+          "component_groups": [ "sndbx:door_close" ]
+        }
+      },
+      "sndbx:door_close": {
+        "add": {
+          "component_groups": [ "sndbx:door_close" ]
+        },
+        "remove": {
+          "component_groups": [ "sndbx:door_open" ]
+        }
+      }
+    }
+  }
+}

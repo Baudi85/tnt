@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:crate_1x",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/crates/crate_1x1_oak"
+      },
+      "geometry": {
+        "default": "geometry.crate_1x"
+      },
+      "animations": {
+        "dest1": "animation.crate1.destroy",
+        "dest2": "animation.crate1.destroy2",
+        "align": "animation.crate.rot_align"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "scripts": {
+        "animate": [
+          "align",
+          { "dest1": "q.skin_id == 0 && q.is_ignited" },
+          { "dest2": "q.skin_id == 1 && q.is_ignited" }
+        ]
+      },
+      "sound_effects": {
+        "break": "crate.1x1.break"
+      }
+    }
+  }
+}

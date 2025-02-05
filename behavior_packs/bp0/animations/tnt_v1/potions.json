@@ -1,0 +1,36 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.potions":{
+         "timeline":{
+            "0.0":[ "/summon splash_potion ~3 ~0.5 ~" ],
+            "0.05":[ "/summon splash_potion ~2 ~1 ~2.25" ],
+            "0.1":[ "/summon splash_potion ~ ~1.5 ~3" ],
+            "0.15":[ "/summon splash_potion ~-2.25 ~2 ~2" ],
+            "0.2":[ "/summon splash_potion ~-3 ~2.5 ~" ],
+            "0.25":[ "/summon splash_potion ~-2.25 ~3 ~-2"],
+            "0.3":[ "/summon splash_potion ~ ~3.5 ~-3" ],
+            "0.35":[ "/summon splash_potion ~2.25 ~4 ~-2.25" ],
+            "0.4":[ "/summon splash_potion ~2 ~4.5 ~2.25" ],
+            "0.45":[ "/summon splash_potion ~3 ~5 ~" ],
+            "0.5":[ "/summon splash_potion ~2.25 ~5.5 ~2.25" ],
+            "0.55":[ "/summon splash_potion ~ ~6 ~3" ],
+            "0.6":[ "/summon splash_potion ~-2.25 ~6.5 ~2.25" ],
+            "0.65":[ "/summon splash_potion ~-3 ~7 ~" ],
+            "0.7":[ "/summon splash_potion ~-2.25 ~7.5 ~-2.25" ],
+            "0.75":[ "/summon splash_potion ~ ~8 ~-3" ],
+            "0.8":[ "/summon splash_potion ~2.25 ~8.5 ~-2.25" ],
+            "0.85":[ "/summon splash_potion ~3 ~9 ~" ],
+            "0.9":[ "/summon splash_potion ~2.25 ~9.5 ~2.25" ],
+            "0.95":[ "/summon splash_potion ~3 ~10 ~" ],
+            "1.0":[ "/summon splash_potion ~-2.25 ~10.5 ~2.25" ],
+            "1.05":[ "/summon splash_potion ~-3 ~11 ~" ],
+            "1.1":[ "/summon splash_potion ~-2.25 ~11.5 ~-2.25" ],
+            "1.15":[ "/summon splash_potion ~ ~12 ~-3" ],
+            "1.2":[ "/summon splash_potion ~2.25 ~12.5 ~-2.25", "@s sndbx:despawn" ]
+         },
+         "animation_length": 1.25,
+         "loop":false
+      }
+   }
+}

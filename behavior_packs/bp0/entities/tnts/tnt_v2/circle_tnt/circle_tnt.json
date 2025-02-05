@@ -1,0 +1,56 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:circle_tnt",
+      "runtime_identifier": "minecraft:tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "runtime" ]
+      },
+      "animations": {
+        "runtime": "controller.animation.circle_tnt.on_ignite"
+      }
+    },
+    
+    "components": {
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "circle_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 6,
+        "fuse_lit": true,
+        "power": 25,
+        "causes_fire": false,
+        "breaks_blocks": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

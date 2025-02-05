@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.bunker_door_1.open": {
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": "/fill 32 55 17 33 61 9 air 0 replace barrier"
+      }
+    },
+    "animation.bunker_door_1.close": {
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": "/fill 32 55 17 33 61 9 barrier 0 replace air"
+      }
+    },
+
+    "animation.bunker_door_2.open": {
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": "/fill -3 55 30 5 61 31 air 0 replace barrier"
+      }
+    },
+    "animation.bunker_door_2.close": {
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": "/fill -3 55 30 5 61 31 barrier 0 replace air"
+      }
+    },
+
+    "animation.bunker_door_3.open": {
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": "/fill 13 55 -4 21 61 -5 air 0 replace barrier"
+      }
+    },
+    "animation.bunker_door_3.close": {
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": "/fill 13 55 -4 21 61 -5 barrier 0 replace air"
+      }
+    }
+  }
+}

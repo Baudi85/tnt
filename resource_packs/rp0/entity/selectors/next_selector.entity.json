@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:next_selector",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/selectors/next_press",
+        "pressed": "textures/selectors/next_pressed"
+      },
+      "geometry": {
+        "default": "geometry.selector"
+      },
+      "render_controllers": [
+        "controller.render.selector_button"
+      ],
+      "particle_effects": {
+        "click": "sndbx:selector_changer"
+      },
+      "animations": {
+        "setup": "controller.animation.selector.setup",
+        "press": "animation.selector.clicked"
+      },
+      "scripts": {
+        "animate": [
+          "setup"
+        ]
+      },
+      "sound_effects": {
+        "click": "random.click"
+      }
+    }
+  }
+}

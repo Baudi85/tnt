@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sndbx.item.float": {
+			"loop": true,
+			"bones": {
+				"tnt": {
+					"rotation": [0, "(q.anim_time * -180.0) * 0.2", 0],
+					"position": [0, "10.0 + math.cos(q.anim_time * 160.0) * 5.0", 0]
+				}
+			}
+		}
+	}
+}

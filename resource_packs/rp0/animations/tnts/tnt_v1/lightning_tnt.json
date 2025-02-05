@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.beacon_scale": {
+      "loop": true,
+      "bones": {
+        "bone1": {
+          "rotation": [ 0, "query.life_time * 30.0", 0 ],
+          "scale": [ 0.25, "math.clamp(query.life_time * 320.0, 0, 2560)", 0.25 ],
+          "position": [ 0, "temp.life_time = ((query.life_time > 0.25) ? -2560 * (1 / ((query.life_time - 0.25) * 3.0)) : -2560.0); return query.life_time * temp.life_time;", 0 ]
+        },
+        "bone2": {
+          "rotation": [ 0, "query.life_time * 30.0", 0 ],
+          "scale": [ 0.25, "math.clamp(query.life_time * 320.0, 0, 2560)", 0.25 ],
+          "position": [ 0, "temp.life_time = ((query.life_time > 0.25) ? -2560 * ((query.life_time - 0.25) * 3.0) : -2560.0); return query.life_time * temp.life_time;", 0 ]
+        }
+      }
+    },
+    "animation.lightning_particle": {
+      "loop": true,
+      "animation_length": 3.0,
+      "particle_effects": {
+        "0.0": [
+          {
+            "effect": "lightning",
+            "locator": "lightning_base",
+            "pre_effect_script": "variable.spawn_rate = 30; variable.x = 1.0; variable.y = 1.0; variable.z = 1.0;"
+          },
+          {
+            "effect": "lightning_tnt_particle",
+            "locator": "lightning_base",
+            "pre_effect_script": "variable.spawn_rate = 30; variable.x = 1.0; variable.y = 1.0; variable.z = 1.0;"
+          }
+        ]
+      }
+    },
+    "animation.lightning_particle_lit": {
+      "loop": true,
+      "animation_length": 3.0,
+      "particle_effects": {
+        "0.0": {
+          "effect": "lightning",
+          "locator": "lightning_base",
+          "pre_effect_script": "variable.spawn_rate = 150; variable.x = 2.0; variable.y = 2.0; variable.z = 2.0;"
+        }
+      }
+    }
+  }
+}

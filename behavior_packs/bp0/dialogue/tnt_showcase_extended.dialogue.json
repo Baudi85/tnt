@@ -1,0 +1,2499 @@
+{
+  "format_version": "1.14",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "showcase_extended_base_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:base_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_base_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_base_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:base_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_base_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_arctic_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:arctic_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_arctic_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_arctic_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:arctic_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_arctic_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_big_bertha_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:big_bertha_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_big_bertha_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_big_bertha_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:big_bertha_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_big_bertha_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_black_hole_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:black_hole_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_black_hole_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_black_hole_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:black_hole_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_black_hole_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_blast_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:blast_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_blast_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_blast_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:blast_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_blast_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_blaze_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:blaze_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_blaze_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_blaze_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:blaze_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_blaze_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_black_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:black_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_black_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_black_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:black_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_black_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_blue_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:blue_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_blue_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_blue_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:blue_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_blue_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_brown_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:brown_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_brown_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_brown_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:brown_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_brown_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_cyan_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:cyan_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_cyan_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_cyan_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:cyan_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_cyan_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_gray_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:gray_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_gray_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_gray_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:gray_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_gray_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_green_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:green_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_green_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_green_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:green_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_green_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_light_blue_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:light_blue_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_light_blue_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_light_blue_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:light_blue_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_light_blue_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_light_gray_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:light_gray_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_light_gray_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_light_gray_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:light_gray_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_light_gray_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_lime_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:lime_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_lime_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_lime_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:lime_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_lime_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_magenta_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:magenta_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_magenta_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_magenta_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:magenta_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_magenta_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_orange_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:orange_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_orange_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_orange_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:orange_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_orange_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_pink_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:pink_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_pink_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_pink_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:pink_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_pink_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_purple_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:purple_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_purple_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_purple_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:purple_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_purple_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_red_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:red_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_red_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_red_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:red_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_red_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_white_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:white_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_white_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_white_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:white_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_white_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_yellow_colored_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:yellow_colored_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_yellow_colored_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_yellow_colored_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:yellow_colored_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_yellow_colored_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_fireball_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:fireball_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_fireball_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_fireball_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:fireball_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_fireball_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_fish_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:fish_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_fish_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_fish_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:fish_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_fish_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_galaxy_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:galaxy_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_galaxy_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_galaxy_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:galaxy_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_galaxy_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_lightning_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:lightning_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_lightning_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_lightning_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:lightning_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_lightning_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_mega_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:mega_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_mega_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_mega_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:mega_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_mega_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_party_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:party_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_party_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_party_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:party_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_party_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_potion_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:potion_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_potion_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_potion_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:potion_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_potion_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_scatter_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:scatter_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_scatter_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_scatter_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:scatter_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_scatter_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_sticky_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:sticky_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_sticky_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_sticky_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:sticky_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_sticky_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_super_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:super_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_super_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_super_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:super_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_super_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_tornado_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:tornado_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_tornado_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_tornado_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:tornado_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_tornado_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_ultra_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:ultra_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_ultra_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_ultra_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:ultra_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_ultra_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_wither_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:wither_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_wither_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_wither_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:wither_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_wither_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_blessed_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:blessed_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_blessed_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_blessed_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:blessed_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_blessed_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_butterfly_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:butterfly_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_butterfly_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_butterfly_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:butterfly_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_butterfly_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_circle_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:circle_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_circle_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_circle_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:circle_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_circle_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_device_crasher_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:device_crasher_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_device_crasher_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_device_crasher_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:device_crasher_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_device_crasher_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_dinnerbone_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:dinnerbone_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_dinnerbone_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_dinnerbone_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:dinnerbone_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_dinnerbone_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_doomsday_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:doomsday_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_doomsday_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_doomsday_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:doomsday_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_doomsday_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_dynamite_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:dynamite_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_dynamite_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_dynamite_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:dynamite_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_dynamite_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_ender_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:ender_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_ender_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_ender_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:ender_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_ender_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_equaliser_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:equaliser_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_equaliser_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_equaliser_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:equaliser_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_equaliser_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_gravitational_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:gravitational_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_gravitational_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_gravitational_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:gravitational_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_gravitational_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_infinity_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:infinity_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_infinity_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_infinity_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:infinity_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_infinity_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_lucky_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:lucky_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_lucky_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_lucky_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:lucky_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_lucky_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_magic_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:magic_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_magic_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_magic_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:magic_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_magic_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_magnet_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:magnet_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_magnet_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_magnet_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:magnet_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_magnet_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_miners_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:miners_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_miners_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_miners_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:miners_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_miners_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_axolotl_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:axolotl_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_axolotl_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_axolotl_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:axolotl_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_axolotl_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_bat_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:bat_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_bat_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_bat_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:bat_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_bat_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_cat_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:cat_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_cat_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_cat_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:cat_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_cat_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_chicken_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:chicken_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_chicken_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_chicken_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:chicken_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_chicken_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_cow_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:cow_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_cow_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_cow_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:cow_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_cow_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_fox_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:fox_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_fox_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_fox_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:fox_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_fox_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_parrot_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:parrot_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_parrot_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_parrot_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:parrot_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_parrot_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_pig_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:pig_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_pig_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_pig_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:pig_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_pig_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_polar_bear_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:polar_bear_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_polar_bear_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_polar_bear_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:polar_bear_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_polar_bear_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_rabbit_mob_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:rabbit_mob_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_rabbit_mob_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_rabbit_mob_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:rabbit_mob_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_rabbit_mob_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_napalm_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:napalm_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_napalm_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_napalm_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:napalm_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_napalm_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_patient_zero_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:patient_zero_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_patient_zero_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_patient_zero_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:patient_zero_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_patient_zero_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_toxic_goo",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:toxic_goo.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_toxic_goo",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_toxic_goo"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:toxic_goo_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_toxic_goo",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_portal_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:portal_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_portal_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_portal_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:portal_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_portal_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_rainbow_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:rainbow_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_rainbow_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_rainbow_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:rainbow_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_rainbow_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_shulker_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:shulker_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_shulker_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_shulker_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:shulker_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_shulker_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_black_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:black_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_black_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_black_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:black_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_black_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_blue_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:blue_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_blue_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_blue_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:blue_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_blue_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_brown_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:brown_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_brown_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_brown_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:brown_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_brown_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_cyan_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:cyan_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_cyan_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_cyan_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:cyan_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_cyan_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_dark_green_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:dark_green_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_dark_green_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_dark_green_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:dark_green_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_dark_green_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_gray_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:gray_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_gray_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_gray_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:gray_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_gray_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_light_blue_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:light_blue_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_light_blue_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_light_blue_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:light_blue_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_light_blue_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_light_gray_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:light_gray_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_light_gray_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_light_gray_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:light_gray_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_light_gray_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_lime_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:lime_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_lime_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_lime_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:lime_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_lime_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_magenta_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:magenta_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_magenta_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_magenta_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:magenta_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_magenta_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_orange_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:orange_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_orange_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_orange_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:orange_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_orange_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_pink_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:pink_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_pink_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_pink_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:pink_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_pink_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_purple_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:purple_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_purple_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_purple_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:purple_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_purple_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_red_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:red_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_red_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_red_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:red_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_red_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_white_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:white_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_white_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_white_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:white_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_white_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_yellow_smoke_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:yellow_smoke_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_yellow_smoke_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_yellow_smoke_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:yellow_smoke_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_yellow_smoke_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_split_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:split_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_split_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_split_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:split_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_split_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_sponge_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:sponge_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_sponge_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_sponge_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:sponge_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_sponge_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_sponge_wet_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:sponge_wet_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_sponge_wet_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_sponge_wet_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:sponge_wet_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_sponge_wet_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_time_slower_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:time_slower_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_time_slower_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_time_slower_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:time_slower_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_time_slower_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_troll_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:troll_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_troll_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_troll_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:troll_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_troll_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_void_eater_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:void_eater_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_void_eater_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_void_eater_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:void_eater_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_void_eater_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_extended_world_ender_tnt",
+        "npc_name": {
+          "rawtext": [
+            {
+              "translate": "entity.sndbx:world_ender_tnt.name"
+            }
+          ]
+        },
+        "text": "showcase_extended_world_ender_tnt",
+        "buttons": [
+          {
+            "name": "unextend",
+            "commands": [
+              "/dialogue open @s @initiator showcase_world_ender_tnt"
+            ]
+          },
+          {
+            "name": "equip_button",
+            "commands": [
+              "/give @initiator sndbx:world_ender_tnt_block_spawn_egg 16 0",
+              "/dialogue open @s @initiator[tag=objective_showcase_equip_tnt] showcase_extended_world_ender_tnt",
+              "/playsound note.pling @initiator ~~~ 1.0 2.0",
+              "/execute @a[tag=!objective_showcase_equip_tnt] ~~~ function objectives/finished/showcase_equip_tnt"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

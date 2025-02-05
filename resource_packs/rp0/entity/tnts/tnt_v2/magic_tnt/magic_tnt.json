@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:magic_tnt",
+      "geometry": {
+        "default": "geometry.magic_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "lit": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/magic_tnt/magic_tnt",
+        "lit": "textures/tnts/v2/magic_tnt/magic_tnt_lit"
+      },
+      "particle_effects": {
+        "rune_glyphs": "sndbx:rune_glyphs"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          "fast",
+          "rune_glyphs",
+          { "explosion": "q.life_time >= 3.5" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "fast": "animation.magic_tnt.on_ignite_spin",
+        "rune_glyphs": "controller.animation.magic_tnt_glyphs"
+      },
+      "render_controllers": [
+        "controller.render.magic_tnt"
+      ],
+      "sound_effects": {
+        "ignited": "ui.enchant"
+      }
+    }
+  }
+}

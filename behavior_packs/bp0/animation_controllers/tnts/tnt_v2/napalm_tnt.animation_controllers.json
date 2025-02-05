@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.napalm_tnt.offshoot": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "/function tnt/napalm"
+          ],
+          "transitions": [
+            {
+              "despawn_on_land": "q.is_on_ground"
+            },
+            {
+              "tick_on_ignite": "!q.is_on_ground"
+            }
+          ]
+        },
+        "tick_on_ignite": {
+          "transitions": [
+            {
+              "despawn_on_land": "q.is_on_ground"
+            },
+            {
+              "on_ignite": "!q.is_on_ground"
+            }
+          ]
+        },
+        "despawn_on_land": {
+          "on_entry": [
+            "/playsound firework.large_blast @a ~~-16.75~",
+            "/function tnt/napalm",
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

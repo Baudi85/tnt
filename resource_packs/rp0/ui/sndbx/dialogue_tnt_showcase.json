@@ -1,0 +1,2579 @@
+{
+  "namespace": "sndbx_dialogue_tnt_showcase",
+
+  "showcase_list": {
+    "type": "panel",
+    "$is_extended": false,
+
+    "controls": [
+      {
+        "base_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:base_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.base_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_base_tnt')"
+        }
+      },
+      {
+        "arctic_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:arctic_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.arctic_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_arctic_tnt')"
+        }
+      },
+      {
+        "big_bertha_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:big_bertha_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.big_bertha_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_big_bertha_tnt')"
+        }
+      },
+      {
+        "black_hole_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:black_hole_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.black_hole_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_black_hole_tnt')"
+        }
+      },
+      {
+        "blast_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blast_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blast_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_blast_tnt')"
+        }
+      },
+      {
+        "blaze_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blaze_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blaze_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_blaze_tnt')"
+        }
+      },
+      {
+        "black_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:black_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.black_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_black_colored_tnt')"
+        }
+      },
+      {
+        "blue_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blue_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blue_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_blue_colored_tnt')"
+        }
+      },
+      {
+        "brown_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:brown_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.brown_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_brown_colored_tnt')"
+        }
+      },
+      {
+        "cyan_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cyan_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cyan_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_cyan_colored_tnt')"
+        }
+      },
+      {
+        "gray_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:gray_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.gray_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_gray_colored_tnt')"
+        }
+      },
+      {
+        "green_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:green_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.green_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_green_colored_tnt')"
+        }
+      },
+      {
+        "light_blue_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_blue_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_blue_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_light_blue_colored_tnt')"
+        }
+      },
+      {
+        "light_gray_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_gray_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_gray_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_light_gray_colored_tnt')"
+        }
+      },
+      {
+        "lime_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lime_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lime_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_lime_colored_tnt')"
+        }
+      },
+      {
+        "magenta_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magenta_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magenta_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_magenta_colored_tnt')"
+        }
+      },
+      {
+        "orange_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:orange_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.orange_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_orange_colored_tnt')"
+        }
+      },
+      {
+        "pink_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:pink_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.pink_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_pink_colored_tnt')"
+        }
+      },
+      {
+        "purple_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:purple_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.purple_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_purple_colored_tnt')"
+        }
+      },
+      {
+        "red_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:red_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.red_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_red_colored_tnt')"
+        }
+      },
+      {
+        "white_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:white_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.white_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_white_colored_tnt')"
+        }
+      },
+      {
+        "yellow_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:yellow_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.yellow_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_yellow_colored_tnt')"
+        }
+      },
+      {
+        "fireball_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:fireball_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.fireball_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_fireball_tnt')"
+        }
+      },
+      {
+        "fish_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:fish_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.fish_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_fish_tnt')"
+        }
+      },
+      {
+        "galaxy_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:galaxy_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.galaxy_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_galaxy_tnt')"
+        }
+      },
+      {
+        "lightning_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lightning_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lightning_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_lightning_tnt')"
+        }
+      },
+      {
+        "mega_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:mega_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.mega_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_mega_tnt')"
+        }
+      },
+      {
+        "party_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:party_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.party_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_party_tnt')"
+        }
+      },
+      {
+        "potion_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:potion_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.potion_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_potion_tnt')"
+        }
+      },
+      {
+        "scatter_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:scatter_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.scatter_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_scatter_tnt')"
+        }
+      },
+      {
+        "sticky_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:sticky_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.sticky_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_sticky_tnt')"
+        }
+      },
+      {
+        "super_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:super_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.super_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_super_tnt')"
+        }
+      },
+      {
+        "tornado_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:tornado_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.tornado_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_tornado_tnt')"
+        }
+      },
+      {
+        "ultra_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:ultra_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.ultra_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_ultra_tnt')"
+        }
+      },
+      {
+        "wither_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:wither_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.wither_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_wither_tnt')"
+        }
+      },
+      {
+        "blessed_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blessed_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blessed_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_blessed_tnt')"
+        }
+      },
+      {
+        "butterfly_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:butterfly_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.butterfly_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_butterfly_tnt')"
+        }
+      },
+      {
+        "circle_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:circle_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.circle_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_circle_tnt')"
+        }
+      },
+      {
+        "device_crasher_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:device_crasher_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.device_crasher_tnt",
+          "$stat_bar_power": "five",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_device_crasher_tnt')"
+        }
+      },
+      {
+        "dinnerbone_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:dinnerbone_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.dinnerbone_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_dinnerbone_tnt')"
+        }
+      },
+      {
+        "doomsday_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:doomsday_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.doomsday_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_doomsday_tnt')"
+        }
+      },
+      {
+        "dynamite_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:dynamite_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.dynamite_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "two",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_dynamite_tnt')"
+        }
+      },
+      {
+        "ender_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:ender_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.ender_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_ender_tnt')"
+        }
+      },
+      {
+        "equaliser_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:equaliser_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.equaliser_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_equaliser_tnt')"
+        }
+      },
+      {
+        "gravitational_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:gravitational_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.gravitational_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_gravitational_tnt')"
+        }
+      },
+      {
+        "infinity_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:infinity_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.infinity_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_infinity_tnt')"
+        }
+      },
+      {
+        "lucky_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lucky_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lucky_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "one",
+          "$stat_bar_range": "one",
+          "$visible_binding": "(#dialogtext = 'showcase_lucky_tnt')"
+        }
+      },
+      {
+        "magic_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magic_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magic_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_magic_tnt')"
+        }
+      },
+      {
+        "magnet_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magnet_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magnet_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_magnet_tnt')"
+        }
+      },
+      {
+        "miners_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:miners_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.miners_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_miners_tnt')"
+        }
+      },
+      {
+        "axolotl_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:axolotl_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.axolotl_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_axolotl_mob_tnt')"
+        }
+      },
+      {
+        "bat_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:bat_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.bat_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_bat_mob_tnt')"
+        }
+      },
+      {
+        "cat_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cat_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cat_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_cat_mob_tnt')"
+        }
+      },
+      {
+        "chicken_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:chicken_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.chicken_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_chicken_mob_tnt')"
+        }
+      },
+      {
+        "cow_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cow_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cow_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_cow_mob_tnt')"
+        }
+      },
+      {
+        "fox_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:fox_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.fox_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_fox_mob_tnt')"
+        }
+      },
+      {
+        "parrot_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:parrot_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.parrot_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_parrot_mob_tnt')"
+        }
+      },
+      {
+        "pig_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:pig_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.pig_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_pig_mob_tnt')"
+        }
+      },
+      {
+        "polar_bear_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:polar_bear_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.polar_bear_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_polar_bear_mob_tnt')"
+        }
+      },
+      {
+        "rabbit_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:rabbit_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.rabbit_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_rabbit_mob_tnt')"
+        }
+      },
+      {
+        "napalm_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:napalm_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.napalm_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "one",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_napalm_tnt')"
+        }
+      },
+      {
+        "patient_zero_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:patient_zero_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.patient_zero_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_patient_zero_tnt')"
+        }
+      },
+      {
+        "portal_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:portal_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.portal_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_portal_tnt')"
+        }
+      },
+      {
+        "rainbow_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:rainbow_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.rainbow_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_rainbow_tnt')"
+        }
+      },
+      {
+        "shulker_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:shulker_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.shulker_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_shulker_tnt')"
+        }
+      },
+      {
+        "black_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:black_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.black_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_black_smoke_tnt')"
+        }
+      },
+      {
+        "blue_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blue_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blue_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_blue_smoke_tnt')"
+        }
+      },
+      {
+        "brown_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:brown_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.brown_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_brown_smoke_tnt')"
+        }
+      },
+      {
+        "cyan_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cyan_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cyan_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_cyan_smoke_tnt')"
+        }
+      },
+      {
+        "dark_green_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:dark_green_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.dark_green_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_dark_green_smoke_tnt')"
+        }
+      },
+      {
+        "gray_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:gray_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.gray_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_gray_smoke_tnt')"
+        }
+      },
+      {
+        "light_blue_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_blue_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_blue_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_light_blue_smoke_tnt')"
+        }
+      },
+      {
+        "light_gray_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_gray_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_gray_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_light_gray_smoke_tnt')"
+        }
+      },
+      {
+        "lime_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lime_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lime_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_lime_smoke_tnt')"
+        }
+      },
+      {
+        "magenta_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magenta_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magenta_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_magenta_smoke_tnt')"
+        }
+      },
+      {
+        "orange_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:orange_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.orange_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_orange_smoke_tnt')"
+        }
+      },
+      {
+        "pink_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:pink_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.pink_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_pink_smoke_tnt')"
+        }
+      },
+      {
+        "purple_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:purple_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.purple_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_purple_smoke_tnt')"
+        }
+      },
+      {
+        "red_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:red_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.red_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_red_smoke_tnt')"
+        }
+      },
+      {
+        "white_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:white_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.white_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_white_smoke_tnt')"
+        }
+      },
+      {
+        "yellow_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:yellow_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.yellow_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_yellow_smoke_tnt')"
+        }
+      },
+      {
+        "split_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:split_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.split_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_split_tnt')"
+        }
+      },
+      {
+        "sponge_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:sponge_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.sponge_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "two",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_sponge_tnt')"
+        }
+      },
+      {
+        "sponge_wet_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:sponge_wet_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.sponge_wet_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "two",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_sponge_wet_tnt')"
+        }
+      },
+      {
+        "time_slower_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:time_slower_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.time_slower_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_time_slower_tnt')"
+        }
+      },
+      {
+        "troll_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:troll_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.troll_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_troll_tnt')"
+        }
+      },
+      {
+        "void_eater_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:void_eater_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.void_eater_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_void_eater_tnt')"
+        }
+      },
+      {
+        "world_ender_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:world_ender_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.world_ender_tnt",
+          "$stat_bar_power": "five",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_world_ender_tnt')"
+        }
+      }
+    ]
+  },
+
+  "showcase_list_extended": {
+    "type": "panel",
+    "$is_extended": true,
+    
+    "controls": [
+      {
+        "base_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:base_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.base_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_base_tnt')"
+        }
+      },
+      {
+        "arctic_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:arctic_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.arctic_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_arctic_tnt')"
+        }
+      },
+      {
+        "big_bertha_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:big_bertha_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.big_bertha_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_big_bertha_tnt')"
+        }
+      },
+      {
+        "black_hole_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:black_hole_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.black_hole_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_black_hole_tnt')"
+        }
+      },
+      {
+        "blast_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blast_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blast_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_blast_tnt')"
+        }
+      },
+      {
+        "blaze_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blaze_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blaze_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_blaze_tnt')"
+        }
+      },
+      {
+        "black_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:black_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.black_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_black_colored_tnt')"
+        }
+      },
+      {
+        "blue_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blue_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blue_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_blue_colored_tnt')"
+        }
+      },
+      {
+        "brown_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:brown_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.brown_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_brown_colored_tnt')"
+        }
+      },
+      {
+        "cyan_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cyan_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cyan_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_cyan_colored_tnt')"
+        }
+      },
+      {
+        "gray_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:gray_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.gray_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_gray_colored_tnt')"
+        }
+      },
+      {
+        "green_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:green_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.green_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_green_colored_tnt')"
+        }
+      },
+      {
+        "light_blue_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_blue_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_blue_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_light_blue_colored_tnt')"
+        }
+      },
+      {
+        "light_gray_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_gray_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_gray_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_light_gray_colored_tnt')"
+        }
+      },
+      {
+        "lime_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lime_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lime_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_lime_colored_tnt')"
+        }
+      },
+      {
+        "magenta_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magenta_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magenta_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_magenta_colored_tnt')"
+        }
+      },
+      {
+        "orange_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:orange_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.orange_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_orange_colored_tnt')"
+        }
+      },
+      {
+        "pink_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:pink_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.pink_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_pink_colored_tnt')"
+        }
+      },
+      {
+        "purple_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:purple_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.purple_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_purple_colored_tnt')"
+        }
+      },
+      {
+        "red_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:red_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.red_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_red_colored_tnt')"
+        }
+      },
+      {
+        "white_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:white_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.white_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_white_colored_tnt')"
+        }
+      },
+      {
+        "yellow_colored_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:yellow_colored_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.yellow_colored_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_yellow_colored_tnt')"
+        }
+      },
+      {
+        "fireball_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:fireball_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.fireball_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_fireball_tnt')"
+        }
+      },
+      {
+        "fish_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:fish_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.fish_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_fish_tnt')"
+        }
+      },
+      {
+        "galaxy_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:galaxy_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.galaxy_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_galaxy_tnt')"
+        }
+      },
+      {
+        "lightning_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lightning_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lightning_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_lightning_tnt')"
+        }
+      },
+      {
+        "mega_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:mega_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.mega_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_mega_tnt')"
+        }
+      },
+      {
+        "party_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:party_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.party_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_party_tnt')"
+        }
+      },
+      {
+        "potion_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:potion_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.potion_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_potion_tnt')"
+        }
+      },
+      {
+        "scatter_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:scatter_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.scatter_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_scatter_tnt')"
+        }
+      },
+      {
+        "sticky_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:sticky_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.sticky_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_sticky_tnt')"
+        }
+      },
+      {
+        "super_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:super_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.super_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_super_tnt')"
+        }
+      },
+      {
+        "tornado_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:tornado_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.tornado_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_tornado_tnt')"
+        }
+      },
+      {
+        "ultra_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:ultra_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.ultra_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_ultra_tnt')"
+        }
+      },
+      {
+        "wither_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:wither_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.wither_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_wither_tnt')"
+        }
+      },
+      {
+        "blessed_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blessed_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blessed_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_blessed_tnt')"
+        }
+      },
+      {
+        "butterfly_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:butterfly_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.butterfly_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_butterfly_tnt')"
+        }
+      },
+      {
+        "circle_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:circle_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.circle_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_circle_tnt')"
+        }
+      },
+      {
+        "device_crasher_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:device_crasher_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.device_crasher_tnt",
+          "$stat_bar_power": "five",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_device_crasher_tnt')"
+        }
+      },
+      {
+        "dinnerbone_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:dinnerbone_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.dinnerbone_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_dinnerbone_tnt')"
+        }
+      },
+      {
+        "doomsday_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:doomsday_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.doomsday_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_doomsday_tnt')"
+        }
+      },
+      {
+        "dynamite_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:dynamite_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.dynamite_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "two",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_dynamite_tnt')"
+        }
+      },
+      {
+        "ender_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:ender_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.ender_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_ender_tnt')"
+        }
+      },
+      {
+        "equaliser_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:equaliser_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.equaliser_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_equaliser_tnt')"
+        }
+      },
+      {
+        "gravitational_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:gravitational_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.gravitational_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_gravitational_tnt')"
+        }
+      },
+      {
+        "infinity_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:infinity_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.infinity_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_infinity_tnt')"
+        }
+      },
+      {
+        "lucky_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lucky_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lucky_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "one",
+          "$stat_bar_range": "one",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_lucky_tnt')"
+        }
+      },
+      {
+        "magic_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magic_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magic_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_magic_tnt')"
+        }
+      },
+      {
+        "magnet_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magnet_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magnet_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_magnet_tnt')"
+        }
+      },
+      {
+        "miners_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:miners_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.miners_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_miners_tnt')"
+        }
+      },
+      {
+        "axolotl_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:axolotl_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.axolotl_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_axolotl_mob_tnt')"
+        }
+      },
+      {
+        "bat_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:bat_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.bat_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_bat_mob_tnt')"
+        }
+      },
+      {
+        "cat_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cat_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cat_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_cat_mob_tnt')"
+        }
+      },
+      {
+        "chicken_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:chicken_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.chicken_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_chicken_mob_tnt')"
+        }
+      },
+      {
+        "cow_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cow_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cow_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_cow_mob_tnt')"
+        }
+      },
+      {
+        "fox_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:fox_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.fox_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_fox_mob_tnt')"
+        }
+      },
+      {
+        "parrot_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:parrot_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.parrot_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_parrot_mob_tnt')"
+        }
+      },
+      {
+        "pig_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:pig_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.pig_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_pig_mob_tnt')"
+        }
+      },
+      {
+        "polar_bear_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:polar_bear_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.polar_bear_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_polar_bear_mob_tnt')"
+        }
+      },
+      {
+        "rabbit_mob_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:rabbit_mob_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.rabbit_mob_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_rabbit_mob_tnt')"
+        }
+      },
+      {
+        "napalm_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:napalm_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.napalm_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "one",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_napalm_tnt')"
+        }
+      },
+      {
+        "patient_zero_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:patient_zero_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.patient_zero_tnt",
+          "$stat_bar_power": "four",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_patient_zero_tnt')"
+        }
+      },
+      {
+        "portal_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:portal_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.portal_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_portal_tnt')"
+        }
+      },
+      {
+        "rainbow_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:rainbow_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.rainbow_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_rainbow_tnt')"
+        }
+      },
+      {
+        "shulker_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:shulker_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.shulker_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_shulker_tnt')"
+        }
+      },
+      {
+        "black_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:black_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.black_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_black_smoke_tnt')"
+        }
+      },
+      {
+        "blue_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:blue_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.blue_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_blue_smoke_tnt')"
+        }
+      },
+      {
+        "brown_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:brown_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.brown_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_brown_smoke_tnt')"
+        }
+      },
+      {
+        "cyan_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:cyan_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.cyan_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_cyan_smoke_tnt')"
+        }
+      },
+      {
+        "dark_green_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:dark_green_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.dark_green_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_dark_green_smoke_tnt')"
+        }
+      },
+      {
+        "gray_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:gray_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.gray_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_gray_smoke_tnt')"
+        }
+      },
+      {
+        "light_blue_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_blue_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_blue_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_light_blue_smoke_tnt')"
+        }
+      },
+      {
+        "light_gray_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:light_gray_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.light_gray_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_light_gray_smoke_tnt')"
+        }
+      },
+      {
+        "lime_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:lime_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.lime_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_lime_smoke_tnt')"
+        }
+      },
+      {
+        "magenta_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:magenta_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.magenta_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_magenta_smoke_tnt')"
+        }
+      },
+      {
+        "orange_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:orange_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.orange_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_orange_smoke_tnt')"
+        }
+      },
+      {
+        "pink_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:pink_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.pink_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_pink_smoke_tnt')"
+        }
+      },
+      {
+        "purple_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:purple_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.purple_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_purple_smoke_tnt')"
+        }
+      },
+      {
+        "red_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:red_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.red_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_red_smoke_tnt')"
+        }
+      },
+      {
+        "white_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:white_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.white_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_white_smoke_tnt')"
+        }
+      },
+      {
+        "yellow_smoke_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:yellow_smoke_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.yellow_smoke_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_yellow_smoke_tnt')"
+        }
+      },
+      {
+        "split_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:split_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.split_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_split_tnt')"
+        }
+      },
+      {
+        "sponge_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:sponge_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.sponge_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "two",
+          "$stat_bar_range": "four",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_sponge_tnt')"
+        }
+      },
+      {
+        "sponge_wet_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:sponge_wet_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.sponge_wet_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "two",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_sponge_wet_tnt')"
+        }
+      },
+      {
+        "time_slower_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:time_slower_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.time_slower_tnt",
+          "$stat_bar_power": "three",
+          "$stat_bar_fuse_time": "three",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_time_slower_tnt')"
+        }
+      },
+      {
+        "troll_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:troll_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.troll_tnt",
+          "$stat_bar_power": "two",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "two",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_troll_tnt')"
+        }
+      },
+      {
+        "void_eater_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:void_eater_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.void_eater_tnt",
+          "$stat_bar_power": "one",
+          "$stat_bar_fuse_time": "four",
+          "$stat_bar_range": "three",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_void_eater_tnt')"
+        }
+      },
+      {
+        "world_ender_tnt@sndbx_dialogue_tnt_showcase.tnt_showcase_dialogue_content_panel": {
+          "$tnt_text_name": "entity.sndbx:world_ender_tnt_block.name",
+          "$tnt_text_description": "dialogue.showcase.description.world_ender_tnt",
+          "$stat_bar_power": "five",
+          "$stat_bar_fuse_time": "five",
+          "$stat_bar_range": "five",
+          "$visible_binding": "(#dialogtext = 'showcase_extended_world_ender_tnt')"
+        }
+      }
+    ]
+  },
+
+  "tnt_showcase_dialogue_content_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "offset": "$content_panel_offset",
+    
+    "controls": [
+      {
+        "tnt_model_display@sndbx_dialogue_tnt_showcase.tnt_model_showcase": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_model_display_offset"
+        }
+      },
+      {
+        "tnt_extend_panel_button@sndbx_dialogue_tnt_showcase.tnt_dialog_button": {
+          "$button_type": "extend_panel",
+          "ignored": "$is_extended",
+
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_button_offset_extend"
+        }
+      },
+      {
+        "tnt_equip_button@sndbx_dialogue_tnt_showcase.tnt_dialog_button": {
+          "$button_type": "equip",
+          "ignored": "(not $is_extended)",
+
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_button_offset_equip"
+        }
+      },
+      {
+        "equip_tip@sndbx_dialogue_tnt_showcase.tnt_extended_info_text": {
+          "ignored": "(not $is_extended)",
+
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_button_offset_equip_tip"
+        }
+      },
+      {
+        "tnt_unextend_panel_button@sndbx_dialogue_tnt_showcase.tnt_dialog_button": {
+          "$button_type": "unextend_panel",
+          "ignored": "(not $is_extended)",
+
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_button_offset_unextend"
+        }
+      },
+      {
+        "tnt_stats@sndbx_dialogue_tnt_showcase.tnt_stats_stacked_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_stats_offset"
+        }
+      },
+      {
+        "tnt_texts@sndbx_dialogue_tnt_showcase.tnt_text_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$tnt_texts_offset"
+        }
+      }
+    ],
+
+    "bindings": [
+      {
+        "binding_name": "#dialogtext",
+        "binding_type": "global"
+      },
+      {
+        "source_property_name": "$visible_binding",
+        "binding_type": "view",
+        "target_property_name": "#visible"
+      }
+    ],
+
+    "variables": [
+
+      // Desktop size
+      {
+        "requires": "(not ($is_android or $is_ios) and not ($nx_os))",
+        "$content_panel_offset": [ 0, 0 ],
+
+        "$model_showcase_max_size": [ 119, 120 ],
+        "$tnt_model_display_offset": [ 19, 14 ],
+
+        "$tnt_button_offset_extend": [ 101, -42 ],
+        "$tnt_button_offset_unextend": [ 101, -42 ],
+        "$tnt_button_offset_equip": [ 56, -32 ],
+        "$tnt_button_offset_equip_tip": [ 154.75, 116 ],
+        "$tnt_button_extend_size": [ 16, 32 ],
+        "$tnt_button_equip_size": [ 84, 43 ],
+        "$tnt_button_equip_tip_size": [ 121, 43 ],
+        "$tnt_button_equip_tip_scale": 1.0,
+
+        "$tnt_stats_max_size": [ 114, 109 ],
+        "$tnt_stats_offset": [ 122.5, 26 ],
+        "$stat_icon_size": [ 128, 35 ],
+        "$stat_icon_offset": [ 0, 0 ],
+        "$stat_power_icon_offset": [ 0, 0.35 ],
+        "$stat_fuse_time_icon_offset": [ 0, 40 ],
+        "$stat_range_icon_offset": [ 0, 79.5 ],
+        "$stat_bar_size": [ 65, 25 ],
+        "$stat_bar_offset": [ 98, 0 ],
+
+        "$tnt_text_panel_max_size": [ 278, 79 ],
+        "$tnt_texts_offset": [ 14, 154 ]
+      },
+
+      // Compressed size
+      {
+        "requires": "($is_android or $is_ios or $nx_os)",
+        "$content_panel_offset": [ 0, 0 ],
+
+        "$model_showcase_max_size": [ 84, 84 ],
+        "$tnt_model_display_offset": [ 22, 18 ],
+
+        "$tnt_button_offset_extend": [ 78, -36 ],
+        "$tnt_button_offset_unextend": [ 78, -36 ],
+        "$tnt_button_offset_equip": [ 46, -26 ],
+        "$tnt_button_offset_equip_tip": [ 124.5, 92 ],
+        "$tnt_button_extend_size": [ 14, 28 ],
+        "$tnt_button_equip_size": [ 64, 33 ],
+        "$tnt_button_equip_tip_size": [ 100, 64 ],
+        "$tnt_button_equip_tip_scale": 0.9,
+
+        "$tnt_stats_max_size": [ 98, 102 ],
+        "$tnt_stats_offset": [ 118.5, 19 ],
+        "$stat_icon_size": [ 64, 31 ],
+        "$stat_icon_offset": [ 0, 0 ],
+        "$stat_power_icon_offset": [ 0, 0 ],
+        "$stat_fuse_time_icon_offset": [ 0, 32 ],
+        "$stat_range_icon_offset": [ 0, 64 ],
+        "$stat_bar_size": [ 52, 20 ],
+        "$stat_bar_offset": [ 59.25, -1 ],
+
+        "$tnt_text_panel_max_size": [ 224, 32 ],
+        "$tnt_texts_offset": [ 6, 126 ]
+      }
+    ]
+  },
+
+  "tnt_model_showcase": {
+    "type": "panel",
+    "size": "$model_showcase_max_size",
+
+    "controls": [
+      {
+        "portrait_indent": {
+          "type": "custom",
+          "renderer": "actor_portrait_renderer",
+          "layer": 5,
+          "size": [ "100% - 12px", "100% - 12px" ],
+          "enable_scissor_test": true,
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_collection_name": "skins_collection",
+              "binding_name": "#skin_index"
+            }
+          ]
+        }      
+      }
+    ]
+  },
+
+  "tnt_buttons_label_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "equip_button@npc_interact.student_button_label": {
+          "text": " ",
+          "$visible_binding": "(#student_button_text = 'equip_button')"
+        }
+      },
+      {
+        "extended_panel_button@npc_interact.student_button_label": {
+          "text": "§l>§r",
+          "$visible_binding": "(#student_button_text = 'extend')"
+        }
+      },
+      {
+        "unextended_panel_button@npc_interact.student_button_label": {
+          "text": "§l<§r",
+          "$visible_binding": "(#student_button_text = 'unextend')"
+        }
+      }
+    ]
+  },
+
+  "tnt_button@common.empty_panel": {
+    "controls": [
+      {
+        "button@common_buttons.light_text_button": {
+          "$default_button_texture|default": "textures/ui/sndbx/showcase/button_default",
+          "$hover_button_texture|default": "textures/ui/sndbx/showcase/button_hovered",
+          "$pressed_button_texture|default": "textures/ui/sndbx/showcase/button_pressed",
+          "$button_type_panel": "sndbx_dialogue_tnt_showcase.tnt_buttons_label_panel",
+          "$pressed_button_name": "button.student_button",
+          
+          "sound_name": "$button_sound_effect_name",
+          "sound_volume": "$button_sound_effect_volume",
+          "sound_pitch": "$button_sound_effect_pitch",
+
+          "layer": 4,
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "student_buttons_collection",
+              "binding_collection_prefix": "student_buttons"
+            }
+          ],
+          "$is_equip_button|default": false,
+          "button_mappings": [
+            {
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "focused"
+            },
+            {
+              "ignored": "($is_equip_button or not $is_extended)",
+              "from_button_id": "button.menu_tab_left",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "global"
+            },
+            {
+              "ignored": "($is_equip_button or $is_extended)",
+              "from_button_id": "button.menu_tab_right",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "global"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#student_button_text",
+        "binding_type": "collection",
+        "binding_collection_name": "student_buttons_collection"
+      },
+      {
+        "source_property_name": "$visible_binding",
+        "binding_type": "view",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "tnt_button_panel_template": {
+    "type": "panel",
+    "controls": "$button_control",
+    "bindings": [
+      {
+        "binding_name": "#student_button_visible",
+        "binding_type": "collection",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "student_buttons_collection"
+      }
+    ]
+  },
+
+  "extend_panel_dialog_button@sndbx_dialogue_tnt_showcase.tnt_button_panel_template": {
+    "$button_type": "extend",
+    "$button_control": [
+      {
+        "button@sndbx_dialogue_tnt_showcase.tnt_button": {
+          "$button_sound_effect_name": "ui.sndbx_button",
+          "$button_sound_effect_volume": 1.0,
+          "$button_sound_effect_pitch": 1.5,
+
+          "size": "$tnt_button_extend_size",
+          "$visible_binding": "(#student_button_text = 'extend')"
+        }
+      }
+    ]
+  },
+
+  "unextend_panel_dialog_button@sndbx_dialogue_tnt_showcase.tnt_button_panel_template": {
+    "$button_type": "unextend",
+    "$button_control": [
+      {
+        "button@sndbx_dialogue_tnt_showcase.tnt_button": {
+          "$button_sound_effect_name": "ui.sndbx_button",
+          "$button_sound_effect_volume": 1.0,
+          "$button_sound_effect_pitch": 1.0,
+
+          "size": "$tnt_button_extend_size",
+          "$visible_binding": "(#student_button_text = 'unextend')"
+        }
+      }
+    ]
+  },
+
+  "equip_dialog_button@sndbx_dialogue_tnt_showcase.tnt_button_panel_template": {
+    "$button_type": "equip_button",
+    "$button_control": [
+      {
+        "button@sndbx_dialogue_tnt_showcase.tnt_button": {
+          "$button_sound_effect_name": "random.pop",
+          "$button_sound_effect_volume": 1.0,
+          "$button_sound_effect_pitch": 1.0,
+
+          "$border_visible": false,
+          "$default_button_texture": "textures/ui/sndbx/showcase/equip_button_default",
+          "$hover_button_texture": "textures/ui/sndbx/showcase/equip_button_hovered",
+          "$pressed_button_texture": "textures/ui/sndbx/showcase/equip_button_pressed",
+
+          "size": "$tnt_button_equip_size",
+          "$is_equip_button": true,
+          "$visible_binding": "(#student_button_text = 'equip_button')"
+        }
+      }
+    ]
+  },
+
+  "tnt_dialog_button@common.empty_panel": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "buttons": {
+          "type": "panel",
+          "size": [ "100% + 2px", "100%" ],
+          "controls": [
+            {
+              "actions": {
+                "type": "grid",
+                "size": [ "100%", "100%" ],
+                "grid_item_template": "('sndbx_dialogue_tnt_showcase.' + $button_type + '_dialog_button')",
+                "grid_dimension_binding": "#student_button_grid_dimensions",
+                "collection_name": "student_buttons_collection",
+                "bindings": [
+                  {
+                    "binding_name": "#student_button_grid_dimensions"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "tnt_extended_info_text@sndbx_dialogue_tnt_showcase.text_label": {
+    "font_scale_factor": "$tnt_button_equip_tip_scale",
+    "size": "$tnt_button_equip_tip_size",
+    "color": "$e_color_format",
+    "text": "dialogue.showcase.equip_tip"
+  },
+  
+  "tnt_stats_stacked_panel": {
+    "type": "panel",
+    "size": "$tnt_stats_max_size",
+
+    "controls": [
+      { 
+        "power@sndbx_dialogue_tnt_showcase.tnt_stat_power": {
+          "offset": "$stat_power_icon_offset"
+        } 
+      },
+      { 
+        "fuse_time@sndbx_dialogue_tnt_showcase.tnt_stat_fuse_time": {
+          "offset": "$stat_fuse_time_icon_offset"
+        } 
+      },
+      { 
+        "range@sndbx_dialogue_tnt_showcase.tnt_stat_range": {
+          "offset": "$stat_range_icon_offset"
+        } 
+      }
+    ]
+  },
+
+  "tnt_stat_power@sndbx_dialogue_tnt_showcase.tnt_stat_display_template": {
+    "$stat_icon_uv_size": [ 12, 17 ],
+    "$stat_name": "power",
+    "$stat_hover_text": "dialogue.showcase.stats.power.name",
+    "$hover_text_color": "$c_color_format",
+    "$stat_bar_level|default": 5,
+
+    "variables": [
+      { "requires": "($stat_bar_power = 'one')", "$stat_bar_level": 1 },
+      { "requires": "($stat_bar_power = 'two')", "$stat_bar_level": 2 },
+      { "requires": "($stat_bar_power = 'three')", "$stat_bar_level": 3 },
+      { "requires": "($stat_bar_power = 'four')", "$stat_bar_level": 4 },
+      { "requires": "($stat_bar_power = 'five')", "$stat_bar_level": 5 }
+    ]
+  },
+
+  "tnt_stat_fuse_time@sndbx_dialogue_tnt_showcase.tnt_stat_display_template": {
+    "$stat_icon_uv_size": [ 14, 15 ],
+    "$stat_name": "fuse_time",
+    "$stat_hover_text": "dialogue.showcase.stats.fuse_time.name",
+    "$hover_text_color": "$a_color_format",
+    "$stat_bar_level|default": 2,
+
+    "variables": [
+      { "requires": "($stat_bar_fuse_time = 'one')", "$stat_bar_level": 1 },
+      { "requires": "($stat_bar_fuse_time = 'two')", "$stat_bar_level": 2 },
+      { "requires": "($stat_bar_fuse_time = 'three')", "$stat_bar_level": 3 },
+      { "requires": "($stat_bar_fuse_time = 'four')", "$stat_bar_level": 4 },
+      { "requires": "($stat_bar_fuse_time = 'five')", "$stat_bar_level": 5 }
+    ]
+  },
+
+  "tnt_stat_range@sndbx_dialogue_tnt_showcase.tnt_stat_display_template": {
+    "$stat_icon_uv_size": [ 16, 16 ],
+    "$stat_name": "range",
+    "$stat_hover_text": "dialogue.showcase.stats.range.name",
+    "$hover_text_color": "$d_color_format",
+    "$stat_bar_level|default": 3,
+
+    "variables": [
+      { "requires": "($stat_bar_range = 'one')", "$stat_bar_level": 1 },
+      { "requires": "($stat_bar_range = 'two')", "$stat_bar_level": 2 },
+      { "requires": "($stat_bar_range = 'three')", "$stat_bar_level": 3 },
+      { "requires": "($stat_bar_range = 'four')", "$stat_bar_level": 4 },
+      { "requires": "($stat_bar_range = 'five')", "$stat_bar_level": 5 }
+    ]
+  },
+
+  "tnt_stat_display_template": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%c", 27 ],
+
+    "controls": [
+      {
+        "stat_icon@sndbx_dialogue_tnt_showcase.stats_display_image_control": {
+          "offset": "$stat_icon_offset",
+          "size": "$stat_icon_size",
+          "uv": [ 0, 0 ],
+          "uv_size": "$stat_icon_uv_size",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "ignored": "$is_extended",
+          
+          "$hover_size": "$stat_icon_size",
+          "$hover_text": "$stat_hover_text",
+          "$stat_type|default": "stat_icons",
+          "$stat_name|default": "power"
+        }
+      },
+      {
+        "stat_bar@sndbx_dialogue_tnt_showcase.stats_display_image_control": {
+          "offset": "$stat_bar_offset",
+          "size": "$stat_bar_size",
+          "uv": "$stat_bar_uv",
+          "uv_size": [ 26, 10 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "layer": -5,
+
+          "$hover_size": "$stat_bar_size",
+          "$stat_type|default": "stat_bars",
+          "$stat_name|default": "power",
+
+          "variables": [
+            { "requires": "($stat_bar_level = 1)", "$stat_bar_uv": [ 0, 0] },
+            { "requires": "($stat_bar_level = 2)", "$stat_bar_uv": [ 0, 10] },
+            { "requires": "($stat_bar_level = 3)", "$stat_bar_uv": [ 0, 20] },
+            { "requires": "($stat_bar_level = 4)", "$stat_bar_uv": [ 0, 30] },
+            { "requires": "($stat_bar_level = 5)", "$stat_bar_uv": [ 0, 40] }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "stats_display_image_control": {
+    "type": "image",
+    "texture": "('textures/ui/sndbx/showcase/' + $stat_type + '/' + $stat_name)",
+    "size": "$hover_size",
+    "layer": "$panel_base_layer",
+
+    "$hover_size|default": [ 16, 16 ],
+    "$panel_base_layer|default": 150,
+    "$hover_text|default": "hi_don_t_steal_my_code",
+    "$hover_text_color|default": "$f_color_format",
+    
+    "controls": [
+      {
+        "hover_panel@common.button": {
+          "size": [ "50%", "50%" ],
+          "$pressed_button_name": "unset",
+          "sound_volume": 0.0,
+          "controls": [
+            {
+              "hover@common.empty_panel": {
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "hover_text_image": {
+                      "type": "image",
+                      "allow_clipping": false,
+                      "alpha": 1.0,
+                      "texture": "textures/ui/purpleBorder",
+                      "size": [ "100%c + 8px", "100%c + 8px" ],
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "offset": [ 40, -20 ],
+                      "layer": "($panel_base_layer + 150)",
+                      "controls": [
+                        {
+                          "hover_text_label": {
+                            "type": "label",
+                            "offset": [ 4, 3 ],
+                            "size": [ "default", "default" ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "layer": "$panel_base_layer",
+                            "text": "$hover_text",
+                            "color": "$hover_text_color",
+                            "localize": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "ignored": "($stat_type = 'stat_bars')"
+        }
+      }
+    ]
+  },
+  
+  "tnt_text_panel": {
+    "type": "panel",
+    "size": "$tnt_text_panel_max_size",
+
+    "controls": [
+      {
+        "indent_panel": {
+          "type": "panel",
+          "size": [ "100% - 20px", "100% - 4px" ],
+          "offset": [ 0, 8 ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+
+          "controls": [
+            {
+              "scrollable_content@sndbx_dialogue_tnt_showcase.scrolling_panel": {
+                "$scrolling_content": "sndbx_dialogue_tnt_showcase.tnt_texts_stack_panel",
+
+                "$scroll_track_offset": [ -8.504, -0.045 ],
+                "$scroll_track_image_control": "common.empty_panel",
+                "$scroll_box_image_control": "sndbx_dialogue_tnt_showcase.scroll_box_active",
+                "$scroll_bar_left_padding_size": [ 0, 0 ],
+                "$scroll_bar_right_padding_size": [ 0, 0 ],
+                
+                "size": [ "100%", "100%" ],
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+
+                "$scroll_size|default": [ 12, 59 ],
+                "$scroll_view_port_size|default": [ 260, 59 ],
+                "$scrolling_pane_size|default": [ 260, 59 ],
+                "$scrolling_pane_offset|default": [ 2.5, 0.5 ],
+                "variables": [
+                  {
+                    "requires": "($is_android or $is_ios or $nx_os)",
+                    "$scroll_track_offset": [ -10.504, -1.65 ],
+
+                    "$scroll_size": [ 10, 48 ],
+                    "$scroll_view_port_size": [ 216, 48 ],
+                    "$scrolling_pane_size": [ 216, 48 ],
+                    "$scrolling_pane_offset": [ 2.5, -2 ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "tnt_texts_stack_panel": {
+    "type": "stack_panel",
+
+    "controls": [
+      {
+        "tnt_name@sndbx_dialogue_tnt_showcase.text_label": {
+          "size": [ "100% - 12px", "default" ],
+
+          "font_scale_factor": 1.54,
+          "text_alignment": "center",
+          "text": "$tnt_text_name",
+          "color": "$e_color_format",
+          "alpha": 0.8,
+          
+          "controls": [
+            {
+              "tnt_name_colored@sndbx_dialogue_tnt_showcase.text_label": {
+                "size": [ "100%", "default" ],
+                "offset": [ 0, 0 ],
+
+                "font_scale_factor": 1.54,
+                "text_alignment": "center",
+                "text": "$tnt_text_name",
+                "color": "$c_color_format",
+                "alpha": "@sndbx_dialogue_tnt_showcase.anim_beat_alpha_0"
+              }
+            }
+          ]
+        }
+      },
+      { "small_padding_0@common.empty_panel": { "size": [ "100%", 1.5 ] } },
+      {
+        "tnt_description@sndbx_dialogue_tnt_showcase.text_label": {
+          "size": [ "100% - 24px", "default" ],
+          "offset": [ 16, 0 ],
+
+          "font_scale_factor": 1.0,
+          "text_alignment": "left",
+          "text": "$tnt_text_description",
+          "color": "$f_color_format",
+          "propagate_alpha": true
+        }      
+      }
+    ]
+  },
+
+  "anim_beat_alpha_0": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 1.6,
+    "from": 0.8,
+    "to": 0.0,
+    "next": "@sndbx_dialogue_tnt_showcase.anim_beat_alpha_1"
+  },
+  "anim_beat_alpha_1": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.4,
+    "from": 0.0,
+    "to": 0.8,
+    "next": "@sndbx_dialogue_tnt_showcase.anim_beat_alpha_0"
+  },
+
+  "text_label": {
+    "type": "label",
+    "layer": 1,
+    "size": [ "100%", "default" ],
+    "shadow": true,
+    "localize": true
+  },
+
+  "scroll_box_active": {
+    "type": "panel",
+    "size": [ 10, "100%" ],
+    "allow_clipping": false,
+
+    "controls": [
+      {
+        "scroll_box_active_indent": {
+          "type": "image",
+          "size": [ "100% + 0.48px", "100% + 0.48px" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [ 0.7568, 0.7215, 0.9372 ],
+          "texture": "textures/ui/button_borderless_light",
+          "layer": 1
+        }
+      }
+    ]
+  },
+  
+  "scrolling_panel@common.scrolling_panel": {
+    "$scroll_track_offset|default": [ 0, 0 ],
+    "$scroll_track_image_control": "common.empty_panel",
+    "$scroll_box_mouse_image_control": "$scroll_box_image_control",
+    "$scroll_box_touch_image_control": "$scroll_box_image_control",
+    "controls": [
+      {
+        "scroll_base@sndbx_dialogue_tnt_showcase.scrolling_panel_base": {
+          "size": "$scrolling_pane_size",
+          "offset": "$scrolling_pane_offset"
+        }
+      }
+    ]
+  },
+  
+  "scrolling_panel_base@common.scrolling_panel_base": {
+    "controls": [
+      { 
+        "$scroll_view_name@common.scroll_view_control": {
+          "controls": [
+            {
+              "panel": {
+                "type": "panel",
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "$view_port_size|default": [ "100%", "100%" ],
+                "clips_children": true,
+                "controls": [
+                  { "viewport@sndbx_dialogue_tnt_showcase.viewport": {} },
+                  { "bar_and_track@sndbx_dialogue_tnt_showcase.bar_and_track": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "viewport@common.scroll_background_and_viewport": {
+    "controls": [
+      {
+        "scrolling_view_port": {
+          "layer": 1,
+          "type": "panel",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$scroll_view_port_offset",
+          "size": "$scroll_view_port_size",
+          "controls": [
+            {
+              "scrolling_content@$scrolling_content": {
+                "layer": 2,
+                "$scrolling_content_anchor_from|default": "top_left",
+                "$scrolling_content_anchor_to|default": "top_left",
+                "anchor_from": "$scrolling_content_anchor_from",
+                "anchor_to": "$scrolling_content_anchor_to"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "bar_and_track@common.scroll_bar_and_track": {
+    "size": "$scrolling_pane_size",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "centered_panel": {
+          "type": "panel",
+          "size": "$scroll_size",
+          "anchor_from": "$bar_and_track_anchor_from",
+          "anchor_to": "$bar_and_track_anchor_to",
+          "$bar_side|default": "scroll_right",
+          "offset": "$scroll_track_offset",
+          "variables": [
+            {
+              "requires": "($bar_side = scroll_left)",
+              "$bar_and_track_anchor_from": "top_left",
+              "$bar_and_track_anchor_to": "top_left"
+            },
+            {
+              "requires": "($bar_side = scroll_right)",
+              "$bar_and_track_anchor_from": "top_right",
+              "$bar_and_track_anchor_to": "top_right"
+            }
+          ],
+          "controls": [
+            {
+              "track@common.scrollbar_track": {
+                "layer": 20,
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            },
+            {
+              "scroll_box@common.scroll_box": {
+                "layer": 25,
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.mob_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.life_time >= 4.0"
+            }
+          ],
+          "on_entry": [ "/playsound random.fuse @a ~~~" ]
+        },
+        "on_ignite": {
+          "transitions": [
+            { "on_axolotl_tnt_explode": "q.owner_identifier == 'sndbx:axolotl_mob_tnt'" },
+            { "on_bat_tnt_explode": "q.owner_identifier == 'sndbx:bat_mob_tnt'" },
+            { "on_cat_tnt_explode": "q.owner_identifier == 'sndbx:cat_mob_tnt'" },
+            { "on_chicken_tnt_explode": "q.owner_identifier == 'sndbx:chicken_mob_tnt'" },
+            { "on_cow_tnt_explode": "q.owner_identifier == 'sndbx:cow_mob_tnt'" },
+            { "on_fox_tnt_explode": "q.owner_identifier == 'sndbx:fox_mob_tnt'" },
+            { "on_parrot_tnt_explode": "q.owner_identifier == 'sndbx:parrot_mob_tnt'" },
+            { "on_pig_tnt_explode": "q.owner_identifier == 'sndbx:pig_mob_tnt'" },
+            { "on_polar_bear_tnt_explode": "q.owner_identifier == 'sndbx:polar_bear_mob_tnt'" },
+            { "on_rabbit_tnt_explode": "q.owner_identifier == 'sndbx:rabbit_mob_tnt'" }
+          ],
+          "on_exit": [
+            "/playsound firework.launch @a ~~~ 1.0 0.5"
+          ]
+        },
+        "on_axolotl_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:axolotl ~ ~1 ~-3",
+            "/summon minecraft:axolotl ~ ~1 ~3",
+            "/summon minecraft:axolotl ~3 ~ ~",
+            "/summon minecraft:axolotl ~-3 ~ ~",
+            "/summon minecraft:axolotl ~-2 ~1 ~2",
+            "/summon minecraft:axolotl ~2 ~1 ~-2",
+            "/summon minecraft:axolotl ~2 ~1 ~2",
+            "/summon minecraft:axolotl ~-2 ~1 ~-2",
+            "/particle sndbx:axolotl_spawn ~ ~0.5 ~",
+
+            "/playsound mob.axolotl.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_bat_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:bat ~ ~1 ~-3",
+            "/summon minecraft:bat ~ ~1 ~3",
+            "/summon minecraft:bat ~3 ~ ~",
+            "/summon minecraft:bat ~-3 ~ ~",
+            "/summon minecraft:bat ~-2 ~1 ~2",
+            "/summon minecraft:bat ~2 ~1 ~-2",
+            "/summon minecraft:bat ~2 ~1 ~2",
+            "/summon minecraft:bat ~-2 ~1 ~-2",
+            "/particle sndbx:bat_spawn ~ ~0.5 ~",
+
+            "/playsound mob.bat.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_cat_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:cat ~ ~1 ~-3",
+            "/summon minecraft:cat ~ ~1 ~3",
+            "/summon minecraft:cat ~3 ~ ~",
+            "/summon minecraft:cat ~-3 ~ ~",
+            "/summon minecraft:cat ~-2 ~1 ~2",
+            "/summon minecraft:cat ~2 ~1 ~-2",
+            "/summon minecraft:cat ~2 ~1 ~2",
+            "/summon minecraft:cat ~-2 ~1 ~-2",
+            "/particle sndbx:cat_spawn ~ ~0.5 ~",
+
+            "/playsound mob.cat.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_chicken_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:chicken ~ ~1 ~-3",
+            "/summon minecraft:chicken ~ ~1 ~3",
+            "/summon minecraft:chicken ~3 ~ ~",
+            "/summon minecraft:chicken ~-3 ~ ~",
+            "/summon minecraft:chicken ~-2 ~1 ~2",
+            "/summon minecraft:chicken ~2 ~1 ~-2",
+            "/summon minecraft:chicken ~2 ~1 ~2",
+            "/summon minecraft:chicken ~-2 ~1 ~-2",
+            "/particle sndbx:chicken_spawn ~ ~0.5 ~",
+
+            "/playsound mob.chicken.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_cow_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:cow ~ ~1 ~-3",
+            "/summon minecraft:cow ~ ~1 ~3",
+            "/summon minecraft:cow ~3 ~ ~",
+            "/summon minecraft:cow ~-3 ~ ~",
+            "/summon minecraft:cow ~-2 ~1 ~2",
+            "/summon minecraft:cow ~2 ~1 ~-2",
+            "/summon minecraft:cow ~2 ~1 ~2",
+            "/summon minecraft:cow ~-2 ~1 ~-2",
+            "/particle sndbx:cow_spawn ~ ~0.5 ~",
+
+            "/playsound mob.cow.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_fox_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:fox ~ ~1 ~-3",
+            "/summon minecraft:fox ~ ~1 ~3",
+            "/summon minecraft:fox ~3 ~ ~",
+            "/summon minecraft:fox ~-3 ~ ~",
+            "/summon minecraft:fox ~-2 ~1 ~2",
+            "/summon minecraft:fox ~2 ~1 ~-2",
+            "/summon minecraft:fox ~2 ~1 ~2",
+            "/summon minecraft:fox ~-2 ~1 ~-2",
+            "/particle sndbx:fox_spawn ~ ~0.5 ~",
+
+            "/playsound mob.fox.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_parrot_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:parrot ~ ~1 ~-3",
+            "/summon minecraft:parrot ~ ~1 ~3",
+            "/summon minecraft:parrot ~3 ~ ~",
+            "/summon minecraft:parrot ~-3 ~ ~",
+            "/summon minecraft:parrot ~-2 ~1 ~2",
+            "/summon minecraft:parrot ~2 ~1 ~-2",
+            "/summon minecraft:parrot ~2 ~1 ~2",
+            "/summon minecraft:parrot ~-2 ~1 ~-2",
+            "/particle sndbx:parrot_spawn ~ ~0.5 ~",
+
+            "/playsound mob.parrot.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_pig_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:pig ~ ~1 ~-3",
+            "/summon minecraft:pig ~ ~1 ~3",
+            "/summon minecraft:pig ~3 ~ ~",
+            "/summon minecraft:pig ~-3 ~ ~",
+            "/summon minecraft:pig ~-2 ~1 ~2",
+            "/summon minecraft:pig ~2 ~1 ~-2",
+            "/summon minecraft:pig ~2 ~1 ~2",
+            "/summon minecraft:pig ~-2 ~1 ~-2",
+            "/particle sndbx:pig_spawn ~ ~0.5 ~",
+
+            "/playsound mob.pig.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_polar_bear_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:polar_bear ~ ~1 ~-3",
+            "/summon minecraft:polar_bear ~ ~1 ~3",
+            "/summon minecraft:polar_bear ~3 ~ ~",
+            "/summon minecraft:polar_bear ~-3 ~ ~",
+            "/summon minecraft:polar_bear ~-2 ~1 ~2",
+            "/summon minecraft:polar_bear ~2 ~1 ~-2",
+            "/summon minecraft:polar_bear ~2 ~1 ~2",
+            "/summon minecraft:polar_bear ~-2 ~1 ~-2",
+            "/particle sndbx:polar_bear_spawn ~ ~0.5 ~",
+
+            "/playsound mob.polar_bear.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        },
+        "on_rabbit_tnt_explode": {
+          "on_entry": [
+            "/summon minecraft:rabbit ~ ~1 ~-3",
+            "/summon minecraft:rabbit ~ ~1 ~3",
+            "/summon minecraft:rabbit ~3 ~ ~",
+            "/summon minecraft:rabbit ~-3 ~ ~",
+            "/summon minecraft:rabbit ~-2 ~1 ~2",
+            "/summon minecraft:rabbit ~2 ~1 ~-2",
+            "/summon minecraft:rabbit ~2 ~1 ~2",
+            "/summon minecraft:rabbit ~-2 ~1 ~-2",
+            "/particle sndbx:rabbit_spawn ~ ~0.5 ~",
+
+            "/playsound mob.rabbit.hurt @a ~~~ 1.0",
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

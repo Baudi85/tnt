@@ -1,0 +1,175 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.basic_block.idle": {
+			"loop": true,
+			"bones": {
+				"root1": {
+					"scale": ["math.sin(query.anim_time * 300) * -0.01 + 1", "math.sin(query.anim_time * 300) * 0.01 + 1", "math.sin(query.anim_time * 300) * -0.01 + 1"]
+				},
+				"head1": {
+					"position": [0, "math.sin(query.anim_time * 300) * 0.05", 0]
+				},
+				"left_arm1": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 300 - 20) * -3 - 3"]
+				},
+				"right_arm1": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 300 - 20) * 3 + 3"]
+				}
+			}
+		},
+		"animation.basic_block.walk": {
+			"loop": true,
+			"bones": {
+				"root1": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 300 - 20) * 1"],
+					"position": [0, "math.abs(math.sin(query.anim_time * 300 - 20) * 3)", 0],
+					"scale": ["math.sin(query.anim_time * 600) * -0.01 + 1", "math.sin(query.anim_time * 600) * 0.01 + 1", "math.sin(query.anim_time * 600) * -0.01 + 1"]
+				},
+				"head1": {
+					"position": [0, "math.abs(math.sin(query.anim_time * 300 - 20) * 1)", 0]
+				},
+				"left_arm1": {
+					"rotation": ["math.clamp(math.sin(query.anim_time * 300 - 10) * 45,-20,20)", 0, 0]
+				},
+				"right_arm1": {
+					"rotation": ["math.clamp(math.sin(query.anim_time * 300 - 10) * -45,-20,20)", 0, 0]
+				},
+				"left_leg1": {
+					"rotation": ["math.clamp(math.sin(query.anim_time * 300) * -45,-20,20)", 0, 0]
+				},
+				"right_leg1": {
+					"rotation": ["math.clamp(math.sin(query.anim_time * 300) * 45,-20,20)", 0, 0]
+				}
+			}
+		},
+		"animation.basic_block.hit": {
+			"loop": true,
+			"animation_length": 0.75,
+			"bones": {
+				"root1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [-5, 0, 0],
+						"0.3": [-5, 0, 0],
+						"0.45": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.15": [0, 3, 0],
+						"0.45": [0, 0, 0]
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.2": [0.95, 1.05, 0.95],
+						"0.4": [1, 1, 1],
+						"0.45": [1.05, 0.95, 1.05],
+						"0.55": [1, 1, 1]
+					}
+				},
+				"head1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [-10, 0, 0],
+						"0.3": [-10, 0, 0],
+						"0.45": [0, 0, 0]
+					}
+				},
+				"left_arm1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [0, 0, -25],
+						"0.3": [0, 0, -25],
+						"0.45": [0, 0, 0]
+					}
+				},
+				"right_arm1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [0, 0, 25],
+						"0.3": [0, 0, 25],
+						"0.45": [0, 0, 0]
+					}
+				},
+				"left_leg1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [-50, 0, 0],
+						"0.3": [-50, 0, 0],
+						"0.45": [0, 0, 0]
+					}
+				},
+				"right_leg1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [-50, 0, 0],
+						"0.3": [-50, 0, 0],
+						"0.45": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.basic_block.attack": {
+			"loop": true,
+			"animation_length": 0.75,
+			"bones": {
+				"root1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1": [10, 0, 0],
+						"0.45": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.1": [0, 2, 0],
+						"0.3": [0, 1.8, 0],
+						"0.45": [0, 0, 0]
+					},
+					"scale": {
+						"0.4": [1, 1, 1],
+						"0.5": [1.05, 0.95, 1.05],
+						"0.6": [1, 1, 1]
+					}
+				},
+				"head1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1": [-5, 0, 0],
+						"0.3": [-2, 0, 0],
+						"0.4": [0, 0, 0]
+					}
+				},
+				"left_arm1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [-120, -10, 0],
+						"0.3": [-115, -10, 0],
+						"0.4": [0, 0, 0]
+					}
+				},
+				"right_arm1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.15": [-115, 10, 0],
+						"0.3": [-110, 10, 0],
+						"0.4": [0, 0, 0]
+					}
+				},
+				"left_leg1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [4, 0, 0],
+						"0.4": [0, 0, 0]
+					}
+				},
+				"right_leg1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [5, 0, 0],
+						"0.4": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

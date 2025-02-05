@@ -1,0 +1,199 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scientist.one": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "no_dialogue": "!q.variant"
+            },
+            {
+              "dialogue_1": "q.is_saddled && q.variant == 1"
+            },
+            {
+              "dialogue_2": "q.is_saddled && q.variant == 2"
+            }
+          ]
+        },
+        "no_dialogue": {
+          "on_entry": [ "@s sndbx:no_dialogue" ],
+          "transitions": [
+            {
+              "default": "q.variant > 0"
+            }
+          ]
+        },
+        "hide_dialogue": {
+          "on_entry": [ "/playsound mob.villager.no @a ~~~" ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ]
+        },
+        "dialogue_1": {
+          "on_entry": [
+            "@s sndbx:show_dialogue_1",
+            "/playsound mob.villager.haggle @a ~~~"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 1"
+            },
+            {
+              "hide_dialogue": "!q.is_saddled"
+            }
+          ]
+        },
+        "dialogue_2": {
+          "on_entry": [
+            "@s sndbx:show_dialogue_2",
+            "/playsound mob.villager.haggle @a ~~~",
+
+            "/execute @s[tag=!dialogue_finished] ~~~ function objectives/setup/showcase",
+            "/tag @s add dialogue_finished"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 2"
+            },
+            {
+              "hide_dialogue": "!q.is_saddled"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.scientist.two": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "no_dialogue": "!q.variant"
+            },
+            {
+              "dialogue_1": "q.is_saddled && q.variant == 1"
+            }
+          ]
+        },
+        "no_dialogue": {
+          "on_entry": [ "@s sndbx:no_dialogue" ],
+          "transitions": [
+            {
+              "default": "q.variant > 0"
+            }
+          ]
+        },
+        "hide_dialogue": {
+          "on_entry": [ "/playsound mob.villager.no @a ~~~" ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ]
+        },
+        "dialogue_1": {
+          "on_entry": [
+            "@s sndbx:show_dialogue_1",
+            "/playsound mob.villager.haggle @a ~~~"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 1"
+            },
+            {
+              "hide_dialogue": "!q.is_saddled"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.scientist.three": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "no_dialogue": "!q.variant"
+            },
+            {
+              "dialogue_1": "q.is_saddled && q.variant == 1"
+            },
+            {
+              "dialogue_2": "q.is_saddled && q.variant == 2"
+            },
+            {
+              "dialogue_3": "q.is_saddled && q.variant == 3"
+            }
+          ]
+        },
+        "no_dialogue": {
+          "on_entry": [ "@s sndbx:no_dialogue" ],
+          "transitions": [
+            {
+              "default": "q.variant > 0"
+            }
+          ]
+        },
+        "hide_dialogue": {
+          "on_entry": [ "/playsound mob.villager.no @a ~~~" ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ]
+        },
+        "dialogue_1": {
+          "on_entry": [
+            "@s sndbx:show_dialogue_1",
+            "/playsound mob.villager.haggle @a ~~~"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 1"
+            },
+            {
+              "hide_dialogue": "!q.is_saddled"
+            }
+          ]
+        },
+        "dialogue_2": {
+          "on_entry": [
+            "@s sndbx:show_dialogue_2",
+            "/playsound mob.villager.haggle @a ~~~"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 2"
+            },
+            {
+              "hide_dialogue": "!q.is_saddled"
+            }
+          ]
+        },
+        "dialogue_3": {
+          "on_entry": [
+            "@s sndbx:show_dialogue_3",
+            "/playsound mob.villager.haggle @a ~~~",
+
+            "/execute @s[tag=!dialogue_finished] ~~~ function objectives/setup/showcase_equip_tnt",
+            "/tag @s add dialogue_finished"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 3"
+            },
+            {
+              "hide_dialogue": "!q.is_saddled"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

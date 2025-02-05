@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:super_tnt",
+      "geometry": {
+        "default": "geometry.supertnt",
+        "primed": "geometry.supertnt_primed"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "primed": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/super_tnt/super_tnt",
+        "flashing": "textures/tnts/v1/super_tnt/super_tnt_white",
+        "primed": "textures/entity/creeper/creeper_armor"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);",
+          "variable.uv = (math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.005;"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          { "explosion": "q.life_time >= 5.5" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion"
+      },
+      "render_controllers": [
+        "controller.render.tnt.default.big",
+        "controller.render.lit_tnt.super"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

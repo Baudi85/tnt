@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:elevator_door",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/elevators/elevator_door"
+      },
+      "geometry": {
+        "default": "geometry.elevator_door"
+      },
+      "render_controllers": [
+        "controller.render.elevator"
+      ],
+      "scripts": {
+        "animate": [ "setup" ]
+      },
+      "animations": {
+        "setup": "controller.animation.elevator_door.setup",
+        "open_door": "animation.elevator_door.open",
+        "close_door": "animation.elevator_door.close"
+      }
+    }
+  }
+}

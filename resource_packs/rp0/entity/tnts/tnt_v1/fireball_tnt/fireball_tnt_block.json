@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:fireball_tnt_block",
+      "geometry": {
+        "default": "geometry.fireballtnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/fireball_tnt/fireball_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct",
+        "meteorite":"sndbx:meteorite_ring"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "ring_particle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "ring_particle":"animation.meteorite_ring"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "fireball_tnt"
+      }
+    }
+  }
+}

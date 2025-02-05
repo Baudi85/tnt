@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.lit_fireballtnt": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "overlay_color":{
+        "r": "variable.flash ? 1.0 : math.sin(query.life_time*800)*0.2+0.8",
+        "g": "variable.flash ? 1.0 : math.sin(query.life_time*800)*0.2+0.2",
+        "b": "variable.flash",
+        "a": "variable.flash ? 1.0 : 0.9"
+      },
+      "is_hurt_color":{},
+      "on_fire_color":{}
+    },
+    "controller.render.fireballtnt": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "overlay_color":{
+      	"r":"math.sin(query.life_time*400)*0.2+0.8",
+      	"g":"math.sin(query.life_time*400)*0.2+0.2",
+      	"b":0,
+      	"a": "math.sin(query.life_time * 400 - 100)*0.2+0.2"
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:world_ender_tnt_dummy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime",
+          "tp"
+        ]
+      },
+      "animations": {
+        "runtime": "animation.sndbx_world_ender_tnt_expl",
+        "tp": "controller.animation.world_ender_tnt.tp"
+      }
+    },
+    "component_groups": {
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sndbx:teleport_entity": {
+        "minecraft:is_shaking": {}
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "all_of": [
+                      { "test": "is_family", "subject": "other", "value": "world_ender_tnt" }, { "test": "is_family", "subject": "other", "value": "lit" }
+                    ]
+                  },
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "entity_explosion"
+                  }
+                ]
+              },
+              "event": "sndbx:teleport_entity",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "none_of": [
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "entity_explosion"
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": [
+          30.0,
+          30.0
+        ],
+        "time_down_event": {
+          "event": "sndbx:despawn",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn"
+          ]
+        }
+      },
+      "sndbx:teleport_entity": {
+        "add": {
+          "component_groups": [
+            "sndbx:teleport_entity"
+          ]
+        }
+      },
+      "sndbx:remove_teleport_entity": {
+        "remove": {
+          "component_groups": [
+            "sndbx:teleport_entity"
+          ]
+        }
+      }
+    }
+  }
+}

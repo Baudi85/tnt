@@ -1,0 +1,11 @@
+{
+  "values": [
+    "tnt/infinity_tnt",
+    "tnt/void_eater_tnt",
+    "bunker_door/setup",
+    "remove_unused_structures",
+    "shooting_range/target_hit",
+
+    "tick"
+  ]
+}

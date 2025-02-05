@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dynamite_spark": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "emit": "q.is_powered" }
+          ]
+        },
+        "emit": {
+          "particle_effects": [
+            { "effect": "fire_fuse", "locator": "spark0" },
+            { "effect": "fire_fuse", "locator": "spark1" },
+            { "effect": "fire_fuse", "locator": "spark2" }
+          ],
+          "transitions": [ { "default": "1.0" } ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+execute @e[type=sndbx:void_eater_tnt,tag=void_eater_tnt] ~ ~ ~ structure load mystructure:void_eater ~-10 ~-1 ~-10

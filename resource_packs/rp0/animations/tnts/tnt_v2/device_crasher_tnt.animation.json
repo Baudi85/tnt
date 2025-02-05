@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.device_crasher_tnt.idle": {
+			"loop": true,
+			"bones": {
+				"bone4": {
+					"scale": "1 + math.sin(query.anim_time*150)*.04"
+				},
+				"bone0": {
+					"scale": "1 + math.sin(query.anim_time*150)*.04"
+				},
+				"bone1": {
+					"scale": "1 + math.sin(query.anim_time*150 + 100)*.04"
+				},
+				"bone2": {
+					"scale": "1 + math.sin(query.anim_time*150 + 160)*.04"
+				},
+				"bone3": {
+					"scale": "1 + math.sin(query.anim_time*150 + 100)*.04"
+				},
+				"bone5": {
+					"scale": "1 + math.sin(query.anim_time*150 + 160)*.04"
+				}
+			}
+		},
+		"animation.device_crasher_tnt.explode": {
+			"loop": true,
+			"bones": {
+				"bone4": {
+					"scale": "1 + math.sin(query.anim_time*150*(query.anim_time*2))*.04"
+				},
+				"bone0": {
+					"scale": "1 + math.sin(query.anim_time*150*(query.anim_time*2))*.04"
+				},
+				"bone1": {
+					"scale": "1 + math.sin(query.anim_time*150*(query.anim_time*2) + 100)*.04"
+				},
+				"bone2": {
+					"scale": "1 + math.sin(query.anim_time*150*(query.anim_time*2) + 160)*.04"
+				},
+				"bone3": {
+					"scale": "1 + math.sin(query.anim_time*150*(query.anim_time*2) + 100)*.04"
+				},
+				"bone5": {
+					"scale": "1 + math.sin(query.anim_time*150*(query.anim_time*2) + 160)*.04"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,986 @@
+{
+  "format_version": "1.14",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "showcase_base_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:base_tnt.name" } ] },
+        "text": "showcase_base_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_base_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_arctic_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:arctic_tnt.name" } ] },
+        "text": "showcase_arctic_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_arctic_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_big_bertha_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:big_bertha_tnt.name" } ] },
+        "text": "showcase_big_bertha_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_big_bertha_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_black_hole_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:black_hole_tnt.name" } ] },
+        "text": "showcase_black_hole_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_black_hole_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_blast_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:blast_tnt.name" } ] },
+        "text": "showcase_blast_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_blast_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_blaze_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:blaze_tnt.name" } ] },
+        "text": "showcase_blaze_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_blaze_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_black_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:black_colored_tnt.name" } ] },
+        "text": "showcase_black_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_black_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_blue_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:blue_colored_tnt.name" } ] },
+        "text": "showcase_blue_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_blue_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_brown_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:brown_colored_tnt.name" } ] },
+        "text": "showcase_brown_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_brown_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_cyan_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:cyan_colored_tnt.name" } ] },
+        "text": "showcase_cyan_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_cyan_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_gray_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:gray_colored_tnt.name" } ] },
+        "text": "showcase_gray_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_gray_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_green_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:green_colored_tnt.name" } ] },
+        "text": "showcase_green_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_green_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_light_blue_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:light_blue_colored_tnt.name" } ] },
+        "text": "showcase_light_blue_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_light_blue_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_light_gray_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:light_gray_colored_tnt.name" } ] },
+        "text": "showcase_light_gray_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_light_gray_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_lime_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:lime_colored_tnt.name" } ] },
+        "text": "showcase_lime_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_lime_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_magenta_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:magenta_colored_tnt.name" } ] },
+        "text": "showcase_magenta_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_magenta_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_orange_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:orange_colored_tnt.name" } ] },
+        "text": "showcase_orange_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_orange_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_pink_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:pink_colored_tnt.name" } ] },
+        "text": "showcase_pink_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_pink_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_purple_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:purple_colored_tnt.name" } ] },
+        "text": "showcase_purple_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_purple_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_red_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:red_colored_tnt.name" } ] },
+        "text": "showcase_red_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_red_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_white_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:white_colored_tnt.name" } ] },
+        "text": "showcase_white_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_white_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_yellow_colored_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:yellow_colored_tnt.name" } ] },
+        "text": "showcase_yellow_colored_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_yellow_colored_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_fireball_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:fireball_tnt.name" } ] },
+        "text": "showcase_fireball_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_fireball_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_fish_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:fish_tnt.name" } ] },
+        "text": "showcase_fish_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_fish_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_galaxy_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:galaxy_tnt.name" } ] },
+        "text": "showcase_galaxy_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_galaxy_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_lightning_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:lightning_tnt.name" } ] },
+        "text": "showcase_lightning_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_lightning_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_mega_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:mega_tnt.name" } ] },
+        "text": "showcase_mega_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_mega_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_party_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:party_tnt.name" } ] },
+        "text": "showcase_party_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_party_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_potion_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:potion_tnt.name" } ] },
+        "text": "showcase_potion_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_potion_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_scatter_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:scatter_tnt.name" } ] },
+        "text": "showcase_scatter_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_scatter_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_sticky_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:sticky_tnt.name" } ] },
+        "text": "showcase_sticky_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_sticky_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_super_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:super_tnt.name" } ] },
+        "text": "showcase_super_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_super_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_tornado_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:tornado_tnt.name" } ] },
+        "text": "showcase_tornado_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_tornado_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_ultra_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:ultra_tnt.name" } ] },
+        "text": "showcase_ultra_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_ultra_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_wither_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:wither_tnt.name" } ] },
+        "text": "showcase_wither_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_wither_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_blessed_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:blessed_tnt.name" } ] },
+        "text": "showcase_blessed_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_blessed_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_butterfly_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:butterfly_tnt.name" } ] },
+        "text": "showcase_butterfly_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_butterfly_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_circle_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:circle_tnt.name" } ] },
+        "text": "showcase_circle_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_circle_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_device_crasher_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:device_crasher_tnt.name" } ] },
+        "text": "showcase_device_crasher_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_device_crasher_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_dinnerbone_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:dinnerbone_tnt.name" } ] },
+        "text": "showcase_dinnerbone_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_dinnerbone_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_doomsday_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:doomsday_tnt.name" } ] },
+        "text": "showcase_doomsday_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_doomsday_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_dynamite_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:dynamite_tnt.name" } ] },
+        "text": "showcase_dynamite_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_dynamite_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_ender_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:ender_tnt.name" } ] },
+        "text": "showcase_ender_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_ender_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_equaliser_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:equaliser_tnt.name" } ] },
+        "text": "showcase_equaliser_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_equaliser_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_gravitational_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:gravitational_tnt.name" } ] },
+        "text": "showcase_gravitational_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_gravitational_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_infinity_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:infinity_tnt.name" } ] },
+        "text": "showcase_infinity_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_infinity_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_lucky_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:lucky_tnt.name" } ] },
+        "text": "showcase_lucky_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_lucky_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_magic_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:magic_tnt.name" } ] },
+        "text": "showcase_magic_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_magic_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_magnet_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:magnet_tnt.name" } ] },
+        "text": "showcase_magnet_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_magnet_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_miners_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:miners_tnt.name" } ] },
+        "text": "showcase_miners_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_miners_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_axolotl_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:axolotl_mob_tnt.name" } ] },
+        "text": "showcase_axolotl_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_axolotl_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_bat_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:bat_mob_tnt.name" } ] },
+        "text": "showcase_bat_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_bat_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_cat_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:cat_mob_tnt.name" } ] },
+        "text": "showcase_cat_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_cat_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_chicken_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:chicken_mob_tnt.name" } ] },
+        "text": "showcase_chicken_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_chicken_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_cow_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:cow_mob_tnt.name" } ] },
+        "text": "showcase_cow_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_cow_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_fox_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:fox_mob_tnt.name" } ] },
+        "text": "showcase_fox_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_fox_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_parrot_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:parrot_mob_tnt.name" } ] },
+        "text": "showcase_parrot_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_parrot_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_pig_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:pig_mob_tnt.name" } ] },
+        "text": "showcase_pig_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_pig_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_polar_bear_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:polar_bear_mob_tnt.name" } ] },
+        "text": "showcase_polar_bear_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_polar_bear_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_rabbit_mob_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:rabbit_mob_tnt.name" } ] },
+        "text": "showcase_rabbit_mob_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_rabbit_mob_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_napalm_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:napalm_tnt.name" } ] },
+        "text": "showcase_napalm_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_napalm_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_patient_zero_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:patient_zero_tnt.name" } ] },
+        "text": "showcase_patient_zero_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_patient_zero_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_toxic_goo",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:toxic_goo.name" } ] },
+        "text": "showcase_toxic_goo",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_toxic_goo" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_portal_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:portal_tnt.name" } ] },
+        "text": "showcase_portal_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_portal_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_rainbow_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:rainbow_tnt.name" } ] },
+        "text": "showcase_rainbow_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_rainbow_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_shulker_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:shulker_tnt.name" } ] },
+        "text": "showcase_shulker_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_shulker_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_black_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:black_smoke_tnt.name" } ] },
+        "text": "showcase_black_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_black_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_blue_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:blue_smoke_tnt.name" } ] },
+        "text": "showcase_blue_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_blue_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_brown_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:brown_smoke_tnt.name" } ] },
+        "text": "showcase_brown_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_brown_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_cyan_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:cyan_smoke_tnt.name" } ] },
+        "text": "showcase_cyan_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_cyan_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_dark_green_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:dark_green_smoke_tnt.name" } ] },
+        "text": "showcase_dark_green_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_dark_green_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_gray_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:gray_smoke_tnt.name" } ] },
+        "text": "showcase_gray_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_gray_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_light_blue_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:light_blue_smoke_tnt.name" } ] },
+        "text": "showcase_light_blue_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_light_blue_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_light_gray_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:light_gray_smoke_tnt.name" } ] },
+        "text": "showcase_light_gray_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_light_gray_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_lime_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:lime_smoke_tnt.name" } ] },
+        "text": "showcase_lime_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_lime_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_magenta_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:magenta_smoke_tnt.name" } ] },
+        "text": "showcase_magenta_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_magenta_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_orange_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:orange_smoke_tnt.name" } ] },
+        "text": "showcase_orange_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_orange_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_pink_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:pink_smoke_tnt.name" } ] },
+        "text": "showcase_pink_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_pink_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_purple_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:purple_smoke_tnt.name" } ] },
+        "text": "showcase_purple_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_purple_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_red_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:red_smoke_tnt.name" } ] },
+        "text": "showcase_red_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_red_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_white_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:white_smoke_tnt.name" } ] },
+        "text": "showcase_white_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_white_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_yellow_smoke_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:yellow_smoke_tnt.name" } ] },
+        "text": "showcase_yellow_smoke_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_yellow_smoke_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_split_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:split_tnt.name" } ] },
+        "text": "showcase_split_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_split_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_sponge_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:sponge_tnt.name" } ] },
+        "text": "showcase_sponge_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_sponge_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_sponge_wet_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:sponge_wet_tnt.name" } ] },
+        "text": "showcase_sponge_wet_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_sponge_wet_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_time_slower_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:time_slower_tnt.name" } ] },
+        "text": "showcase_time_slower_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_time_slower_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_troll_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:troll_tnt.name" } ] },
+        "text": "showcase_troll_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_troll_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_void_eater_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:void_eater_tnt.name" } ] },
+        "text": "showcase_void_eater_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_void_eater_tnt" ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "showcase_world_ender_tnt",
+        "npc_name": { "rawtext": [ { "translate": "entity.sndbx:world_ender_tnt.name" } ] },
+        "text": "showcase_world_ender_tnt",
+        "buttons": [
+          {
+            "name": "extend",
+            "commands": [ "/dialogue open @s @initiator showcase_extended_world_ender_tnt" ]
+          }
+        ]
+      }
+    ]
+  }
+}

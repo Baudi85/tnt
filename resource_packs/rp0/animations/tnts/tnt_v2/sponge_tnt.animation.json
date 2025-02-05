@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sponge_tnt.absorb_water": {
+      "loop": "hold_on_last_frame",
+			"animation_length": 4,
+      "bones": {
+				"tnt": {
+					"scale": "temp.anim_time = query.anim_time; return ((temp.anim_time + 0.1 * math.sin(temp.anim_time * 1000 - 250)) * 0.3)/3.33 + 1.0;"
+				}
+			}
+    }
+	}
+}

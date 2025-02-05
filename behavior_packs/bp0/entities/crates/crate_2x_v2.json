@@ -1,0 +1,149 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:crate_2x_v2",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "sndbx:destroy_crate_1": {
+        "minecraft:skin_id": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 1.2,
+          "time_down_event": {
+            "event": "sndbx:despawn",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:destroy_crate_0": {
+        "minecraft:skin_id": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 1.36,
+          "time_down_event": {
+            "event": "sndbx:despawn",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+
+      "sndbx:destroyed": {
+        "minecraft:is_ignited": {}
+      }
+    },
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:physics": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 2.5,
+            "height": 1.7,
+            "pivot": [0, 0.85, 0]
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "tnt" },
+                  {
+                    "any_of": [ { "test": "has_damage", "value": "block_explosion" }, { "test": "has_damage", "value": "entity_explosion" } ]
+                  }
+                ]
+              },
+              "event": "sndbx:destroy_crate",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "none_of": [
+                  { "test": "is_family", "subject": "other", "value": "tnt" },
+                  {
+                    "any_of": [ { "test": "has_damage", "value": "block_explosion" }, { "test": "has_damage", "value": "entity_explosion" } ]
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      }
+    },
+    "events": {
+      "sndbx:destroy_crate": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "sndbx:destroyed"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 5,
+                "add": {
+                  "component_groups": [
+                    "sndbx:destroy_crate_0"
+                  ]
+                }
+              },
+              {
+                "weight": 5,
+                "add": {
+                  "component_groups": [
+                    "sndbx:destroy_crate_1"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

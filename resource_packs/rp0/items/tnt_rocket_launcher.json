@@ -1,0 +1,12 @@
+{
+  "format_version": "1.14",
+  "minecraft:item": {
+    "description": {
+      "identifier": "sndbx:tnt_rocket_launcher",
+      "category": "Tools"
+    },
+    "components": {
+      "minecraft:icon": "rocket_launcher"
+    }
+  }
+}

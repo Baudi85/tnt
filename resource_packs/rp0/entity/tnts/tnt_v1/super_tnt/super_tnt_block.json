@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:super_tnt_block",
+      "geometry": {
+        "default": "geometry.supertnt",
+        "primed": "geometry.supertnt_primed"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "primed": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/super_tnt/super_tnt",
+        "primed": "textures/entity/creeper/creeper_armor"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct"
+      },
+      "scripts": {
+        "pre_animation":[
+          "variable.uv = (math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.005;"
+        ],
+        "animate": [
+          "align",
+          "block_destruct"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block",
+        "controller.render.tnt.super"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "super_tnt"
+      }
+    }
+  }
+}

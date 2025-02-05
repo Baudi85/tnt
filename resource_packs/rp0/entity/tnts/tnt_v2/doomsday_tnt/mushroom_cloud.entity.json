@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:mushroom_cloud",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/doomsday/mushroom_cloud"
+      },
+      "geometry": {
+        "default": "geometry.mushroom_cloud"
+      },
+      "render_controllers": [
+        "controller.render.mushroom_cloud"
+      ],
+      "scripts": {
+        "animate": [
+          "explode"
+        ]
+      },
+      "animations": {
+        "explode": "animation.mushroom_cloud.explode"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:equaliser_tnt",
+      "geometry": {
+        "default": "geometry.equaliser_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/equaliser_tnt/equaliser_tnt"
+      },
+      "particle_effects": {
+        "redstone": "minecraft:redstone_wire_dust_particle"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "redstone",
+          { "push_in": "q.is_powered" }
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "redstone": "controller.animation.equaliser_tnt_redstone",
+        "push_in": "animation.equaliser_tnt.push_in"
+      },
+      "render_controllers": [
+        "controller.render.equaliser_tnt",
+        "controller.render.equaliser_tnt.flash_lit"
+      ],
+      "sound_effects": {
+        "ignited": "random.click"
+      }
+    }
+  }
+}

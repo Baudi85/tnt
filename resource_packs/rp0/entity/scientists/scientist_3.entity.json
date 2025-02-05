@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:scientist_3",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/scientists/scientist_3"
+      },
+      "particle_effects": {
+        "dialogue_1": "sndbx:scientist_dialogue_showcase_0",
+        "dialogue_2": "sndbx:scientist_dialogue_showcase_1",
+        "dialogue_3": "sndbx:scientist_dialogue_showcase_2"
+      },
+      "geometry": {
+        "default": "geometry.scientist_3"
+      },
+      "render_controllers": [
+        "controller.render.scientist"
+      ],
+      "scripts": {
+        "animate": [
+          "look_at_target",
+          "dialogue_controller"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "dialogue_controller": "controller.animation.scientist.dialogue"
+      }
+    }
+  }
+}

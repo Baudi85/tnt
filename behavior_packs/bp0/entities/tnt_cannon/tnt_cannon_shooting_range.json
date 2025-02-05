@@ -1,0 +1,260 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:tnt_cannon_shooting_range",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "detect_rider",
+          { "launch_tnt": "q.has_rider" },
+          "cooldown_attack",
+          "particle"
+        ]
+      },
+      "animations": {
+        "detect_rider": "controller.animation.tnt_cannon.detect_rider",
+        "launch_tnt": "controller.animation.tnt_cannon.shooting_range.launch_tnt",
+        "cooldown_attack": "controller.animation.tnt_cannon.cooldown_attack",
+        "particle": "controller.animation.interact_particle"
+      }
+    },
+    "component_groups": {
+      "sndbx:set_health": {
+        "minecraft:health": {
+          "value": 1,
+          "max": 1,
+          "min": 1
+        }
+      },
+      "sndbx:has_rider": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "play_sounds": "plop",
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "rider_count", "subject": "self", "value": 1 },
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "has_component", "subject": "self", "value": "minecraft:is_ignited", "operator": "!=" }
+                  ]
+                },
+                "event": "sndbx:launch_tnt",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+
+      "sndbx:launch_tnt": {
+        "minecraft:is_sheared": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.0,
+          "time_down_event": {
+            "event": "sndbx:reload_cannon",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:reloading_cannon": {
+        "minecraft:is_ignited": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            1.04,
+            1.04
+          ],
+          "time_down_event": {
+            "event": "sndbx:reloaded_cannon",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:damage_attack": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    { "test": "rider_count", "subject": "self", "value": 0 },
+                    { "test": "has_damage", "subject": "self", "value": "attack", "operator": "!=" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_damage", "value": "attack" },
+                    { "test": "rider_count", "subject": "self", "value": 1 }
+                  ]
+                },
+                "event": "sndbx:launch_tnt_via_attack",
+                "target": "self"
+              },
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+
+      "sndbx:launched_via_attack": {
+        "minecraft:out_of_control": {},
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+
+      "sndbx:load_black_colored_tnt": { "minecraft:skin_id": { "value": 1 } },
+      "sndbx:load_blue_colored_tnt": { "minecraft:skin_id": { "value": 2 } },
+      "sndbx:load_brown_colored_tnt": { "minecraft:skin_id": { "value": 3 } },
+      "sndbx:load_cyan_colored_tnt": { "minecraft:skin_id": { "value": 4 } },
+      "sndbx:load_gray_colored_tnt": { "minecraft:skin_id": { "value": 5 } },
+      "sndbx:load_green_colored_tnt": { "minecraft:skin_id": { "value": 6 } },
+      "sndbx:load_light_blue_colored_tnt": { "minecraft:skin_id": { "value": 7 } },
+      "sndbx:load_light_gray_colored_tnt": { "minecraft:skin_id": { "value": 8 } },
+      "sndbx:load_lime_colored_tnt": { "minecraft:skin_id": { "value": 9 } },
+      "sndbx:load_magenta_colored_tnt": { "minecraft:skin_id": { "value": 10 } },
+      "sndbx:load_orange_colored_tnt": { "minecraft:skin_id": { "value": 11 } },
+      "sndbx:load_pink_colored_tnt": { "minecraft:skin_id": { "value": 12 } },
+      "sndbx:load_purple_colored_tnt": { "minecraft:skin_id": { "value": 13 } },
+      "sndbx:load_red_colored_tnt": { "minecraft:skin_id": { "value": 14 } },
+      "sndbx:load_white_colored_tnt": { "minecraft:skin_id": { "value": 15 } },
+      "sndbx:load_yellow_colored_tnt": { "minecraft:skin_id": { "value": 16 } }
+    },
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 1.5,
+	      "height": 3
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "inanimate",
+          "tnt_cannon",
+          "shooting_range"
+        ]
+      },
+      "minecraft:rideable": {
+        "controlling_seat": 0,
+        "crouching_skip_interact": true,
+        "family_types": [
+          "player"
+        ],
+        "interact_text": "action.interact.ride.sndbx:tnt_cannon",
+        "pull_in_entities": false,
+        "rider_can_interact": true,
+        "seat_count": 1,
+        "seats": {
+          "position": [
+            0,
+            1.4,
+            -0.4
+          ]
+        }
+      },
+      "minecraft:input_ground_controlled": {},
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "sndbx:set_health": {
+        "add": {
+          "component_groups": [
+            "sndbx:set_health"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:damage_attack"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:launched_via_attack"
+          ]
+        }
+      },
+      "sndbx:launch_tnt_via_attack": {
+        "add": {
+          "component_groups": [
+            "sndbx:launch_tnt",
+            "sndbx:launched_via_attack"
+          ]
+        },
+        "trigger": {
+          "event": "sndbx:random_tnt",
+          "target": "self"
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:damage_attack"
+          ]
+        }
+      },
+      "sndbx:has_rider": { "add": { "component_groups": [ "sndbx:has_rider" ] } },
+      "sndbx:has_no_rider": { "remove": { "component_groups": [ "sndbx:has_rider" ] } },
+
+      "sndbx:launch_tnt": {
+        "add": { "component_groups": [ "sndbx:launch_tnt" ] },
+        "trigger": {
+          "event": "sndbx:random_tnt",
+          "target": "self"
+        }
+      },
+      "sndbx:random_tnt": {
+        "sequence": [
+          {
+            "randomize": [
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_black_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_blue_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_brown_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_cyan_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_gray_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_green_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_light_blue_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_light_gray_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_lime_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_magenta_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_orange_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_pink_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_purple_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_red_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_white_colored_tnt" ] } },
+              { "weight": 5, "add": { "component_groups": [ "sndbx:load_yellow_colored_tnt" ] } }
+            ]
+          }
+        ]
+      },
+      "sndbx:reload_cannon": { "remove": { "component_groups": [ "sndbx:launch_tnt" ] }, "add": { "component_groups": [ "sndbx:reloading_cannon" ] } },
+      "sndbx:reloaded_cannon": { "remove": { "component_groups": [ "sndbx:reloading_cannon" ] } }
+    }
+  }
+}

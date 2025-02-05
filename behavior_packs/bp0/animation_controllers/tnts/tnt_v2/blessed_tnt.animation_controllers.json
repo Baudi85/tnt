@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.blessed_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/playsound tnt.blessed @p"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.tick_delay) >= 4.5"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/particle sndbx:holy_glitter ~ ~0.5 ~",
+            
+            "/function tnt/blessed/dirt",
+            "/function tnt/blessed/grass",
+            "/function tnt/blessed/sand",
+            "/function tnt/blessed/stone",
+            "/function tnt/blessed/gravel",
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:magic_tnt",
+      "runtime_identifier": "minecraft:tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "runtime" ]
+      },
+      "animations": {
+        "runtime": "controller.animation.magic_tnt.on_ignite"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {
+        }
+      }
+    },
+    
+    "components": {
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "magic_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 4.0,
+        "looping": false,
+        "time_down_event": {
+          "event": "sndbx:tnt_despawn"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    
+    "events": {
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

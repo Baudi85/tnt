@@ -1,0 +1,62 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:portal_tnt",
+      "geometry": {
+        "default": "geometry.portal_tnt",
+        "anim": "geometry.portal_tnt.anim"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "anim": "conduit_wind"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/portal_tnt/portal_tnt",
+        "anim": "textures/tnts/v2/portal_tnt/portal_tnt_anim",
+        "lit": "textures/tnts/v2/portal_tnt/portal_tnt_lit"
+      },
+      "particle_effects": {
+        "portal_dust": "sndbx:portal_dust",
+        "portal_platform": "sndbx:gateway_platform"
+      },
+      "scripts": {
+        "initialize": [
+          "v.swell_amount = 0.0;"
+        ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);",
+          "v.flipbook = math.mod(math.floor(query.life_time * 16), 32) / 32;"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          "tnt_explode",
+          {
+            "explosion": "q.life_time >= 3.5"
+          }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "portal_dust": "controller.animation.portal_tnt_particles",
+        "tnt_explode": "animation.portal_tnt.explode"
+      },
+      "render_controllers": [
+        {
+          "controller.render.portal_tnt.lit": "q.is_shaking ? (q.distance_from_camera >= 2.5) : 1"
+        },
+        {
+          "controller.render.portal_tnt.anim": "q.is_shaking ? (q.distance_from_camera >= 2.5) : 1"
+        }
+      ],
+      "sound_effects": {
+        "ignited": "portal.trigger"
+      }
+    }
+  }
+}

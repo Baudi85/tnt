@@ -1,0 +1,235 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:escalator_control_panel",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {
+            "event_controller": "q.mark_variant != 0"
+          }
+        ]
+      },
+      "animations": {
+        "event_controller": "controller.animation.escalator_control_panel.event_controller"
+      }
+    },
+    "component_groups": {
+      "sndbx:set_health": {
+        "minecraft:health": {
+          "value": 1,
+          "max": 1,
+          "min": 1
+        }
+      },
+      "sndbx:can_be_turned_on": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "swing": true,
+              "interact_text": "action.interact.sndbx:escalator_control_panel.turn_on",
+              "on_interact": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "sndbx:turn_on",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+      "sndbx:can_be_turned_off": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "swing": true,
+              "interact_text": "action.interact.sndbx:escalator_control_panel.turn_off",
+              "on_interact": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "sndbx:turn_off",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+      "sndbx:is_on": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "sndbx:is_off": {
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sndbx:reset_escalator_control_panel": {
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [
+          "inanimate",
+          "escalator_control_panel"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      },
+      "minecraft:is_stackable": {},
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "test": "is_riding",
+            "subject": "self",
+            "value": false
+          },
+          "event": "sndbx:despawn",
+          "target": "self"
+        }
+      },
+
+      "minecraft:rideable": {
+        "family_types": [
+          "player"
+        ],
+        "seat_count": 30,
+        "seats": [
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] },
+          { "position": [0, 0.5, 3] }
+        ]
+      }
+    },
+    "events": {
+      "sndbx:set_health": {
+        "add": {
+          "component_groups": [
+            "sndbx:set_health"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:can_be_turned_on"
+          ]
+        }
+      },
+      "sndbx:turn_on": {
+        "remove": {
+          "component_groups": [
+            "sndbx:can_be_turned_on"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "sndbx:can_be_turned_off",
+            "sndbx:is_on"
+          ]
+        }
+      },
+      "sndbx:turn_off": {
+        "remove": {
+          "component_groups": [
+            "sndbx:can_be_turned_off"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "sndbx:can_be_turned_on",
+            "sndbx:is_off"
+          ]
+        }
+      },
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn"
+          ]
+        }
+      },
+      "sndbx:reset_escalator_control_panel": {
+        "add": {
+          "component_groups": [
+            "sndbx:reset_escalator_control_panel",
+            "sndbx:can_be_turned_on"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:can_be_turned_off",
+            "sndbx:is_on",
+            "sndbx:is_off"
+          ]
+        }
+      }
+    }
+  }
+}

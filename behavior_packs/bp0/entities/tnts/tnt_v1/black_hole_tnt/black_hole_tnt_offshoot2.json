@@ -1,0 +1,103 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:black_hole_tnt_offshoot2",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "sndbx:explosion_1": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 3,
+          "causes_fire": true
+        }
+      },
+      "sndbx:explosion_2": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 6,
+          "causes_fire": true
+        }
+      },
+      "sndbx:explosion_3": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 9,
+          "causes_fire": true
+        }
+      },
+      "sndbx:explosion_4": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 12,
+          "causes_fire": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "black_hole_tnt",
+          "offshoot",
+          "inanimate"
+        ]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [ 0, -1, 0 ]
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+    },
+    "events": {
+      "sndbx:explosion_1": {
+        "add": {
+          "component_groups": [ "sndbx:explosion_1" ]
+        }
+      },
+      "sndbx:explosion_2": {
+        "add": {
+          "component_groups": [ "sndbx:explosion_2" ]
+        }
+      },
+      "sndbx:explosion_3": {
+        "add": {
+          "component_groups": [ "sndbx:explosion_3" ]
+        }
+      },
+      "sndbx:explosion_4": {
+        "add": {
+          "component_groups": [ "sndbx:explosion_4" ]
+        }
+      }
+    }
+  }
+}

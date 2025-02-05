@@ -1,0 +1,7 @@
+{
+  "ui_defs": [
+    "ui/sndbx/achievements_common.json",
+    "ui/sndbx/achievements_list.json",
+    "ui/sndbx/dialogue_tnt_showcase.json"
+  ]
+}

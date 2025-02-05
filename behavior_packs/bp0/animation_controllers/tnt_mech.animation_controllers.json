@@ -1,0 +1,149 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_mech.rider": {
+      "initial_state": "has_no_rider",
+      "states": {
+        "has_no_rider": {
+          "on_entry": [
+            "@s sndbx:deactivate_sword",
+            "/playsound tnt_mech.deactivation @a[r=20] ~~~ 1.0"
+          ],
+          "transitions": [
+            { "has_rider": "q.has_rider" }
+          ],
+          "on_exit": [
+            "/stopsound @a[r=20] tnt_mech.deactivation"
+          ]
+        },
+        "has_rider": {
+          "on_entry": [
+            "@s sndbx:activate_sword",
+            "/playsound tnt_mech.activation @a[r=20] ~~~ 1.0"
+          ],
+          "transitions": [
+            { "has_no_rider": "!q.has_rider" }
+          ],
+          "on_exit": [
+            "/stopsound @a[r=20] tnt_mech.activation"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_mech.player": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_attack": "v.attack_time"
+            }
+          ]
+        },
+        "on_attack": {
+          "on_entry": [
+            "/event entity @e[type=sndbx:tnt_mech,r=1.5] sndbx:use_sword"
+          ],
+          "on_exit": [
+            "/event entity @e[type=sndbx:tnt_mech,r=1.5] sndbx:remove_use_sword"
+          ],
+          "transitions": [
+            {
+              "default": "!v.attack_time"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_mech.player.dubstep_control": {
+      "initial_state": "disable",
+      "states": {
+        "disable": {
+          "transitions": [
+            { "enable": "query.variant == 1" }
+          ]
+        },
+        "enable": {
+          "on_entry": [
+            "/event entity @e[type=sndbx:tnt_mech,r=1.5] sndbx:enable_dubstep"
+          ],
+          "transitions": [
+            { "disable": "query.variant == 0" }
+          ],
+          "on_exit": [
+            "/event entity @e[type=sndbx:tnt_mech,r=1.5] sndbx:disable_dubstep"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_mech.dubstep": {
+      "initial_state": "disabled",
+      "states": {
+        "disabled": {
+          "transitions": [
+            { "enabled": "q.is_ignited" }
+          ]
+        },
+        "enabled": {
+          "on_entry": [
+            "/music play tnt_mech.dubstep 1.0 0.5 loop",
+            "/title @p actionbar §5Now playing: SNDBX - Dubstep"
+          ],
+          "transitions": [
+            { "disabled": "!q.is_ignited" }
+          ],
+          "on_exit": [
+            "/music stop 1.0"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_mech.sword_attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "using_sword": "q.has_rider && q.is_illager_captain"
+            }
+          ]
+        },
+        "using_sword": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "area_attack": "(q.life_time - v.tick_delay) >= 0.25"
+            }
+          ]
+        },
+        "area_attack": {
+          "on_entry": [
+            "@s sndbx:area_attack",
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "inactive": "(q.life_time - v.tick_delay) >= 0.15"
+            }
+          ],
+          "on_exit": [
+            "@s sndbx:reset_area_attack"
+          ]
+        },
+        "inactive": {
+          "transitions": [
+            {
+              "default": "!q.is_illager_captain"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

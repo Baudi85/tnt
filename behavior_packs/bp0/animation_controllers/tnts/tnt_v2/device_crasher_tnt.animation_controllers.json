@@ -1,0 +1,79 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.device_crasher_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "on_ignite": "q.is_powered" }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+
+            "/execute @a[tag=!achievements_device_crasher_tnt,r=50] ~~~ function achievements/device_crasher_tnt",
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            { "sequence_1": "query.variant == 0 && (q.life_time - v.tick_delay) >= 4.0" },
+            { "sequence_2": "query.variant == 1 && (q.life_time - v.tick_delay) >= 4.0" },
+            { "sequence_3": "query.variant == 2 && (q.life_time - v.tick_delay) >= 4.0" },
+            { "sequence_4": "query.variant == 3 && (q.life_time - v.tick_delay) >= 4.0" },
+            { "sequence_5": "query.variant == 4 && (q.life_time - v.tick_delay) >= 4.0" },
+            { "sequence_6": "query.variant == 5 && (q.life_time - v.tick_delay) >= 4.0" },
+            { "sequence_last": "query.variant == 6 && (q.life_time - v.tick_delay) >= 4.0" }
+          ]
+        },
+        "sequence_1": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon sndbx:device_crasher_tnt ~ ~ ~ sndbx:tnt_sequence_1"
+          ],
+          "transitions": [ { "sequence_2": "query.variant == 1 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        },
+        "sequence_2": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon sndbx:device_crasher_tnt ~ ~ ~ sndbx:tnt_sequence_2"
+          ],
+          "transitions": [ { "sequence_3": "query.variant == 2 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        },
+        "sequence_3": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon sndbx:device_crasher_tnt ~ ~ ~ sndbx:tnt_sequence_3"
+          ],
+          "transitions": [ { "sequence_4": "query.variant == 3 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        },
+        "sequence_4": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon sndbx:device_crasher_tnt ~ ~ ~ sndbx:tnt_sequence_4"
+          ],
+          "transitions": [ { "sequence_5": "query.variant == 4 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        },
+        "sequence_5": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon sndbx:device_crasher_tnt ~ ~ ~ sndbx:tnt_sequence_5"
+          ],
+          "transitions": [ { "sequence_6": "query.variant == 5 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        },
+        "sequence_6": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon sndbx:device_crasher_tnt ~ ~ ~ sndbx:tnt_sequence_6"
+          ],
+          "transitions": [ { "sequence_last": "query.variant == 6 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        },
+        "sequence_last": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [ { "default": "query.variant == 6 && (q.life_time - v.tick_delay) >= 4.0" } ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.sndbx_tnt.hop": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ignited": "q.is_powered"
+            }
+          ]
+        },
+        "ignited": {
+          "animations": [ "hop" ],
+          "sound_effects": [
+            {
+              "effect": "ignited"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.sndbx_tnt.ignite_no_hop": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ignited": "q.is_powered"
+            }
+          ]
+        },
+        "ignited": {
+          "sound_effects": [
+            {
+              "effect": "ignited"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.sndbx_tnt.destruct_particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_destroy": "q.is_illager_captain" 
+            }
+          ]
+        },
+        "on_destroy": {
+          "transitions": [
+            { "base_tnt": "q.owner_identifier == 'sndbx:base_tnt_block'" },
+            
+            { "black_colored_tnt": "q.owner_identifier == 'sndbx:black_colored_tnt_block'" },
+            { "blue_colored_tnt": "q.owner_identifier == 'sndbx:blue_colored_tnt_block'" },
+            { "brown_colored_tnt": "q.owner_identifier == 'sndbx:brown_colored_tnt_block'" },
+            { "cyan_colored_tnt": "q.owner_identifier == 'sndbx:cyan_colored_tnt_block'" },
+            { "gray_colored_tnt": "q.owner_identifier == 'sndbx:gray_colored_tnt_block'" },
+            { "green_colored_tnt": "q.owner_identifier == 'sndbx:green_colored_tnt_block'" },
+            { "light_blue_colored_tnt": "q.owner_identifier == 'sndbx:light_blue_colored_tnt_block'" },
+            { "light_gray_colored_tnt": "q.owner_identifier == 'sndbx:light_gray_colored_tnt_block'" },
+            { "lime_colored_tnt": "q.owner_identifier == 'sndbx:lime_colored_tnt_block'" },
+            { "magenta_colored_tnt": "q.owner_identifier == 'sndbx:magenta_colored_tnt_block'" },
+            { "orange_colored_tnt": "q.owner_identifier == 'sndbx:orange_colored_tnt_block'" },
+            { "pink_colored_tnt": "q.owner_identifier == 'sndbx:pink_colored_tnt_block'" },
+            { "purple_colored_tnt": "q.owner_identifier == 'sndbx:purple_colored_tnt_block'" },
+            { "red_colored_tnt": "q.owner_identifier == 'sndbx:red_colored_tnt_block'" },
+            { "white_colored_tnt": "q.owner_identifier == 'sndbx:white_colored_tnt_block'" },
+            { "yellow_colored_tnt": "q.owner_identifier == 'sndbx:yellow_colored_tnt_block'" },
+            
+            { "arctic_tnt": "q.owner_identifier == 'sndbx:arctic_tnt_block'" },
+            { "big_bertha_tnt": "q.owner_identifier == 'sndbx:big_bertha_tnt_block'" },
+            { "black_hole_tnt": "q.owner_identifier == 'sndbx:black_hole_tnt_block'" },
+            { "blast_tnt": "q.owner_identifier == 'sndbx:blast_tnt_block'" },
+            { "blaze_tnt": "q.owner_identifier == 'sndbx:blaze_tnt_block'" },
+            { "fireball_tnt": "q.owner_identifier == 'sndbx:fireball_tnt_block'" },
+            { "fish_tnt": "q.owner_identifier == 'sndbx:fish_tnt_block'" },
+            { "galaxy_tnt": "q.owner_identifier == 'sndbx:galaxy_tnt_block'" },
+            { "lightning_tnt": "q.owner_identifier == 'sndbx:lightning_tnt_block'" },
+            { "mega_tnt": "q.owner_identifier == 'sndbx:mega_tnt_block'" },
+            { "party_tnt": "q.owner_identifier == 'sndbx:party_tnt_block'" },
+            { "potion_tnt": "q.owner_identifier == 'sndbx:potion_tnt_block'" },
+            { "scatter_tnt": "q.owner_identifier == 'sndbx:scatter_tnt_block'" },
+            { "sticky_tnt": "q.owner_identifier == 'sndbx:sticky_tnt_block'" },
+            { "super_tnt": "q.owner_identifier == 'sndbx:super_tnt_block'" },
+            { "tornado_tnt": "q.owner_identifier == 'sndbx:tornado_tnt_block'" },
+            { "ultra_tnt": "q.owner_identifier == 'sndbx:ultra_tnt_block'" },
+            { "wither_tnt": "q.owner_identifier == 'sndbx:wither_tnt_block'" },
+            
+            { "axolotl_mob_tnt": "q.owner_identifier == 'sndbx:axolotl_mob_tnt_block'" },
+            { "bat_mob_tnt": "q.owner_identifier == 'sndbx:bat_mob_tnt_block'" },
+            { "cat_mob_tnt": "q.owner_identifier == 'sndbx:cat_mob_tnt_block'" },
+            { "chicken_mob_tnt": "q.owner_identifier == 'sndbx:chicken_mob_tnt_block'" },
+            { "cow_mob_tnt": "q.owner_identifier == 'sndbx:cow_mob_tnt_block'" },
+            { "fox_mob_tnt": "q.owner_identifier == 'sndbx:fox_mob_tnt_block'" },
+            { "parrot_mob_tnt": "q.owner_identifier == 'sndbx:parrot_mob_tnt_block'" },
+            { "pig_mob_tnt": "q.owner_identifier == 'sndbx:pig_mob_tnt_block'" },
+            { "polar_bear_mob_tnt": "q.owner_identifier == 'sndbx:polar_bear_mob_tnt_block'" },
+            { "rabbit_mob_tnt": "q.owner_identifier == 'sndbx:rabbit_mob_tnt_block'" },
+            
+            { "black_smoke_tnt": "q.owner_identifier == 'sndbx:black_smoke_tnt_block'" },
+            { "blue_smoke_tnt": "q.owner_identifier == 'sndbx:blue_smoke_tnt_block'" },
+            { "brown_smoke_tnt": "q.owner_identifier == 'sndbx:brown_smoke_tnt_block'" },
+            { "cyan_smoke_tnt": "q.owner_identifier == 'sndbx:cyan_smoke_tnt_block'" },
+            { "gray_smoke_tnt": "q.owner_identifier == 'sndbx:gray_smoke_tnt_block'" },
+            { "dark_green_smoke_tnt": "q.owner_identifier == 'sndbx:dark_green_smoke_tnt_block'" },
+            { "light_blue_smoke_tnt": "q.owner_identifier == 'sndbx:light_blue_smoke_tnt_block'" },
+            { "light_gray_smoke_tnt": "q.owner_identifier == 'sndbx:light_gray_smoke_tnt_block'" },
+            { "lime_smoke_tnt": "q.owner_identifier == 'sndbx:lime_smoke_tnt_block'" },
+            { "magenta_smoke_tnt": "q.owner_identifier == 'sndbx:magenta_smoke_tnt_block'" },
+            { "orange_smoke_tnt": "q.owner_identifier == 'sndbx:orange_smoke_tnt_block'" },
+            { "pink_smoke_tnt": "q.owner_identifier == 'sndbx:pink_smoke_tnt_block'" },
+            { "purple_smoke_tnt": "q.owner_identifier == 'sndbx:purple_smoke_tnt_block'" },
+            { "red_smoke_tnt": "q.owner_identifier == 'sndbx:red_smoke_tnt_block'" },
+            { "white_smoke_tnt": "q.owner_identifier == 'sndbx:white_smoke_tnt_block'" },
+            { "yellow_smoke_tnt": "q.owner_identifier == 'sndbx:yellow_smoke_tnt_block'" },
+            
+            { "blessed_tnt": "q.owner_identifier == 'sndbx:blessed_tnt_block'" },
+            { "butterfly_tnt": "q.owner_identifier == 'sndbx:butterfly_tnt_block'" },
+            { "circle_tnt": "q.owner_identifier == 'sndbx:circle_tnt_block'" },
+            { "dinnerbone_tnt": "q.owner_identifier == 'sndbx:dinnerbone_tnt_block'" },
+            { "dynamite_tnt": "q.owner_identifier == 'sndbx:dynamite_tnt_block'" },
+            { "ender_tnt": "q.owner_identifier == 'sndbx:ender_tnt_block'" },
+            { "equaliser_tnt": "q.owner_identifier == 'sndbx:equaliser_tnt_block'" },
+            { "gravitational_tnt": "q.owner_identifier == 'sndbx:gravitational_tnt_block'" },
+            { "infinity_tnt": "q.owner_identifier == 'sndbx:infinity_tnt_block'" },
+            { "magic_tnt": "q.owner_identifier == 'sndbx:magic_tnt_block'" },
+            { "magnet_tnt": "q.owner_identifier == 'sndbx:magnet_tnt_block'" },
+            { "miners_tnt": "q.owner_identifier == 'sndbx:miners_tnt_block'" },
+            { "napalm_tnt": "q.owner_identifier == 'sndbx:napalm_tnt_block'" },
+            { "doomsday": "q.owner_identifier == 'sndbx:doomsday_tnt_block'" },
+            { "lucky_tnt": "q.owner_identifier == 'sndbx:lucky_tnt_block'" },
+            { "patient_zero_tnt": "q.owner_identifier == 'sndbx:patient_zero_tnt_block'" },
+            { "device_crasher_tnt": "q.owner_identifier == 'sndbx:device_crasher_tnt_block'" },
+            { "portal_tnt": "q.owner_identifier == 'sndbx:portal_tnt_block'" },
+            { "rainbow_tnt": "q.owner_identifier == 'sndbx:rainbow_tnt_block'" },
+            { "shulker_tnt": "q.owner_identifier == 'sndbx:shulker_tnt_block'" },
+            { "split_tnt": "q.owner_identifier == 'sndbx:split_tnt_block'" },
+            { "sponge_tnt": "q.owner_identifier == 'sndbx:sponge_tnt_block'" },
+            { "time_slower_tnt": "q.owner_identifier == 'sndbx:time_slower_tnt_block'" },
+            { "toxic_goo_tnt": "q.owner_identifier == 'sndbx:toxic_goo_tnt_block'" },
+            { "troll_tnt": "q.owner_identifier == 'sndbx:troll_tnt_block'" },
+            { "void_eater_tnt": "q.owner_identifier == 'sndbx:void_eater_tnt_block'" },
+            { "wet_sponge_tnt": "q.owner_identifier == 'sndbx:wet_sponge_tnt_block'" },
+            { "world_ender_tnt": "q.owner_identifier == 'sndbx:world_ender_tnt_block'" }
+          ]
+        },
+        "base_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        
+        "black_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 33;variable.color_g1 = 33;variable.color_b1 = 35;variable.color_r2 = 0;variable.color_g2 = 0;variable.color_b2 = 0;variable.color_a = 1.0;" } ] },
+        "blue_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 66;variable.color_g1 = 80;variable.color_b1 = 158;variable.color_r2 = 46;variable.color_g2 = 40;variable.color_b2 = 130;variable.color_a = 1.0;" } ] },
+        "brown_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 107;variable.color_g1 = 72;variable.color_b1 = 39;variable.color_r2 = 81;variable.color_g2 = 38;variable.color_b2 = 22;variable.color_a = 1.0;" } ] },
+        "cyan_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 28;variable.color_g1 = 150;variable.color_b1 = 134;variable.color_r2 = 9;variable.color_g2 = 106;variable.color_b2 = 119;variable.color_a = 1.0;" } ] },
+        "gray_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 75;variable.color_g1 = 79;variable.color_b1 = 81;variable.color_r2 = 51;variable.color_g2 = 56;variable.color_b2 = 61;variable.color_a = 1.0;" } ] },
+        "green_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 102;variable.color_g1 = 112;variable.color_b1 = 32;variable.color_r2 = 102;variable.color_g2 = 112;variable.color_b2 = 32;variable.color_a = 1.0;" } ] },
+        "light_blue_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 70;variable.color_g1 = 181;variable.color_b1 = 221;variable.color_r2 = 40;variable.color_g2 = 119;variable.color_b2 = 193;variable.color_a = 1.0;" } ] },
+        "light_gray_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 148;variable.color_g1 = 150;variable.color_b1 = 150;variable.color_r2 = 107;variable.color_g2 = 144;variable.color_b2 = 102;variable.color_a = 1.0;" } ] },
+        "lime_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 145;variable.color_g1 = 188;variable.color_b1 = 35;variable.color_r2 = 116;variable.color_g2 = 155;variable.color_b2 = 9;variable.color_a = 1.0;" } ] },
+        "magenta_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 201;variable.color_g1 = 88;variable.color_b1 = 177;variable.color_r2 = 160;variable.color_g2 = 52;variable.color_b2 = 68;variable.color_a = 1.0;" } ] },
+        "orange_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 252;variable.color_g1 = 140;variable.color_b1 = 35;variable.color_r2 = 219;variable.color_g2 = 60;variable.color_b2 = 2;variable.color_a = 1.0;" } ] },
+        "pink_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 252;variable.color_g1 = 174;variable.color_b1 = 189;variable.color_r2 = 219;variable.color_g2 = 122;variable.color_b2 = 169;variable.color_a = 1.0;" } ] },
+        "purple_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 150;variable.color_g1 = 51;variable.color_b1 = 175;variable.color_r2 = 84;variable.color_g2 = 22;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "red_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 175;variable.color_g1 = 33;variable.color_b1 = 175;variable.color_r2 = 33;variable.color_g2 = 35;variable.color_b2 = 9;variable.color_a = 1.0;" } ] },
+        "white_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 249;variable.color_g1 = 251;variable.color_b1 = 252;variable.color_r2 = 188;variable.color_g2 = 203;variable.color_b2 = 219;variable.color_a = 1.0;" } ] },
+        "yellow_colored_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 247;variable.color_g1 = 211;variable.color_b1 = 54;variable.color_r2 = 219;variable.color_g2 = 141;variable.color_b2 = 24;variable.color_a = 1.0;" } ] },
+        
+        "arctic_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 103;variable.color_g1 = 144;variable.color_b1 = 223;variable.color_r2 = 240;variable.color_g2 = 253;variable.color_b2 = 253;variable.color_a = 0.8;" } ] },
+        "big_bertha_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "blast_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 232;variable.color_g1 = 163;variable.color_b1 = 37;variable.color_r2 = 193;variable.color_g2 = 67;variable.color_b2 = 3;variable.color_a = 1.0;" } ] },
+        "blaze_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 255;variable.color_g1 = 228;variable.color_b1 = 53;variable.color_r2 = 224;variable.color_g2 = 107;variable.color_b2 = 17;variable.color_a = 1.0;" } ] },
+        "fireball_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 255;variable.color_g1 = 135;variable.color_b1 = 60;variable.color_r2 = 144;variable.color_g2 = 56;variable.color_b2 = 22;variable.color_a = 1.0;" } ] },
+        "fish_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 83;variable.color_g1 = 197;variable.color_b1 = 232;variable.color_r2 = 40;variable.color_g2 = 119;variable.color_b2 = 193;variable.color_a = 1.0;" } ] },
+        "galaxy_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 109;variable.color_g1 = 102;variable.color_b1 = 504;variable.color_r2 = 82;variable.color_g2 = 54;variable.color_b2 = 84;variable.color_a = 1.0;" } ] },
+        "lightning_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 21;variable.color_g1 = 89;variable.color_b1 = 242;variable.color_r2 = 157;variable.color_g2 = 14;variable.color_b2 = 68;variable.color_a = 1.0;" } ] },
+        "mega_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 232;variable.color_g1 = 66;variable.color_b1 = 37;variable.color_r2 = 191;variable.color_g2 = 0;variable.color_b2 = 15;variable.color_a = 1.0;" } ] },
+        "party_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = math.random_integer(80,255);variable.color_g1 = math.random_integer(80,255);variable.color_b1 = math.random_integer(80,255);variable.color_r2 = math.random_integer(40,255);variable.color_g2 = math.random_integer(40,255);variable.color_b2 = math.random_integer(40,255);variable.color_a = 1.0;" } ] },
+        "potion_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "scatter_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "sticky_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 158;variable.color_g2 = 211;variable.color_b2 = 143;variable.color_a = 0.5;" } ] },
+        "super_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "tornado_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 148;variable.color_g1 = 158;variable.color_b1 = 160;variable.color_r2 = 98;variable.color_g2 = 108;variable.color_b2 = 124;variable.color_a = 1.0;" } ] },
+        "ultra_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "wither_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 52;variable.color_g1 = 52;variable.color_b1 = 52;variable.color_r2 = 52;variable.color_g2 = 52;variable.color_b2 = 52;variable.color_a = 0.5;" } ] },
+        
+        "axolotl_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 233;variable.color_g1 = 83;variable.color_b1 = 125;variable.color_r2 = 131;variable.color_g2 = 24;variable.color_b2 = 101;variable.color_a = 1.0;" } ] },
+        "bat_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 156;variable.color_g1 = 67;variable.color_b1 = 55;variable.color_r2 = 54;variable.color_g2 = 33;variable.color_b2 = 16;variable.color_a = 1.0;" } ] },
+        "cat_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 48;variable.color_g1 = 60;variable.color_b1 = 104;variable.color_r2 = 24;variable.color_g2 = 20;variable.color_b2 = 58;variable.color_a = 1.0;" } ] },
+        "chicken_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 145;variable.color_g2 = 45;variable.color_b2 = 17;variable.color_a = 1.0;" } ] },
+        "cow_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 75;variable.color_g1 = 43;variable.color_b1 = 34;variable.color_r2 = 18;variable.color_g2 = 10;variable.color_b2 = 6;variable.color_a = 1.0;" } ] },
+        "fox_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 200;variable.color_g1 = 101;variable.color_b1 = 24;variable.color_r2 = 145;variable.color_g2 = 45;variable.color_b2 = 17;variable.color_a = 1.0;" } ] },
+        "parrot_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 202;variable.color_g1 = 23;variable.color_b1 = 48;variable.color_r2 = 72;variable.color_g2 = 3;variable.color_b2 = 29;variable.color_a = 1.0;" } ] },
+        "pig_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 251;variable.color_g1 = 162;variable.color_b1 = 166;variable.color_r2 = 183;variable.color_g2 = 52;variable.color_b2 = 95;variable.color_a = 1.0;" } ] },
+        "polar_bear_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 112;variable.color_g1 = 216;variable.color_b1 = 244;variable.color_r2 = 47;variable.color_g2 = 101;variable.color_b2 = 178;variable.color_a = 1.0;" } ] },
+        "rabbit_mob_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 220;variable.color_g1 = 165;variable.color_b1 = 117;variable.color_r2 = 152;variable.color_g2 = 72;variable.color_b2 = 64;variable.color_a = 1.0;" } ] },
+        
+        "black_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 33;variable.color_g1 = 33;variable.color_b1 = 35;variable.color_r2 = 0;variable.color_g2 = 0;variable.color_b2 = 0;variable.color_a = math.random(0.4,0.8);" } ] },
+        "blue_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 66;variable.color_g1 = 80;variable.color_b1 = 158;variable.color_r2 = 46;variable.color_g2 = 40;variable.color_b2 = 130;variable.color_a = math.random(0.4,0.8);" } ] },
+        "brown_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 107;variable.color_g1 = 72;variable.color_b1 = 39;variable.color_r2 = 81;variable.color_g2 = 38;variable.color_b2 = 22;variable.color_a = math.random(0.4,0.8);" } ] },
+        "cyan_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 28;variable.color_g1 = 150;variable.color_b1 = 134;variable.color_r2 = 9;variable.color_g2 = 106;variable.color_b2 = 119;variable.color_a = math.random(0.4,0.8);" } ] },
+        "gray_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 75;variable.color_g1 = 79;variable.color_b1 = 81;variable.color_r2 = 51;variable.color_g2 = 56;variable.color_b2 = 61;variable.color_a = math.random(0.4,0.8);" } ] },
+        "dark_green_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 102;variable.color_g1 = 112;variable.color_b1 = 32;variable.color_r2 = 102;variable.color_g2 = 112;variable.color_b2 = 32;variable.color_a = math.random(0.4,0.8);" } ] },
+        "light_blue_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 70;variable.color_g1 = 181;variable.color_b1 = 221;variable.color_r2 = 40;variable.color_g2 = 119;variable.color_b2 = 193;variable.color_a = math.random(0.4,0.8);" } ] },
+        "light_gray_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 148;variable.color_g1 = 150;variable.color_b1 = 150;variable.color_r2 = 107;variable.color_g2 = 144;variable.color_b2 = 102;variable.color_a = math.random(0.4,0.8);" } ] },
+        "lime_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 145;variable.color_g1 = 188;variable.color_b1 = 35;variable.color_r2 = 116;variable.color_g2 = 155;variable.color_b2 = 9;variable.color_a = math.random(0.4,0.8);" } ] },
+        "magenta_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 201;variable.color_g1 = 88;variable.color_b1 = 177;variable.color_r2 = 160;variable.color_g2 = 52;variable.color_b2 = 68;variable.color_a = math.random(0.4,0.8);" } ] },
+        "orange_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 252;variable.color_g1 = 140;variable.color_b1 = 35;variable.color_r2 = 219;variable.color_g2 = 60;variable.color_b2 = 2;variable.color_a = math.random(0.4,0.8);" } ] },
+        "pink_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 252;variable.color_g1 = 174;variable.color_b1 = 189;variable.color_r2 = 219;variable.color_g2 = 122;variable.color_b2 = 169;variable.color_a = math.random(0.4,0.8);" } ] },
+        "purple_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 150;variable.color_g1 = 51;variable.color_b1 = 175;variable.color_r2 = 84;variable.color_g2 = 22;variable.color_b2 = 142;variable.color_a = math.random(0.4,0.8);" } ] },
+        "red_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 175;variable.color_g1 = 33;variable.color_b1 = 175;variable.color_r2 = 33;variable.color_g2 = 35;variable.color_b2 = 9;variable.color_a = math.random(0.4,0.8);" } ] },
+        "white_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 249;variable.color_g1 = 251;variable.color_b1 = 252;variable.color_r2 = 188;variable.color_g2 = 203;variable.color_b2 = 219;variable.color_a = math.random(0.4,0.8);" } ] },
+        "yellow_smoke_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 247;variable.color_g1 = 211;variable.color_b1 = 54;variable.color_r2 = 219;variable.color_g2 = 141;variable.color_b2 = 24;variable.color_a = math.random(0.4,0.8);" } ] },
+        
+        "black_hole_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 87;variable.color_g1 = 82;variable.color_b1 = 123;variable.color_r2 = 19;variable.color_g2 = 18;variable.color_b2 = 33;variable.color_a = 1.0;" } ] },
+        "blessed_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 242;variable.color_g1 = 208;variable.color_b1 = 61;variable.color_r2 = 66;variable.color_g2 = 156;variable.color_b2 = 185;variable.color_a = 1.0;" } ] },
+        "butterfly_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 248;variable.color_g1 = 145;variable.color_b1 = 207;variable.color_r2 = 244;variable.color_g2 = 244;variable.color_b2 = 137;variable.color_a = 1.0;" } ] },
+        "circle_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "dinnerbone_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 142;variable.color_g1 = 142;variable.color_b1 = 142;variable.color_r2 = 234;variable.color_g2 = 67;variable.color_b2 = 24;variable.color_a = 1.0;" } ] },
+        "dynamite_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 255;variable.color_g2 = 255;variable.color_b2 = 255;variable.color_a = 1.0;" } ] },
+        "ender_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 230;variable.color_g1 = 45;variable.color_b1 = 248;variable.color_r2 = 49;variable.color_g2 = 36;variable.color_b2 = 65;variable.color_a = 1.0;" } ] },
+        "equaliser_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 142;variable.color_g2 = 142;variable.color_b2 = 142;variable.color_a = 1.0;" } ] },
+        "gravitational_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 219;variable.color_g1 = 251;variable.color_b1 = 236;variable.color_r2 = 23;variable.color_g2 = 43;variable.color_b2 = 69;variable.color_a = 1.0;" } ] },
+        "infinity_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 155;variable.color_g1 = 55;variable.color_b1 = 170;variable.color_r2 = 25;variable.color_g2 = 42;variable.color_b2 = 44;variable.color_a = 1.0;" } ] },
+        "magic_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 238;variable.color_g1 = 103;variable.color_b1 = 237;variable.color_r2 = 71;variable.color_g2 = 33;variable.color_b2 = 137;variable.color_a = 1.0;" } ] },
+        "magnet_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 21;variable.color_g1 = 89;variable.color_b1 = 242;variable.color_r2 = 157;variable.color_g2 = 14;variable.color_b2 = 68;variable.color_a = 1.0;" } ] },
+        "miners_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 74;variable.color_g2 = 63;variable.color_b2 = 154;variable.color_a = 1.0;" } ] },
+        "napalm_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 250;variable.color_g1 = 192;variable.color_b1 = 87;variable.color_r2 = 204;variable.color_g2 = 62;variable.color_b2 = 33;variable.color_a = 1.0;" } ] },
+        "doomsday": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 3.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 244;variable.color_g2 = 151;variable.color_b2 = 38;variable.color_a = 1.0;" } ] },
+        "lucky_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 247;variable.color_g1 = 211;variable.color_b1 = 54;variable.color_r2 = 219;variable.color_g2 = 141;variable.color_b2 = 24;variable.color_a = 1.0;" } ] },
+        "patient_zero_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 88;variable.color_g1 = 240;variable.color_b1 = 125;variable.color_r2 = 130;variable.color_g2 = 66;variable.color_b2 = 25;variable.color_a = 1.0;" } ] },
+        "device_crasher_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 99;variable.color_g1 = 226;variable.color_b1 = 75;variable.color_r2 = 82;variable.color_g2 = 167;variable.color_b2 = 122;variable.color_a = 1.0;" } ] },
+        "portal_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 156;variable.color_g1 = 66;variable.color_b1 = 226;variable.color_r2 = 47;variable.color_g2 = 11;variable.color_b2 = 148;variable.color_a = 1.0;" } ] },
+        "rainbow_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = math.random_integer(80,255);variable.color_g1 = math.random_integer(80,255);variable.color_b1 = math.random_integer(80,255);variable.color_r2 = math.random_integer(40,255);variable.color_g2 = math.random_integer(40,255);variable.color_b2 = math.random_integer(40,255);variable.color_a = 1.0;" } ] },
+        "shulker_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 136;variable.color_g1 = 96;variable.color_b1 = 136;variable.color_r2 = 89;variable.color_g2 = 55;variable.color_b2 = 90;variable.color_a = 1.0;" } ] },
+        "split_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 255;variable.color_g2 = 255;variable.color_b2 = 255;variable.color_a = 1.0;" } ] },
+        "sponge_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 249;variable.color_g1 = 228;variable.color_b1 = 104;variable.color_r2 = 119;variable.color_g2 = 50;variable.color_b2 = 26;variable.color_a = 1.0;" } ] },
+        "time_slower_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 100;variable.color_g1 = 157;variable.color_b1 = 236;variable.color_r2 = 19;variable.color_g2 = 49;variable.color_b2 = 173;variable.color_a = 1.0;" } ] },
+        "toxic_goo_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 197;variable.color_g1 = 237;variable.color_b1 = 30;variable.color_r2 = 121;variable.color_g2 = 202;variable.color_b2 = 8;variable.color_a = 1.0;" } ] },
+        "troll_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 184;variable.color_g1 = 210;variable.color_b1 = 215;variable.color_r2 = 80;variable.color_g2 = 124;variable.color_b2 = 159;variable.color_a = 1.0;" } ] },
+        "void_eater_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 125;variable.color_g1 = 75;variable.color_b1 = 111;variable.color_r2 = 68;variable.color_g2 = 30;variable.color_b2 = 69;variable.color_a = 1.0;" } ] },
+        "wet_sponge_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 249;variable.color_g1 = 228;variable.color_b1 = 104;variable.color_r2 = 119;variable.color_g2 = 50;variable.color_b2 = 26;variable.color_a = 1.0;" } ] },
+        "world_ender_tnt": { "particle_effects": [ { "effect": "block_destruct", "pre_effect_script": "variable.emitter_radius = 1.0;variable.color_r1 = 234;variable.color_g1 = 67;variable.color_b1 = 24;variable.color_r2 = 74;variable.color_g2 = 91;variable.color_b2 = 127;variable.color_a = 1.0;" } ] }
+      }
+    }
+  }
+}

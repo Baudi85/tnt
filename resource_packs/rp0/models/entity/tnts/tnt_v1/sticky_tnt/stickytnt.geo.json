@@ -1,0 +1,116 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.stickytnt",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt",
+					"parent":"rightarm",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]},
+						{"origin": [4, 2, -9], "size": [3, 3, 3], "inflate": 0.125, "uv": [3, 9]},
+						{"origin": [6, 1, -4], "size": [3, 3, 4], "uv": [1, 33]},
+						{"origin": [6, 2, 4], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [6, 12, 2], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]},
+						{"origin": [2, 11, 6], "size": [4, 3, 3], "uv": [2, 41]},
+						{"origin": [-9, 12, 5], "size": [3, 3, 4], "uv": [1, 33]},
+						{"origin": [-9, 11, -5], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [-9, 2, -5], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]},
+						{"origin": [-9, 1, 3], "size": [3, 3, 4], "uv": [1, 33]},
+						{"origin": [-6, 1, 6], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]},
+						{"origin": [1, 1, 6], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [5, 11, -9], "size": [4, 3, 3], "uv": [2, 41]},
+						{"origin": [-4, 12, -9], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [-6, 1, -9], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]}
+					]
+				},
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.stickytnt_inner",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt_inner",
+					"parent": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]},
+						{"origin": [4, 2, -9], "size": [3, 3, 3], "inflate": 0.125, "uv": [3, 9]},
+						{"origin": [6, 1, -4], "size": [3, 3, 4], "uv": [1, 33]},
+						{"origin": [6, 2, 4], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [6, 12, 2], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]},
+						{"origin": [2, 11, 6], "size": [4, 3, 3], "uv": [2, 41]},
+						{"origin": [-9, 12, 5], "size": [3, 3, 4], "uv": [1, 33]},
+						{"origin": [-9, 11, -5], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [-9, 2, -5], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]},
+						{"origin": [-9, 1, 3], "size": [3, 3, 4], "uv": [1, 33]},
+						{"origin": [-6, 1, 6], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]},
+						{"origin": [1, 1, 6], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [5, 11, -9], "size": [4, 3, 3], "uv": [2, 41]},
+						{"origin": [-4, 12, -9], "size": [3, 3, 3], "uv": [3, 9]},
+						{"origin": [-6, 1, -9], "size": [3, 3, 3], "inflate": 0.25, "uv": [3, 9]}
+					]
+				},
+				{
+					"name": "tnt",
+					"parent":"rightarm",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0]
+				}
+			]
+		}
+	]
+}

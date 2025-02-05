@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.bunker_door": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default"} ],
+      "textures": [ "Texture.default" ],
+      "on_fire_color": {},
+      "is_hurt_color": {},
+      "ignore_lighting": false
+    }
+  }
+}

@@ -1,0 +1,851 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:tnt_launcher_projectile",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sndbx:arctic_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:arctic_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:black_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:black_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:blue_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:blue_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:brown_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:brown_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:cyan_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:cyan_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:gray_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:gray_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:green_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:green_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:light_blue_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:light_blue_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:light_gray_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:light_gray_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:lime_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:lime_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:magenta_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:magenta_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:orange_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:orange_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:pink_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:pink_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:purple_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:purple_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:red_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:red_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:white_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:white_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:yellow_colored_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:yellow_colored_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:fireball_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:fireball_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:fish_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:fish_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:galaxy_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:galaxy_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:scatter_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:scatter_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:tornado_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:tornado_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:dinnerbone_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:dinnerbone_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:lucky_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:lucky_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:axolotl_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:axolotl_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:bat_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:bat_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:cat_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:cat_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:chicken_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:chicken_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:cow_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:cow_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:fox_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:fox_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:parrot_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:parrot_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:pig_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:pig_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:polar_bear_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:polar_bear_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:rabbit_mob_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:rabbit_mob_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:napalm_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:napalm_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:patient_zero_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:patient_zero_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:portal_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:portal_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:rainbow_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:rainbow_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:shulker_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:shulker_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:black_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:black_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:blue_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:blue_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:brown_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:brown_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:cyan_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:cyan_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:dark_green_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:dark_green_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:gray_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:gray_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:light_blue_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:light_blue_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:light_gray_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:light_gray_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:lime_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:lime_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:magenta_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:magenta_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:orange_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:orange_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:pink_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:pink_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:purple_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:purple_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:red_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:red_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:white_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:white_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:yellow_smoke_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:yellow_smoke_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:sponge_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:sponge_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:sponge_wet_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:sponge_wet_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:troll_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:troll_tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      },
+      "sndbx:vanilla_tnt": {
+        "minecraft:addrider": {
+          "entity_type": "minecraft:tnt",
+          "spawn_event": "sndbx:spawned_by_projectile"
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 1,
+            "knockback": true,
+            "destroy_on_hit": true,
+            "should_bounce": true
+          },
+          "stick_in_ground": {
+            "shake_time": 0.5
+          }
+        },
+        "anchor": 1,
+        "power": 2.3,
+        "gravity": 0.05,
+        "angle_offset": 0,
+        "offset": [
+          0,
+          -0.1,
+          0
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:rideable": {
+        "family_types": [
+          "tnt"
+        ],
+        "seats": {
+          "position": [
+            0,
+            0.0,
+            0
+          ]
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "test": "rider_count",
+              "subject": "self",
+              "value": 0
+            },
+            "event": "sndbx:despawn",
+            "target": "self"
+          }
+        ]
+      }
+    },
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn"
+          ]
+        }
+      },
+      "sndbx:arctic_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:arctic_tnt"
+          ]
+        }
+      },
+      "sndbx:black_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:black_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:blue_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:blue_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:brown_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:brown_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:cyan_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:cyan_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:gray_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:gray_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:green_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:green_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:light_blue_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:light_blue_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:light_gray_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:light_gray_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:lime_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:lime_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:magenta_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:magenta_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:orange_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:orange_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:pink_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:pink_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:purple_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:purple_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:red_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:red_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:white_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:white_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:yellow_colored_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:yellow_colored_tnt"
+          ]
+        }
+      },
+      "sndbx:fireball_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:fireball_tnt"
+          ]
+        }
+      },
+      "sndbx:fish_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:fish_tnt"
+          ]
+        }
+      },
+      "sndbx:galaxy_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:galaxy_tnt"
+          ]
+        }
+      },
+      "sndbx:scatter_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:scatter_tnt"
+          ]
+        }
+      },
+      "sndbx:tornado_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:tornado_tnt"
+          ]
+        }
+      },
+      "sndbx:dinnerbone_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:dinnerbone_tnt"
+          ]
+        }
+      },
+      "sndbx:lucky_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:lucky_tnt"
+          ]
+        }
+      },
+      "sndbx:axolotl_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:axolotl_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:bat_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:bat_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:cat_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:cat_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:chicken_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:chicken_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:cow_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:cow_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:fox_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:fox_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:parrot_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:parrot_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:pig_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:pig_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:polar_bear_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:polar_bear_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:rabbit_mob_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:rabbit_mob_tnt"
+          ]
+        }
+      },
+      "sndbx:napalm_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:napalm_tnt"
+          ]
+        }
+      },
+      "sndbx:patient_zero_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:patient_zero_tnt"
+          ]
+        }
+      },
+      "sndbx:portal_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:portal_tnt"
+          ]
+        }
+      },
+      "sndbx:rainbow_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:rainbow_tnt"
+          ]
+        }
+      },
+      "sndbx:shulker_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:shulker_tnt"
+          ]
+        }
+      },
+      "sndbx:black_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:black_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:blue_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:blue_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:brown_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:brown_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:cyan_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:cyan_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:dark_green_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:dark_green_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:gray_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:gray_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:light_blue_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:light_blue_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:light_gray_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:light_gray_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:lime_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:lime_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:magenta_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:magenta_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:orange_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:orange_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:pink_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:pink_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:purple_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:purple_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:red_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:red_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:white_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:white_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:yellow_smoke_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:yellow_smoke_tnt"
+          ]
+        }
+      },
+      "sndbx:sponge_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:sponge_tnt"
+          ]
+        }
+      },
+      "sndbx:sponge_wet_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:sponge_wet_tnt"
+          ]
+        }
+      },
+      "sndbx:troll_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:troll_tnt"
+          ]
+        }
+      },
+      "sndbx:vanilla_tnt": {
+        "add": {
+          "component_groups": [
+            "sndbx:vanilla_tnt"
+          ]
+        }
+      }
+    }
+  }
+}

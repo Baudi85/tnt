@@ -1,0 +1,111 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:magnet_tnt_offshoot",
+      "is_summonable": true,
+      "is_spawnable": false,
+      "is_experimental": false
+    },
+    
+    "component_groups": {
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {
+        }
+      },
+      "sndbx:pull_entities_in": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1.0,
+          "attack_time": 0.4,
+          "knockback_damage": 1,
+          "knockback_horizontal_strength": -6,
+          "knockback_vertical_strength": -6,
+          "knockback_range": 12,
+          "knockback_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "tnt"
+          },
+          "damage_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "inanimate"
+          },
+          "cooldown_time": 0.1
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0.0,
+          "max": 0.0
+        },
+        "minecraft:timer": {
+          "time": 2.0,
+          "looping": false,
+          "time_down_event": {
+            "event": "sndbx:tnt_despawn",
+            "target": "self"
+          }
+        }
+      }
+    },
+    
+    "components": {
+      "minecraft:timer": {
+        "time": 1.6,
+        "looping": false,
+        "time_down_event": {
+          "event": "sndbx:pull_entities_in",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [ 0, -1, 0 ]
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "magnet_tnt",
+          "offshoot",
+          "inanimate"
+        ]
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    
+    "events": {
+      "sndbx:pull_entities_in": {
+        "add": {
+          "component_groups": [
+            "sndbx:pull_entities_in"
+          ]
+        }
+      },
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

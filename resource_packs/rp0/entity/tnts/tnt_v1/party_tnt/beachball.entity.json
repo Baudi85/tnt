@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:beachball",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+      	"default": "textures/tnts/v1/party_tnt/beach_ball"
+      },
+      "geometry": {
+        "default": "geometry.beachball"
+      },
+      "render_controllers": [ "controller.render.sndbx_tnt.block" ]
+    }
+  }
+}

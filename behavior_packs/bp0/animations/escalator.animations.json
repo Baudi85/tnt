@@ -1,0 +1,196 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.escalator.escalator_up": {
+      "loop": false,
+      "animation_length": 10.0,
+      "anim_time_update": "query.anim_time + query.delta_time * 2.0",
+      "timeline": {
+        "0.0": [
+          "/playsound elevator.button @a[r=6] ~~~ 1.0",
+          "/execute @e[type=sndbx:escalator_control_panel] ~ ~ ~ particle sndbx:elevator_control_panel ~ ~0.8 ~0.5",
+          "/tag @s add escalator_running",
+          "/tag @a[r=6] add no_riding_anim",
+          "/ride @a[r=6] start_riding @e[type=sndbx:escalator_control_panel] teleport_rider",
+          "/fill 68 54 16 72 54 10 barrier 0 replace air",
+          "/fill 70 53 16 74 53 10 barrier 0 replace air",
+          "/fill 72 52 16 76 52 10 barrier 0 replace air",
+          "/fill 74 51 16 78 51 10 barrier 0 replace air",
+          "/fill 76 50 16 80 50 10 barrier 0 replace air",
+          "/fill 78 49 16 82 49 10 barrier 0 replace air",
+          "/fill 80 48 16 84 48 10 barrier 0 replace air",
+          "/fill 82 47 16 86 47 10 barrier 0 replace air",
+          "/fill 83 46 16 87 46 10 barrier 0 replace air",
+          "/fill 86 44 16 90 44 10 barrier 0 replace air"
+        ],
+        "0.5": [
+          "/tp @e[type=sndbx:escalator] 87 46 13"
+        ],
+        "1.0": [
+          "/tp @e[type=sndbx:escalator] 86 46 13"
+        ],
+        "1.5": [
+          "/tp @e[type=sndbx:escalator] 85 47 13"
+        ],
+        "2.0": [
+          "/tp @e[type=sndbx:escalator] 84 47 13"
+        ],
+        "2.5": [
+          "/tp @e[type=sndbx:escalator] 83 48 13"
+        ],
+        "3.0": [
+          "/tp @e[type=sndbx:escalator] 82 48 13"
+        ],
+        "3.5": [
+          "/tp @e[type=sndbx:escalator] 81 49 13"
+        ],
+        "4.0": [
+          "/tp @e[type=sndbx:escalator] 80 49 13"
+        ],
+        "4.5": [
+          "/tp @e[type=sndbx:escalator] 79 50 13"
+        ],
+        "5.0": [
+          "/tp @e[type=sndbx:escalator] 78 50 13"
+        ],
+        "5.5": [
+          "/tp @e[type=sndbx:escalator] 77 51 13"
+        ],
+        "6.0": [
+          "/tp @e[type=sndbx:escalator] 76 51 13"
+        ],
+        "6.5": [
+          "/tp @e[type=sndbx:escalator] 75 52 13"
+        ],
+        "7.0": [
+          "/tp @e[type=sndbx:escalator] 74 52 13"
+        ],
+        "7.5": [
+          "/tp @e[type=sndbx:escalator] 73 53 13"
+        ],
+        "8.0": [
+          "/tp @e[type=sndbx:escalator] 72 53 13"
+        ],
+        "8.5": [
+          "/tp @e[type=sndbx:escalator] 71 54 13"
+        ],
+        "9.2": [
+          "/tp @e[type=sndbx:escalator] 70 54 13",
+          "/event entity @e[type=sndbx:escalator] sndbx:escalator_off",
+          "/event entity @e[type=sndbx:escalator_control_panel] sndbx:turn_off",
+          "/tag @s remove escalator_running",
+          "/tag @e[type=sndbx:escalator,tag=!on_top,x=68,y=54,z=10,dx=4,dy=0,dz=6] add on_top",
+          "/fill 70 53 16 74 53 10 air 0 replace barrier",
+          "/fill 72 52 16 76 52 10 air 0 replace barrier",
+          "/fill 74 51 16 78 51 10 air 0 replace barrier",
+          "/fill 76 50 16 80 50 10 air 0 replace barrier",
+          "/fill 78 49 16 82 49 10 air 0 replace barrier",
+          "/fill 80 48 16 84 48 10 air 0 replace barrier",
+          "/fill 82 47 16 86 47 10 air 0 replace barrier",
+          "/fill 83 46 16 87 46 10 air 0 replace barrier",
+          "/fill 86 44 16 90 44 10 air 0 replace barrier",
+          "/tag @a[r=6] remove no_riding_anim",
+          "/ride @a[r=6] stop_riding",
+          "/execute @s ~ ~ ~ tp @a[r=6] ~ ~2 ~"
+        ]
+      }
+    },
+
+    "animation.escalator.escalator_down": {
+      "loop": false,
+      "animation_length": 10.0,
+      "anim_time_update": "query.anim_time + query.delta_time * 2.0",
+      "timeline": {
+        "0.0": [
+          "/execute @a[tag=!objective_outside_escalator] ~~~ function objectives/finished/outside_escalator",
+          
+          "/playsound elevator.button @a[r=6] ~~~ 1.0",
+          "/execute @e[type=sndbx:escalator_control_panel] ~ ~ ~ particle sndbx:elevator_control_panel ~ ~0.8 ~0.5",
+          "/tag @s add escalator_running",
+          "/tag @a[r=6] add no_riding_anim",
+          "/ride @a[r=6] start_riding @e[type=sndbx:escalator_control_panel] teleport_rider",
+          "/fill 68 54 16 72 54 10 barrier 0 replace air",
+          "/fill 70 53 16 74 53 10 barrier 0 replace air",
+          "/fill 72 52 16 76 52 10 barrier 0 replace air",
+          "/fill 74 51 16 78 51 10 barrier 0 replace air",
+          "/fill 76 50 16 80 50 10 barrier 0 replace air",
+          "/fill 78 49 16 82 49 10 barrier 0 replace air",
+          "/fill 80 48 16 84 48 10 barrier 0 replace air",
+          "/fill 82 47 16 86 47 10 barrier 0 replace air",
+          "/fill 83 46 16 87 46 10 barrier 0 replace air",
+          "/fill 86 44 16 90 44 10 barrier 0 replace air"
+        ],
+        "0.5": [
+          "/tp @e[type=sndbx:escalator] 71 54 13"
+        ],
+        "1.0": [
+          "/tp @e[type=sndbx:escalator] 72 53 13"
+        ],
+        "1.5": [
+          "/tp @e[type=sndbx:escalator] 73 53 13"
+        ],
+        "2.0": [
+          "/tp @e[type=sndbx:escalator] 74 52 13"
+        ],
+        "2.5": [
+          "/tp @e[type=sndbx:escalator] 75 52 13"
+        ],
+        "3.0": [
+          "/tp @e[type=sndbx:escalator] 76 51 13"
+        ],
+        "3.5": [
+          "/tp @e[type=sndbx:escalator] 77 51 13"
+        ],
+        "4.0": [
+          "/tp @e[type=sndbx:escalator] 78 50 13"
+        ],
+        "4.5": [
+          "/tp @e[type=sndbx:escalator] 79 50 13"
+        ],
+        "5.0": [
+          "/tp @e[type=sndbx:escalator] 80 49 13"
+        ],
+        "5.5": [
+          "/tp @e[type=sndbx:escalator] 81 49 13"
+        ],
+        "6.0": [
+          "/tp @e[type=sndbx:escalator] 82 48 13"
+        ],
+        "6.5": [
+          "/tp @e[type=sndbx:escalator] 83 48 13"
+        ],
+        "7.0": [
+          "/tp @e[type=sndbx:escalator] 84 47 13"
+        ],
+        "7.5": [
+          "/tp @e[type=sndbx:escalator] 85 47 13"
+        ],
+        "8.0": [
+          "/tp @e[type=sndbx:escalator] 86 46 13"
+        ],
+        "8.5": [
+          "/tp @e[type=sndbx:escalator] 87 46 13"
+        ],
+        "9.2": [
+          "/tp @e[type=sndbx:escalator] 88 45 13",
+          "/event entity @e[type=sndbx:escalator] sndbx:escalator_off",
+          "/event entity @e[type=sndbx:escalator_control_panel] sndbx:turn_off",
+          "/tag @s remove escalator_running",
+          "/tag @e[type=sndbx:escalator,tag=on_top,x=86,y=45,z=10,dx=4,dy=0,dz=6] remove on_top",
+          "/fill 68 54 16 72 54 10 air 0 replace barrier",
+          "/fill 70 53 16 74 53 10 air 0 replace barrier",
+          "/fill 72 52 16 76 52 10 air 0 replace barrier",
+          "/fill 74 51 16 78 51 10 air 0 replace barrier",
+          "/fill 76 50 16 80 50 10 air 0 replace barrier",
+          "/fill 78 49 16 82 49 10 air 0 replace barrier",
+          "/fill 80 48 16 84 48 10 air 0 replace barrier",
+          "/fill 82 47 16 86 47 10 air 0 replace barrier",
+          "/fill 83 46 16 87 46 10 air 0 replace barrier",
+          "/tag @a[r=6] remove no_riding_anim",
+          "/ride @a[r=6] stop_riding",
+          "/execute @s ~ ~ ~ tp @a[r=6] ~ ~1 ~"
+        ]
+      }
+    }
+  }
+}

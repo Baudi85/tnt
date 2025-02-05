@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+	"animations": {
+    "animation.swell_withertnt": {
+      "loop": true,
+      "bones": {
+        "tnt": {
+          "scale": "temp.anim_time = query.anim_time; return (temp.anim_time + 0.2 * math.sin(temp.anim_time * 5000 - 250)) * 0.2 + 0.97;"
+        }
+      }
+    }
+	}
+}

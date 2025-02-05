@@ -1,0 +1,99 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:party_balloon",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          { "despawn_a": "query.variant == 1" },
+          { "despawn_b": "query.variant == 2" }
+        ]
+      },
+      "animations": {
+        "despawn_a": "animation.despawn_a",
+        "despawn_b": "animation.despawn_b"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:pop_a": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "sndbx:pop_b": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    
+    "components": {
+      "minecraft:collision_box":{
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:spell_effects": {
+        "add_effects": [
+          {
+            "effect": "levitation",
+            "duration": 10,
+            "amplifier": 2,
+            "visible": false
+          }
+        ]
+      },
+      "minecraft:timer": {
+        "time": [ 3.0, 5.0 ],
+        "looping": false,
+        "time_down_event": {
+          "event": "sndbx:random"
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    
+    "events": {
+      "sndbx:random": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "sndbx:pop_a" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "sndbx:pop_b" ] }
+              }
+            ]
+          }
+        ]
+      },
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      }
+    }
+  }
+}

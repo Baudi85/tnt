@@ -1,0 +1,76 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.waypoint.objective": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "transitions": [ 
+            {
+              "runtime": "!q.is_illager_captain"
+            },
+            {
+              "on_goal_reached": "q.is_illager_captain"
+            }
+          ]
+        },
+        "runtime": { 
+          "transitions": [ { "on_detect": "1" } ],
+          "on_entry": [
+            "/execute @a[r=4] ~~~ event entity @e[type=sndbx:waypoint,family=objective,family=!unapproachable,r=4] sndbx:start_despawn",
+            "/execute @a[r=100] ~~~ summon sndbx:waypoint ~~2.5~-2.5 sndbx:trail_guide",
+            "/event entity @a[rm=101,type=sndbx:waypoint,family=guide] sndbx:despawn"
+          ]
+        },
+        "on_goal_reached": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "goal_reached": "(q.life_time - v.tick_delay) >= 0.5"
+            }
+          ]
+        },
+        "goal_reached": {
+          "on_entry": [
+            "/particle sndbx:party_tnt",
+            "/event entity @e[type=sndbx:waypoint,family=guide,r=50] sndbx:despawn",
+            "/playsound firework.twinkle @a ~~~",
+
+            "/execute @s[x=2,y=55,z=11,r=4] ~~~ function objectives/finished/intro",
+            "/execute @s[x=1,y=55,z=49,r=4] ~~~ function objectives/finished/showcase",
+            "/execute @s[x=-2,y=55,z=43,r=4] ~~~ function objectives/finished/showcase_talk",
+            "/execute @s[x=1,y=55,z=19,r=4] ~~~ function objectives/finished/return",
+            "/execute @s[x=17,y=55,z=-10,r=4] ~~~ function objectives/finished/shooting_range",
+            "/execute @s[x=20,y=55,z=-20,r=4] ~~~ function objectives/finished/shooting_range_talk",
+            "/execute @s[x=17,y=55,z=8,r=4] ~~~ function objectives/finished/return_2",
+            "/execute @s[x=61,y=55,z=13,r=4] ~~~ function objectives/finished/outside",
+            "/execute @s[x=96,y=44,z=13,r=4] ~~~ function objectives/finished/outside_platform"
+          ]
+        }
+      }
+    },
+    "controller.animation.waypoint.trail": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "transitions": [ 
+            {
+              "runtime": "1"
+            }
+          ]
+        },
+        "runtime": { 
+          "transitions": [ { "on_detect": "1" } ],
+          "on_entry": [
+            "/tp @s ^^^5 facing @e[type=sndbx:waypoint,family=objective,c=1]",
+            "/particle sndbx:guide_trail ~~~",
+            
+            "/execute @e[type=sndbx:waypoint,family=objective] ~~~ event entity @e[type=sndbx:waypoint,family=guide,r=3] sndbx:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:doomsday_tnt",
+      "geometry": {
+        "default": "geometry.doomsday_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "doomsday_1": "textures/tnts/v2/doomsday/doomsday2_countdown1",
+        "doomsday_2": "textures/tnts/v2/doomsday/doomsday2_countdown2",
+        "doomsday_3": "textures/tnts/v2/doomsday/doomsday2_countdown3",
+        "doomsday_4": "textures/tnts/v2/doomsday/doomsday2_countdown4",
+        "default": "textures/tnts/v2/doomsday/doomsday2"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [ 
+          "align",
+          { "tnt_explode": "q.is_shaking" }
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "tnt_explode": "animation.doomsday.explosion"
+      },
+      "render_controllers": [
+        "controller.render.doomsday_tnt"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

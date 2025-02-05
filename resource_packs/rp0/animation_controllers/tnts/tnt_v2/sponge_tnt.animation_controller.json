@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.sponge_wet_tnt_leak": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "water_leak": "!q.is_powered" },
+            { "bubble_leak": "q.is_powered" }
+          ]
+        },
+        "water_leak": {
+          "particle_effects": [
+            { 
+              "effect": "water_leak"
+            },
+            { 
+              "effect": "bubble_leak",
+              "pre_effect_script": "variable.emitter_rate = 24;variable.box_size = math.random(0.5,1.5);"
+            },
+            { 
+              "effect": "sponge_tnt_wet1_particle"
+            },
+            { 
+              "effect": "sponge_tnt_wet2_particle",
+              "pre_effect_script": "variable.emitter_rate = 24;variable.box_size = math.random(0.5,1.5);"
+            }
+          ],
+          "transitions": [ { "default": "1" } ]
+        },
+        "bubble_leak": {
+          "particle_effects": [
+            { 
+              "effect": "bubble_leak",
+              "pre_effect_script": "variable.emitter_rate = 39;variable.box_size = math.random(1.5,2.5);"
+            }
+          ],
+          "transitions": [ { "default": "1" } ]
+        }
+      }
+    }
+  }
+}

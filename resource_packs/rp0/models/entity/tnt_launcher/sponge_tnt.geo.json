@@ -1,0 +1,76 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.launcher_sponge_tnt",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1]
+				},
+				{
+					"name": "launcher",
+					"parent": "rightItem",
+					"pivot": [-0.5, 17, -2.5]
+				},
+				{
+					"name": "tnt_rocket_launcher_root",
+					"parent": "launcher",
+					"pivot": [-0.5, 17, -2.5]
+				},
+				{
+					"name": "tnt_rocket_launcher",
+					"parent": "tnt_rocket_launcher_root",
+					"pivot": [-0.5, 17, -2.5],
+					"rotation": [0, 90, 0]
+				},
+				{
+					"name": "tnt",
+					"parent": "tnt_rocket_launcher",
+					"pivot": [27.5, 19.8, -2],
+					"cubes": [
+						{
+							"origin": [22.5, 14.8, -7],
+							"size": [10, 10, 10],
+							"uv": {
+								"north": {"uv": [0, 15.9], "uv_size": [16.1, 16]},
+								"east": {"uv": [16, 15.9], "uv_size": [16.1, 16]},
+								"south": {"uv": [32, 15.9], "uv_size": [16.1, 16]},
+								"west": {"uv": [48, 15.9], "uv_size": [16.1, 16]},
+								"up": {"uv": [32, 16], "uv_size": [-16, -16]},
+								"down": {"uv": [48, 16], "uv_size": [-16, -16]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

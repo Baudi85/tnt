@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:cone_light",
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "geometry": {
+        "default": "geometry.cone"
+      },
+      "textures": {
+        "default": "textures/entity/cone/cone_light"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "animations": {
+        "alignment": "animation.block_alignment"
+      },
+      "scripts": {
+        "animate": [
+          "alignment"
+        ]
+      }
+    }
+  }
+}

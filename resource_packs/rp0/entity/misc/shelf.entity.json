@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:shelf",
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "geometry": {
+        "default": "geometry.shelf"
+      },
+      "textures": {
+        "default": "textures/entity/shelf/shelves"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      }
+    }
+  }
+}

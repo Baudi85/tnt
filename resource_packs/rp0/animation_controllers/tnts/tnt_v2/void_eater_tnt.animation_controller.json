@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.void_eater_particle_ignited": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "floating": "!q.is_shaking"
+            },
+            { 
+              "spinning": "q.is_shaking"
+            }
+          ]
+        },
+        "floating": {
+          "animations": [ "floating" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+          "particle_effects": [
+            { "effect": "void_float_x" },
+            { "effect": "void_float_z" }
+          ],
+          "transitions": [
+            { 
+              "spinning": "q.is_shaking"
+            }
+          ]
+        },
+        "spinning": {
+          "animations": [ "spinning" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+          "particle_effects": [
+            { "effect": "void_float_x" },
+            { "effect": "void_float_z" },
+            { "effect": "void_obliterator" }
+          ],
+          "transitions": [
+            { 
+              "floating": "!q.is_shaking"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

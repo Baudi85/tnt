@@ -1,0 +1,51 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:dynamite_tnt",
+      "geometry": {
+        "default": "geometry.dynamite_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/dynamite_tnt/dynamite_tnt"
+      },
+      "particle_effects": {
+        "fire_fuse": "sndbx:fire_fuse_small"
+      },
+      "scripts": {
+        "scalex": "v.swelling_scale_xz",
+        "scaley": "v.swelling_scale_y",
+        "scalez": "v.swelling_scale_xz",
+        "initialize": [ 
+          "v.swell_amount = 0.0;",
+          "v.fuse_length = 4.0;"
+        ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.swelling_scale_xz = math.pow(math.clamp(v.swell_amount - (v.fuse_length - 0.9), 0.0, 1.0), 4.0) * 0.4 + 1.0;",
+          "v.swelling_scale_y = math.pow(math.clamp(v.swell_amount - (v.fuse_length - 0.9), 0.0, 1.0), 4.0) * 0.1 + 1.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "ignite_sound",
+          "align",
+          "spark"
+        ]
+      },
+      "animations": {
+        "ignite_sound": "controller.animation.sndbx_tnt.ignite_no_hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "spark": "controller.animation.dynamite_spark"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.lit"
+      ],
+      "sound_effects": {
+        "ignited": "tnt.dynamite"
+      }
+    }
+  }
+}

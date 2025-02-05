@@ -1,0 +1,1111 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_cannon.detect_rider": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [ { "has_rider": "q.has_rider" }, { "has_no_rider": "!q.has_rider" } ]
+        },
+        "has_rider": {
+          "on_entry": [ 
+            "@s sndbx:has_rider",
+            "/playsound tnt_cannon.activate @a ~~~ 1.0",
+            "/execute @a[tag=!objective_shooting_range_ride_cannon] ~~~ function objectives/finished/shooting_range_ride_cannon"
+          ],
+          "transitions": [ { "default": "!q.has_rider" } ]
+        },
+        "has_no_rider": {
+          "on_entry": [ "@s sndbx:has_no_rider", "/playsound tnt_cannon.deactivate @a ~~~ 1.0" ],
+          "transitions": [ { "default": "q.has_rider" } ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.detect_unloaded_launcher": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "unloaded_launcher": "q.has_rider && q.is_powered" }
+          ]
+        },
+        "unloaded_launcher": {
+          "on_entry": [
+            "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§c\"},{\"translate\":\"tnt_cannon.unloaded\"}]}",
+            "/tellraw @a[tag=!tnt_tip,r=12] {\"rawtext\":[{\"translate\":\"chat.objective.prefix\"},{\"translate\":\"chat.objective.list.shoot_structure_tip\"}]}",
+            "/playsound note.chime @a[tag=!tnt_tip] ~~~",
+            "/tag @a[r=12] add tnt_tip",
+            "/playsound note.pling @p",
+
+            "@s sndbx:remove_not_loaded"
+          ],
+          "transitions": [ { "default": "!q.is_powered" } ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.load_tnts": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "load_arctic_tnt": "q.skin_id == 1 && q.has_rider" },
+            { "load_black_colored_tnt": "q.skin_id == 2 && q.has_rider" },
+            { "load_blue_colored_tnt": "q.skin_id == 3 && q.has_rider" },
+            { "load_brown_colored_tnt": "q.skin_id == 4 && q.has_rider" },
+            { "load_cyan_colored_tnt": "q.skin_id == 5 && q.has_rider" },
+            { "load_gray_colored_tnt": "q.skin_id == 6 && q.has_rider" },
+            { "load_green_colored_tnt": "q.skin_id == 7 && q.has_rider" },
+            { "load_light_blue_colored_tnt": "q.skin_id == 8 && q.has_rider" },
+            { "load_light_gray_colored_tnt": "q.skin_id == 9 && q.has_rider" },
+            { "load_lime_colored_tnt": "q.skin_id == 10 && q.has_rider" },
+            { "load_magenta_colored_tnt": "q.skin_id == 11 && q.has_rider" },
+            { "load_orange_colored_tnt": "q.skin_id == 12 && q.has_rider" },
+            { "load_pink_colored_tnt": "q.skin_id == 13 && q.has_rider" },
+            { "load_purple_colored_tnt": "q.skin_id == 14 && q.has_rider" },
+            { "load_red_colored_tnt": "q.skin_id == 15 && q.has_rider" },
+            { "load_white_colored_tnt": "q.skin_id == 16 && q.has_rider" },
+            { "load_yellow_colored_tnt": "q.skin_id == 17 && q.has_rider" },
+            { "load_fireball_tnt": "q.skin_id == 18 && q.has_rider" },
+            { "load_fish_tnt": "q.skin_id == 19 && q.has_rider" },
+            { "load_galaxy_tnt": "q.skin_id == 20 && q.has_rider" },
+            { "load_scatter_tnt": "q.skin_id == 21 && q.has_rider" },
+            { "load_tornado_tnt": "q.skin_id == 22 && q.has_rider" },
+            { "load_dinnerbone_tnt": "q.skin_id == 23 && q.has_rider" },
+            { "load_lucky_tnt": "q.skin_id == 24 && q.has_rider" },
+            { "load_axolotl_mob_tnt": "q.skin_id == 25 && q.has_rider" },
+            { "load_bat_mob_tnt": "q.skin_id == 26 && q.has_rider" },
+            { "load_cat_mob_tnt": "q.skin_id == 27 && q.has_rider" },
+            { "load_chicken_mob_tnt": "q.skin_id == 28 && q.has_rider" },
+            { "load_cow_mob_tnt": "q.skin_id == 29 && q.has_rider" },
+            { "load_fox_mob_tnt": "q.skin_id == 30 && q.has_rider" },
+            { "load_parrot_mob_tnt": "q.skin_id == 31 && q.has_rider" },
+            { "load_pig_mob_tnt": "q.skin_id == 32 && q.has_rider" },
+            { "load_polar_bear_mob_tnt": "q.skin_id == 33 && q.has_rider" },
+            { "load_rabbit_mob_tnt": "q.skin_id == 34 && q.has_rider" },
+            { "load_napalm_tnt": "q.skin_id == 35 && q.has_rider" },
+            { "load_patient_zero_tnt": "q.skin_id == 36 && q.has_rider" },
+            { "load_portal_tnt": "q.skin_id == 37 && q.has_rider" },
+            { "load_rainbow_tnt": "q.skin_id == 38 && q.has_rider" },
+            { "load_shulker_tnt": "q.skin_id == 39 && q.has_rider" },
+            { "load_black_smoke_tnt": "q.skin_id == 40 && q.has_rider" },
+            { "load_blue_smoke_tnt": "q.skin_id == 41 && q.has_rider" },
+            { "load_brown_smoke_tnt": "q.skin_id == 42 && q.has_rider" },
+            { "load_cyan_smoke_tnt": "q.skin_id == 43 && q.has_rider" },
+            { "load_dark_green_smoke_tnt": "q.skin_id == 44 && q.has_rider" },
+            { "load_gray_smoke_tnt": "q.skin_id == 45 && q.has_rider" },
+            { "load_light_blue_smoke_tnt": "q.skin_id == 46 && q.has_rider" },
+            { "load_light_gray_smoke_tnt": "q.skin_id == 47 && q.has_rider" },
+            { "load_lime_smoke_tnt": "q.skin_id == 48 && q.has_rider" },
+            { "load_magenta_smoke_tnt": "q.skin_id == 49 && q.has_rider" },
+            { "load_orange_smoke_tnt": "q.skin_id == 50 && q.has_rider" },
+            { "load_pink_smoke_tnt": "q.skin_id == 51 && q.has_rider" },
+            { "load_purple_smoke_tnt": "q.skin_id == 52 && q.has_rider" },
+            { "load_red_smoke_tnt": "q.skin_id == 53 && q.has_rider" },
+            { "load_white_smoke_tnt": "q.skin_id == 54 && q.has_rider" },
+            { "load_yellow_smoke_tnt": "q.skin_id == 55 && q.has_rider" },
+            { "load_sponge_tnt": "q.skin_id == 56 && q.has_rider" },
+            { "load_sponge_wet_tnt": "q.skin_id == 57 && q.has_rider" },
+            { "load_troll_tnt": "q.skin_id == 58 && q.has_rider" },
+            { "load_vanilla_tnt": "q.skin_id == 59 && q.has_rider" }
+          ]
+        },
+        "load_arctic_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:arctic_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 1 || !q.has_rider" } ]
+        },
+
+        "load_black_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:black_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 2 || !q.has_rider" } ]
+        },
+
+        "load_blue_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:blue_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 3 || !q.has_rider" } ]
+        },
+
+        "load_brown_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:brown_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 4 || !q.has_rider" } ]
+        },
+
+        "load_cyan_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cyan_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 5 || !q.has_rider" } ]
+        },
+
+        "load_gray_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:gray_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 6 || !q.has_rider" } ]
+        },
+
+        "load_green_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:green_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 7 || !q.has_rider" } ]
+        },
+
+        "load_light_blue_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_blue_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 8 || !q.has_rider" } ]
+        },
+
+        "load_light_gray_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_gray_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 9 || !q.has_rider" } ]
+        },
+
+        "load_lime_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:lime_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 10 || !q.has_rider" } ]
+        },
+
+        "load_magenta_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:magenta_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 11 || !q.has_rider" } ]
+        },
+
+        "load_orange_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:orange_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 12 || !q.has_rider" } ]
+        },
+
+        "load_pink_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:pink_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 13 || !q.has_rider" } ]
+        },
+
+        "load_purple_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:purple_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 14 || !q.has_rider" } ]
+        },
+
+        "load_red_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:red_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 15 || !q.has_rider" } ]
+        },
+
+        "load_white_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:white_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 16 || !q.has_rider" } ]
+        },
+
+        "load_yellow_colored_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:yellow_colored_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 17 || !q.has_rider" } ]
+        },
+
+        "load_fireball_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:fireball_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 18 || !q.has_rider" } ]
+        },
+
+        "load_fish_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:fish_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 19 || !q.has_rider" } ]
+        },
+
+        "load_galaxy_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:galaxy_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 20 || !q.has_rider" } ]
+        },
+
+        "load_scatter_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:scatter_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 21 || !q.has_rider" } ]
+        },
+
+        "load_tornado_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:tornado_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 22 || !q.has_rider" } ]
+        },
+
+        "load_dinnerbone_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:dinnerbone_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 23 || !q.has_rider" } ]
+        },
+
+        "load_lucky_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:lucky_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 24 || !q.has_rider" } ]
+        },
+
+        "load_axolotl_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:axolotl_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 25 || !q.has_rider" } ]
+        },
+
+        "load_bat_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:bat_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 26 || !q.has_rider" } ]
+        },
+
+        "load_cat_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cat_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 27 || !q.has_rider" } ]
+        },
+
+        "load_chicken_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:chicken_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 28 || !q.has_rider" } ]
+        },
+
+        "load_cow_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cow_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 29 || !q.has_rider" } ]
+        },
+
+        "load_fox_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:fox_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 30 || !q.has_rider" } ]
+        },
+
+        "load_parrot_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:parrot_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 31 || !q.has_rider" } ]
+        },
+
+        "load_pig_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:pig_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 32 || !q.has_rider" } ]
+        },
+
+        "load_polar_bear_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:polar_bear_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 33 || !q.has_rider" } ]
+        },
+
+        "load_rabbit_mob_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:rabbit_mob_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 34 || !q.has_rider" } ]
+        },
+
+        "load_napalm_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:napalm_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 35 || !q.has_rider" } ]
+        },
+
+        "load_patient_zero_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:patient_zero_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 36 || !q.has_rider" } ]
+        },
+
+        "load_portal_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:portal_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 37 || !q.has_rider" } ]
+        },
+
+        "load_rainbow_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:rainbow_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 38 || !q.has_rider" } ]
+        },
+
+        "load_shulker_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:shulker_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 39 || !q.has_rider" } ]
+        },
+
+        "load_black_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:black_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 40 || !q.has_rider" } ]
+        },
+
+        "load_blue_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:blue_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 41 || !q.has_rider" } ]
+        },
+
+        "load_brown_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:brown_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 42 || !q.has_rider" } ]
+        },
+
+        "load_cyan_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:cyan_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 43 || !q.has_rider" } ]
+        },
+
+        "load_dark_green_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:dark_green_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 44 || !q.has_rider" } ]
+        },
+
+        "load_gray_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:gray_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 45 || !q.has_rider" } ]
+        },
+
+        "load_light_blue_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_blue_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 46 || !q.has_rider" } ]
+        },
+
+        "load_light_gray_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:light_gray_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 47 || !q.has_rider" } ]
+        },
+
+        "load_lime_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:lime_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 48 || !q.has_rider" } ]
+        },
+
+        "load_magenta_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:magenta_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 49 || !q.has_rider" } ]
+        },
+
+        "load_orange_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:orange_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 50 || !q.has_rider" } ]
+        },
+
+        "load_pink_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:pink_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 51 || !q.has_rider" } ]
+        },
+
+        "load_purple_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:purple_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 52 || !q.has_rider" } ]
+        },
+
+        "load_red_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:red_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 53 || !q.has_rider" } ]
+        },
+
+        "load_white_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:white_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 54 || !q.has_rider" } ]
+        },
+
+        "load_yellow_smoke_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:yellow_smoke_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 55 || !q.has_rider" } ]
+        },
+
+        "load_sponge_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:sponge_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 56 || !q.has_rider" } ]
+        },
+
+        "load_sponge_wet_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:sponge_wet_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 57 || !q.has_rider" } ]
+        },
+
+        "load_troll_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"entity.sndbx:troll_tnt.name\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 58 || !q.has_rider" } ]
+        },
+
+        "load_vanilla_tnt": {
+          "on_entry": [ "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§e\"},{\"translate\":\"tnt_launcher.loaded\"},{\"text\":\"§b \"},{\"translate\":\"vanilla.tnt\"}]}" ],
+          "transitions": [ { "default": "q.skin_id != 59 || !q.has_rider" } ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.launch_tnt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "use_arctic_tnt": "q.is_sheared && q.skin_id == 1" },
+            { "use_black_colored_tnt": "q.is_sheared && q.skin_id == 2" },
+            { "use_blue_colored_tnt": "q.is_sheared && q.skin_id == 3" },
+            { "use_brown_colored_tnt": "q.is_sheared && q.skin_id == 4" },
+            { "use_cyan_colored_tnt": "q.is_sheared && q.skin_id == 5" },
+            { "use_gray_colored_tnt": "q.is_sheared && q.skin_id == 6" },
+            { "use_green_colored_tnt": "q.is_sheared && q.skin_id == 7" },
+            { "use_light_blue_colored_tnt": "q.is_sheared && q.skin_id == 8" },
+            { "use_light_gray_colored_tnt": "q.is_sheared && q.skin_id == 9" },
+            { "use_lime_colored_tnt": "q.is_sheared && q.skin_id == 10" },
+            { "use_magenta_colored_tnt": "q.is_sheared && q.skin_id == 11" },
+            { "use_orange_colored_tnt": "q.is_sheared && q.skin_id == 12" },
+            { "use_pink_colored_tnt": "q.is_sheared && q.skin_id == 13" },
+            { "use_purple_colored_tnt": "q.is_sheared && q.skin_id == 14" },
+            { "use_red_colored_tnt": "q.is_sheared && q.skin_id == 15" },
+            { "use_white_colored_tnt": "q.is_sheared && q.skin_id == 16" },
+            { "use_yellow_colored_tnt": "q.is_sheared && q.skin_id == 17" },
+            { "use_fireball_tnt": "q.is_sheared && q.skin_id == 18" },
+            { "use_fish_tnt": "q.is_sheared && q.skin_id == 19" },
+            { "use_galaxy_tnt": "q.is_sheared && q.skin_id == 20" },
+            { "use_scatter_tnt": "q.is_sheared && q.skin_id == 21" },
+            { "use_tornado_tnt": "q.is_sheared && q.skin_id == 22" },
+            { "use_dinnerbone_tnt": "q.is_sheared && q.skin_id == 23" },
+            { "use_lucky_tnt": "q.is_sheared && q.skin_id == 24" },
+            { "use_axolotl_mob_tnt": "q.is_sheared && q.skin_id == 25" },
+            { "use_bat_mob_tnt": "q.is_sheared && q.skin_id == 26" },
+            { "use_cat_mob_tnt": "q.is_sheared && q.skin_id == 27" },
+            { "use_chicken_mob_tnt": "q.is_sheared && q.skin_id == 28" },
+            { "use_cow_mob_tnt": "q.is_sheared && q.skin_id == 29" },
+            { "use_fox_mob_tnt": "q.is_sheared && q.skin_id == 30" },
+            { "use_parrot_mob_tnt": "q.is_sheared && q.skin_id == 31" },
+            { "use_pig_mob_tnt": "q.is_sheared && q.skin_id == 32" },
+            { "use_polar_bear_mob_tnt": "q.is_sheared && q.skin_id == 33" },
+            { "use_rabbit_mob_tnt": "q.is_sheared && q.skin_id == 34" },
+            { "use_napalm_tnt": "q.is_sheared && q.skin_id == 35" },
+            { "use_patient_zero_tnt": "q.is_sheared && q.skin_id == 36" },
+            { "use_portal_tnt": "q.is_sheared && q.skin_id == 37" },
+            { "use_rainbow_tnt": "q.is_sheared && q.skin_id == 38" },
+            { "use_shulker_tnt": "q.is_sheared && q.skin_id == 39" },
+            { "use_black_smoke_tnt": "q.is_sheared && q.skin_id == 40" },
+            { "use_blue_smoke_tnt": "q.is_sheared && q.skin_id == 41" },
+            { "use_brown_smoke_tnt": "q.is_sheared && q.skin_id == 42" },
+            { "use_cyan_smoke_tnt": "q.is_sheared && q.skin_id == 43" },
+            { "use_dark_green_smoke_tnt": "q.is_sheared && q.skin_id == 44" },
+            { "use_gray_smoke_tnt": "q.is_sheared && q.skin_id == 45" },
+            { "use_light_blue_smoke_tnt": "q.is_sheared && q.skin_id == 46" },
+            { "use_light_gray_smoke_tnt": "q.is_sheared && q.skin_id == 47" },
+            { "use_lime_smoke_tnt": "q.is_sheared && q.skin_id == 48" },
+            { "use_magenta_smoke_tnt": "q.is_sheared && q.skin_id == 49" },
+            { "use_orange_smoke_tnt": "q.is_sheared && q.skin_id == 50" },
+            { "use_pink_smoke_tnt": "q.is_sheared && q.skin_id == 51" },
+            { "use_purple_smoke_tnt": "q.is_sheared && q.skin_id == 52" },
+            { "use_red_smoke_tnt": "q.is_sheared && q.skin_id == 53" },
+            { "use_white_smoke_tnt": "q.is_sheared && q.skin_id == 54" },
+            { "use_yellow_smoke_tnt": "q.is_sheared && q.skin_id == 55" },
+            { "use_sponge_tnt": "q.is_sheared && q.skin_id == 56" },
+            { "use_sponge_wet_tnt": "q.is_sheared && q.skin_id == 57" },
+            { "use_troll_tnt": "q.is_sheared && q.skin_id == 58" },
+            { "use_vanilla_tnt": "q.is_sheared && q.skin_id == 59" }
+          ],
+          "on_exit": [
+            "/execute @a[tag=!objective_outside_shoot_structure] ~~~ function objectives/finished/outside_shoot_structure"
+          ]
+        },
+        "use_arctic_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_arctic_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 1" }
+          ]
+        },
+
+        "use_black_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_black_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 2" }
+          ]
+        },
+
+        "use_blue_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_blue_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 3" }
+          ]
+        },
+
+        "use_brown_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_brown_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 4" }
+          ]
+        },
+
+        "use_cyan_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_cyan_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 5" }
+          ]
+        },
+
+        "use_gray_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_gray_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 6" }
+          ]
+        },
+
+        "use_green_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_green_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 7" }
+          ]
+        },
+
+        "use_light_blue_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_light_blue_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 8" }
+          ]
+        },
+
+        "use_light_gray_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_light_gray_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 9" }
+          ]
+        },
+
+        "use_lime_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_lime_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 10" }
+          ]
+        },
+
+        "use_magenta_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_magenta_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 11" }
+          ]
+        },
+
+        "use_orange_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_orange_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 12" }
+          ]
+        },
+
+        "use_pink_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_pink_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 13" }
+          ]
+        },
+
+        "use_purple_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_purple_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 14" }
+          ]
+        },
+
+        "use_red_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_red_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 15" }
+          ]
+        },
+
+        "use_white_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_white_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 16" }
+          ]
+        },
+
+        "use_yellow_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_yellow_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 17" }
+          ]
+        },
+
+        "use_fireball_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_fireball_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 18" }
+          ]
+        },
+
+        "use_fish_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_fish_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 19" }
+          ]
+        },
+
+        "use_galaxy_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_galaxy_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 20" }
+          ]
+        },
+
+        "use_scatter_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_scatter_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 21" }
+          ]
+        },
+
+        "use_tornado_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_tornado_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 22" }
+          ]
+        },
+
+        "use_dinnerbone_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_dinnerbone_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 23" }
+          ]
+        },
+
+        "use_lucky_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_lucky_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 24" }
+          ]
+        },
+
+        "use_axolotl_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_axolotl_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 25" }
+          ]
+        },
+
+        "use_bat_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_bat_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 26" }
+          ]
+        },
+
+        "use_cat_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_cat_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 27" }
+          ]
+        },
+
+        "use_chicken_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_chicken_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 28" }
+          ]
+        },
+
+        "use_cow_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_cow_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 29" }
+          ]
+        },
+
+        "use_fox_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_fox_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 30" }
+          ]
+        },
+
+        "use_parrot_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_parrot_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 31" }
+          ]
+        },
+
+        "use_pig_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_pig_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 32" }
+          ]
+        },
+
+        "use_polar_bear_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_polar_bear_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 33" }
+          ]
+        },
+
+        "use_rabbit_mob_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_rabbit_mob_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 34" }
+          ]
+        },
+
+        "use_napalm_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_napalm_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 35" }
+          ]
+        },
+
+        "use_patient_zero_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_patient_zero_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 36" }
+          ]
+        },
+
+        "use_portal_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_portal_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 37" }
+          ]
+        },
+
+        "use_rainbow_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_rainbow_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 38" }
+          ]
+        },
+
+        "use_shulker_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_shulker_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 39" }
+          ]
+        },
+
+        "use_black_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_black_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 40" }
+          ]
+        },
+
+        "use_blue_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_blue_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 41" }
+          ]
+        },
+
+        "use_brown_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_brown_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 42" }
+          ]
+        },
+
+        "use_cyan_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_cyan_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 43" }
+          ]
+        },
+
+        "use_dark_green_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_dark_green_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 44" }
+          ]
+        },
+
+        "use_gray_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_gray_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 45" }
+          ]
+        },
+
+        "use_light_blue_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_light_blue_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 46" }
+          ]
+        },
+
+        "use_light_gray_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_light_gray_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 47" }
+          ]
+        },
+
+        "use_lime_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_lime_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 48" }
+          ]
+        },
+
+        "use_magenta_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_magenta_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 49" }
+          ]
+        },
+
+        "use_orange_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_orange_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 50" }
+          ]
+        },
+
+        "use_pink_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_pink_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 51" }
+          ]
+        },
+
+        "use_purple_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_purple_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 52" }
+          ]
+        },
+
+        "use_red_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_red_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 53" }
+          ]
+        },
+
+        "use_white_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_white_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 54" }
+          ]
+        },
+
+        "use_yellow_smoke_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_yellow_smoke_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 55" }
+          ]
+        },
+
+        "use_sponge_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_sponge_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 56" }
+          ]
+        },
+
+        "use_sponge_wet_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_sponge_wet_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 57" }
+          ]
+        },
+
+        "use_troll_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_troll_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 58" }
+          ]
+        },
+
+        "use_vanilla_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_vanilla_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 59" }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.shooting_range.launch_tnt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "use_black_colored_tnt": "q.is_sheared && q.skin_id == 1" },
+            { "use_blue_colored_tnt": "q.is_sheared && q.skin_id == 2" },
+            { "use_brown_colored_tnt": "q.is_sheared && q.skin_id == 3" },
+            { "use_cyan_colored_tnt": "q.is_sheared && q.skin_id == 4" },
+            { "use_gray_colored_tnt": "q.is_sheared && q.skin_id == 5" },
+            { "use_green_colored_tnt": "q.is_sheared && q.skin_id == 6" },
+            { "use_light_blue_colored_tnt": "q.is_sheared && q.skin_id == 7" },
+            { "use_light_gray_colored_tnt": "q.is_sheared && q.skin_id == 8" },
+            { "use_lime_colored_tnt": "q.is_sheared && q.skin_id == 9" },
+            { "use_magenta_colored_tnt": "q.is_sheared && q.skin_id == 10" },
+            { "use_orange_colored_tnt": "q.is_sheared && q.skin_id == 11" },
+            { "use_pink_colored_tnt": "q.is_sheared && q.skin_id == 12" },
+            { "use_purple_colored_tnt": "q.is_sheared && q.skin_id == 13" },
+            { "use_red_colored_tnt": "q.is_sheared && q.skin_id == 14" },
+            { "use_white_colored_tnt": "q.is_sheared && q.skin_id == 15" },
+            { "use_yellow_colored_tnt": "q.is_sheared && q.skin_id == 16" }
+          ],
+          "on_exit": [
+            "/execute @a[tag=!objective_shooting_range_aim_cannon] ~~~ function objectives/finished/shooting_range_aim_cannon"
+          ]
+        },
+
+        "use_black_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_black_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 1" }
+          ]
+        },
+
+        "use_blue_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_blue_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 2" }
+          ]
+        },
+
+        "use_brown_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_brown_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 3" }
+          ]
+        },
+
+        "use_cyan_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_cyan_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 4" }
+          ]
+        },
+
+        "use_gray_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_gray_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 5" }
+          ]
+        },
+
+        "use_green_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_green_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 6" }
+          ]
+        },
+
+        "use_light_blue_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_light_blue_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 7" }
+          ]
+        },
+
+        "use_light_gray_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_light_gray_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 8" }
+          ]
+        },
+
+        "use_lime_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_lime_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 9" }
+          ]
+        },
+
+        "use_magenta_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_magenta_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 10" }
+          ]
+        },
+
+        "use_orange_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_orange_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 11" }
+          ]
+        },
+
+        "use_pink_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_pink_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 12" }
+          ]
+        },
+
+        "use_purple_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_purple_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 13" }
+          ]
+        },
+
+        "use_red_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_red_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 14" }
+          ]
+        },
+
+        "use_white_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_white_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 15" }
+          ]
+        },
+
+        "use_yellow_colored_tnt": {
+          "on_entry": [ "/event entity @p sndbx:use_yellow_colored_tnt" ],
+          "transitions": [
+            { "default": "!q.is_sheared || q.skin_id != 16" }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.unsupported_tnt": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "unsupported": "q.is_illager_captain && q.has_rider"
+            }
+          ]
+        },
+        "unsupported": {
+          "on_entry": [
+            "/titleraw @p actionbar {\"rawtext\":[{\"text\":\"§c\"},{\"translate\":\"tnt_cannon.unsupported\"}]}",
+            "/tellraw @a[tag=!tnt_tip,r=12] {\"rawtext\":[{\"translate\":\"chat.objective.prefix\"},{\"translate\":\"chat.objective.list.shoot_structure_tip\"}]}",
+            "/playsound note.chime @a[tag=!tnt_tip] ~~~",
+            "/tag @a[r=12] add tnt_tip",
+
+            "/playsound note.bass @a ~~~",
+            "@s sndbx:remove_unsupported_tnt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_illager_captain || !q.has_rider"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.tnt_cannon.cooldown_attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.out_of_control"
+            }
+          ]
+        },
+        "cooldown": {
+          "on_entry": [ "v.tick_delay = q.life_time;" ],
+          "transitions": [
+            {
+              "default": "(q.life_time - v.tick_delay) >= 1.0"
+            }
+          ],
+          "on_exit": [ "@s minecraft:entity_spawned" ]
+        }
+      }
+    },
+
+    "controller.animation.interact_particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "emit": "!q.has_rider"
+            }
+          ]
+        },
+        "emit": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/particle sndbx:interact ~ ~ ~"
+          ],
+          "transitions": [
+            {
+              "default": "(q.life_time - v.tick_delay) >= 10.0 || q.has_rider"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

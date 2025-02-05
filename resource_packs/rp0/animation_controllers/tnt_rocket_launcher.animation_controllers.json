@@ -1,0 +1,117 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_rocket_launcher.setup": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "third_person": "!variable.is_first_person"
+            },
+            {
+              "first_person": "variable.is_first_person"
+            }
+          ]
+        },
+        "third_person": {
+          "animations": [
+            "tnt_rocket_launcher.third_person.idle"
+          ],
+          "transitions": [
+            {
+              "third_person.shoot": "query.is_using_item && q.is_ignited && !q.is_illager_captain"
+            },
+            {
+              "first_person": "variable.is_first_person"
+            },
+            {
+              "third_person.overheat": "query.is_illager_captain"
+            }
+          ]
+        },
+        "third_person.shoot": {
+          "animations": [
+            "tnt_rocket_launcher.third_person.shoot"
+          ],
+          "transitions": [
+            {
+              "third_person": "!variable.is_first_person && q.any_animation_finished && query.is_using_item"
+            },
+            {
+              "first_person": "variable.is_first_person"
+            },
+            {
+              "third_person.overheat": "query.is_illager_captain && q.any_animation_finished && !variable.is_first_person"
+            }
+          ]
+        },
+        "third_person.overheat": {
+          "animations": [
+            "tnt_rocket_launcher.overheating"
+          ],
+          "transitions": [
+            {
+              "third_person": "!query.is_illager_captain && !variable.is_first_person"
+            },
+            {
+              "third_person.shoot": "query.is_using_item && q.is_ignited && !q.is_illager_captain"
+            },
+            {
+              "first_person": "variable.is_first_person"
+            }
+          ],
+          "blend_transition": 0.2
+        },
+        "first_person": {
+          "animations": [
+            "tnt_rocket_launcher.first_person.idle"
+          ],
+          "transitions": [
+            {
+              "first_person.shoot": "query.is_using_item && q.is_ignited && !q.is_illager_captain"
+            },
+            {
+              "third_person": "!variable.is_first_person"
+            },
+            {
+              "first_person.overheat": "query.is_illager_captain && q.any_animation_finished && variable.is_first_person"
+            }
+          ]
+        },
+        "first_person.shoot": {
+          "animations": [
+            "tnt_rocket_launcher.first_person.shoot"
+          ],
+          "transitions": [
+            {
+              "first_person": "variable.is_first_person && q.any_animation_finished && query.is_using_item"
+            },
+            {
+              "third_person": "!variable.is_first_person"
+            },
+            {
+              "first_person.overheat": "query.is_illager_captain && q.any_animation_finished && variable.is_first_person"
+            }
+          ]
+        },
+        "first_person.overheat": {
+          "animations": [
+            "tnt_rocket_launcher.first_person.overheating"
+          ],
+          "transitions": [
+            {
+              "first_person": "!query.is_illager_captain && variable.is_first_person"
+            },
+            {
+              "first_person.shoot": "query.is_using_item && q.is_ignited && !q.is_illager_captain"
+            },
+            {
+              "third_person": "!variable.is_first_person"
+            }
+          ],
+          "blend_transition": 0.2
+        }
+      }
+    }
+  }
+}

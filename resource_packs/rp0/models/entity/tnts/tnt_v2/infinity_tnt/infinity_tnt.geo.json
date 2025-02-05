@@ -1,0 +1,53 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.infinity_tnt",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "root",
+					"parent": "tnt",
+					"pivot": [0, 19, 0]
+				},
+				{
+					"name": "upper",
+					"parent": "root",
+					"pivot": [0, 31, 0],
+					"cubes": [
+						{"origin": [-8, 23, -8], "size": [16, 16, 16], "pivot": [0, 31, 0], "rotation": [0, 0, -180], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "mid",
+					"parent": "root",
+					"pivot": [0, 20, 0],
+					"cubes": [
+						{"origin": [-6, 8, -6], "size": [12, 16, 12], "pivot": [0, 20, 0], "rotation": [0, 0, -180], "uv": [0, 36]}
+					],
+					"locators": {
+						"mid": [0, 19, 0]
+					}
+				},
+				{
+					"name": "lowwer",
+					"parent": "root",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

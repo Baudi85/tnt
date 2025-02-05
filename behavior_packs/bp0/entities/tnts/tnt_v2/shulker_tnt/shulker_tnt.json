@@ -1,0 +1,85 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:shulker_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:is_charged": {},
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "lit",
+          "shulker_tnt"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 4,
+        "fuse_lit": true,
+        "power": 4,
+        "causes_fire": false
+      },
+      "minecraft:shooter": {
+        "def": "minecraft:shulker_bullet"
+      },
+      "minecraft:behavior.ranged_attack": {
+        "attack_interval_min": 0.5,
+        "attack_interval_max": 1,
+        "attack_radius": 65
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {
+        "value": 0,
+        "max": 0
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "value": "player"
+          },
+          "max_dist": 66
+        },
+        "must_see": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:spawned_by_projectile": {
+        "add": {
+          "component_groups": [
+            "sndbx:spawned_by_projectile"
+          ]
+        }
+      }
+    },
+    "component_groups": {
+      "sndbx:spawned_by_projectile": {
+        "minecraft:is_shaking": {}
+      }
+    }
+  }
+}

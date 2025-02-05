@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:void_eater_tnt",
+      "geometry": {
+        "default": "geometry.void_eater_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/void_eater_tnt/void_eater_tnt"
+      },
+      "particle_effects": {
+        "void_float_x": "sndbx:void_float_x",
+        "void_float_z": "sndbx:void_float_z",
+        "void_obliterator": "sndbx:void_obliterator"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "ignite_controller",
+          { "explosion": "q.life_time >= 5.5" }
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "explosion": "animation.sndbx_tnt.explosion",
+        "ignite_controller": "controller.animation.void_eater_particle_ignited",
+        "floating": "animation.void_eater_tnt.floating",
+        "spinning": "animation.void_eater_tnt.spinning"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.lit"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

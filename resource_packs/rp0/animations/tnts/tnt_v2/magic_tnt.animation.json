@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.magic_tnt.idle_spin": {
+			"loop": true,
+			"animation_length": 4.0,
+			"bones": {
+				"blobs": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"4.0": [0, 360, 0]
+					}
+				}
+			}
+		},
+		"animation.magic_tnt.on_ignite_spin": {
+			"animation_length": 4.2,
+			"bones": {
+				"blobs": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"4.0": [0, 3560, 0]
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"3.0": [1, 1, 1],
+						"4.0": [1.5, 1, 1.5]
+					}
+				}
+			}
+		}
+	}
+}

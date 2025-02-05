@@ -1,0 +1,143 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:infinity_tnt",
+      "runtime_identifier": "minecraft:tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ 
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.infinity_tnt.on_ignite"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:loop_expl": {
+        "minecraft:is_ignited": {}
+      },
+      "sndbx:stop_tnt_expl": {
+        "minecraft:transformation": {
+          "into": "sndbx:infinity_tnt_block"
+        }
+      },
+
+      "sndbx:infinity_tnt_1": {
+        "minecraft:skin_id": {
+          "value": 1
+        },
+        "minecraft:type_family": {
+          "family": [ "tnt", "lit2", "infinity_tnt", "inanimate" ]
+        }
+      },
+      "sndbx:infinity_tnt_2": {
+        "minecraft:skin_id": {
+          "value": 2
+        },
+        "minecraft:type_family": {
+          "family": [ "tnt", "lit2", "infinity_tnt", "inanimate" ]
+        }
+      },
+      "sndbx:infinity_tnt_3": {
+        "minecraft:skin_id": {
+          "value": 3
+        },
+        "minecraft:type_family": {
+          "family": [ "tnt", "lit2", "infinity_tnt", "inanimate" ]
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    
+    "components": {
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "infinity_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 2.48
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 4,
+        "fuse_lit": true,
+        "power": 10,
+        "causes_fire": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    
+    "events": {
+      "sndbx:loop_expl": {
+        "add": {
+          "component_groups": [
+            "sndbx:loop_expl"
+          ]
+        }
+      },
+      "sndbx:stop_tnt_expl": {
+        "add": {
+          "component_groups": [
+            "sndbx:stop_tnt_expl"
+          ]
+        }
+      },
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn"
+          ]
+        }
+      },
+
+      "sndbx:infinity_tnt_1": {
+        "add": {
+          "component_groups": [
+            "sndbx:infinity_tnt_1"
+          ]
+        }
+      },
+      "sndbx:infinity_tnt_2": {
+        "add": {
+          "component_groups": [
+            "sndbx:infinity_tnt_2"
+          ]
+        }
+      },
+      "sndbx:infinity_tnt_3": {
+        "add": {
+          "component_groups": [
+            "sndbx:infinity_tnt_3"
+          ]
+        }
+      }
+    }
+  }
+}

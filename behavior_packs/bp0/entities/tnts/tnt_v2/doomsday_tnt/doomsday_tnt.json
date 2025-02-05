@@ -1,0 +1,126 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:doomsday_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.doomsday_tnt.on_ignite"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:initiate_explode": {
+        "minecraft:is_ignited": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            9.0,
+            9.0
+          ],
+          "time_down_event": {
+            "event": "sndbx:doomsday_explode",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:doomsday_explode": {
+        "minecraft:is_charged": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            1.1,
+            1.1
+          ],
+          "time_down_event": {
+            "event": "sndbx:doomsday_despawn_str",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:doomsday_despawn_str": {
+        "minecraft:is_shaking": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            2.5,
+            2.5
+          ],
+          "time_down_event": {
+            "event": "sndbx:doomsday_despawn",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:doomsday_despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "doomsday",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 2.98,
+        "height": 2.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:initiate_explode"
+          ]
+        }
+      },
+      "sndbx:doomsday_explode": {
+        "add": {
+          "component_groups": [
+            "sndbx:doomsday_explode"
+          ]
+        }
+      },
+      "sndbx:doomsday_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:doomsday_despawn"
+          ]
+        }
+      },
+      "sndbx:doomsday_despawn_str": {
+        "add": {
+          "component_groups": [
+            "sndbx:doomsday_despawn_str"
+          ]
+        }
+      }
+    }
+  }
+}

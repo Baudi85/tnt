@@ -1,0 +1,79 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scientist.dialogue": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "dialogue_1": "q.is_saddled && q.variant == 1"
+            },
+            {
+              "dialogue_2": "q.is_saddled && q.variant == 2"
+            },
+            {
+              "dialogue_3": "q.is_saddled && q.variant == 3"
+            }
+          ]
+        },
+        "dialogue_1": {
+          "particle_effects": [
+            { 
+              "effect": "dialogue_1",
+              "locator": "dialogue"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!q.variant || !q.is_saddled"
+            },
+            { 
+              "dialogue_2": "q.variant == 2"
+            },
+            { 
+              "dialogue_3": "q.variant == 3"
+            }
+          ]
+        },
+        "dialogue_2": {
+          "particle_effects": [
+            { 
+              "effect": "dialogue_2",
+              "locator": "dialogue"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!q.variant || !q.is_saddled"
+            },
+            { 
+              "dialogue_1": "q.variant == 1"
+            },
+            { 
+              "dialogue_3": "q.variant == 3"
+            }
+          ]
+        },
+        "dialogue_3": {
+          "particle_effects": [
+            { 
+              "effect": "dialogue_3",
+              "locator": "dialogue"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!q.variant || !q.is_saddled"
+            },
+            { 
+              "dialogue_1": "q.variant == 1"
+            },
+            { 
+              "dialogue_2": "q.variant == 2"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

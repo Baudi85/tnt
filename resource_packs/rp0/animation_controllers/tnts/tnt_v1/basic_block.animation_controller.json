@@ -1,0 +1,71 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.basic_block.move": {
+      "states": {
+        "default": {
+          "animations": [
+            "idle",
+            "look_at_target"
+          ],
+          "transitions": [
+            {
+              "walk": "query.ground_speed > 0"
+            },
+            {
+              "hit": "!query.is_on_ground"
+            },
+            {
+              "attack": "variable.attack_time > 0"
+            }
+          ],
+          "blend_transition": 0
+        },
+        "walk": {
+          "animations": [
+            {
+              "walk": "query.modified_move_speed * 2"
+            },
+            "look_at_target"
+          ],
+          "transitions": [
+            {
+              "default": "query.ground_speed == 0"
+            },
+            {
+              "hit": "!query.is_on_ground"
+            },
+            {
+              "attack": "variable.attack_time > 0"
+            }
+          ],
+          "blend_transition": 0
+        },
+        "hit": {
+          "animations": [
+            "hit",
+            "look_at_target"
+          ],
+          "transitions": [
+            {
+              "default": "query.is_on_ground"
+            }
+          ],
+          "blend_transition": 0
+        },
+        "attack": {
+          "animations": [
+            "attack",
+            "look_at_target"
+          ],
+          "transitions": [
+            {
+              "default": "query.all_animations_finished"
+            }
+          ],
+          "blend_transition": 0
+        }
+      }
+    }
+  }
+}

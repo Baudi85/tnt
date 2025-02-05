@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:lightning_tnt_block",
+      "geometry": {
+        "default": "geometry.lightningtnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/lightning_tnt/lightning_tnt"
+      },
+      "particle_effects": {
+        "block_destruct": "sndbx:block_destruct",
+        "lightning": "sndbx:lightning_bolts"
+      },
+      "scripts": {
+        "animate": [
+          "align",
+          "block_destruct",
+          "particle"
+        ]
+      },
+      "animations": {
+        "align": "animation.sndbx_tnt.rot_align",
+        "block_destruct": "controller.animation.sndbx_tnt.destruct_particle",
+        "particle": "animation.lightning_particle"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      },
+      "spawn_egg": {
+        "texture": "lightning_tnt"
+      }
+    }
+  }
+}

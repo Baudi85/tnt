@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.gravitational_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_ignite": "q.is_powered"
+            }
+          ]
+        },
+        "on_ignite": {
+          "particle_effects": [
+            {
+              "effect": "charge",
+              "locator": "charge"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

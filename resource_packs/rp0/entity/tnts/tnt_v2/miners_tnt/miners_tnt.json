@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:miners_tnt",
+      "geometry": {
+        "default": "geometry.miners_tnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v2/miners_tnt/miners_tnt",
+        "lit": "textures/tnts/v2/miners_tnt/miners_tnt_lit"
+      },
+      "scripts": {
+        "initialize": [ "v.swell_amount = 0.0;" ],
+        "pre_animation": [
+          "v.swell_amount = query.is_powered ? v.swell_amount + query.delta_time : 0.0;",
+          "v.flash = math.mod(math.round(v.swell_amount * 4.0), 2.0);"
+        ],
+        "animate": [
+          "align",
+          "hop_controller",
+          { "tnt_ignited": "q.life_time < 3.5" },
+          { "tnt_explode": "q.life_time > 3.6" }
+        ]
+      },
+      "animations": {
+        "hop_controller": "controller.animation.sndbx_tnt.hop",
+        "align": "animation.sndbx_tnt.rot_align",
+        "hop": "animation.sndbx_tnt.hop",
+        "tnt_ignited": "animation.miners_tnt.ignited",
+        "tnt_explode": "animation.miners_tnt.explode"
+      },
+      "render_controllers": [
+        "controller.render.miners_tnt"
+      ],
+      "sound_effects": {
+        "ignited": "random.fuse"
+      }
+    }
+  }
+}

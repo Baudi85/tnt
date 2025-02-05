@@ -1,0 +1,99 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:troll_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.troll_tnt.on_ignite"
+      }
+    },
+    "component_groups": {
+      "sndbx:stick_to_player": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "sndbx:explode_while_sticking": {
+        "minecraft:variant": {
+          "value": 4
+        },
+        "minecraft:explode": {
+          "fuse_length": 0.5,
+          "fuse_lit": true,
+          "power": 3,
+          "breaks_blocks": true,
+          "causes_fire": false
+        }
+      },
+      "sndbx:spawned_by_projectile": {
+        "minecraft:is_shaking": {}
+      }
+    },
+    "components": {
+      "minecraft:is_charged": {},
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "lit",
+          "troll_tnt",
+          "inanimate"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 4,
+        "fuse_lit": true,
+        "power": 4,
+        "causes_fire": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:stick_to_player": {
+        "add": {
+          "component_groups": [
+            "sndbx:stick_to_player"
+          ]
+        }
+      },
+      "sndbx:explode_while_sticking": {
+        "add": {
+          "component_groups": [
+            "sndbx:explode_while_sticking"
+          ]
+        }
+      },
+      "sndbx:spawned_by_projectile": {
+        "add": {
+          "component_groups": [
+            "sndbx:spawned_by_projectile"
+          ]
+        }
+      }
+    }
+  }
+}

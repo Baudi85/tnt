@@ -1,0 +1,97 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:split_tnt",
+      "runtime_identifier": "minecraft:tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ { "runtime": "q.skin_id == 0" } ]
+      },
+      "animations": {
+        "runtime": "controller.animation.base_tnt.on_ignite"
+      }
+    },
+    
+    "component_groups": {
+      "sndbx:split_tnt_1": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "sndbx:split_tnt_instant_expl": {
+        "minecraft:explode": {
+          "fuse_length": -1,
+          "fuse_lit": true,
+          "power": 50,
+          "breaks_blocks": true,
+          "causes_fire": false
+        }
+      }
+    },
+    
+    "components": {
+      "minecraft:skin_id": {
+        "value": 0
+      },
+      "minecraft:is_charged": {
+      },
+      "minecraft:type_family": {
+        "family": [ 
+          "tnt",
+          "lit",
+          "base_tnt",
+          "inanimate" 
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      },
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuse_length": 4,
+        "fuse_lit": true,
+        "power": 4,
+        "causes_fire": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    
+    "events": {
+      "sndbx:split_tnt_explode": {
+        "sequence": [
+          {       
+            "filters": { "test": "is_skin_id", "subject": "self", "value": 0 },
+            "add": {
+              "component_groups": [ 
+                "sndbx:split_tnt_explode" 
+              ]
+            }
+          }
+        ]
+      },
+      "sndbx:split_tnt_instant_expl": {
+        "add": {
+          "component_groups": [
+            "sndbx:split_tnt_instant_expl"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.arrow": {
+      "geometry": "!q.is_ignited ? geometry.default : geometry.tnt_skeleton_arrow",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "!q.is_ignited ? texture.default : texture.tnt_skeleton_arrow" ],
+      "filter_lighting": true
+    }
+  }
+}

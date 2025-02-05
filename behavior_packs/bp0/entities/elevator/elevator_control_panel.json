@@ -1,0 +1,207 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:elevator_control_panel",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "sndbx:can_be_triggered": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "void",
+              "damage_multiplier": 10e7,
+              "deals_damage": true
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    { "test": "has_damage", "value": "anvil" },
+                    { "test": "has_damage", "value": "block_explosion" },
+                    { "test": "has_damage", "value": "entity_explosion" },
+                    { "test": "has_damage", "value": "fire" },
+                    { "test": "has_damage", "value": "fire_tick" },
+                    { "test": "has_damage", "value": "lava" },
+                    { "test": "has_damage", "value": "projectile" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "operator": "!=", "value": "player" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "has_damage", "subject": "self", "value": "attack" }
+                  ]
+                },
+                "event": "sndbx:trigger_intro_sequence"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "swing": true,
+              "on_interact": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "sndbx:trigger_intro_sequence",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+
+      "sndbx:trigger_sequence_to_main_entity": {
+        "minecraft:behavior.send_event": {
+          "priority": 1,
+          "event_choices": [
+            {
+              "min_activation_range": 0.0,
+              "max_activation_range": 20.0,
+              "cooldown_time": 0.0,
+              "weight": 1,
+              "filters": { 
+                "all_of": [
+                  { 
+                    "test": "is_family", 
+                    "subject": "other", 
+                    "value": "elevator_lift" 
+                  },
+                  { 
+                    "test": "has_component", 
+                    "subject": "other", 
+                    "operator": "!=", 
+                    "value": "minecraft:is_saddled" 
+                  }
+                ] 
+              },
+              "sequence": [
+                {
+                  "base_delay": 0.0,
+                  "event": "sndbx:trigger_intro_sequence"
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.1,
+          "time_down_event": {
+            "event": "sndbx:despawn",
+            "target": "self"
+          }
+        }
+      },
+
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": { }
+      }
+    },
+
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:is_stackable": {
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.5
+      },
+      "minecraft:health": {
+        "min": 1,
+        "max": 1,
+        "value": 1
+      },
+      "minecraft:type_family": {
+        "family": [
+          "elevator",
+          "elevator_control_panel",
+          "inanimate"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": { 
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      },
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "test": "has_tag",
+            "subject": "self",
+            "operator": "!=",
+            "value": "intro_sequence_triggered"
+          },
+          "event": "sndbx:can_be_triggered"
+        }
+      }
+    },
+
+    "events": {
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [ "sndbx:despawn" ]
+        }
+      },
+      
+      "sndbx:can_be_triggered": {
+        "add": {
+          "component_groups": [ "sndbx:can_be_triggered" ]
+        }
+      },
+
+      "sndbx:trigger_intro_sequence": {
+        "add": {
+          "component_groups": [ "sndbx:trigger_sequence_to_main_entity" ]
+        },
+        "remove": {
+          "component_groups": [ "sndbx:can_be_triggered" ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.escalator.lcd_off": {
+			"loop": true,
+			"bones": {
+				"lcd_slider": {
+					"position": [3.5, 0, 0]
+				},
+				"lcd_1": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.escalator.lcd_on": {
+			"loop": true,
+			"bones": {
+				"lcd_slider": {
+					"position": [-1.5, 0, 0]
+				},
+				"lcd_1": {
+					"scale": 1
+				},
+				"lcd_2": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.escalator.control_panel_click": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.8,
+			"bones": {
+				"control_panel": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.1": [1.02, 0.98, 1.02],
+						"0.2": [0.98, 1.02, 0.98],
+						"0.35": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.escalator.vibrate": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"scale": [1, "math.sin(query.anim_time * 1200)*.002 + 1", 1]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "move"
+				}
+			}
+		}
+	}
+}

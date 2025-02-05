@@ -1,0 +1,518 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:brown_smoke_tnt_block",
+      "is_summonable": false,
+      "is_spawnable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "setup",
+          "despawn",
+          "hide_shadow"
+        ]
+      },
+      "animations": {
+        "setup": "controller.animation.tnt.on_spawn",
+        "despawn": "controller.animation.tnt.on_despawn",
+        "hide_shadow": "controller.animation.tnt.hide_shadow"
+      }
+    },
+    "component_groups": {
+      "sndbx:tnt_remove": {
+        "minecraft:is_illager_captain": {}
+      },
+      "sndbx:tnt_drop_item": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "num_to_spawn": 1,
+            "single_use": true,
+            "spawn_item": "sndbx:brown_smoke_tnt_block_spawn_egg"
+          }
+        }
+      },
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sndbx:tnt_explode": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        "minecraft:transformation": {
+          "into": "sndbx:brown_smoke_tnt",
+          "transformation_sound": "plop"
+        },
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": true
+        },
+        "minecraft:is_charged": {},
+        "minecraft:physics": {
+          "has_gravity": true
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0
+        }
+      },
+      "sndbx:tnt_on_spawn": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "sndbx:tnt_spawned": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:is_stackable": {}
+      },
+      "sndbx:facing_north": {
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "sndbx:facing_south": {
+        "minecraft:mark_variant": {
+          "value": 3
+        }
+      },
+      "sndbx:facing_west": {
+        "minecraft:mark_variant": {
+          "value": 4
+        }
+      },
+      "sndbx:facing_east": {
+        "minecraft:mark_variant": {
+          "value": 5
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "smoke_tnt",
+          "brown_smoke_tnt"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "attack"
+                  },
+                  {
+                    "test": "has_ability",
+                    "subject": "other",
+                    "value": "instabuild"
+                  },
+                  {
+                    "none_of": [
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "flint_and_steel"
+                      },
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "fire_charge"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "self",
+              "event": "sndbx:tnt_remove"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "attack"
+                  },
+                  {
+                    "test": "has_ability",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "instabuild"
+                  },
+                  {
+                    "none_of": [
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "flint_and_steel"
+                      },
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "fire_charge"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "self",
+              "event": "sndbx:tnt_remove_and_drop_item"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "attack"
+                  },
+                  {
+                    "test": "is_variant",
+                    "value": 2
+                  },
+                  {
+                    "any_of": [
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "flint_and_steel"
+                      },
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "fire_charge"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "self",
+              "event": "sndbx:tnt_explode"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "anvil"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "block_explosion"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "entity_explosion"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "fire"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "fire_tick"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "lava"
+                  },
+                  {
+                    "test": "is_variant",
+                    "value": 2
+                  }
+                ]
+              },
+              "target": "self",
+              "event": "sndbx:tnt_explode"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "none_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "anvil"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "block_explosion"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "entity_explosion"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "fire"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "fire_tick"
+                  },
+                  {
+                    "test": "has_damage",
+                    "value": "lava"
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "cause": "void",
+            "damage_multiplier": 10,
+            "deals_damage": true
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "action.interact.creeper",
+            "play_sounds": "ignite",
+            "hurt_item": 1,
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_component",
+                    "operator": "!=",
+                    "value": "minecraft:is_charged"
+                  },
+                  {
+                    "any_of": [
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "flint_and_steel"
+                      },
+                      {
+                        "test": "has_equipment",
+                        "domain": "hand",
+                        "subject": "other",
+                        "value": "fire_charge"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "event": "sndbx:tnt_explode"
+            }
+          },
+          {
+            "interact_text": "action.interact.tnt_launcher.brown_smoke_tnt",
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "sndbx:tnt_rocket_launcher"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  }
+                ]
+              },
+              "event": "sndbx:load_brown_smoke_tnt",
+              "target": "other"
+            }
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "other",
+              "value": "facing_north"
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:facing_north"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "other",
+              "value": "facing_south"
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:facing_south"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "other",
+              "value": "facing_west"
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:facing_west"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "has_tag",
+              "subject": "other",
+              "value": "facing_east"
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:facing_east"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "!=",
+              "value": "player"
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:tnt_explode"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "add": {
+              "component_groups": [
+                "sndbx:tnt_on_spawn"
+              ]
+            }
+          }
+        ]
+      },
+      "sndbx:tnt.spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_spawned"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:tnt_on_spawn"
+          ]
+        }
+      },
+      "sndbx:tnt_explode": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_explode"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "sndbx:tnt_spawned"
+          ]
+        }
+      },
+      "sndbx:tnt_remove": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_remove"
+          ]
+        }
+      },
+      "sndbx:tnt_remove_and_drop_item": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_remove",
+            "sndbx:tnt_drop_item"
+          ]
+        }
+      },
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.escalator_control_panel.event_controller": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "turn_on": "q.mark_variant == 1"
+            },
+            {
+              "turn_off": "q.mark_variant == 2"
+            }
+          ]
+        },
+        "turn_on": {
+          "on_entry": [
+            "/event entity @e[type=sndbx:escalator,c=1] sndbx:escalator_on"
+          ],
+          "transitions": [
+            {
+              "default": "q.mark_variant != 1"
+            }
+          ]
+        },
+        "turn_off": {
+          "on_entry": [
+            "/event entity @e[type=sndbx:escalator,c=1] sndbx:escalator_off"
+          ],
+          "transitions": [
+            {
+              "default": "q.mark_variant != 2"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.escalator.event_controller": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "turn_on": "q.mark_variant == 2"
+            },
+            {
+              "turn_off": "q.mark_variant == 1"
+            }
+          ]
+        },
+        "turn_on": {
+          "animations": [
+            {
+              "escalator_down": "q.is_ignited"
+            },
+            {
+              "escalator_up": "!q.is_ignited"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "q.mark_variant != 2 && !q.out_of_control"
+            }
+          ]
+        },
+        "turn_off": {
+          "transitions": [
+            {
+              "default": "q.mark_variant != 1 && !q.out_of_control"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

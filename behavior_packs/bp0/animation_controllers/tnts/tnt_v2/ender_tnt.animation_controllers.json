@@ -1,0 +1,61 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ender_tnt.teleport": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_explode": "q.life_time > 0.5"
+            }
+          ]
+        },
+        "on_ignite": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.tick_delay) >= 1.5"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/execute @s[family=ender_tnt_ignited] ~ ~ ~ spreadplayers ~ ~ 5 10 @s",
+            "/execute @s[family=ender_tnt_ignited] ~ ~ ~ playsound mob.endermen.portal @p",
+            "/execute @s[family=ender_tnt_ignited] ~ ~ ~ particle minecraft:mob_portal ~ ~ ~"
+          ],
+          "transitions": [
+            {
+              "on_ignite": "1.0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.ender_tnt.particles": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "emit": "1.0"
+            }
+          ]
+        },
+        "emit": {
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/particle minecraft:end_chest ~ ~ ~"
+          ],
+          "transitions": [
+            {
+              "default": "1.0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

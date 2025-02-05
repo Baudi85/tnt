@@ -1,0 +1,81 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.portal_tnt",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-8, 0, -8], "size": [16, 16, 16], "uv": [0, 0]}
+					],
+					"locators": {
+						"spark": [0, 16.5, 0],
+						"portal_base": [0, 8, 0]
+					}
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.portal_tnt.anim",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "tnt",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "portal_anim",
+					"parent": "tnt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 16, 16],
+							"uv": {
+								"north": {
+									"uv": [0, 0],
+									"uv_size": [64, 64]
+								},
+								"east": {
+									"uv": [0, 0],
+									"uv_size": [64, 64]
+								},
+								"south": {
+									"uv": [0, 0],
+									"uv_size": [64, 64]
+								},
+								"west": {
+									"uv": [0, 0],
+									"uv_size": [64, 64]
+								},
+								"up": {
+									"uv": [64, 64],
+									"uv_size": [-64, -64]
+								},
+								"down": {
+									"uv": [64, 64],
+									"uv_size": [-64, -64]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

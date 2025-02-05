@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.selector.clicked": {
+			"animation_length": 0.16667,
+			"bones": {
+				"bb_main": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0833": [1, 1, 0.4],
+						"0.1667": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

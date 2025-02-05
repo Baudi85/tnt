@@ -1,0 +1,57 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.colored_tnt.dye": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_dye": "q.skin_id > 0"
+            }
+          ]
+        },
+        "on_dye": {
+          "transitions": [
+            { "dye_black": "q.skin_id == 1" },
+            { "dye_blue": "q.skin_id == 2" },
+            { "dye_brown": "q.skin_id == 3" },
+            { "dye_cyan": "q.skin_id == 4" },
+            { "dye_gray": "q.skin_id == 5" },
+            { "dye_green": "q.skin_id == 6" },
+            { "dye_light_blue": "q.skin_id == 7" },
+            { "dye_light_gray": "q.skin_id == 8" },
+            { "dye_lime": "q.skin_id == 9" },
+            { "dye_magenta": "q.skin_id == 10" },
+            { "dye_orange": "q.skin_id == 11" },
+            { "dye_pink": "q.skin_id == 12" },
+            { "dye_purple": "q.skin_id == 13" },
+            { "dye_red": "q.skin_id == 14" },
+            { "dye_white": "q.skin_id == 15" },
+            { "dye_yellow": "q.skin_id == 16" }
+          ],
+          "on_exit": [ 
+            "/execute @a[tag=!achievements_rainbow_tnt,r=12] ~~~ function achievements/rainbow_tnt",
+            "/playsound sign.dye.use @a ~~~" 
+          ]
+        },
+        "dye_black": { "on_entry": [ "/summon sndbx:black_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_blue": { "on_entry": [ "/summon sndbx:blue_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_brown": { "on_entry": [ "/summon sndbx:brown_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_cyan": { "on_entry": [ "/summon sndbx:cyan_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_gray": { "on_entry": [ "/summon sndbx:gray_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_green": { "on_entry": [ "/summon sndbx:green_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_light_blue": { "on_entry": [ "/summon sndbx:light_blue_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_light_gray": { "on_entry": [ "/summon sndbx:light_gray_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_lime": { "on_entry": [ "/summon sndbx:lime_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_magenta": { "on_entry": [ "/summon sndbx:magenta_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_orange": { "on_entry": [ "/summon sndbx:orange_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_pink": { "on_entry": [ "/summon sndbx:pink_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_purple": { "on_entry": [ "/summon sndbx:purple_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_red": { "on_entry": [ "/summon sndbx:red_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_white": { "on_entry": [ "/summon sndbx:white_colored_tnt_block", "@s sndbx:tnt_despawn" ] },
+        "dye_yellow": { "on_entry": [ "/summon sndbx:yellow_colored_tnt_block", "@s sndbx:tnt_despawn" ] }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:sponge_wet_tnt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "runtime"
+        ]
+      },
+      "animations": {
+        "runtime": "controller.animation.sponge_wet_tnt.on_ignite"
+      }
+    },
+    "component_groups": {
+      "sndbx:tnt_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sndbx:spawned_by_projectile": {
+        "minecraft:is_shaking": {}
+      }
+    },
+    "components": {
+      "minecraft:scale": {
+        "value": 0.98
+      },
+      "minecraft:is_charged": {},
+      "minecraft:type_family": {
+        "family": [
+          "tnt",
+          "lit",
+          "sponge_tnt",
+          "inanimate"
+        ]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.01,
+            "height": 0.01,
+            "pivot": [
+              0,
+              -1,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:tnt_despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:tnt_despawn"
+          ]
+        }
+      },
+      "sndbx:spawned_by_projectile": {
+        "add": {
+          "component_groups": [
+            "sndbx:spawned_by_projectile"
+          ]
+        }
+      }
+    }
+  }
+}

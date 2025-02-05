@@ -1,0 +1,352 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.smoke_tnt.chimney_smoke": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tick_smoke": "q.is_powered"
+            }
+          ]
+        },
+        "tick_smoke": {
+          "transitions": [
+            { "smoke_chimney_black": "(q.owner_identifier == 'sndbx:black_smoke_tnt' || q.owner_identifier == 'sndbx:black_smoke_tnt_block')" },
+            { "smoke_chimney_blue": "(q.owner_identifier == 'sndbx:blue_smoke_tnt' || q.owner_identifier == 'sndbx:blue_smoke_tnt_block')" },
+            { "smoke_chimney_brown": "(q.owner_identifier == 'sndbx:brown_smoke_tnt' || q.owner_identifier == 'sndbx:brown_smoke_tnt_block')" },
+            { "smoke_chimney_cyan": "(q.owner_identifier == 'sndbx:cyan_smoke_tnt' || q.owner_identifier == 'sndbx:cyan_smoke_tnt_block')" },
+            { "smoke_chimney_dark_green": "(q.owner_identifier == 'sndbx:dark_green_smoke_tnt' || q.owner_identifier == 'sndbx:dark_green_smoke_tnt_block')" },
+            { "smoke_chimney_gray": "(q.owner_identifier == 'sndbx:gray_smoke_tnt' || q.owner_identifier == 'sndbx:gray_smoke_tnt_block')" },
+            { "smoke_chimney_light_blue": "(q.owner_identifier == 'sndbx:light_blue_smoke_tnt' || q.owner_identifier == 'sndbx:light_blue_smoke_tnt_block')" },
+            { "smoke_chimney_light_gray": "(q.owner_identifier == 'sndbx:light_gray_smoke_tnt' || q.owner_identifier == 'sndbx:light_gray_smoke_tnt_block')" },
+            { "smoke_chimney_lime": "(q.owner_identifier == 'sndbx:lime_smoke_tnt' || q.owner_identifier == 'sndbx:lime_smoke_tnt_block')" },
+            { "smoke_chimney_magenta": "(q.owner_identifier == 'sndbx:magenta_smoke_tnt' || q.owner_identifier == 'sndbx:magenta_smoke_tnt_block')" },
+            { "smoke_chimney_orange": "(q.owner_identifier == 'sndbx:orange_smoke_tnt' || q.owner_identifier == 'sndbx:orange_smoke_tnt_block')" },
+            { "smoke_chimney_pink": "(q.owner_identifier == 'sndbx:pink_smoke_tnt' || q.owner_identifier == 'sndbx:pink_smoke_tnt_block')" },
+            { "smoke_chimney_purple": "(q.owner_identifier == 'sndbx:purple_smoke_tnt' || q.owner_identifier == 'sndbx:purple_smoke_tnt_block')" },
+            { "smoke_chimney_red": "(q.owner_identifier == 'sndbx:red_smoke_tnt' || q.owner_identifier == 'sndbx:red_smoke_tnt_block')" },
+            { "smoke_chimney_white": "(q.owner_identifier == 'sndbx:white_smoke_tnt' || q.owner_identifier == 'sndbx:white_smoke_tnt_block')" },
+            { "smoke_chimney_yellow": "(q.owner_identifier == 'sndbx:yellow_smoke_tnt' || q.owner_identifier == 'sndbx:yellow_smoke_tnt_block')" }
+          ]
+        },
+        
+        "smoke_chimney_black": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 0.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_blue": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 0.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_brown": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 128.0; v.color_g = 64.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_cyan": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 255.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_dark_green": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 128.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_gray": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 128.0; v.color_g = 128.0; v.color_b = 128.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_light_blue": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 255.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_light_gray": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 192.0; v.color_g = 192.0; v.color_b = 192.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_lime": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 255.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_magenta": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 0.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_orange": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 128.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_pink": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 128.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_purple": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 128.0; v.color_g = 0.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_red": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 0.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_yellow": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 255.0; v.color_b = 0.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        },
+        "smoke_chimney_white": {
+          "particle_effects": [
+            {
+              "effect": "smoke_chimney",
+              "locator": "chimney",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 255.0; v.color_b = 255.0;"
+            }
+          ],
+          "transitions": [ { "tick_smoke": "1.0" } ]
+        }
+      }
+    },
+    
+    "controller.animation.smoke_tnt.emit_particles": {
+      "initial_state": "on_ignite",
+      "states": {
+        "on_ignite": {
+          "transitions": [
+            { "smoke_black": "q.owner_identifier == 'sndbx:black_smoke_tnt'" },
+            { "smoke_blue": "q.owner_identifier == 'sndbx:blue_smoke_tnt'" },
+            { "smoke_brown": "q.owner_identifier == 'sndbx:brown_smoke_tnt'" },
+            { "smoke_cyan": "q.owner_identifier == 'sndbx:cyan_smoke_tnt'" },
+            { "smoke_dark_green": "q.owner_identifier == 'sndbx:dark_green_smoke_tnt'" },
+            { "smoke_gray": "q.owner_identifier == 'sndbx:gray_smoke_tnt'" },
+            { "smoke_light_blue": "q.owner_identifier == 'sndbx:light_blue_smoke_tnt'" },
+            { "smoke_light_gray": "q.owner_identifier == 'sndbx:light_gray_smoke_tnt'" },
+            { "smoke_lime": "q.owner_identifier == 'sndbx:lime_smoke_tnt'" },
+            { "smoke_magenta": "q.owner_identifier == 'sndbx:magenta_smoke_tnt'" },
+            { "smoke_orange": "q.owner_identifier == 'sndbx:orange_smoke_tnt'" },
+            { "smoke_pink": "q.owner_identifier == 'sndbx:pink_smoke_tnt'" },
+            { "smoke_purple": "q.owner_identifier == 'sndbx:purple_smoke_tnt'" },
+            { "smoke_red": "q.owner_identifier == 'sndbx:red_smoke_tnt'" },
+            { "smoke_white": "q.owner_identifier == 'sndbx:white_smoke_tnt'" },
+            { "smoke_yellow": "q.owner_identifier == 'sndbx:yellow_smoke_tnt'" }
+          ]
+        },
+        "smoke_black": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 0.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_blue": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 0.0; v.color_b = 255.0;"
+            }
+          ]
+        },
+        "smoke_brown": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 128.0; v.color_g = 64.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_cyan": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 255.0; v.color_b = 255.0;"
+            }
+          ]
+        },
+        "smoke_dark_green": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 128.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_gray": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 128.0; v.color_g = 128.0; v.color_b = 128.0;"
+            }
+          ]
+        },
+        "smoke_light_blue": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 255.0; v.color_b = 255.0;"
+            }
+          ]
+        },
+        "smoke_light_gray": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 192.0; v.color_g = 192.0; v.color_b = 192.0;"
+            }
+          ]
+        },
+        "smoke_lime": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 0.0; v.color_g = 255.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_magenta": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 0.0; v.color_b = 255.0;"
+            }
+          ]
+        },
+        "smoke_orange": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 128.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_pink": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 128.0; v.color_b = 255.0;"
+            }
+          ]
+        },
+        "smoke_purple": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 128.0; v.color_g = 0.0; v.color_b = 255.0;"
+            }
+          ]
+        },
+        "smoke_red": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 0.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_yellow": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 255.0; v.color_b = 0.0;"
+            }
+          ]
+        },
+        "smoke_white": {
+          "particle_effects": [
+            {
+              "effect": "smoke",
+              "pre_effect_script": "v.color_r = 255.0; v.color_g = 255.0; v.color_b = 255.0;"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

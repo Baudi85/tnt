@@ -1,0 +1,103 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sndbx:mushroom_cloud",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "sndbx:mushroom_cloud_timer": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": [
+            4.75,
+            4.75
+          ],
+          "time_down_event": {
+            "event": "sndbx:despawn",
+            "target": "self"
+          }
+        }
+      },
+      "sndbx:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:fire_immune": {},
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 10.0
+      },
+      "minecraft:collision_box": {
+        "width": 0.00,
+        "height": 0.00
+      },
+      "minecraft:break_blocks": {
+        "breakable_blocks": [
+          "minecraft:grass",
+          "minecraft:dirt"
+        ]
+      },
+      "minecraft:behavior.knockback_roar": {
+        "attack_time": 0.3,
+        "cooldown_time": 0,
+        "duration": 4.5,
+        "knockback_damage": 100,
+        "knockback_horizontal_strength": 100,
+        "knockback_range": 120,
+        "knockback_vertical_strength": 100,
+        "knockback_strength": 100,
+        "knockback_filters": { // so the knockback won't effect creative gamemode players
+          "none_of": [
+            {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_ability",
+                  "subject": "other",
+                  "value": "instabuild"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "sndbx:mushroom_cloud_timer"
+          ]
+        }
+      },
+      "sndbx:despawn": {
+        "add": {
+          "component_groups": [
+            "sndbx:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

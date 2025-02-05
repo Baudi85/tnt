@@ -1,0 +1,540 @@
+{
+  "format_version": "1.10",
+  "render_controllers": {
+    "controller.render.sndbx_tnt.block": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.lit": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "overlay_color": {
+        "r": "variable.flash == 0.0 ? this : 1.0",
+        "g": "variable.flash == 0.0 ? this : 1.0",
+        "b": "variable.flash == 0.0 ? this : 1.0",
+        "a": "variable.flash == 0.0 ? this : 1.0"
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+
+    "controller.render.tnt.default.big": {
+      "arrays": {
+        "textures": { "array.overlay": [ "texture.default", "texture.flashing" ] }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "array.overlay[variable.flash]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "light_color_multiplier": "variable.flash ? 10000.0 : 1.0",
+      "ignore_lighting" : true
+    },
+
+    "controller.render.sndbx_tnt.display.base_tnt": {
+      "geometry": "geometry.base_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.base_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.colored_tnt": {
+      "arrays": {
+        "textures": {
+          "array.colors": [
+            "texture.black_colored_tnt",
+            "texture.blue_colored_tnt",
+            "texture.brown_colored_tnt",
+            "texture.cyan_colored_tnt",
+            "texture.gray_colored_tnt",
+            "texture.green_colored_tnt",
+            "texture.light_blue_colored_tnt",
+            "texture.light_gray_colored_tnt",
+            "texture.lime_colored_tnt",
+            "texture.magenta_colored_tnt",
+            "texture.orange_colored_tnt",
+            "texture.pink_colored_tnt",
+            "texture.purple_colored_tnt",
+            "texture.red_colored_tnt",
+            "texture.white_colored_tnt",
+            "texture.yellow_colored_tnt"
+          ]
+        }
+      },
+      "geometry": "geometry.colored_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "array.colors[variable.colored_tnt]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.arctic_tnt": {
+      "geometry": "geometry.arctic_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.arctic_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.big_bertha_tnt": {
+      "geometry": "geometry.big_bertha_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.big_bertha_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.black_hole_tnt": {
+      "geometry": "geometry.black_hole_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.black_hole_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.blast_tnt": {
+      "geometry": "geometry.blast_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.blast_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.blaze_tnt": {
+      "geometry": "geometry.blaze_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.blaze_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.fireball_tnt": {
+      "geometry": "geometry.fireball_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.fireball_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.fish_tnt": {
+      "geometry": "geometry.fish_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.fish_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.galaxy_tnt": {
+      "geometry": "geometry.galaxy_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.galaxy_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.lightning_tnt": {
+      "geometry": "geometry.lightning_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.lightning_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.mega_tnt": {
+      "geometry": "geometry.mega_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.mega_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.mega_tnt.armor": {
+      "geometry": "geometry.mega_tnt_armor",
+      "materials": [ { "*": "material.armor" } ],
+      "textures": [ "texture.tnt_armor_creeper" ],
+      "uv_anim": {
+        "offset": [ 
+          "(math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.0125",
+          "(math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.0125" 
+        ],
+        "scale": [ 0.5, 0.5 ]
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "ignore_lighting" : true
+    },
+    "controller.render.sndbx_tnt.display.party_tnt": {
+      "geometry": "geometry.party_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.party_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.potion_tnt": {
+      "geometry": "geometry.potion_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.potion_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.scatter_tnt": {
+      "geometry": "geometry.scatter_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.scatter_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.sticky_tnt": {
+      "geometry": "geometry.sticky_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.sticky_tnt" ],
+      "part_visibility": [
+        { "tnt_inner": false },
+        { "tnt": true }
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.sticky_tnt_material": {
+      "geometry": "Geometry.sticky_tnt_inner",
+      "materials": [ { "*": "material.sticky" } ],
+      "textures": [ "Texture.sticky_tnt_inner" ],
+      "part_visibility": [
+        { "tnt_inner": true },
+        { "tnt": false }
+      ],
+      "is_hurt_color":{},
+      "on_fire_color":{}
+    },
+    "controller.render.sndbx_tnt.display.super_tnt": {
+      "geometry": "geometry.super_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.super_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.super_tnt.armor": {
+      "geometry": "geometry.super_tnt_armor",
+      "materials": [ { "*": "material.armor" } ],
+      "textures": [ "texture.tnt_armor_creeper" ],
+      "uv_anim": {
+        "offset": [ 
+          "(math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.005",
+          "(math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.005" 
+        ],
+        "scale": [ 0.3, 0.3 ]
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "ignore_lighting" : true
+    },
+    "controller.render.sndbx_tnt.display.tnt_mob": {
+      "geometry": "geometry.tnt_mob",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.tnt_mob" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.tornado_tnt": {
+      "geometry": "geometry.tornado_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.tornado_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.ultra_tnt": {
+      "geometry": "geometry.ultra_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.ultra_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.ultra_tnt.armor": {
+      "geometry": "geometry.ultra_tnt_armor",
+      "materials": [ { "*": "material.armor" } ],
+      "textures": [ "texture.tnt_armor_creeper" ],
+      "uv_anim": {
+        "offset": [ 
+          "(math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01",
+          "(math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01" 
+        ],
+        "scale": [ 0.1, 0.1 ]
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "ignore_lighting" : true
+    },
+    "controller.render.sndbx_tnt.display.wither_tnt": {
+      "geometry": "geometry.wither_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.wither_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+
+    "controller.render.sndbx_tnt.display.mob_tnt": {
+      "arrays": {
+        "textures": {
+          "array.mobs": [
+            "texture.axolotl_mob_tnt",
+            "texture.bat_mob_tnt",
+            "texture.cat_mob_tnt",
+            "texture.chicken_mob_tnt",
+            "texture.cow_mob_tnt",
+            "texture.fox_mob_tnt",
+            "texture.parrot_mob_tnt",
+            "texture.pig_mob_tnt",
+            "texture.polar_bear_mob_tnt",
+            "texture.rabbit_mob_tnt"
+          ]
+        }
+      },
+      "geometry": "geometry.mob_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "array.mobs[variable.mob_tnt]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.smoke_tnt": {
+      "arrays": {
+        "textures": {
+          "array.colors": [
+            "texture.black_smoke_tnt",
+            "texture.blue_smoke_tnt",
+            "texture.brown_smoke_tnt",
+            "texture.cyan_smoke_tnt",
+            "texture.gray_smoke_tnt",
+            "texture.dark_green_smoke_tnt",
+            "texture.light_blue_smoke_tnt",
+            "texture.light_gray_smoke_tnt",
+            "texture.lime_smoke_tnt",
+            "texture.magenta_smoke_tnt",
+            "texture.orange_smoke_tnt",
+            "texture.pink_smoke_tnt",
+            "texture.purple_smoke_tnt",
+            "texture.red_smoke_tnt",
+            "texture.white_smoke_tnt",
+            "texture.yellow_smoke_tnt"
+          ]
+        }
+      },
+      "geometry": "geometry.smoke_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "array.colors[variable.smoke_tnt]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    }, 
+    "controller.render.sndbx_tnt.display.black_hole_tnt_v2": {
+      "geometry": "geometry.black_hole_tnt_v2",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.black_hole_tnt_v2" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.blessed_tnt": {
+      "geometry": "geometry.blessed_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.blessed_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.butterfly_tnt": {
+      "geometry": "geometry.butterfly_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.butterfly_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.circle_tnt": {
+      "geometry": "geometry.circle_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.circle_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.dinnerbone_tnt": {
+      "geometry": "geometry.dinnerbone_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.dinnerbone_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.dynamite_tnt": {
+      "geometry": "geometry.dynamite_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.dynamite_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.ender_tnt": {
+      "geometry": "geometry.ender_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.ender_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.equaliser_tnt": {
+      "geometry": "geometry.equaliser_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.equaliser_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.gravitational_tnt": {
+      "geometry": "geometry.gravitational_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.gravitational_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.infinity_tnt": {
+      "geometry": "geometry.infinity_tnt",
+      "materials": [ { "*": "material.glow" } ],
+      "textures": [ "texture.infinity_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.magic_tnt": {
+      "geometry": "geometry.magic_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.magic_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.magnet_tnt": {
+      "geometry": "geometry.magnet_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.magnet_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.magnet_tnt.armor": {
+      "geometry": "geometry.magnet_tnt_armor",
+      "materials": [ { "*": "material.armor" } ],
+      "textures": [ "texture.tnt_armor_wither" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "uv_anim": {
+        "offset": [
+          "Math.cos(query.life_time * 22.92) * 3.0",
+          "query.life_time * 0.2"
+        ],
+        "scale": [ 1.0, 1.0 ]
+      },
+      "ignore_lighting": true
+    },
+    "controller.render.sndbx_tnt.display.miners_tnt": {
+      "geometry": "geometry.miners_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.miners_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.napalm_tnt": {
+      "geometry": "geometry.napalm_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.napalm_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.doomsday": {
+      "geometry": "geometry.doomsday_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.doomsday_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.patient_zero_tnt": {
+      "geometry": "geometry.patient_zero_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.patient_zero_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.device_crasher_tnt": {
+      "geometry": "geometry.device_crasher_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.device_crasher_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.portal_tnt": {
+      "geometry": "geometry.portal_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.portal_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.rainbow_tnt": {
+      "geometry": "geometry.rainbow_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.rainbow_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.shulker_tnt": {
+      "geometry": "geometry.shulker_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.shulker_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.split_tnt": {
+      "geometry": "geometry.split_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.split_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.sponge_tnt": {
+      "geometry": "geometry.sponge_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.sponge_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.wet_sponge_tnt": {
+      "geometry": "geometry.sponge_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.sponge_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.time_slower_tnt": {
+      "geometry": "geometry.time_slower_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.time_slower_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.troll_tnt": {
+      "geometry": "geometry.troll_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.troll_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.void_eater_tnt": {
+      "geometry": "geometry.void_eater_tnt",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.void_eater_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.world_ender_tnt": {
+      "geometry": "geometry.world_ender_tnt",
+      "materials": [ { "*": "material.glow" } ],
+      "textures": [ "texture.world_ender_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.sndbx_tnt.display.lucky_tnt": {
+      "geometry": "geometry.lucky_tnt",
+      "materials": [ { "*": "material.lucky_tnt" } ],
+      "textures": [ "texture.lucky_tnt" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "uv_anim": {
+        "offset": [ 
+          "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.007", 
+          0
+        ],
+        "scale": [ 1.0, 1.0 ]
+      },
+      "ignore_lighting" : true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:party_balloon",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+      	"default": "textures/tnts/v1/party_tnt/balloon"
+      },
+      "geometry": {
+        "default": "geometry.balloon"
+      },
+      "render_controllers": [ "controller.render.sndbx_tnt.block" ]
+    }
+  }
+}

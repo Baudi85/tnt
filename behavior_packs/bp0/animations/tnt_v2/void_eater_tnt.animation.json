@@ -1,0 +1,22 @@
+{
+  "format_version":"1.10.0",
+  "animations": {
+    "animation.void_eater_tnt.wing_flap_sound": {
+      "timeline": {
+        "0.54": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "1.08": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "1.62": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "2.16": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "2.70": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "3.24": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "3.78": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "4.32": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "4.86": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "5.40": [ "/playsound mob.enderdragon.flap @a ~~~" ],
+        "5.94": [ "/playsound mob.enderdragon.flap @a ~~~" ]
+      },
+      "animation_length": 5.95,
+      "loop": false
+    }
+  }
+}

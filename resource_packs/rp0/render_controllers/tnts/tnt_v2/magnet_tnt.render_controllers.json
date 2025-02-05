@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.magnet_tnt": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "part_visibility": [
+        { "tnt_block": "!q.is_powered" },
+        { "magnet": true }
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.magnet_tnt.flash_lit": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "part_visibility": [
+        { "tnt_block": "q.is_powered" },
+        { "magnet": "!q.is_powered" }
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "overlay_color": {
+        "r": "variable.flash == 0.0 ? this : 1.0",
+        "g": "variable.flash == 0.0 ? this : 1.0",
+        "b": "variable.flash == 0.0 ? this : 1.0",
+        "a": "variable.flash == 0.0 ? this : 1.0"
+      }
+    },
+    "controller.render.magnet_tnt.overlay": {
+      "geometry": "Geometry.magnet",
+      "materials": [ { "*": "Material.magnet" } ],
+      "textures": [ "query.is_powered ? Texture.armor_blue : Texture.armor_white" ],
+      "is_hurt_color":{},
+      "on_fire_color":{},
+      "uv_anim": {
+        "offset": [
+          "Math.cos(query.life_time * 22.92) * 3.0",
+          "query.life_time * 0.2"
+        ],
+        "scale": [ 1.0, 1.0 ]
+      },
+      "ignore_lighting": true
+    },
+    "controller.render.magnet_tnt.offshoot": {
+      "geometry": "geometry.offshoot",
+      "materials": [ { "*": "material.offshoot" } ],
+      "textures": [ "texture.offshoot" ],
+      "part_visibility": [ { "*": false } ]
+    }
+  }
+}

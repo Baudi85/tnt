@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:tnt_cannon",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnt_cannon"
+      },
+      "geometry": {
+        "default": "geometry.tnt_cannon"
+      },
+      "render_controllers": [
+        "controller.render.tnt_cannon"
+      ],
+      "scripts": {
+        "animate": [
+          "setup",
+          "rotate",
+          { "shoot": "q.has_rider" }
+        ]
+      },
+      "animations": {
+        "setup": "controller.animation.tnt_cannon.setup",
+        "shoot": "controller.animation.tnt_cannon.shoot",
+        "rotate": "animation.tnt_cannon.rotate",
+        "active": "animation.tnt_cannon.active",
+        "inactive": "animation.tnt_cannon.inactive",
+        "fire": "animation.tnt_cannon.fire",
+        "reload": "animation.tnt_cannon.reload"
+      },
+
+      "sound_effects": {
+        "fire": "tnt_cannon.shooting",
+        "reload": "tnt_cannon.reload"
+      },
+      "particle_effects": {
+        "cannon_fire": "sndbx:cannon_fire"
+      }
+    }
+  }
+}

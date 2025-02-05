@@ -1,0 +1,68 @@
+{
+  "format_version":"1.10.0",
+  "animations": {
+    "animation.lucky_tnt.roll_sequence": {
+      "timeline": {
+        "0.0": [
+          "/scoreboard objectives add luckyTNT dummy",
+          "/playsound random.orb @a ~~~ 0.5 0.5"
+        ],
+        "1.0": [ 
+          "/scoreboard players random @s luckyTNT 1 2", 
+          "/playsound note.pling @a ~~~ 0.5 0.5" 
+        ],
+        "2.0": [ 
+          "/scoreboard players random @s[scores={luckyTNT=1}] luckyTNT 1 36",
+          "/scoreboard players random @s[scores={luckyTNT=2}] luckyTNT 37 88",
+          "/playsound note.pling @a ~~~ 0.5 0.5"
+        ],
+        "3.0": [
+          "/scoreboard players random @s[scores={luckyTNT=1..5}] luckyTNT 6 13",
+          "/scoreboard players random @s[scores={luckyTNT=6..36}] luckyTNT 14 21",
+          "/scoreboard players random @s[scores={luckyTNT=6..13}] luckyTNT 1 5",
+          "/scoreboard players random @s[scores={luckyTNT=14..21}] luckyTNT 6 36",
+          
+          "/scoreboard players random @s[scores={luckyTNT=37..49}] luckyTNT 50 59",
+          "/scoreboard players random @s[scores={luckyTNT=60..66}] luckyTNT 67 73",
+          "/scoreboard players random @s[scores={luckyTNT=82..88}] luckyTNT 74 81",
+          
+          "/scoreboard players random @s[scores={luckyTNT=50..59}] luckyTNT 37 49",
+          "/scoreboard players random @s[scores={luckyTNT=67..73}] luckyTNT 60 66",
+          "/scoreboard players random @s[scores={luckyTNT=74..81}] luckyTNT 82 88",
+          
+          "/playsound note.pling @a ~~~ 0.5 0.5" 
+        ],
+        "4.0": [ 
+          "/tag @s remove disaster",
+          "/tag @s[scores={luckyTNT=2}] add disaster",
+          "/tag @s[scores={luckyTNT=26}] add disaster",
+          "/tag @s[scores={luckyTNT=32}] add disaster",
+          "/tag @s[scores={luckyTNT=35}] add disaster",
+          "/tag @s[scores={luckyTNT=61}] add disaster",
+          "/tag @s[scores={luckyTNT=63}] add disaster",
+          "/tag @s[scores={luckyTNT=87}] add disaster",
+          "/tag @s[scores={luckyTNT=88}] add disaster",
+          
+          "/scoreboard players set @s[tag=\"disaster\",tag=\"disable_disaster\"] luckyTNT 1",
+          "/tag @s[tag=\"disaster\",tag=\"disable_disaster\"] remove disaster",
+          
+          "/execute @s[tag=!\"disaster\"] ~~~ playsound random.levelup @a ~~~ 0.5 0.5",
+          "/execute @s[tag=!\"disaster\"] ~~~ particle minecraft:villager_happy ~~0.5~",
+          "/execute @s[tag=!\"disaster\"] ~~~ function tnt/lucky",
+          
+          "/execute @s[tag=\"disaster\"] ~~~ particle minecraft:villager_angry ~~0.5~",
+          "/execute @s[tag=\"disaster\"] ~~~ titleraw @a actionbar {\"rawtext\":[{\"text\":\"§c\"},{\"translate\":\"action.interact.lucky_tnt.disaster\"}]}"
+        ],
+        "4.10": [ "/execute @s[tag=\"disaster\"] ~~~ playsound note.pling @a ~~~ 1 2" ],
+        "4.60": [ "/execute @s[tag=\"disaster\"] ~~~ playsound note.pling @a ~~~ 1 2" ],
+        "5.10": [ "/execute @s[tag=\"disaster\"] ~~~ playsound note.pling @a ~~~ 1 2" ],
+        "5.60": [ "/execute @s[tag=\"disaster\"] ~~~ playsound note.pling @a ~~~ 1 2" ],
+        "6.60": [ 
+          "/execute @s[tag=\"disaster\"] ~~~ function tnt/lucky" 
+        ]
+      },
+      "animation_length": 15,
+      "loop": false
+    }
+  }
+}

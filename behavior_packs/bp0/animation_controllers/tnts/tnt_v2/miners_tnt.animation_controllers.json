@@ -1,0 +1,92 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.miners_tnt.on_ignite": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { 
+              "on_ignite": "q.life_time >= 0.1"
+            }
+          ],
+          "on_entry": [ "/tag @s add is_countdown" ]
+        },
+        "on_ignite": {
+          "on_entry": [ 
+            "v.on_explode = q.life_time;",
+            
+            "/execute @s ~~~ detect ~~-4~ bedrock -1 tag @s add bedrock_beneath",
+            "/execute @s ~~~ detect ~~-3~ bedrock -1 tag @s add bedrock_beneath",
+            "/execute @s ~~~ detect ~~-2~ bedrock -1 tag @s add bedrock_beneath",
+            "/execute @s ~~~ detect ~~-1~ bedrock -1 tag @s add bedrock_beneath"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=\"bedrock_beneath\"] sndbx:despawn_explode",
+            "/execute @s[tag=!\"bedrock_beneath\"] ~~~ fill ~5~~5~-5~-1~-5 air 0 destroy",
+            "/tag @s remove is_countdown"
+          ],
+          "transitions": [
+            {
+              "on_explode": "(q.life_time - v.on_explode) >= 4.0"
+            },
+            {
+              "abort_explosion": "q.variant == 3"
+            }
+          ]
+        },
+        "on_explode": {
+          "on_entry": [
+            "/scoreboard objectives add minersTNT dummy",
+            "/scoreboard players add @s minersTNT 1",
+            "/scoreboard players set @s[scores={minersTNT=5..}] minersTNT 0",
+            
+            "/execute @s[scores={minersTNT=4},tag=!\"bedrock_beneath\"] ~~~ function tnt/miners"
+          ],
+          "on_exit": [
+            "/scoreboard objectives add minersTNT dummy",
+            "/scoreboard players add @s minersTNT 1",
+            "/scoreboard players set @s[scores={minersTNT=5..}] minersTNT 0",
+            
+            "/execute @s[scores={minersTNT=4},tag=!\"bedrock_beneath\"] ~~~ function tnt/miners"
+          ],
+          "transitions": [
+            {
+              "on_explode_tick": "1"
+            }
+          ]
+        },
+        "on_explode_tick": {
+          "on_entry": [
+            "/scoreboard objectives add minersTNT dummy",
+            "/scoreboard players add @s minersTNT 1",
+            "/scoreboard players set @s[scores={minersTNT=5..}] minersTNT 0",
+            
+            "/execute @s[scores={minersTNT=4},tag=!\"bedrock_beneath\"] ~~~ function tnt/miners"
+          ],
+          "on_exit": [
+            "/scoreboard objectives add minersTNT dummy",
+            "/scoreboard players add @s minersTNT 1",
+            "/scoreboard players set @s[scores={minersTNT=5..}] minersTNT 0",
+            
+            "/execute @s[scores={minersTNT=4},tag=!\"bedrock_beneath\"] ~~~ function tnt/miners"
+          ],
+          "transitions": [
+            {
+              "on_explode": "1"
+            }
+          ]
+        },
+        "abort_explosion": {
+          "on_entry": [
+            "/playsound random.fizz @a ~~~",
+            "/particle sndbx:squeezed_evaporation ~~0.5~",
+            "/particle sndbx:squeezed_evaporation ~~1.0~",
+            "/summon sndbx:miners_tnt_block",
+            "@s sndbx:tnt_despawn"
+          ]
+        }
+      }
+    }
+  }
+}

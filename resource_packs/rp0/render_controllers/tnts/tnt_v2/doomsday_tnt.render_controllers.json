@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.doomsday_tnt": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "q.is_ignited ? Array.state[Math.min(Math.floor(query.life_time * 0.33333333333), 3.0)] : Array.state[4]" ],
+      "arrays": {
+        "textures": {
+          "Array.state": [
+            "texture.doomsday_1",
+            "texture.doomsday_2",
+            "texture.doomsday_3",
+            "texture.doomsday_4",
+            "texture.default"
+          ]
+        }
+      },
+      "overlay_color": {
+        "r": "variable.flash == 0.0 ? this : 1.0",
+        "g": "variable.flash == 0.0 ? this : 1.0",
+        "b": "variable.flash == 0.0 ? this : 1.0",
+        "a": "variable.flash == 0.0 ? this : 1.0"
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.mushroom_cloud": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "ignore_lighting": true,
+      "light_color_multiplier": 1.0
+    }
+  }
+}

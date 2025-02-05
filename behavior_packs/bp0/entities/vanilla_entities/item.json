@@ -1,0 +1,636 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:item",
+      "is_spawnable": true,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "root"
+        ]
+      },
+      "animations": {
+        "root": "controller.animation.item.root"
+      }
+    },
+    "component_groups": {
+      "sndbx:drop_item": {
+        "minecraft:addrider": {
+          "entity_type": "sndbx:drop_item"
+        },
+        "minecraft:collision_box": {
+          "height": 0.00001,
+          "width": 0.00001
+        }
+      },
+      "minecraft:player_item": {
+        "minecraft:is_charged": {}
+      }
+    },
+    "components": {
+      "minecraft:tick_world": {},
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "item"
+        ],
+        "seats": {
+          "position": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.black_hole"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.base"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.black_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.blue_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.brown_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.cyan_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.gray_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.green_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.light_blue_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.light_gray_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.lime_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.magenta_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.orange_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.pink_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.purple_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.red_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.white_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.yellow_colored"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.arctic"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.big_bertha"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.blast"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.blaze"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.fireball"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.fish"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.galaxy"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.lightning"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.mega"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.party"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.potion"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.scatter"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.sticky"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.super"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.tornado"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.ultra"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.wither"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.axolotl_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.bat_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.cat_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.chicken_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.cow_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.fox_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.parrot_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.pig_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.polar_bear_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.rabbit_mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.blessed"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.butterfly"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.circle"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.dinnerbone"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.dynamite"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.ender"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.equaliser"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.gravitational"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.infinity"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.magic"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.magnet"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.miners"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.mob"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.napalm"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.patient_zero"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.device_crasher"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.portal"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.rainbow"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.shulker"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.split"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.sponge"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.wet_sponge"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.time_slower"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.troll"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.void_eater"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.world_ender"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.black_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.blue_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.brown_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.cyan_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.dark_green_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.gray_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.light_blue_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.light_gray_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.lime_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.magenta_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.orange_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.pink_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.purple_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.red_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.white_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.yellow_smoke"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.doomsday"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.lucky"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "tnt.rocket_launcher"
+                }
+              ]
+            },
+            "event": "sndbx:drop_item"
+          }
+        ]
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "sndbx:drop_item": {
+        "add": {
+          "component_groups": [
+            "sndbx:drop_item"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:player_item"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "sndbx:ultra_tnt_block_spawn_egg",
+      "geometry": {
+        "default": "geometry.ultratnt"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/tnts/v1/ultra_tnt/ultra_tnt"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "first_person": "c.is_first_person"
+          },
+          {
+            "third_person": "!c.is_first_person"
+          }
+        ]
+      },
+      "animations": {
+        "first_person": "animation.sndbx_tnt.item.first_person.ultra_tnt",
+        "third_person": "animation.sndbx_tnt.item.third_person.ultra_tnt"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ]
+    }
+  }
+}

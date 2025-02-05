@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.equaliser_tnt_redstone": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "emit": "q.is_powered" }
+          ]
+        },
+        "emit": {
+          "particle_effects": [
+            { 
+              "effect": "redstone", 
+              "locator": "lever"
+            }
+          ],
+          "transitions": [ { "default": "1" } ]
+        }
+      }
+    }
+  }
+}

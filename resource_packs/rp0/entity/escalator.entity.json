@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sndbx:escalator",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/escalator"
+      },
+      "geometry": {
+        "default": "geometry.escalator"
+      },
+      "scripts": {
+        "animate": [
+          "setup",
+          "control_panel_scale"
+        ]
+      },
+      "animations": {
+        "lcd_off": "animation.escalator.lcd_off",
+        "lcd_on": "animation.escalator.lcd_on",
+        "setup": "controller.animation.escalator.setup",
+        "control_panel_click": "animation.escalator.control_panel_click",
+        "control_panel_scale": "animation.elevator.control_panel_scale",
+        "vibrate": "animation.escalator.vibrate"
+      },
+      "render_controllers": [
+        "controller.render.sndbx_tnt.block"
+      ],
+      "sound_effects": {
+        "move": "escalator.move"
+      }
+    }
+  }
+}

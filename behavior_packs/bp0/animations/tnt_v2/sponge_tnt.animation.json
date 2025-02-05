@@ -1,0 +1,13 @@
+{
+  "format_version":"1.10.0",
+  "animations": {
+    "animation.timer_spongetnt": {
+      "timeline": {
+        "0.0": [ "/tag @s add absorb" ],
+        "4.0": [ "/tag @s add explode" ]
+      },
+      "animation_length": 4.1,
+      "loop": false
+    }
+  }
+}
